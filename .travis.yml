@@ -12,12 +12,6 @@ cache:
     - vendor/bundle
   yarn: true
 
-before_install:
-  - gem update --system --no-document
-  - gem --version
-  - gem install bundler --no-document
-  - bundler --version
-
 install:
   - bundle install --jobs=3 --retry=3 --without=development:production
   - yarn install
