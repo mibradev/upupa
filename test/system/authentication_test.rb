@@ -1,0 +1,41 @@
+# frozen_string_literal: true
+
+require "application_system_test_case"
+
+class AuthenticationTest < ApplicationSystemTestCase
+  setup do
+    @user = users(:one)
+    @password = "12345678"
+  end
+
+  test "successful login" do
+    visit new_user_session_url
+    assert_selector "h2", text: "Login"
+    fill_in "Email", with: @user.email
+    fill_in "Password", with: @password
+    click_button "Login"
+    assert_equal root_path, current_path
+    assert_text I18n.t("devise.sessions.signed_in")
+  end
+
+  test "failed login" do
+    visit new_user_session_url
+    click_button "Login"
+    assert_equal new_user_session_path, current_path
+    assert_text I18n.t("devise.failure.invalid", authentication_keys: "Email")
+  end
+
+  test "invalid email" do
+    visit new_user_session_url
+    fill_in "Password", with: @password
+    click_button "Login"
+    assert_text I18n.t("devise.failure.invalid", authentication_keys: "Email")
+  end
+
+  test "invalid password" do
+    visit new_user_session_url
+    fill_in "Email", with: @user.email
+    click_button "Login"
+    assert_text I18n.t("devise.failure.invalid", authentication_keys: "Email")
+  end
+end
