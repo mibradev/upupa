@@ -1,16 +1,16 @@
 <div class="max-w-xs px-4 py-16 mx-auto">
   <div class="bg-orange-100 text-gray-700 px-6 py-8 rounded shadow-md">
-    <h2 class="text-xl text-center mb-6">Login</h2>
+    <h2 class="text-xl font-bold text-center mb-6">Login</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="mb-4">
         <%= f.label :email, class: "block text-sm font-bold mb-2" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: :email, class: "shadow appearance-none border focus:border-orange-400 rounded w-full py-2 px-3 leading-tight focus:outline-none" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: :email, class: "appearance-none placeholder-gray-400 leading-tight w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:shadow" %>
       </div>
 
-      <div class="mb-6">
+      <div class="mb-4">
         <%= f.label :password, class: "block text-sm font-bold mb-2" %>
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "*" * 16, class: "shadow appearance-none border focus:border-orange-400 rounded w-full py-2 px-3 leading-tight focus:outline-none" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "*" * 16, class: "appearance-none placeholder-gray-400 leading-tight w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:shadow" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
@@ -20,8 +20,8 @@
         </div>
       <% end %>
 
-      <div>
-        <%= f.submit "Login", class: "bg-orange-400 hover:bg-orange-500 text-orange-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+      <div class="mt-6">
+        <%= f.submit "Login", class: "bg-gray-700 text-gray-100 font-bold px-4 py-2 rounded cursor-pointer hover:bg-gray-800 focus:outline-none focus:shadow-outline" %>
       </div>
     <% end %>
   </div>
