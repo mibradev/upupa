@@ -6,26 +6,26 @@ AllCops:
   TargetRubyVersion: 2.6
   DisabledByDefault: true
   Exclude:
-    - 'bin/**/*'
-    - 'db/schema.rb'
-    - 'log/**/*'
-    - 'node_modules/**/*'
-    - 'public/**/*'
-    - 'storage/**/*'
+    - "bin/**/*"
+    - "db/schema.rb"
+    - "log/**/*"
+    - "node_modules/**/*"
+    - "public/**/*"
+    - "storage/**/*"
     - 'tmp/**/*'
     - 'vendor/**/*'
 
 Performance:
   Exclude:
-    - 'test/**/*'
+    - "test/**/*"
 
 Rails/AssertNot:
   Include:
-    - 'test/**/*'
+    - "test/**/*"
 
 Rails/RefuteMethods:
   Include:
-    - 'test/**/*'
+    - "test/**/*"
 
 Style/AndOr:
   Enabled: true
