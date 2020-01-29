@@ -23,8 +23,6 @@ checks:
     enabled: false
 
 plugins:
-  csslint:
-    enabled: true
   rubocop:
     enabled: true
     channel: rubocop-0-76
