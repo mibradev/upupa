@@ -11,6 +11,7 @@ class AuthenticationTest < ApplicationSystemTestCase
   test "successful login" do
     visit new_user_session_url
     assert_page_title "Login"
+    assert_page_description "Log into Upupa to access your account."
     assert_selector "h2", text: "Login"
     fill_in "Email", with: @user.email
     fill_in "Password", with: @password

@@ -11,4 +11,9 @@ class ApplicationHelperTest < ActionView::TestCase
     view.page_title("Page Title")
     assert_equal "Page Title", view.content_for(:page_title)
   end
+
+  test "page description" do
+    view.page_description("Page description.")
+    assert_equal "Page description.", view.content_for(:page_description)
+  end
 end

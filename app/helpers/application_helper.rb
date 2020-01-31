@@ -5,4 +5,8 @@ module ApplicationHelper
     title = "#{title} - Upupa" unless current_page?(root_path)
     content_for(:page_title, title)
   end
+
+  def page_description(content)
+    content_for(:page_description, content)
+  end
 end
