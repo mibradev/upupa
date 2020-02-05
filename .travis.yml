@@ -20,7 +20,8 @@ before_script:
   - RAILS_ENV=test bundle exec rails db:create
 
 script:
-  - bundle exec rails test:system test
+  - bundle exec rails test
+  - bundle exec rails test:system
   - bundle exec rubocop --parallel
 
 notifications:
