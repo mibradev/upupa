@@ -13,7 +13,7 @@ cache:
   yarn: true
 
 install:
-  - bundle install --jobs=3 --retry=3 --without=development:production
+  - bundle install --jobs=3 --retry=3 --without=development:production --deployment
   - yarn install
 
 before_script:
