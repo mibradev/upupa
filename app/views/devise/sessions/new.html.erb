@@ -13,7 +13,7 @@
 
       <div class="mb-4">
         <%= f.label :password, class: "block text-sm font-bold mb-2" %>
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "*" * 16, required: true, class: "appearance-none placeholder-gray-400 leading-tight w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:shadow" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "*" * 8, required: true, class: "appearance-none placeholder-gray-400 leading-tight w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:shadow" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
