@@ -9,7 +9,6 @@ class RoleTest < ActiveSupport::TestCase
 
   test "validity" do
     assert @role.valid?
-    assert_equal "Admin", @role.name
   end
 
   test "presence of name" do
