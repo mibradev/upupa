@@ -2,4 +2,5 @@
 
 class User < ApplicationRecord
   devise :database_authenticatable
+  devise :validatable
 end
