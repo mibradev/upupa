@@ -26,7 +26,5 @@ plugins:
   rubocop:
     enabled: true
     channel: rubocop-0-76
-  scss-lint:
-    enabled: true
 
 exclude_patterns: []
