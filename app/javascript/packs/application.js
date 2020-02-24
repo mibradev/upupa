@@ -4,5 +4,3 @@ require("@rails/activestorage").start()
 
 import "channels"
 import "controllers"
-import "images"
-import "stylesheets"
