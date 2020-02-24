@@ -65,4 +65,14 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
     assert @user.errors.added?(:password_confirmation, :confirmation, attribute: User.human_attribute_name(:password))
   end
+
+  test "has many roles" do
+    @user.roles = roles.first(2)
+    assert_equal 2, @user.roles.count
+  end
+
+  test "uniqueness of role" do
+    user = users(:admin)
+    assert_raise(ActiveRecord::RecordNotUnique) { user.roles << user.roles.first }
+  end
 end

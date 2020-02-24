@@ -4,7 +4,7 @@ require "test_helper"
 
 class RoleTest < ActiveSupport::TestCase
   setup do
-    @role = roles(:admin)
+    @role = roles(:one)
   end
 
   test "validity" do
@@ -32,5 +32,15 @@ class RoleTest < ActiveSupport::TestCase
   test "not squishing absent name" do
     @role.name = nil
     assert_nil @role.name
+  end
+
+  test "has many users" do
+    @role.users = users.first(2)
+    assert_equal 2, @role.users.count
+  end
+
+  test "uniqueness of user" do
+    role = roles(:admin)
+    assert_raise(ActiveRecord::RecordNotUnique) { role.users << role.users.first }
   end
 end
