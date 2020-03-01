@@ -5,7 +5,7 @@ require "test_helper"
 class ApplicationHelperTest < ActionView::TestCase
   test "page title" do
     view.page_title "Page Title"
-    assert_equal "Page Title - Upupa", view.content_for(:page_title)
+    assert_equal "Page Title - #{I18n.t :app_name}", view.content_for(:page_title)
   end
 
   test "page title in home page" do

@@ -14,7 +14,7 @@ class Devise::SessionsControllerTest < ActionDispatch::IntegrationTest
     get new_user_session_url
     assert_response :ok
     assert_page_title "Login"
-    assert_page_description "Log into Upupa to access your account."
+    assert_page_description "Log into #{I18n.t :app_name} to access your account."
     assert_select "h2", "Log in"
     assert_select "input[type='email'][autofocus][autocomplete='email'][placeholder='Email'][required]"
     assert_select "input[type='password'][autocomplete='current-password'][placeholder='********'][required]"

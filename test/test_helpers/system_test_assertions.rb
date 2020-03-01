@@ -2,7 +2,7 @@
 
 class ActionDispatch::SystemTestCase
   def assert_page_title(title)
-    title = "#{title} - Upupa" unless current_path == root_path
+    title = "#{title} - #{I18n.t :app_name}" unless current_path == root_path
     assert page.has_title?(title)
   end
 
