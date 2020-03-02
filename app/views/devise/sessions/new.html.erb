@@ -1,9 +1,9 @@
 <% page_title "Login" %>
 <% page_description "Log into #{t :app_name} to access your account." %>
 
-<div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-11 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-dark text-light px-4 py-5 rounded-lg mt-5 shadow-sm">
+<div class="container pt-5">
+  <div class="row justify-content-center pt-5">
+    <div class="col-11 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-dark text-light px-4 py-5 rounded-lg shadow-sm">
       <h2 class="h3 text-center mb-4">Log in</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
