@@ -25,6 +25,6 @@ checks:
 plugins:
   rubocop:
     enabled: true
-    channel: rubocop-0-76
+    channel: rubocop-0-81
 
 exclude_patterns: []
