@@ -5,17 +5,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.6.6"
 
-gem "rails", "~> 6.0.0"
+gem "bootsnap", "~> 1.4.0", require: false
+gem "devise", "~> 4.7.0"
+gem "jbuilder", "~> 2.10.0"
 gem "pg", "~> 1.2.0"
 gem "puma", "~> 4.3.0"
-gem "sass-rails", "~> 6.0.0"
-gem "webpacker", "~> 5.0.0"
-gem "turbolinks", "~> 5.2.0"
-gem "jbuilder", "~> 2.10.0"
-gem "bootsnap", "~> 1.4.0", require: false
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "devise", "~> 4.7.0"
 gem "pundit", "~> 2.1.0"
+gem "rails", "~> 6.0.0"
+gem "sass-rails", "~> 6.0.0"
+gem "turbolinks", "~> 5.2.0"
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "webpacker", "~> 5.0.0"
 
 group :development, :test do
   gem "byebug", "~> 11.1.0", platforms: [:mri, :mingw, :x64_mingw]
@@ -25,10 +25,10 @@ group :development, :test do
 end
 
 group :development do
-  gem "web-console", "~> 4.0.0"
   gem "listen", "~> 3.2.0"
   gem "spring", "~> 2.1.0"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem "web-console", "~> 4.0.0"
 end
 
 group :test do
