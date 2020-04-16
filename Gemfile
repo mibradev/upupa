@@ -19,7 +19,7 @@ gem "webpacker", "~> 5.0.0"
 
 group :development, :test do
   gem "byebug", "~> 11.1.0", platforms: [:mri, :mingw, :x64_mingw]
-  gem "rubocop", "~> 0.81.0", require: false
+  gem "rubocop", "~> 0.82.0", require: false
   gem "rubocop-performance", "~> 1.5.0", require: false
   gem "rubocop-rails", "~> 2.5.0", require: false
 end
@@ -34,5 +34,5 @@ end
 group :test do
   gem "capybara", "~> 3.32.0"
   gem "selenium-webdriver", "~> 3.142.0"
-  gem "webdrivers", "~> 4.2.0"
+  gem "webdrivers", "~> 4.3.0"
 end
