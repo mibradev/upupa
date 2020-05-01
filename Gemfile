@@ -15,7 +15,7 @@ gem "rails", "~> 6.0.0"
 gem "sass-rails", "~> 6.0.0"
 gem "turbolinks", "~> 5.2.0"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "webpacker", "~> 5.0.0"
+gem "webpacker", "~> 5.1.0"
 
 group :development, :test do
   gem "byebug", "~> 11.1.0", platforms: [:mri, :mingw, :x64_mingw]
