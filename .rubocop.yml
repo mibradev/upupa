@@ -27,6 +27,12 @@ Rails/RefuteMethods:
   Include:
     - "test/**/*"
 
+Rails/IndexBy:
+  Enabled: true
+
+Rails/IndexWith:
+  Enabled: true
+
 Style/AndOr:
   Enabled: true
 
@@ -176,6 +182,12 @@ Lint/DeprecatedClassMethods:
   Enabled: true
 
 Style/ParenthesesAroundCondition:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
   Enabled: true
 
 Style/RedundantBegin:
