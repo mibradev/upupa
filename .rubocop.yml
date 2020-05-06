@@ -12,8 +12,8 @@ AllCops:
     - "node_modules/**/*"
     - "public/**/*"
     - "storage/**/*"
-    - 'tmp/**/*'
-    - 'vendor/**/*'
+    - "tmp/**/*"
+    - "vendor/**/*"
 
 Performance:
   Exclude:
