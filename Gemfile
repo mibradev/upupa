@@ -19,7 +19,7 @@ gem "webpacker", "~> 5.1.0"
 
 group :development, :test do
   gem "byebug", "~> 11.1.0", platforms: [:mri, :mingw, :x64_mingw]
-  gem "rubocop", "~> 0.82.0", require: false
+  gem "rubocop", "~> 0.83.0", require: false
   gem "rubocop-performance", "~> 1.5.0", require: false
   gem "rubocop-rails", "~> 2.5.0", require: false
 end
