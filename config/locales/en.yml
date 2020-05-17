@@ -1,2 +1,7 @@
 en:
   app_name: "Upupa"
+
+  activerecord:
+    errors:
+      messages:
+        future_date: "can't be in the futute"

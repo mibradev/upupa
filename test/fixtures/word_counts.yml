@@ -1,0 +1,4 @@
+one:
+  date: <%= Date.current %>
+  actual_word_count: 2000
+  user: one
