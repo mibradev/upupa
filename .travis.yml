@@ -15,7 +15,7 @@ cache:
 
 install:
   - bundle install --deployment --jobs=3 --retry=3 --without=development:production
-  - yarn install
+  - yarn install --frozen-lockfile
 
 before_script:
   - RAILS_ENV=test bundle exec rails db:create
