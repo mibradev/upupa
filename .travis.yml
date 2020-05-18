@@ -23,6 +23,7 @@ before_script:
 script:
   - bundle exec rails test
   - bundle exec rails test:system
+  - bundle exec rails zeitwerk:check
   - bundle exec rubocop --parallel
 
 notifications:
