@@ -9,7 +9,7 @@ gem "bootsnap", "~> 1.4.0", require: false
 gem "devise", "~> 4.7.0"
 gem "jbuilder", "~> 2.10.0"
 gem "pg", "~> 1.2.0"
-gem "puma", "~> 4.3.0"
+gem "puma", "~> 4.3.5"
 gem "pundit", "~> 2.1.0"
 gem "rails", "~> 6.0.0"
 gem "sass-rails", "~> 6.0.0"
