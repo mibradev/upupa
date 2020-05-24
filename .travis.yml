@@ -14,8 +14,8 @@ cache:
     - vendor/bundle
 
 before_install:
-  bundle config set deployment 'true'
-  bundle config set without 'development:production'
+  - bundle config set deployment 'true'
+  - bundle config set without 'development:production'
 
 install:
   - bundle install --jobs=3 --retry=3
