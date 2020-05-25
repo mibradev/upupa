@@ -5,6 +5,11 @@ addons:
   chrome: stable
   postgresql: 12
 
+  apt:
+    packages:
+      - postgresql-12
+      - postgresql-client-12
+
 cache:
   bundler: true
   yarn: true
