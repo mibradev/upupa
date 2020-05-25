@@ -1,11 +1,14 @@
 dist: bionic
 language: ruby
 
-services:
-  - postgresql
-
 addons:
   chrome: stable
+  postgresql: "12"
+
+  apt:
+    packages:
+      - postgresql-12
+      - postgresql-client-12
 
 cache:
   bundler: true
@@ -34,6 +37,10 @@ script:
   - bundle exec rails test:system
   - bundle exec rails zeitwerk:check
   - bundle exec rubocop --parallel
+
+env:
+  global:
+    - PGVER=12
 
 notifications:
   email: false
