@@ -3,7 +3,7 @@ language: ruby
 
 addons:
   chrome: stable
-  postgresql: "11"
+  postgresql: 11
 
 cache:
   bundler: true
