@@ -8,7 +8,8 @@ addons:
   apt:
     packages:
       - postgresql-12
-      - postgresql-client-12
+      - postgresql-contrib
+      - libpq-dev
 
 cache:
   bundler: true
