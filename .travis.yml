@@ -1,15 +1,11 @@
 dist: bionic
 language: ruby
 
+services:
+  - postgresql
+
 addons:
   chrome: stable
-  postgresql: 12
-
-  apt:
-    packages:
-      - postgresql-12
-      - postgresql-contrib
-      - libpq-dev
 
 cache:
   bundler: true
