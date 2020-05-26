@@ -6,8 +6,6 @@ AllCops:
   TargetRubyVersion: 2.7
   DisabledByDefault: true
   Exclude:
-    - "bin/**/*"
-    - "config/**/*"
     - "db/schema.rb"
     - "log/**/*"
     - "node_modules/**/*"
