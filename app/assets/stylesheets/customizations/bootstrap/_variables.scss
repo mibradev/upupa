@@ -1,15 +1,15 @@
 // Color system
 
 $white:    #fff !default;
-$gray-100: #e5e5e5 !default;
-$gray-200: #cbcbcc !default;
-$gray-300: #b1b1b2 !default;
-$gray-400: #979799 !default;
-$gray-500: #7d7d7f !default;
-$gray-600: #636365 !default;
-$gray-700: #4a4a4b !default;
-$gray-800: #303031 !default;
-$gray-900: #181818 !default;
+$gray-100: #e8e8e8 !default;
+$gray-200: #d1d1d2 !default;
+$gray-300: #b9b9bb !default;
+$gray-400: #a2a2a4 !default;
+$gray-500: #8b8b8d !default;
+$gray-600: #747477 !default;
+$gray-700: #5d5d5f !default;
+$gray-800: #474748 !default;
+$gray-900: #303031 !default;
 $black:    #000 !default;
 
 $blue:    #569ac2 !default;
@@ -30,7 +30,7 @@ $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
-$dark:          $gray-800 !default;
+$dark:          $gray-900 !default;
 
 $yiq-contrasted-threshold:  175 !default;
 
