@@ -3,12 +3,12 @@
 task :stats do
   require "rails/code_statistics"
 
-  STATS_DIRECTORIES += [
+  STATS_DIRECTORIES.concat [
     ["Policies", "app/policies"],
     ["Policy tests", "test/policies"]
   ]
 
-  CodeStatistics::TEST_TYPES += [
+  CodeStatistics::TEST_TYPES.concat [
     "Policy tests"
   ]
 end
