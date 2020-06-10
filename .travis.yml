@@ -32,6 +32,7 @@ install:
 
 before_script:
   - bundle exec rails db:create
+  - bundle exec rails webpacker:compile
 
 script:
   - bundle exec rails zeitwerk:check
