@@ -34,10 +34,10 @@ before_script:
   - bundle exec rails db:create
 
 script:
-  - bundle exec rails test
-  - bundle exec rails test:system
   - bundle exec rails zeitwerk:check
   - bundle exec rubocop --parallel
+  - bundle exec rails test
+  - bundle exec rails test:system
 
 notifications:
   email: false
