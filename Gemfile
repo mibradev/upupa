@@ -22,8 +22,8 @@ gem "pundit", "~> 2.1.0"
 group :development, :test do
   gem "byebug", "~> 11.1.0", platforms: [:mri, :mingw, :x64_mingw]
 
-  gem "rubocop", "~> 0.85.0", require: false
-  gem "rubocop-performance", "~> 1.6.0", require: false
+  gem "rubocop", "~> 0.88.0", require: false
+  gem "rubocop-performance", "~> 1.7.0", require: false
   gem "rubocop-rails", "~> 2.6.0", require: false
 end
 
@@ -35,7 +35,7 @@ group :development do
 end
 
 group :test do
-  gem "capybara", "~> 3.32.0"
+  gem "capybara", "~> 3.33.0"
   gem "selenium-webdriver", "~> 3.142.0"
   gem "webdrivers", "~> 4.4.0"
 end
