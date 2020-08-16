@@ -3,7 +3,6 @@ require:
   - rubocop-rails
 
 AllCops:
-  TargetRubyVersion: 2.7
   DisabledByDefault: true
   Exclude:
     - "db/schema.rb"
