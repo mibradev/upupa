@@ -14,7 +14,7 @@ gem "puma", "~> 4.3.0"
 gem "sass-rails", "~> 6.0.0"
 gem "turbolinks", "~> 5.2.0"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "webpacker", "~> 5.1.0"
+gem "webpacker", "~> 5.2.0"
 
 gem "devise", "~> 4.7.0"
 gem "pundit", "~> 2.1.0"
