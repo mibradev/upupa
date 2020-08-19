@@ -28,4 +28,9 @@ class WordCountFileTest < ActiveSupport::TestCase
     @word_count_file.name = " file.doc "
     assert_equal "file.doc", @word_count_file.name
   end
+
+  test "not stripping absent name" do
+    @word_count_file.name = nil
+    assert_nil @word_count_file.name
+  end
 end
