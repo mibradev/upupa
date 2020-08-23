@@ -33,4 +33,8 @@ class WordCountFileTest < ActiveSupport::TestCase
     @word_count_file.name = nil
     assert_nil @word_count_file.name
   end
+
+  test "has many word counts" do
+    assert @word_count_file.word_counts.count > 1
+  end
 end

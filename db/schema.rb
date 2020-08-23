@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_17_115708) do
+ActiveRecord::Schema.define(version: 2020_08_23_050534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,13 @@ ActiveRecord::Schema.define(version: 2020_08_17_115708) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_word_count_files_on_name", unique: true
+  end
+
+  create_table "word_count_files_counts", id: false, force: :cascade do |t|
+    t.bigint "word_count_file_id", null: false
+    t.bigint "word_count_id", null: false
+    t.index ["word_count_file_id"], name: "index_word_count_files_counts_on_word_count_file_id"
+    t.index ["word_count_id", "word_count_file_id"], name: "index_word_count_files_on_word_count_id_and_word_count_file_id", unique: true
   end
 
   create_table "word_counts", force: :cascade do |t|

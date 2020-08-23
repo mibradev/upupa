@@ -55,4 +55,14 @@ class WordCountTest < ActiveSupport::TestCase
     assert_not @word_count.valid?
     assert @word_count.errors.added?(:user, :blank)
   end
+
+  test "has many word count files" do
+    assert @word_count.word_count_files.count > 1
+  end
+
+  test "presence of word count files" do
+    @word_count.word_count_files.clear
+    assert_not @word_count.valid?
+    assert @word_count.errors.added?(:word_count_files, :blank)
+  end
 end
