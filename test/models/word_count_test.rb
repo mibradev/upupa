@@ -27,7 +27,7 @@ class WordCountTest < ActiveSupport::TestCase
   end
 
   test "range of date" do
-    @word_count.date = @word_count.date.tomorrow
+    @word_count.date = Date.tomorrow
     assert_not @word_count.valid?
     assert @word_count.errors.added?(:date, :future_date)
   end
