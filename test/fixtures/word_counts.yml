@@ -1,4 +1,9 @@
 one:
-  date: <%= Date.current %>
+  date: 2020-01-01
   actual_word_count: 2000
   user: one
+
+two:
+  date: 2020-01-02
+  actual_word_count: 2000
+  user: two

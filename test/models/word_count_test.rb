@@ -18,12 +18,11 @@ class WordCountTest < ActiveSupport::TestCase
   end
 
   test "uniquness of date" do
-    word_count = @word_count.dup
-    assert_not word_count.valid?
-    assert word_count.errors.added?(:date, :taken, value: word_count.date)
-
-    word_count.user = users(:two)
-    assert word_count.valid?
+    word_count_two = word_counts(:two)
+    word_count_two.date = @word_count.date
+    word_count_two.user_id = @word_count.user_id
+    assert_not word_count_two.valid?
+    assert word_count_two.errors.added?(:date, :taken, value: word_count_two.date)
   end
 
   test "range of date" do
