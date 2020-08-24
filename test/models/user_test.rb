@@ -68,7 +68,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "has many roles" do
-    assert users(:with_roles).roles.count > 1
+    assert_equal 2, users(:with_roles).roles.count
   end
 
   test "uniqueness of role" do

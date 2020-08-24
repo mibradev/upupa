@@ -57,7 +57,7 @@ class WordCountTest < ActiveSupport::TestCase
   end
 
   test "has many word count files" do
-    assert word_counts(:with_word_count_files).word_count_files.count > 1
+    assert_equal 2, word_counts(:with_word_count_files).word_count_files.count
   end
 
   test "uniqueness of word count file" do
