@@ -30,9 +30,10 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "uniqueness of email" do
-    user = @user.dup
-    assert_not user.valid?
-    assert user.errors.added?(:email, :taken, value: user.email)
+    user_two = users(:two)
+    user_two.email = @user.email
+    assert_not user_two.valid?
+    assert user_two.errors.added?(:email, :taken, value: user_two.email)
   end
 
   test "format of email" do
@@ -41,14 +42,14 @@ class UserTest < ActiveSupport::TestCase
     assert @user.errors.added?(:email, :invalid, value: @user.email)
   end
 
-  test "presence of password" do
-    user = User.new
-    assert_not user.valid?
-    assert user.errors.added?(:password, :blank)
+  test "presence of password if user is new" do
+    new_user = User.new
+    assert_not new_user.valid?
+    assert new_user.errors.added?(:password, :blank)
   end
 
   test "minimum length of password" do
-    @user.password = @password.chop
+    @user.password = @password[0..6]
     assert_not @user.valid?
     assert @user.errors.added?(:password, :too_short, count: 8)
   end
@@ -61,18 +62,17 @@ class UserTest < ActiveSupport::TestCase
 
   test "confirmation of password" do
     @user.password = @password
-    @user.password_confirmation = @password * 2
+    @user.password_confirmation = "invalid#{@password}"
     assert_not @user.valid?
     assert @user.errors.added?(:password_confirmation, :confirmation, attribute: User.human_attribute_name(:password))
   end
 
   test "has many roles" do
-    @user.roles = roles.first(2)
-    assert_equal 2, @user.roles.count
+    assert users(:with_roles).roles.count > 1
   end
 
   test "uniqueness of role" do
-    user = users(:admin)
+    user = users(:with_roles)
     assert_raise(ActiveRecord::RecordNotUnique) { user.roles << user.roles.first }
   end
 end

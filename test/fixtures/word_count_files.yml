@@ -3,3 +3,7 @@ one:
 
 two:
   name: Two.doc
+
+with_word_counts:
+  name: With Word Counts.doc
+  word_counts: one, two

@@ -57,7 +57,13 @@ class WordCountTest < ActiveSupport::TestCase
   end
 
   test "has many word count files" do
-    assert @word_count.word_count_files.count > 1
+    assert word_counts(:with_word_count_files).word_count_files.count > 1
+  end
+
+  test "uniqueness of word count file" do
+    assert_raise(ActiveRecord::RecordNotUnique) do
+      @word_count.word_count_files << @word_count.word_count_files.first
+    end
   end
 
   test "presence of word count files" do

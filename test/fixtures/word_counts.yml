@@ -2,10 +2,16 @@ one:
   date: 2020-01-01
   actual_word_count: 2000
   user: one
-  word_count_files: one, two
+  word_count_files: one
 
 two:
   date: 2020-01-02
+  actual_word_count: 2000
+  user: one
+  word_count_files: one
+
+with_word_count_files:
+  date: 2020-01-03
   actual_word_count: 2000
   user: one
   word_count_files: one, two

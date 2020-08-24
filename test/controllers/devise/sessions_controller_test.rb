@@ -6,7 +6,7 @@ class Devise::SessionsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
-    @user = users(:one)
+    @user = users(:with_password)
     @password = "12345678"
   end
 

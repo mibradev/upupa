@@ -1,5 +1,9 @@
 one:
   name: One
 
-admin:
-  name: Admin
+two:
+  name: Two
+
+with_users:
+  name: With Users
+  users: one, two

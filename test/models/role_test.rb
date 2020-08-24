@@ -18,10 +18,10 @@ class RoleTest < ActiveSupport::TestCase
   end
 
   test "uniqueness of name" do
-    role = @role.dup
-    role.name = @role.name.downcase
-    assert_not role.valid?
-    assert role.errors.added?(:name, :taken, value: role.name)
+    role_two = roles(:two)
+    role_two.name = @role.name.downcase
+    assert_not role_two.valid?
+    assert role_two.errors.added?(:name, :taken, value: role_two.name)
   end
 
   test "squishing name" do
@@ -35,12 +35,11 @@ class RoleTest < ActiveSupport::TestCase
   end
 
   test "has many users" do
-    @role.users = users.first(2)
-    assert_equal 2, @role.users.count
+    assert roles(:with_users).users.count > 1
   end
 
   test "uniqueness of user" do
-    role = roles(:admin)
+    role = roles(:with_users)
     assert_raise(ActiveRecord::RecordNotUnique) { role.users << role.users.first }
   end
 end

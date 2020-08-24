@@ -18,10 +18,10 @@ class WordCountFileTest < ActiveSupport::TestCase
   end
 
   test "uniqueness of name" do
-    word_count_file = @word_count_file.dup
-    word_count_file.name = @word_count_file.name.downcase
-    assert_not word_count_file.valid?
-    assert word_count_file.errors.added?(:name, :taken, value: word_count_file.name)
+    word_count_file_two = word_count_files(:two)
+    word_count_file_two.name = @word_count_file.name.downcase
+    assert_not word_count_file_two.valid?
+    assert word_count_file_two.errors.added?(:name, :taken, value: word_count_file_two.name)
   end
 
   test "stripping name" do
@@ -35,6 +35,12 @@ class WordCountFileTest < ActiveSupport::TestCase
   end
 
   test "has many word counts" do
-    assert @word_count_file.word_counts.count > 1
+    assert word_count_files(:with_word_counts).word_counts.count > 1
+  end
+
+  test "uniqueness of word count" do
+    assert_raise(ActiveRecord::RecordNotUnique) do
+      @word_count_file.word_counts << @word_count_file.word_counts.first
+    end
   end
 end
