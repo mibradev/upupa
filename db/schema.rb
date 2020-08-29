@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_23_050534) do
+ActiveRecord::Schema.define(version: 2020_08_29_200908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,14 @@ ActiveRecord::Schema.define(version: 2020_08_23_050534) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["date", "user_id"], name: "index_word_counts_on_date_and_user_id", unique: true
     t.index ["user_id"], name: "index_word_counts_on_user_id"
+  end
+
+  create_table "work_types", force: :cascade do |t|
+    t.string "name"
+    t.decimal "multiplicand"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_work_types_on_name", unique: true
   end
 
   add_foreign_key "word_counts", "users"
