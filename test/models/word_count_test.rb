@@ -47,7 +47,7 @@ class WordCountTest < ActiveSupport::TestCase
   test "minimum actual word count" do
     @word_count.actual_word_count = 0
     assert_not @word_count.valid?
-    assert @word_count.errors.added?(:actual_word_count, :greater_than, value: @word_count.actual_word_count, count: @word_count.actual_word_count)
+    assert @word_count.errors.added?(:actual_word_count, :greater_than, value: @word_count.actual_word_count, count: 0)
   end
 
   test "presence of user" do
