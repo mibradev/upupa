@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.1"
 
-gem "rails", "6.0.3.2"
+gem "rails", "6.0.3.3"
 
 gem "bootsnap", "~> 1.4.0", require: false
 gem "jbuilder", "~> 2.10.0"
@@ -22,9 +22,9 @@ gem "pundit", "~> 2.1.0"
 group :development, :test do
   gem "byebug", "~> 11.1.0", platforms: [:mri, :mingw, :x64_mingw]
 
-  gem "rubocop", "~> 0.89.0", require: false
-  gem "rubocop-performance", "~> 1.7.0", require: false
-  gem "rubocop-rails", "~> 2.7.0", require: false
+  gem "rubocop", "~> 0.90.0", require: false
+  gem "rubocop-performance", "~> 1.8.0", require: false
+  gem "rubocop-rails", "~> 2.8.0", require: false
 end
 
 group :development do
