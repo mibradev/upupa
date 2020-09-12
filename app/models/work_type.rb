@@ -6,6 +6,8 @@ class WorkType < ApplicationRecord
   validates :multiplicand, presence: true
   validates :multiplicand, numericality: { allow_nil: true }
 
+  has_many :word_counts
+
   def name=(value)
     value = value.squish unless value.nil?
     super(value)

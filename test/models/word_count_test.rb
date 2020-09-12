@@ -56,6 +56,12 @@ class WordCountTest < ActiveSupport::TestCase
     assert @word_count.errors.added?(:user, :blank)
   end
 
+  test "presence of work type" do
+    @word_count.work_type = nil
+    assert_not @word_count.valid?
+    assert @word_count.errors.added?(:work_type, :blank)
+  end
+
   test "has many word count files" do
     assert_equal 2, word_counts(:with_word_count_files).word_count_files.count
   end

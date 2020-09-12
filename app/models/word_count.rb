@@ -9,6 +9,7 @@ class WordCount < ApplicationRecord
   validates :word_count_files, presence: true
 
   belongs_to :user
+  belongs_to :work_type
   has_and_belongs_to_many :word_count_files
 
   private
