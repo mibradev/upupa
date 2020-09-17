@@ -41,7 +41,8 @@ class WorkTypeTest < ActiveSupport::TestCase
     assert_not @work_type.errors.added?(:multiplicand, :not_a_number, value: @work_type.multiplicand)
   end
 
-  test "has many word counts" do
+
+  test "has many word_counts" do
     assert_equal 2, @work_type.word_counts.count
   end
 end

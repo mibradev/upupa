@@ -17,7 +17,7 @@ class UserTest < ActiveSupport::TestCase
     assert @user.valid?
   end
 
-  test "validity with password and password confirmation" do
+  test "validity with password and password_confirmation" do
     @user.password = @password
     @user.password_confirmation = @password
     assert @user.valid?
