@@ -41,6 +41,11 @@ class WorkTypeTest < ActiveSupport::TestCase
     assert_not @work_type.errors.added?(:multiplicand, :not_a_number, value: @work_type.multiplicand)
   end
 
+  test "numericality of multiplicand" do
+    @work_type.multiplicand = "NaN"
+    assert_not @work_type.valid?
+    assert @work_type.errors.added?(:multiplicand, :not_a_number, value: "NaN")
+  end
 
   test "has many word_counts" do
     assert_equal 2, @work_type.word_counts.count

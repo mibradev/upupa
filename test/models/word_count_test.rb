@@ -38,6 +38,12 @@ class WordCountTest < ActiveSupport::TestCase
     assert_not @word_count.errors.added?(:actual_word_count, :not_a_number, value: @word_count.actual_word_count)
   end
 
+  test "numericality of actual_word_count" do
+    @word_count.actual_word_count = "NaN"
+    assert_not @word_count.valid?
+    assert @word_count.errors.added?(:actual_word_count, :not_a_number, value: "NaN")
+  end
+
   test "type of actual_word_count" do
     @word_count.actual_word_count = 1.1
     assert_not @word_count.valid?
