@@ -4,6 +4,7 @@ one:
   user: one
   work_type: one
   word_count_files: one
+  total: 2000.0
 
 two:
   date: 2020-01-02
@@ -11,6 +12,7 @@ two:
   user: one
   work_type: one
   word_count_files: one
+  total: 2000.0
 
 with_word_count_files:
   date: 2020-01-03
@@ -18,3 +20,4 @@ with_word_count_files:
   user: one
   work_type: two
   word_count_files: one, two
+  total: 2000.0

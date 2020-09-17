@@ -77,4 +77,12 @@ class WordCountTest < ActiveSupport::TestCase
     assert_not @word_count.valid?
     assert @word_count.errors.added?(:word_count_files, :blank)
   end
+
+  test "setting total" do
+    @word_count.total = nil
+    @word_count.actual_word_count = 3000
+    @word_count.work_type.multiplicand = 0.5
+    assert @word_count.save
+    assert_equal 1500, @word_count.total
+  end
 end
