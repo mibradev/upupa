@@ -8,6 +8,10 @@ addons:
 
 env:
   global:
+    - BUNDLE_DEPLOYMENT=true
+    - BUNDLE_JOBS=4
+    - BUNDLE_RETRY=3
+    - BUNDLE_WITHOUT=development:production
     - RAILS_ENV=test
 
 cache:
@@ -18,11 +22,6 @@ cache:
     - vendor/bundle
 
 before_install:
-  - bundle config set deployment true
-  - bundle config set jobs 4
-  - bundle config set retry 3
-  - bundle config set without development:production
-  - bundle config list
   - nvm install 12.18
   - node --version
 
