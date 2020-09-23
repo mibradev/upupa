@@ -9,7 +9,6 @@ addons:
 env:
   global:
     - RAILS_ENV=test
-    - TRAVIS_NODE_VERSION=12
 
 cache:
   bundler: true
@@ -24,6 +23,8 @@ before_install:
   - bundle config set retry 3
   - bundle config set without development:production
   - bundle config list
+  - nvm install 12.18
+  - node --version
 
 install:
   - bundle install
