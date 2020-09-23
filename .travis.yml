@@ -9,6 +9,7 @@ addons:
 env:
   global:
     - RAILS_ENV=test
+    - TRAVIS_NODE_VERSION=12
 
 cache:
   bundler: true
