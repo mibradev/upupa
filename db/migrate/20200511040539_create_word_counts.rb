@@ -5,9 +5,10 @@ class CreateWordCounts < ActiveRecord::Migration[6.0]
     create_table :word_counts do |t|
       t.date :date, null: false
       t.integer :actual_word_count, null: false
+      t.decimal :total, null: false
       t.text :notes
+      t.references :work_type, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
-
       t.timestamps
     end
 

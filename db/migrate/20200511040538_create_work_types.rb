@@ -5,7 +5,6 @@ class CreateWorkTypes < ActiveRecord::Migration[6.0]
     create_table :work_types do |t|
       t.string :name
       t.decimal :multiplicand
-
       t.timestamps
     end
 
