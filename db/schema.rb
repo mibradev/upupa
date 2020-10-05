@@ -55,20 +55,6 @@ ActiveRecord::Schema.define(version: 2020_08_23_050534) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
-  create_table "word_count_files", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_word_count_files_on_name", unique: true
-  end
-
-  create_table "word_count_files_counts", id: false, force: :cascade do |t|
-    t.bigint "word_count_file_id", null: false
-    t.bigint "word_count_id", null: false
-    t.index ["word_count_file_id"], name: "index_word_count_files_counts_on_word_count_file_id"
-    t.index ["word_count_id", "word_count_file_id"], name: "index_word_count_files_on_word_count_id_and_word_count_file_id", unique: true
-  end
-
   create_table "word_counts", force: :cascade do |t|
     t.date "date", null: false
     t.integer "actual_word_count", null: false
@@ -81,6 +67,20 @@ ActiveRecord::Schema.define(version: 2020_08_23_050534) do
     t.index ["date", "user_id"], name: "index_word_counts_on_date_and_user_id", unique: true
     t.index ["user_id"], name: "index_word_counts_on_user_id"
     t.index ["work_type_id"], name: "index_word_counts_on_work_type_id"
+  end
+
+  create_table "word_counts_work_files", id: false, force: :cascade do |t|
+    t.bigint "word_count_id", null: false
+    t.bigint "work_file_id", null: false
+    t.index ["word_count_id", "work_file_id"], name: "index_word_counts_work_files_on_word_count_id_and_work_file_id", unique: true
+    t.index ["work_file_id"], name: "index_word_counts_work_files_on_work_file_id"
+  end
+
+  create_table "work_files", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_work_files_on_name", unique: true
   end
 
   create_table "work_types", force: :cascade do |t|

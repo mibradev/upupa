@@ -3,7 +3,7 @@
 admin = User.create!(email: "admin@example.com", password: "12345678")
 Role.create!(name: "Admin", users: [admin])
 
-word_count_file = WordCountFile.create!(name: "file.doc")
+work_file = WorkFile.create!(name: "file.doc")
 work_type = WorkType.create!(name: "Translation", multiplicand: 1.0)
 
 WordCount.create!(
@@ -12,5 +12,5 @@ WordCount.create!(
   notes: nil,
   work_type: work_type,
   user: admin,
-  word_count_files: [word_count_file]
+  work_files: [work_file]
 )

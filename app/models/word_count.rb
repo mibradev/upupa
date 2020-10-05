@@ -6,13 +6,13 @@ class WordCount < ApplicationRecord
   validate :date_cannot_be_in_the_future
   validates :actual_word_count, presence: true
   validates :actual_word_count, numericality: { allow_nil: true, only_integer: true, greater_than: 0 }
-  validates :word_count_files, presence: true
+  validates :work_files, presence: true
 
   before_save :set_total
 
   belongs_to :user
   belongs_to :work_type
-  has_and_belongs_to_many :word_count_files
+  has_and_belongs_to_many :work_files
 
   private
     def date_cannot_be_in_the_future

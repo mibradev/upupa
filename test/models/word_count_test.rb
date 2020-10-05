@@ -68,20 +68,20 @@ class WordCountTest < ActiveSupport::TestCase
     assert @word_count.errors.added?(:work_type, :blank)
   end
 
-  test "has many word_count_files" do
-    assert_equal 2, word_counts(:with_word_count_files).word_count_files.count
+  test "has many work_files" do
+    assert_equal 2, word_counts(:with_work_files).work_files.count
   end
 
-  test "uniqueness of word_count_file" do
+  test "uniqueness of work_file" do
     assert_raise(ActiveRecord::RecordNotUnique) do
-      @word_count.word_count_files << @word_count.word_count_files.first
+      @word_count.work_files << @word_count.work_files.first
     end
   end
 
-  test "presence of word_count_files" do
-    @word_count.word_count_files.clear
+  test "presence of work_files" do
+    @word_count.work_files.clear
     assert_not @word_count.valid?
-    assert @word_count.errors.added?(:word_count_files, :blank)
+    assert @word_count.errors.added?(:work_files, :blank)
   end
 
   test "setting total" do
