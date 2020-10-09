@@ -1,16 +1,18 @@
 # frozen_string_literal: true
 
-admin = User.create!(email: "admin@example.com", password: "12345678")
-Role.create!(name: "Admin", users: [admin])
+user = User.create!(email: "user@localhost", password: "12345678")
+role = Role.create!(name: "User")
 
-work_file = WorkFile.create!(name: "file.doc")
+user.roles << role
+
 work_type = WorkType.create!(name: "Translation", multiplicand: 1.0)
+work_file = WorkFile.create!(name: "file.doc")
+word_count = WordCount.create!(date: Date.current, notes: nil, user: user)
 
-WordCount.create!(
-  date: Date.current,
+WordCountFile.create!(
   actual_word_count: 1,
   notes: nil,
   work_type: work_type,
-  user: admin,
-  work_files: [work_file]
+  work_files: [work_file],
+  word_counts: [word_count]
 )

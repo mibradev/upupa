@@ -47,7 +47,7 @@ class WorkTypeTest < ActiveSupport::TestCase
     assert @work_type.errors.added?(:multiplicand, :not_a_number, value: "NaN")
   end
 
-  test "has many word_counts" do
-    assert_equal 2, @work_type.word_counts.count
+  test "has many word_count_files" do
+    assert_equal 2, @work_type.word_count_files.count
   end
 end

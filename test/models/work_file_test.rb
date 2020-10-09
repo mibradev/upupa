@@ -34,13 +34,13 @@ class WorkFileTest < ActiveSupport::TestCase
     assert_nil @work_file.name
   end
 
-  test "has many word_counts" do
-    assert_equal 2, work_files(:with_word_counts).word_counts.count
+  test "has many word_count_files" do
+    assert_equal 3, @work_file.word_count_files.count
   end
 
-  test "uniqueness of word_count" do
+  test "uniqueness of word_count_file" do
     assert_raise(ActiveRecord::RecordNotUnique) do
-      @work_file.word_counts << @work_file.word_counts.first
+      @work_file.word_count_files << @work_file.word_count_files.first
     end
   end
 end

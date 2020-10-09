@@ -1,23 +1,14 @@
 one:
   date: 2020-01-01
-  actual_word_count: 2000
   user: one
-  work_type: one
-  work_files: one
-  total: 2000.0
+  word_count_files: one
 
 two:
   date: 2020-01-02
-  actual_word_count: 2000
   user: one
-  work_type: one
-  work_files: one
-  total: 2000.0
+  word_count_files: one
 
-with_work_files:
+with_word_count_files:
   date: 2020-01-03
-  actual_word_count: 2000
   user: one
-  work_type: two
-  work_files: one, two
-  total: 2000.0
+  word_count_files: one, two
