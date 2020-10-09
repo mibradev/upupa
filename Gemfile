@@ -22,7 +22,7 @@ gem "pundit", "~> 2.1.0"
 group :development, :test do
   gem "byebug", "~> 11.1.0", platforms: [:mri, :mingw, :x64_mingw]
 
-  gem "rubocop", "~> 0.91.0", require: false
+  gem "rubocop", "~> 0.93.0", require: false
   gem "rubocop-performance", "~> 1.8.0", require: false
   gem "rubocop-rails", "~> 2.8.0", require: false
 end
