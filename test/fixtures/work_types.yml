@@ -5,3 +5,7 @@ one:
 two:
   name: Two
   multiplicand: 1.0
+
+has_many_word_count_files:
+  name: has_many_word_count_files
+  multiplicand: 1.0

@@ -3,3 +3,6 @@ one:
 
 two:
   name: Two.doc
+
+has_and_belongs_to_many_word_count_files:
+  name: has_and_belongs_to_many_word_count_files.doc

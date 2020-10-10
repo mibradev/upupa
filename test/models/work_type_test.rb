@@ -48,6 +48,7 @@ class WorkTypeTest < ActiveSupport::TestCase
   end
 
   test "has many word_count_files" do
+    @work_type.word_count_files = word_count_files(:one, :two)
     assert_equal 2, @work_type.word_count_files.count
   end
 end

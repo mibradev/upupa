@@ -35,11 +35,13 @@ class RoleTest < ActiveSupport::TestCase
   end
 
   test "has many users" do
-    assert_equal 2, roles(:with_users).users.count
+    @role.users = users(:one, :two)
+    assert_equal 2, @role.users.count
   end
 
   test "uniqueness of user" do
-    role = roles(:with_users)
-    assert_raise(ActiveRecord::RecordNotUnique) { role.users << role.users.first }
+    user = users(:one)
+    @role.users = [user]
+    assert_raise(ActiveRecord::RecordNotUnique) { @role.users << user }
   end
 end

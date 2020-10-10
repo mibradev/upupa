@@ -1,13 +1,9 @@
 one:
-  email: one@example
+  email: one@localhost
 
 two:
-  email: two@example
+  email: two@localhost
 
 with_password:
-  email: with_password@example
+  email: with_password@localhost
   encrypted_password: <%= Devise::Encryptor.digest(User, "12345678") %>
-
-with_roles:
-  email: with_roles@example
-  roles: one, two
