@@ -67,6 +67,11 @@ class UserTest < ActiveSupport::TestCase
     assert @user.errors.added?(:password_confirmation, :confirmation, attribute: User.human_attribute_name(:password))
   end
 
+  test "has many word_counts" do
+    @user.word_counts = word_counts(:one, :two)
+    assert_equal 2, @user.word_counts.count
+  end
+
   test "has many roles" do
     @user.roles = roles(:one, :two)
     assert_equal 2, @user.roles.count
