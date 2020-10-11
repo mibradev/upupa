@@ -19,7 +19,7 @@ class RoleTest < ActiveSupport::TestCase
 
   test "uniqueness of name" do
     role_two = roles(:two)
-    role_two.name = @role.name.downcase
+    role_two.name = @role.name.swapcase
     assert_not role_two.valid?
     assert role_two.errors.added?(:name, :taken, value: role_two.name)
   end
@@ -40,8 +40,8 @@ class RoleTest < ActiveSupport::TestCase
   end
 
   test "uniqueness of user" do
-    user = users(:one)
-    @role.users = [user]
-    assert_raise(ActiveRecord::RecordNotUnique) { @role.users << user }
+    assert_raise(ActiveRecord::RecordNotUnique) do
+      @role.users << users(:one, :one)
+    end
   end
 end

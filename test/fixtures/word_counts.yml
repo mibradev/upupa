@@ -1,11 +1,11 @@
 one:
   date: 2020-01-01
-  user: one
+  user: has_many_word_counts
 
 two:
   date: 2020-01-02
-  user: one
+  user: has_many_word_counts
 
 has_and_belongs_to_many_word_count_files:
   date: 2020-01-03
-  user: one
+  user: has_many_word_counts

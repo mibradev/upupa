@@ -19,7 +19,7 @@ class WorkTypeTest < ActiveSupport::TestCase
 
   test "uniqueness of name" do
     work_type_two = work_types(:two)
-    work_type_two.name = @work_type.name.downcase
+    work_type_two.name = @work_type.name.swapcase
     assert_not work_type_two.valid?
     assert work_type_two.errors.added?(:name, :taken, value: work_type_two.name)
   end

@@ -44,8 +44,7 @@ class WordCountTest < ActiveSupport::TestCase
 
   test "uniqueness of word_count_file" do
     assert_raise(ActiveRecord::RecordNotUnique) do
-      word_count = word_counts(:has_and_belongs_to_many_word_count_files)
-      word_count.word_count_files << word_count.word_count_files.first
+      @word_count.word_count_files << word_count_files(:one, :one)
     end
   end
 end

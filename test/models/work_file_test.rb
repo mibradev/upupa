@@ -19,7 +19,7 @@ class WorkFileTest < ActiveSupport::TestCase
 
   test "uniqueness of name" do
     work_file_two = work_files(:two)
-    work_file_two.name = @work_file.name.downcase
+    work_file_two.name = @work_file.name.swapcase
     assert_not work_file_two.valid?
     assert work_file_two.errors.added?(:name, :taken, value: work_file_two.name)
   end
@@ -40,10 +40,8 @@ class WorkFileTest < ActiveSupport::TestCase
   end
 
   test "uniqueness of word_count_file" do
-    work_file = work_files(:has_and_belongs_to_many_word_count_files)
-
     assert_raise(ActiveRecord::RecordNotUnique) do
-      work_file.word_count_files << work_file.word_count_files.first
+      @work_file.word_count_files << word_count_files(:one, :one)
     end
   end
 end
