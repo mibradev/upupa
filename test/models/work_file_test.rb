@@ -24,9 +24,9 @@ class WorkFileTest < ActiveSupport::TestCase
     assert work_file_two.errors.added?(:name, :taken, value: work_file_two.name)
   end
 
-  test "stripping name" do
-    @work_file.name = " file.doc "
-    assert_equal "file.doc", @work_file.name
+  test "squishing name" do
+    @work_file.name = " work  file.doc "
+    assert_equal "work file.doc", @work_file.name
   end
 
   test "not stripping absent name" do
