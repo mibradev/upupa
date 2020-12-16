@@ -30,14 +30,14 @@ install:
   - yarn install --frozen-lockfile
 
 before_script:
-  - bin/rails db:create
-  - bin/rails webpacker:compile
+  - bundle exec rails db:create
+  - bundle exec rails webpacker:compile
 
 script:
-  - bin/rails zeitwerk:check
+  - bundle exec rails zeitwerk:check
   - bundle exec rubocop --parallel
-  - bin/rails test
-  - bin/rails test:system
+  - bundle exec rails test
+  - bundle exec rails test:system
 
 notifications:
   email: false
