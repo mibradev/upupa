@@ -36,12 +36,25 @@ class WordCountFileTest < ActiveSupport::TestCase
     assert @word_count_file.errors.added?(:actual_word_count, :greater_than, value: @word_count_file.actual_word_count, count: 0)
   end
 
+  test "setting work_type_multiplicand" do
+    new_word_count_file = @word_count_file.dup
+    new_word_count_file.work_files << work_files(:one)
+    new_word_count_file.word_counts << word_counts(:one)
+    new_word_count_file.work_type_multiplicand = nil
+    assert new_word_count_file.save
+    assert_equal new_word_count_file.work_type.multiplicand, new_word_count_file.work_type_multiplicand
+  end
+
+  test "locked work_type_multiplicand if record is persisted" do
+    @word_count_file.work_type.multiplicand += 1.0
+    assert @word_count_file.save
+    assert_not_equal @word_count_file.work_type.multiplicand, @word_count_file.work_type_multiplicand
+  end
+
   test "setting total" do
     @word_count_file.total = nil
-    @word_count_file.actual_word_count = 3000
-    @word_count_file.work_type.multiplicand = 0.5
     assert @word_count_file.save
-    assert_equal 1500, @word_count_file.total
+    assert_equal @word_count_file.actual_word_count * @word_count_file.work_type_multiplicand, @word_count_file.total
   end
 
   test "presence of work_type" do

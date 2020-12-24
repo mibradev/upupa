@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_040542) do
 
   create_table "word_count_files", force: :cascade do |t|
     t.integer "actual_word_count", null: false
+    t.decimal "work_type_multiplicand", null: false
     t.decimal "total", null: false
     t.text "notes"
     t.bigint "work_type_id", null: false
