@@ -1,3 +1,3 @@
 # Upupa
 
-[![Build Status](https://travis-ci.com/mibradev/upupa.svg?branch=master)](https://travis-ci.com/mibradev/upupa)
+[![CircleCI](https://circleci.com/gh/mibradev/upupa.svg?style=svg)](https://circleci.com/gh/mibradev/upupa)
