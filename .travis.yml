@@ -4,7 +4,7 @@ dist: focal
 
 addons:
   chrome: stable
-  postgresql: 13
+  postgresql: 12
 
 env:
   global:
