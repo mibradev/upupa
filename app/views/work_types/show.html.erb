@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="d-flex flex-column flex-md-row align-items-center pb-3 border-bottom mb-4">
+    <h1 class="me-md-auto">Work Type</h1>
+
+    <div class="btn-group" role="group" aria-label="Navigation buttons">
+      <%= link_to "Edit", edit_work_type_path(@work_type), class: "btn btn-secondary" %>
+      <%= link_to "Back", work_types_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+
+  <dl class="row">
+    <dt class="col-sm-3">Name</dt>
+    <dd class="col-sm-9"><%= @work_type.name %></dd>
+
+    <dt class="col-sm-3">Multiplicand</dt>
+    <dd class="col-sm-9"><%= @work_type.multiplicand %></dd>
+  </dl>
+</div>

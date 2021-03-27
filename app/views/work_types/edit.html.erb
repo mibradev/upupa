@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="d-flex flex-column flex-md-row align-items-center pb-3 border-bottom mb-4">
+    <h1 class="me-md-auto">Editing Work Type</h1>
+
+    <div class="btn-group" role="group" aria-label="Navigation buttons">
+      <%= link_to "Show", @work_type, class: "btn btn-secondary" %>
+      <%= link_to "Back", work_types_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+
+  <%= render "form", work_type: @work_type %>
+</div>

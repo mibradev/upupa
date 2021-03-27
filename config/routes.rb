@@ -3,6 +3,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  resources :work_types
+
   devise_scope :user do
     get "login", to: "devise/sessions#new", as: "new_user_session"
     post "login", to: "devise/sessions#create", as: "user_session"
