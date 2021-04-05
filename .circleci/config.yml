@@ -35,6 +35,9 @@ jobs:
           name: Database setup
           command: bin/rails db:schema:load --trace
       - run:
+          name: Compiling JavaScript packs
+          command: bin/rails webpacker:compile
+      - run:
           name: Tests
           command: bin/rails test
       - run:
