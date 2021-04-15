@@ -1,4 +1,8 @@
-<%= render "shared/alert" %>
-<%= render "shared/notice" %>
+<% content_for :body do %>
+  <%= render "shared/alert" %>
+  <%= render "shared/notice" %>
+
+  <%= yield %>
+<% end %>
 
 <%= render template: "layouts/base" %>
