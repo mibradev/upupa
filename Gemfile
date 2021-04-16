@@ -20,6 +20,7 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 
   gem "rubocop", "~> 1.7", require: false
+  gem "rubocop-minitest", "~> 0.11.1", require: false
   gem "rubocop-performance", "~> 1.9", require: false
   gem "rubocop-rails", "~> 2.9", require: false
 end
