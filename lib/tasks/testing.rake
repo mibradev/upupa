@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 namespace :test do
   ["policies"].each do |name|
     task name => "test:prepare" do

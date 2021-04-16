@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class WordCountFile < ApplicationRecord
   validates :actual_word_count, presence: true
   validates :actual_word_count, numericality: { allow_nil: true, only_integer: true, greater_than: 0 }

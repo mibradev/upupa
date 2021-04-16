@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 task :stats do
   require "rails/code_statistics"
 

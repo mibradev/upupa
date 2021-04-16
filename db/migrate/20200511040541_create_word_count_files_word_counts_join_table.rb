@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class CreateWordCountFilesWordCountsJoinTable < ActiveRecord::Migration[6.0]
   def change
     create_join_table :word_count_files, :word_counts do |t|

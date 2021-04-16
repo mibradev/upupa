@@ -120,7 +120,7 @@ Style/MethodDefParentheses:
 
 Style/FrozenStringLiteralComment:
   Enabled: true
-  EnforcedStyle: always
+  EnforcedStyle: never
 
 Style/RedundantFreeze:
   Enabled: true

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class WorkTypesController < ApplicationController
   before_action :set_work_type, only: [:show, :edit, :update, :destroy]
 

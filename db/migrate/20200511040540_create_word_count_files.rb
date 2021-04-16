@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class CreateWordCountFiles < ActiveRecord::Migration[6.0]
   def change
     create_table :word_count_files do |t|

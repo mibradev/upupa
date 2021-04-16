@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class CreateWorkFiles < ActiveRecord::Migration[6.0]
   def change
     create_table :work_files do |t|

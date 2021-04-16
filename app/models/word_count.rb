@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class WordCount < ApplicationRecord
   validates :date, presence: true
   validates :date, uniqueness: { scope: :user }

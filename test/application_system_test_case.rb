@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require "test_helper"
 require "test_helpers/system_test_assertions"
 
