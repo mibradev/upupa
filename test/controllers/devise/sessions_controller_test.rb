@@ -65,9 +65,10 @@ class Devise::SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   private
-    def assert_not_signed_in
-      assert_not controller.user_signed_in?
-      assert_equal I18n.t("devise.failure.invalid", authentication_keys: "Email"), flash[:alert]
-      assert_equal new_user_session_path, path
-    end
+
+  def assert_not_signed_in
+    assert_not controller.user_signed_in?
+    assert_equal I18n.t("devise.failure.invalid", authentication_keys: "Email"), flash[:alert]
+    assert_equal new_user_session_path, path
+  end
 end

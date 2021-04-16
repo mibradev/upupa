@@ -12,11 +12,12 @@ class WordCountFile < ApplicationRecord
   has_and_belongs_to_many :word_counts
 
   private
-    def set_work_type_multiplicand
-      self.work_type_multiplicand = work_type.multiplicand
-    end
 
-    def set_total
-      self.total = actual_word_count * work_type_multiplicand
-    end
+  def set_work_type_multiplicand
+    self.work_type_multiplicand = work_type.multiplicand
+  end
+
+  def set_total
+    self.total = actual_word_count * work_type_multiplicand
+  end
 end

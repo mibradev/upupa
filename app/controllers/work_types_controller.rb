@@ -39,11 +39,12 @@ class WorkTypesController < ApplicationController
   end
 
   private
-    def set_work_type
-      @work_type = WorkType.find(params[:id])
-    end
 
-    def work_type_params
-      params.require(:work_type).permit(:name, :multiplicand)
-    end
+  def set_work_type
+    @work_type = WorkType.find(params[:id])
+  end
+
+  def work_type_params
+    params.require(:work_type).permit(:name, :multiplicand)
+  end
 end
