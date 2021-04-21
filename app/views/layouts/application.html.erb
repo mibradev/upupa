@@ -1,8 +1,7 @@
 <% content_for :body do %>
-  <% if alert || notice %>
+  <% if flash.any? %>
     <div class="container">
-      <%= render "shared/alert" %>
-      <%= render "shared/notice" %>
+      <%= render "shared/flash" %>
     </div>
   <% end %>
 
