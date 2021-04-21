@@ -1,4 +1,4 @@
-<%= render "shared/scaffold/header", resources: @work_types %>
+<%= render "shared/scaffold/header", resources: @resources %>
 
 <div class="table-responsive">
   <table class="table align-middle">
@@ -11,7 +11,7 @@
     </thead>
 
     <tbody>
-      <% @work_types.each do |work_type| %>
+      <% @resources.each do |work_type| %>
         <tr>
           <td><%= work_type.name %></td>
           <td><%= work_type.multiplicand %></td>
