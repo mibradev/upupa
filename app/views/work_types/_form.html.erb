@@ -1,25 +1,4 @@
-<%= form_with(model: work_type) do |form| %>
-  <% if work_type.errors.any? %>
-    <div class="alert alert-danger" role="alert">
-      <h4 class="alert-heading"><%= pluralize(work_type.errors.count, "error") %> prohibited this work_type from being saved:</h4>
-
-      <ul class="mb-0">
-        <% work_type.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="mb-3">
-    <%= form.label :name, class: "form-label" %>
-    <%= form.text_field :name, class: "form-control" %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :multiplicand, class: "form-label" %>
-    <%= form.text_field :multiplicand, class: "form-control" %>
-  </div>
-
-  <%= form.submit class: "btn btn-primary" %>
+<%= render "shared/form/form", resource: resource do |form| %>
+  <%= render "shared/form/text_field", form: form, attribute: :name %>
+  <%= render "shared/form/text_field", form: form, attribute: :multiplicand %>
 <% end %>
