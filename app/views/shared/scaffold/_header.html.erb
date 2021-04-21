@@ -1,0 +1,29 @@
+<header class="d-flex flex-column flex-md-row align-items-center pb-3 border-bottom mb-4">
+  <h1 class="me-md-auto">
+    <% case action_name %>
+    <% when "index" %>
+      <%= resources.model_name.human.titleize.pluralize %>
+    <% when "show" %>
+      <%= resource.model_name.human.titleize %>
+    <% when "new", "create" %>
+      New <%= resource.model_name.human.titleize %>
+    <% when "edit", "update" %>
+      Editing <%= resource.model_name.human.titleize %>
+    <% end %>
+  </h1>
+
+  <div class="btn-group" role="group" aria-label="Navigation buttons">
+    <% case action_name %>
+    <% when "index" %>
+      <%= link_to "New", { action: "new" }, class: "btn btn-secondary" %>
+    <% when "show" %>
+      <%= link_to "Edit", { action: "edit" }, class: "btn btn-secondary" %>
+      <%= link_to "Back", { action: "index" }, class: "btn btn-secondary" %>
+    <% when "new", "create" %>
+      <%= link_to "Back", { action: "index" }, class: "btn btn-secondary" %>
+    <% when "edit", "update" %>
+      <%= link_to "Show", { action: "show" }, class: "btn btn-secondary" %>
+      <%= link_to "Back", { action: "index" }, class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+</header>

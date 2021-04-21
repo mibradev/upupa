@@ -1,6 +1,2 @@
-<div class="d-flex flex-column flex-md-row align-items-center pb-3 border-bottom mb-4">
-  <h1 class="me-md-auto">New Work Type</h1>
-  <%= link_to "Back", work_types_path, class: "btn btn-secondary" %>
-</div>
-
+<%= render "shared/scaffold/header", resource: @work_type %>
 <%= render "form", resource: @work_type %>

@@ -1,7 +1,4 @@
-<div class="d-flex flex-column flex-md-row align-items-center pb-3 border-bottom mb-4">
-  <h1 class="me-md-auto">Work Types</h1>
-  <%= link_to "New", new_work_type_path, class: "btn btn-secondary" %>
-</div>
+<%= render "shared/scaffold/header", resources: @work_types %>
 
 <div class="table-responsive">
   <table class="table align-middle">
