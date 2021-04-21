@@ -1,8 +1,12 @@
 <% content_for :body do %>
-  <div class="container py-5">
-    <%= render "shared/alert" %>
-    <%= render "shared/notice" %>
+  <% if alert || notice %>
+    <div class="container">
+      <%= render "shared/alert" %>
+      <%= render "shared/notice" %>
+    </div>
+  <% end %>
 
+  <div class="container py-4">
     <%= yield %>
   </div>
 <% end %>
