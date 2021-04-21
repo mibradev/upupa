@@ -12,10 +12,10 @@ class WorkTypesTest < ApplicationSystemTestCase
 
   test "creating a Work type" do
     visit work_types_url
-    click_on "New Work Type"
+    click_on "New"
     fill_in "Multiplicand", with: @work_type.multiplicand
     fill_in "Name", with: "New Work Type"
-    click_on "Create Work type"
+    click_on "Create"
     assert_text "Work type was successfully created"
     click_on "Back"
   end
@@ -25,7 +25,7 @@ class WorkTypesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
     fill_in "Multiplicand", with: @work_type.multiplicand
     fill_in "Name", with: @work_type.name
-    click_on "Update Work type"
+    click_on "Update"
     assert_text "Work type was successfully updated"
     click_on "Back"
   end
