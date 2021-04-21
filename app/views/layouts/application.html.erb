@@ -1,13 +1,11 @@
 <% content_for :body do %>
-  <% if flash.any? %>
-    <div class="container">
-      <%= render "shared/flash" %>
-    </div>
-  <% end %>
+  <main class="container">
+    <%= render "shared/flash" %>
 
-  <div class="container py-4">
-    <%= yield %>
-  </div>
+    <div class="py-4">
+      <%= yield %>
+    </div>
+  </main>
 <% end %>
 
 <%= render template: "layouts/base" %>
