@@ -1,9 +1,15 @@
 <% page_title "Login" %>
 <% page_description "Log into #{t :app_name} to access your account." %>
 
-<div class="py-5">
+<main class="container py-5">
   <div class="row justify-content-center py-5">
     <div class="col-11 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-dark text-light px-4 py-5 rounded-3 shadow-sm">
+      <% if flash.alert %>
+        <div class="alert alert-danger" role="alert">
+          <%= flash.alert %>
+        </div>
+      <% end %>
+
       <h2 class="h3 text-center mb-4">Log in</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -28,4 +34,4 @@
       <% end %>
     </div>
   </div>
-</div>
+</main>
