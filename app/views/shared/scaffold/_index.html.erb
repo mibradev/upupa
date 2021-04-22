@@ -1,11 +1,11 @@
-<%= render "shared/scaffold/header", resources: resources %>
+<%= render "shared/scaffold/header" %>
 
 <div class="table-responsive">
   <table class="table align-middle">
     <thead class="table-dark">
       <tr>
         <% attributes.each do |attribute| %>
-          <th class="col"><%= resources.human_attribute_name(attribute) %></th>
+          <th class="col"><%= @resources.human_attribute_name(attribute) %></th>
         <% end %>
 
         <th scope="col"></th>
@@ -13,7 +13,7 @@
     </thead>
 
     <tbody>
-      <% resources.each do |resource| %>
+      <% @resources.each do |resource| %>
         <tr>
           <% attributes.each do |attribute| %>
             <td><%= resource[attribute] %></td>

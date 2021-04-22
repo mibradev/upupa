@@ -1,5 +1,5 @@
-<%= form_with(model: resource) do |form| %>
-  <%= render "shared/scaffold/form/errors", resource: resource %>
+<%= form_with(model: @resource) do |form| %>
+  <%= render "shared/scaffold/form/errors" %>
 
   <%= yield form %>
 

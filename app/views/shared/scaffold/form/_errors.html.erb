@@ -1,11 +1,11 @@
-<% if resource.errors.any? %>
+<% if @resource.errors.any? %>
   <div class="alert alert-danger" role="alert">
     <h4 class="alert-heading">
-      <%= pluralize(resource.errors.count, "error") %> prohibited this record from being saved:
+      <%= pluralize(@resource.errors.count, "error") %> prohibited this record from being saved:
     </h4>
 
     <ul class="mb-0">
-      <% resource.errors.each do |error| %>
+      <% @resource.errors.each do |error| %>
         <li><%= error.full_message %></li>
       <% end %>
     </ul>
