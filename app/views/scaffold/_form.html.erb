@@ -13,7 +13,9 @@
     </div>
   <% end %>
 
-  <%= yield form %>
+  <% controller.permitted_attributes.each do |attribute| %>
+    <%= render "scaffold/fields/text", form: form, attribute: attribute %>
+  <% end %>
 
   <%= form.submit class: "btn btn-primary" %>
 <% end %>

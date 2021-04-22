@@ -2,7 +2,7 @@
   <table class="table align-middle">
     <thead class="table-dark">
       <tr>
-        <% attributes.each do |attribute| %>
+        <% controller.permitted_attributes.each do |attribute| %>
           <th class="col"><%= @resources.human_attribute_name(attribute) %></th>
         <% end %>
 
@@ -13,7 +13,7 @@
     <tbody>
       <% @resources.each do |resource| %>
         <tr>
-          <% attributes.each do |attribute| %>
+          <% controller.permitted_attributes.each do |attribute| %>
             <td><%= resource[attribute] %></td>
           <% end %>
 

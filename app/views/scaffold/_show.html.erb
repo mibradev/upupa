@@ -1,5 +1,5 @@
 <dl class="row">
-  <% attributes.each do |attribute| %>
+  <% controller.permitted_attributes.each do |attribute| %>
     <dt class="col-sm-3"><%= @resource.class.human_attribute_name(attribute) %></dt>
     <dd class="col-sm-9"><%= @resource[attribute] %></dd>
   <% end %>

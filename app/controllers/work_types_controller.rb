@@ -40,6 +40,10 @@ class WorkTypesController < ApplicationController
     redirect_to work_types_url, notice: "Work type was successfully destroyed."
   end
 
+  def permitted_attributes
+    [:name, :multiplicand]
+  end
+
   private
 
   def set_work_type
@@ -47,6 +51,6 @@ class WorkTypesController < ApplicationController
   end
 
   def work_type_params
-    params.require(:work_type).permit(:name, :multiplicand)
+    params.require(:work_type).permit(permitted_attributes)
   end
 end
