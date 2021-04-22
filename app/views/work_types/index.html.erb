@@ -1,29 +1,4 @@
-<%= render "shared/scaffold/header", resources: @resources %>
-
-<div class="table-responsive">
-  <table class="table align-middle">
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Multiplicand</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @resources.each do |work_type| %>
-        <tr>
-          <td><%= work_type.name %></td>
-          <td><%= work_type.multiplicand %></td>
-          <td class="text-end">
-            <div class="btn-group" role="group" aria-label="Actions">
-              <%= link_to "Show", work_type, class: "btn btn-secondary" %>
-              <%= link_to "Edit", edit_work_type_path(work_type), class: "btn btn-secondary" %>
-              <%= link_to "Destroy", work_type, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary" %>
-            </div>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<%= render "shared/scaffold/index", resources: @resources, attributes: [
+  :name,
+  :multiplicand
+] %>

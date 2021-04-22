@@ -1,0 +1,33 @@
+<%= render "shared/scaffold/header", resources: resources %>
+
+<div class="table-responsive">
+  <table class="table align-middle">
+    <thead class="table-dark">
+      <tr>
+        <% attributes.each do |attribute| %>
+          <th class="col"><%= resources.human_attribute_name(attribute) %></th>
+        <% end %>
+
+        <th scope="col"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% resources.each do |resource| %>
+        <tr>
+          <% attributes.each do |attribute| %>
+            <td><%= resource[attribute] %></td>
+          <% end %>
+
+          <td class="text-end">
+            <div class="btn-group" role="group" aria-label="Actions">
+              <%= link_to "Show", resource, class: "btn btn-secondary" %>
+              <%= link_to "Edit", [:edit, resource], class: "btn btn-secondary" %>
+              <%= link_to "Destroy", resource, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary" %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
