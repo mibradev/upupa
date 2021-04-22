@@ -1,10 +1,10 @@
 class WorkTypesController < ApplicationController
   layout "scaffold"
 
-  before_action :set_work_type, only: [:show, :edit, :update, :destroy]
+  before_action :set_resource, only: [:show, :edit, :update, :destroy]
 
   def index
-    @resources = WorkType.all
+    @resources = resource_model.all
     render "scaffold/index"
   end
 
@@ -13,7 +13,7 @@ class WorkTypesController < ApplicationController
   end
 
   def new
-    @resource = WorkType.new
+    @resource = resource_model.new
     render "scaffold/new"
   end
 
@@ -22,18 +22,18 @@ class WorkTypesController < ApplicationController
   end
 
   def create
-    @resource = WorkType.new(work_type_params)
+    @resource = resource_model.new(resource_params)
 
     if @resource.save
-      redirect_to(@resource, notice: "Work type was successfully created.")
+      redirect_to(@resource, notice: "#{resource_model.model_name.human} was successfully created.")
     else
       render "scaffold/new"
     end
   end
 
   def update
-    if @resource.update(work_type_params)
-      redirect_to @resource, notice: "Work type was successfully updated."
+    if @resource.update(resource_params)
+      redirect_to @resource, notice: "#{resource_model.model_name.human} was successfully updated."
     else
       render "scaffold/edit"
     end
@@ -41,7 +41,7 @@ class WorkTypesController < ApplicationController
 
   def destroy
     @resource.destroy
-    redirect_to work_types_url, notice: "Work type was successfully destroyed."
+    redirect_to({ action: :index }, notice: "#{resource_model.model_name.human} was successfully destroyed.")
   end
 
   def permitted_attributes
@@ -50,11 +50,15 @@ class WorkTypesController < ApplicationController
 
   private
 
-  def set_work_type
-    @resource = WorkType.find(params[:id])
+  def set_resource
+    @resource = resource_model.find(params[:id])
   end
 
-  def work_type_params
-    params.require(:work_type).permit(permitted_attributes)
+  def resource_params
+    params.require(controller_name.singularize).permit(permitted_attributes)
+  end
+
+  def resource_model
+    controller_name.classify.constantize
   end
 end
