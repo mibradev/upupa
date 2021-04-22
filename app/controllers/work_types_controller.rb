@@ -1,4 +1,6 @@
 class WorkTypesController < ApplicationController
+  layout "scaffold"
+
   before_action :set_work_type, only: [:show, :edit, :update, :destroy]
 
   def index

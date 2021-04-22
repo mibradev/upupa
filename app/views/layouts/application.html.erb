@@ -1,11 +1,5 @@
 <% content_for :body do %>
-  <main class="container">
-    <%= render "shared/flash" %>
-
-    <div class="py-4">
-      <%= yield %>
-    </div>
-  </main>
+  <%= yield %>
 <% end %>
 
 <%= render template: "layouts/base" %>
