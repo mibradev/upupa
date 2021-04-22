@@ -25,7 +25,7 @@ class WorkTypesController < ApplicationController
     @resource = resource_model.new(resource_params)
 
     if @resource.save
-      redirect_to(@resource, notice: "#{resource_model.model_name.human} was successfully created.")
+      redirect_to @resource, notice: resource_notice
     else
       render "scaffold/new"
     end
@@ -33,7 +33,7 @@ class WorkTypesController < ApplicationController
 
   def update
     if @resource.update(resource_params)
-      redirect_to @resource, notice: "#{resource_model.model_name.human} was successfully updated."
+      redirect_to @resource, notice: resource_notice
     else
       render "scaffold/edit"
     end
@@ -41,7 +41,7 @@ class WorkTypesController < ApplicationController
 
   def destroy
     @resource.destroy
-    redirect_to({ action: :index }, notice: "#{resource_model.model_name.human} was successfully destroyed.")
+    redirect_to({ action: :index }, notice: resource_notice)
   end
 
   def permitted_attributes
@@ -60,5 +60,9 @@ class WorkTypesController < ApplicationController
 
   def resource_model
     controller_name.classify.constantize
+  end
+
+  def resource_notice
+    I18n.t("scaffold.#{action_name}.notice", resource: resource_model.model_name.human)
   end
 end
