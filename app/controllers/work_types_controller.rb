@@ -5,16 +5,20 @@ class WorkTypesController < ApplicationController
 
   def index
     @resources = WorkType.all
+    render "scaffold/index"
   end
 
   def show
+    render "scaffold/show"
   end
 
   def new
     @resource = WorkType.new
+    render "scaffold/new"
   end
 
   def edit
+    render "scaffold/edit"
   end
 
   def create
@@ -23,7 +27,7 @@ class WorkTypesController < ApplicationController
     if @resource.save
       redirect_to(@resource, notice: "Work type was successfully created.")
     else
-      render :new
+      render "scaffold/new"
     end
   end
 
@@ -31,7 +35,7 @@ class WorkTypesController < ApplicationController
     if @resource.update(work_type_params)
       redirect_to @resource, notice: "Work type was successfully updated."
     else
-      render :edit
+      render "scaffold/edit"
     end
   end
 
