@@ -1,9 +1,4 @@
-<%= render "shared/scaffold/header", resource: @resource %>
-
-<dl class="row">
-  <dt class="col-sm-3">Name</dt>
-  <dd class="col-sm-9"><%= @resource.name %></dd>
-
-  <dt class="col-sm-3">Multiplicand</dt>
-  <dd class="col-sm-9"><%= @resource.multiplicand %></dd>
-</dl>
+<%= render "shared/scaffold/show", resource: @resource, attributes: [
+  :name,
+  :multiplicand
+] %>
