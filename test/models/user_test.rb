@@ -70,6 +70,12 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 2, @user.word_counts.count
   end
 
+  test "dependent word_counts" do
+    @user.word_counts << word_counts(:one)
+    assert_not @user.destroy
+    assert @user.errors.added?(:base, :"restrict_dependent_destroy.has_many", record: "word counts")
+  end
+
   test "has many roles" do
     @user.roles = roles(:one, :two)
     assert_equal 2, @user.roles.count
