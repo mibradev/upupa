@@ -46,7 +46,7 @@ Style/EmptyMethod:
   EnforcedStyle: expanded
 
 Style/FrozenStringLiteralComment:
-  Enabled: false
+  EnforcedStyle: never
 
 Style/GlobalStdStream:
   Enabled: false
