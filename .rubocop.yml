@@ -24,6 +24,9 @@ Metrics/AbcSize:
 Metrics/MethodLength:
   Enabled: false
 
+Minitest/MultipleAssertions:
+  Enabled: false
+
 Rails/HasAndBelongsToMany:
   Enabled: false
 
