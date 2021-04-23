@@ -42,8 +42,13 @@ class ScaffoldController < ApplicationController
   end
 
   def destroy
-    @resource.destroy
-    redirect_to({ action: :index }, notice: resource_notice)
+    if @resource.destroy
+      flash.notice = resource_notice
+    else
+      flash.alert = @resource.errors.full_messages.first
+    end
+
+    redirect_to action: :index
   end
 
   private
