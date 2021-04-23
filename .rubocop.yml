@@ -33,9 +33,6 @@ Rails/FilePath:
 Rails/HasAndBelongsToMany:
   Enabled: false
 
-Rails/HasManyOrHasOneDependent:
-  Enabled: false
-
 Rails/RakeEnvironment:
   Enabled: false
 
