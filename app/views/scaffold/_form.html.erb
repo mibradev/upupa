@@ -13,7 +13,7 @@
     </div>
   <% end %>
 
-  <% controller.permitted_attributes.each do |attribute| %>
+  <% policy(@resource).permitted_attributes.each do |attribute| %>
     <%= render "scaffold/fields/text", form: form, attribute: attribute %>
   <% end %>
 

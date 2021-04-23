@@ -23,7 +23,8 @@ class ScaffoldController < ApplicationController
   end
 
   def create
-    @resource = resource_model.new(resource_params)
+    @resource = resource_model.new
+    @resource.assign_attributes resource_params
 
     if @resource.save
       redirect_to @resource, notice: resource_notice
@@ -52,7 +53,7 @@ class ScaffoldController < ApplicationController
   end
 
   def resource_params
-    params.require(controller_name.singularize).permit(permitted_attributes)
+    permitted_attributes @resource
   end
 
   def resource_model
