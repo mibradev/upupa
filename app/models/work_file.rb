@@ -5,7 +5,6 @@ class WorkFile < ApplicationRecord
   has_and_belongs_to_many :word_count_files
 
   def name=(value)
-    value = value.squish unless value.nil?
-    super(value)
+    super(value&.squish!)
   end
 end

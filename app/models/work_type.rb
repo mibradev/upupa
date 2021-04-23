@@ -7,7 +7,6 @@ class WorkType < ApplicationRecord
   has_many :word_count_files, dependent: :restrict_with_error
 
   def name=(value)
-    value = value.squish unless value.nil?
-    super(value)
+    super(value&.squish!)
   end
 end
