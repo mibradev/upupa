@@ -1,0 +1,2 @@
+class WorkFilesController < ScaffoldController
+end
