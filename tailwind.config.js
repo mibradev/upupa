@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: [
     './app/helpers/**/*.rb',
@@ -5,7 +7,11 @@ module.exports = {
   ],
   darkMode: false,
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        orange: colors.orange
+      }
+    }
   },
   variants: {
     extend: {}
