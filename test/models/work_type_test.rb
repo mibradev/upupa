@@ -45,6 +45,12 @@ class WorkTypeTest < ActiveSupport::TestCase
     assert @work_type.errors.added?(:multiplicand, :not_a_number, value: "NaN")
   end
 
+  test "minimum multiplicand" do
+    @work_type.multiplicand = 0.0
+    assert_not @work_type.valid?
+    assert @work_type.errors.added?(:multiplicand, :greater_than, value: @work_type.multiplicand, count: 0.0)
+  end
+
   test "has many word_count_files" do
     @work_type.word_count_files = word_count_files(:one, :two)
     assert_equal 2, @work_type.word_count_files.count
