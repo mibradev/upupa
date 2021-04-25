@@ -1,37 +1,35 @@
 <% if @resources.any? %>
-  <div class="table-responsive">
-    <table class="table align-middle">
-      <thead class="table-dark">
+  <table>
+    <thead>
+      <tr>
+        <% policy(@resources).permitted_attributes.each do |attribute| %>
+          <th><%= @resources.human_attribute_name(attribute) %></th>
+        <% end %>
+
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @resources.each do |resource| %>
         <tr>
-          <% policy(@resources).permitted_attributes.each do |attribute| %>
-            <th class="col"><%= @resources.human_attribute_name(attribute) %></th>
+          <% policy(resource).permitted_attributes.each do |attribute| %>
+            <td><%= resource[attribute] %></td>
           <% end %>
 
-          <th scope="col"></th>
+          <td>
+            <div>
+              <%= link_to "Show", resource %>
+              <%= link_to "Edit", [:edit, resource] %>
+              <%= link_to "Destroy", resource, method: :delete, data: { confirm: "Are you sure?" } %>
+            </div>
+          </td>
         </tr>
-      </thead>
-
-      <tbody>
-        <% @resources.each do |resource| %>
-          <tr>
-            <% policy(resource).permitted_attributes.each do |attribute| %>
-              <td><%= resource[attribute] %></td>
-            <% end %>
-
-            <td class="text-end">
-              <div class="btn-group" role="group" aria-label="Actions">
-                <%= link_to "Show", resource, class: "btn btn-secondary" %>
-                <%= link_to "Edit", [:edit, resource], class: "btn btn-secondary" %>
-                <%= link_to "Destroy", resource, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary" %>
-              </div>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+      <% end %>
+    </tbody>
+  </table>
 <% else %>
-  <div class="border border-1 py-5 text-muted text-center">
+  <div>
     No records found.
   </div>
 <% end %>

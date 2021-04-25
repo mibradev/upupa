@@ -1,5 +1,5 @@
-<header class="d-flex flex-column flex-md-row align-items-center pb-3 border-bottom mb-4">
-  <h1 class="me-md-auto">
+<header>
+  <h1>
     <% case action_name %>
     <% when "index" %>
       <%= @resources.model_name.human.titleize.pluralize %>
@@ -12,18 +12,18 @@
     <% end %>
   </h1>
 
-  <div class="btn-group" role="group" aria-label="Navigation buttons">
+  <div>
     <% case action_name %>
     <% when "index" %>
-      <%= link_to "New", { action: "new" }, class: "btn btn-secondary" %>
+      <%= link_to "New", { action: "new" } %>
     <% when "show" %>
-      <%= link_to "Edit", { action: "edit" }, class: "btn btn-secondary" %>
-      <%= link_to "Back", { action: "index" }, class: "btn btn-secondary" %>
+      <%= link_to "Edit", { action: "edit" } %>
+      <%= link_to "Back", { action: "index" } %>
     <% when "new", "create" %>
-      <%= link_to "Back", { action: "index" }, class: "btn btn-secondary" %>
+      <%= link_to "Back", { action: "index" } %>
     <% when "edit", "update" %>
-      <%= link_to "Show", { action: "show" }, class: "btn btn-secondary" %>
-      <%= link_to "Back", { action: "index" }, class: "btn btn-secondary" %>
+      <%= link_to "Show", { action: "show" } %>
+      <%= link_to "Back", { action: "index" } %>
     <% end %>
   </div>
 </header>
