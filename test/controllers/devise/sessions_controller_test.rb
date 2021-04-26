@@ -14,8 +14,8 @@ class Devise::SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_page_title "Login"
     assert_page_description "Log into #{I18n.t :app_name} to access your account."
     assert_select "h2", "Log in"
-    assert_select "input[type='email'][autofocus][autocomplete='email'][placeholder='Email'][required]"
-    assert_select "input[type='password'][autocomplete='current-password'][placeholder='********'][required]"
+    assert_select "input[type='email'][autofocus][autocomplete='email'][placeholder='Email']"
+    assert_select "input[type='password'][autocomplete='current-password'][placeholder='********']"
     assert_select "input[type='submit'][value='Log in']"
   end
 
