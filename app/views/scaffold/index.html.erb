@@ -1,35 +1,35 @@
 <% if @resources.any? %>
-  <table>
-    <thead>
-      <tr>
-        <% policy(@resources).permitted_attributes.each do |attribute| %>
-          <th><%= @resources.human_attribute_name(attribute) %></th>
-        <% end %>
-
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @resources.each do |resource| %>
+  <div class="overflow-x-auto rounded shadow">
+    <table class="w-full whitespace-nowrap">
+      <thead class="text-sm font-medium tracking-wider text-left uppercase text-orange-100 bg-gray-600">
         <tr>
-          <% policy(resource).permitted_attributes.each do |attribute| %>
-            <td><%= resource[attribute] %></td>
+          <% policy(@resources).permitted_attributes.each do |attribute| %>
+            <th scope="col" class="py-2 px-4"><%= @resources.human_attribute_name(attribute) %></th>
           <% end %>
 
-          <td>
-            <div>
-              <%= link_to "Show", resource %>
-              <%= link_to "Edit", [:edit, resource] %>
-              <%= link_to "Destroy", resource, method: :delete, data: { confirm: "Are you sure?" } %>
-            </div>
-          </td>
+          <th scope="col" class="py-2 px-4"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody class="text-gray-600 bg-orange-50 divide-y divide-gray-300">
+        <% @resources.each do |resource| %>
+          <tr>
+            <% policy(resource).permitted_attributes.each do |attribute| %>
+              <td class="py-3 px-4"><%= resource[attribute] %></td>
+            <% end %>
+
+            <td class="py-3 px-4 text-right">
+              <%= link_to "Show", resource, class: "p-2 text-sm text-orange-50 bg-gray-600 rounded hover:bg-gray-700" %>
+              <%= link_to "Edit", [:edit, resource], class: "p-2 text-sm text-orange-50 bg-gray-600 rounded hover:bg-gray-700" %>
+              <%= link_to "Destroy", resource, method: :delete, data: { confirm: "Are you sure?" }, class: "p-2 text-sm text-orange-50 bg-gray-600 rounded hover:bg-gray-700" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% else %>
-  <div>
+  <div class="py-32 text-center text-orange-100 bg-gray-600">
     No records found.
   </div>
 <% end %>

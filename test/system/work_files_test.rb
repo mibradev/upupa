@@ -7,7 +7,7 @@ class WorkFilesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit work_files_url
-    assert_selector "h1", text: "Work Files"
+    assert_selector "h2", text: "Work Files"
   end
 
   test "creating a Work file" do

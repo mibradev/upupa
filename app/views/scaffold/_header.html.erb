@@ -1,5 +1,5 @@
-<header>
-  <h1>
+<header class="flex justify-between items-center">
+  <h2 class="text-2xl font-bold">
     <% case action_name %>
     <% when "index" %>
       <%= @resources.model_name.human.titleize.pluralize %>
@@ -10,20 +10,20 @@
     <% when "edit", "update" %>
       Editing <%= @resource.model_name.human.titleize %>
     <% end %>
-  </h1>
+  </h2>
 
-  <div>
+  <div class="flex text-sm font-medium">
     <% case action_name %>
     <% when "index" %>
-      <%= link_to "New", { action: "new" } %>
+      <%= link_to "New", { action: "new" }, class: "py-2 px-4 text-orange-100 bg-gray-600 rounded hover:bg-gray-700" %>
     <% when "show" %>
-      <%= link_to "Edit", { action: "edit" } %>
-      <%= link_to "Back", { action: "index" } %>
+      <%= link_to "Edit", { action: "edit" }, class: "py-2 px-4 text-orange-100 bg-gray-600 rounded rounded-r-none hover:bg-gray-700" %>
+      <%= link_to "Back", { action: "index" }, class: "py-2 px-4 text-orange-100 bg-gray-600 rounded rounded-l-none hover:bg-gray-700" %>
     <% when "new", "create" %>
-      <%= link_to "Back", { action: "index" } %>
+      <%= link_to "Back", { action: "index" }, class: "py-2 px-4 text-orange-100 bg-gray-600 rounded hover:bg-gray-700" %>
     <% when "edit", "update" %>
-      <%= link_to "Show", { action: "show" } %>
-      <%= link_to "Back", { action: "index" } %>
+      <%= link_to "Show", { action: "show" }, class: "py-2 px-4 text-orange-100 bg-gray-600 rounded rounded-r-none hover:bg-gray-700" %>
+      <%= link_to "Back", { action: "index" }, class: "py-2 px-4 text-orange-100 bg-gray-600 rounded rounded-l-none hover:bg-gray-700" %>
     <% end %>
   </div>
 </header>

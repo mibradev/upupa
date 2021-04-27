@@ -7,7 +7,7 @@ class WorkTypesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit work_types_url
-    assert_selector "h1", text: "Work Types"
+    assert_selector "h2", text: "Work Types"
   end
 
   test "creating a Work type" do
