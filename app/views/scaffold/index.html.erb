@@ -15,7 +15,7 @@
         <% @resources.each do |resource| %>
           <tr>
             <% policy(resource).permitted_attributes.each do |attribute| %>
-              <td class="py-3 px-4"><%= resource[attribute] %></td>
+              <td class="py-3 px-4 max-w-xs truncate"><%= resource[attribute] %></td>
             <% end %>
 
             <td class="py-3 px-4 text-right">
