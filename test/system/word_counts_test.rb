@@ -1,6 +1,8 @@
 require "application_system_test_case"
 
 class WordCountsTest < ApplicationSystemTestCase
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @word_count = word_counts(:one)
   end
@@ -11,7 +13,7 @@ class WordCountsTest < ApplicationSystemTestCase
   end
 
   test "creating a Word count" do
-    skip
+    sign_in users(:one)
 
     visit word_counts_url
     click_on "New"

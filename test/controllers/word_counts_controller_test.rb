@@ -1,6 +1,8 @@
 require "test_helper"
 
 class WordCountsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @word_count = word_counts(:one)
   end
@@ -16,7 +18,7 @@ class WordCountsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create word_count" do
-    skip
+    sign_in users(:one)
 
     assert_difference("WordCount.count") do
       post word_counts_url, params: { word_count: { date: Date.current, notes: "new note" } }
