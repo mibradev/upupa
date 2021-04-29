@@ -25,7 +25,6 @@ class WordCountFilesController < ApplicationController
   def create
     @resource = resource_model.new
     @resource.assign_attributes resource_params
-    @resource.assign_attributes resource_attributes
 
     if @resource.save
       redirect_to @resource, notice: resource_notice
@@ -64,10 +63,6 @@ class WordCountFilesController < ApplicationController
 
   def resource_model
     controller_name.classify.constantize
-  end
-
-  def resource_attributes
-    {}
   end
 
   def resource_notice

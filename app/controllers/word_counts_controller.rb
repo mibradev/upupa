@@ -25,7 +25,7 @@ class WordCountsController < ApplicationController
   def create
     @resource = resource_model.new
     @resource.assign_attributes resource_params
-    @resource.assign_attributes resource_attributes
+    @resource.user = current_user
 
     if @resource.save
       redirect_to @resource, notice: resource_notice
@@ -64,10 +64,6 @@ class WordCountsController < ApplicationController
 
   def resource_model
     controller_name.classify.constantize
-  end
-
-  def resource_attributes
-    { user: current_user }
   end
 
   def resource_notice
