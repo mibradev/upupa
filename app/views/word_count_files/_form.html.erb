@@ -1,4 +1,4 @@
 <%= render "shared/scaffold/form" do |form| %>
-  <%= render "shared/scaffold/fields/integer", form: form, method: :actual_word_count %>
-  <%= render "shared/scaffold/fields/text", form: form, method: :notes %>
+  <%= render "shared/scaffold/fields/number_field", form: form, method: :actual_word_count %>
+  <%= render "shared/scaffold/fields/text_area", form: form, method: :notes %>
 <% end %>
