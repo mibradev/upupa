@@ -1,0 +1,2 @@
+class WordCountFilesController < ScaffoldController
+end
