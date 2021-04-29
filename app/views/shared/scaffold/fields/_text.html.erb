@@ -1,4 +1,4 @@
 <div class="space-y-2">
   <%= form.label method, class: "block font-medium" %>
-  <%= form.text_area method, class: "block py-2 px-3 w-full rounded border focus:border-0 focus:shadow focus:outline-none" %>
+  <%= form.text_area method, local_assigns[:options].to_h.merge!(class: "block py-2 px-3 w-full rounded border focus:border-0 focus:shadow focus:outline-none") %>
 </div>
