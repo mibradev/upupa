@@ -27,7 +27,7 @@ class WorkFilesController < ApplicationController
     @resource.assign_attributes resource_params
 
     if @resource.save
-      redirect_to @resource, notice: resource_notice
+      redirect_to @resource, notice: "Work file was successfully created"
     else
       render "scaffold/new"
     end
@@ -35,7 +35,7 @@ class WorkFilesController < ApplicationController
 
   def update
     if @resource.update(resource_params)
-      redirect_to @resource, notice: resource_notice
+      redirect_to @resource, notice: "Work file was successfully updated"
     else
       render "scaffold/edit"
     end
@@ -43,7 +43,7 @@ class WorkFilesController < ApplicationController
 
   def destroy
     if @resource.destroy
-      flash.notice = resource_notice
+      flash.notice = "Work file was successfully destroyed"
     else
       flash.alert = @resource.errors.full_messages.first
     end
@@ -63,9 +63,5 @@ class WorkFilesController < ApplicationController
 
   def resource_model
     controller_name.classify.constantize
-  end
-
-  def resource_notice
-    I18n.t("scaffold.#{action_name}.notice", resource: resource_model.model_name.human)
   end
 end

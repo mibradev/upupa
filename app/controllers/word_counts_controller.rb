@@ -28,7 +28,7 @@ class WordCountsController < ApplicationController
     @resource.user = current_user
 
     if @resource.save
-      redirect_to @resource, notice: resource_notice
+      redirect_to @resource, notice: "Word count was successfully created"
     else
       render "scaffold/new"
     end
@@ -36,7 +36,7 @@ class WordCountsController < ApplicationController
 
   def update
     if @resource.update(resource_params)
-      redirect_to @resource, notice: resource_notice
+      redirect_to @resource, notice: "Word count was successfully updated"
     else
       render "scaffold/edit"
     end
@@ -44,7 +44,7 @@ class WordCountsController < ApplicationController
 
   def destroy
     if @resource.destroy
-      flash.notice = resource_notice
+      flash.notice = "Word count was successfully destroyed"
     else
       flash.alert = @resource.errors.full_messages.first
     end
@@ -64,9 +64,5 @@ class WordCountsController < ApplicationController
 
   def resource_model
     controller_name.classify.constantize
-  end
-
-  def resource_notice
-    I18n.t("scaffold.#{action_name}.notice", resource: resource_model.model_name.human)
   end
 end

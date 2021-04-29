@@ -10,11 +10,3 @@ en:
     submit:
       create: "Create"
       update: "Update"
-
-  scaffold:
-    create:
-      notice: "%{resource} was successfully created."
-    update:
-      notice: "%{resource} was successfully updated."
-    destroy:
-      notice: "%{resource} was successfully destroyed."
