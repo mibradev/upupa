@@ -6,20 +6,16 @@ class WorkFilesController < ApplicationController
 
   def index
     @resources = WorkFile.all
-    render "scaffold/index"
   end
 
   def show
-    render "scaffold/show"
   end
 
   def new
     @resource = WorkFile.new
-    render "scaffold/new"
   end
 
   def edit
-    render "scaffold/edit"
   end
 
   def create
@@ -29,7 +25,7 @@ class WorkFilesController < ApplicationController
     if @resource.save
       redirect_to @resource, notice: "Work file was successfully created"
     else
-      render "scaffold/new"
+      render :new
     end
   end
 
@@ -37,7 +33,7 @@ class WorkFilesController < ApplicationController
     if @resource.update(resource_params)
       redirect_to @resource, notice: "Work file was successfully updated"
     else
-      render "scaffold/edit"
+      render :edit
     end
   end
 

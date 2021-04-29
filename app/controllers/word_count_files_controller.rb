@@ -6,20 +6,16 @@ class WordCountFilesController < ApplicationController
 
   def index
     @resources = WordCountFile.all
-    render "scaffold/index"
   end
 
   def show
-    render "scaffold/show"
   end
 
   def new
     @resource = WordCountFile.new
-    render "scaffold/new"
   end
 
   def edit
-    render "scaffold/edit"
   end
 
   def create
@@ -29,7 +25,7 @@ class WordCountFilesController < ApplicationController
     if @resource.save
       redirect_to @resource, notice: "Word count file was successfully created"
     else
-      render "scaffold/new"
+      render :new
     end
   end
 
@@ -37,7 +33,7 @@ class WordCountFilesController < ApplicationController
     if @resource.update(resource_params)
       redirect_to @resource, notice: "Word count file was successfully updated"
     else
-      render "scaffold/edit"
+      render :edit
     end
   end
 
