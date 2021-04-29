@@ -5,7 +5,7 @@ class WordCountsController < ApplicationController
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
 
   def index
-    @resources = resource_model.all
+    @resources = WordCount.all
     render "scaffold/index"
   end
 
@@ -14,7 +14,7 @@ class WordCountsController < ApplicationController
   end
 
   def new
-    @resource = resource_model.new
+    @resource = WordCount.new
     render "scaffold/new"
   end
 
@@ -23,7 +23,7 @@ class WordCountsController < ApplicationController
   end
 
   def create
-    @resource = resource_model.new
+    @resource = WordCount.new
     @resource.assign_attributes resource_params
     @resource.user = current_user
 
@@ -55,14 +55,10 @@ class WordCountsController < ApplicationController
   private
 
   def set_resource
-    @resource = resource_model.find(params[:id])
+    @resource = WordCount.find(params[:id])
   end
 
   def resource_params
     permitted_attributes @resource
-  end
-
-  def resource_model
-    controller_name.classify.constantize
   end
 end

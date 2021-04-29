@@ -5,7 +5,7 @@ class WorkTypesController < ApplicationController
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
 
   def index
-    @resources = resource_model.all
+    @resources = WorkType.all
     render "scaffold/index"
   end
 
@@ -14,7 +14,7 @@ class WorkTypesController < ApplicationController
   end
 
   def new
-    @resource = resource_model.new
+    @resource = WorkType.new
     render "scaffold/new"
   end
 
@@ -23,7 +23,7 @@ class WorkTypesController < ApplicationController
   end
 
   def create
-    @resource = resource_model.new
+    @resource = WorkType.new
     @resource.assign_attributes resource_params
 
     if @resource.save
@@ -54,14 +54,10 @@ class WorkTypesController < ApplicationController
   private
 
   def set_resource
-    @resource = resource_model.find(params[:id])
+    @resource = WorkType.find(params[:id])
   end
 
   def resource_params
     permitted_attributes @resource
-  end
-
-  def resource_model
-    controller_name.classify.constantize
   end
 end
