@@ -42,13 +42,8 @@ class WorkFilesController < ApplicationController
   end
 
   def destroy
-    if @resource.destroy
-      flash.notice = "Work file was successfully destroyed"
-    else
-      flash.alert = @resource.errors.full_messages.first
-    end
-
-    redirect_to action: :index
+    @resource.destroy
+    redirect_to work_files_url, notice: "Work file was successfully destroyed"
   end
 
   private

@@ -30,6 +30,9 @@ Rails/HasAndBelongsToMany:
 Rails/RakeEnvironment:
   Enabled: false
 
+Rails/SaveBang:
+  Enabled: false
+
 Style/ClassAndModuleChildren:
   Enabled: false
 

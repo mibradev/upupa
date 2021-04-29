@@ -43,13 +43,8 @@ class WordCountsController < ApplicationController
   end
 
   def destroy
-    if @resource.destroy
-      flash.notice = "Word count was successfully destroyed"
-    else
-      flash.alert = @resource.errors.full_messages.first
-    end
-
-    redirect_to action: :index
+    @resource.destroy
+    redirect_to word_counts_url, notice: "Word count was successfully destroyed"
   end
 
   private

@@ -48,7 +48,7 @@ class WorkTypesController < ApplicationController
       flash.alert = @resource.errors.full_messages.first
     end
 
-    redirect_to action: :index
+    redirect_to work_types_url
   end
 
   private
