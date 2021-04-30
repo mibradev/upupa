@@ -1,5 +1,4 @@
 class WorkTypesController < ApplicationController
-  include Pundit
   layout "scaffold"
 
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
@@ -19,8 +18,7 @@ class WorkTypesController < ApplicationController
   end
 
   def create
-    @resource = WorkType.new
-    @resource.assign_attributes resource_params
+    @resource = WorkType.new(resource_params)
 
     if @resource.save
       redirect_to @resource, notice: "Work type was successfully created"
@@ -54,6 +52,6 @@ class WorkTypesController < ApplicationController
   end
 
   def resource_params
-    permitted_attributes @resource
+    params.require(:work_type).permit(:name, :multiplicand)
   end
 end

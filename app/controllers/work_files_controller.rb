@@ -1,5 +1,4 @@
 class WorkFilesController < ApplicationController
-  include Pundit
   layout "scaffold"
 
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
@@ -19,8 +18,7 @@ class WorkFilesController < ApplicationController
   end
 
   def create
-    @resource = WorkFile.new
-    @resource.assign_attributes resource_params
+    @resource = WorkFile.new(resource_params)
 
     if @resource.save
       redirect_to @resource, notice: "Work file was successfully created"
@@ -49,6 +47,6 @@ class WorkFilesController < ApplicationController
   end
 
   def resource_params
-    permitted_attributes @resource
+    params.require(:work_file).permit(:name)
   end
 end

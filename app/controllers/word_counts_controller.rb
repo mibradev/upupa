@@ -1,5 +1,4 @@
 class WordCountsController < ApplicationController
-  include Pundit
   layout "scaffold"
 
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
@@ -19,8 +18,7 @@ class WordCountsController < ApplicationController
   end
 
   def create
-    @resource = WordCount.new
-    @resource.assign_attributes resource_params
+    @resource = WordCount.new(resource_params)
     @resource.user = current_user
 
     if @resource.save
@@ -50,6 +48,6 @@ class WordCountsController < ApplicationController
   end
 
   def resource_params
-    permitted_attributes @resource
+    params.require(:word_count).permit(:date, :notes)
   end
 end

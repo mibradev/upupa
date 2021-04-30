@@ -1,5 +1,4 @@
 class WordCountFilesController < ApplicationController
-  include Pundit
   layout "scaffold"
 
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
@@ -19,8 +18,7 @@ class WordCountFilesController < ApplicationController
   end
 
   def create
-    @resource = WordCountFile.new
-    @resource.assign_attributes resource_params
+    @resource = WordCountFile.new(resource_params)
 
     if @resource.save
       redirect_to @resource, notice: "Word count file was successfully created"
@@ -49,6 +47,6 @@ class WordCountFilesController < ApplicationController
   end
 
   def resource_params
-    permitted_attributes @resource
+    params.require(:word_count_file).permit(:actual_word_count, :notes, :work_type_id)
   end
 end
