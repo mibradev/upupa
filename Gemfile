@@ -13,7 +13,7 @@ gem "sass-rails", "~> 6.0.0"
 gem "turbolinks", "~> 5.2.0"
 gem "webpacker", "~> 5.3.0"
 
-gem "devise", "~> 4.7.0"
+gem "devise", "~> 4.8.0"
 gem "pundit", "~> 2.1.0"
 
 group :development, :test do
