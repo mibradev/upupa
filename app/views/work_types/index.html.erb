@@ -1,3 +1,5 @@
+<%= render "shared/scaffold/header" %>
+
 <% if @resources.any? %>
   <%= render "shared/scaffold/table", th_contents: ["Name", "Multiplicand"] do |resource| %>
     <%= render "shared/scaffold/table/row", resource: resource, td_contents: [resource.name, resource.multiplicand] %>
