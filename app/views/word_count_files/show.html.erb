@@ -1,1 +1,1 @@
-<%= render "shared/scaffold/show" %>
+<%= render "shared/scaffold/description_list", contents: { "Actual word count": @resource.actual_word_count, "Notes": @resource.notes, "Work type": @resource.work_type.name } %>
