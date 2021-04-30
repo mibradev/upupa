@@ -1,2 +1,2 @@
-<%= render "shared/scaffold/header" %>
-<%= render "shared/scaffold/description_list", contents: { "Date": @resource.date, "Notes": @resource.notes } %>
+<%= render "shared/scaffold/header", resource: @word_count %>
+<%= render "shared/scaffold/description_list", contents: { "Date": @word_count.date, "Notes": @word_count.notes } %>

@@ -1,8 +1,10 @@
-<%= render "shared/scaffold/header" %>
+<%= render "shared/scaffold/header", resources: @word_count_files %>
 
-<% if @resources.any? %>
-  <%= render "shared/scaffold/table", th_contents: ["Actual word count", "Notes", "Work type"] do |resource| %>
-    <%= render "shared/scaffold/table/row", resource: resource, td_contents: [resource.actual_word_count, resource.notes, resource.work_type.name] %>
+<% if @word_count_files.any? %>
+  <%= render "shared/scaffold/table", th_contents: ["Actual word count", "Notes", "Work type"] do %>
+    <% @word_count_files.each do |word_count_file| %>
+      <%= render "shared/scaffold/table/row", resource: word_count_file, td_contents: [word_count_file.actual_word_count, word_count_file.notes, word_count_file.work_type.name] %>
+    <% end %>
   <% end %>
 <% else %>
   <%= render "shared/scaffold/empty_collection" %>

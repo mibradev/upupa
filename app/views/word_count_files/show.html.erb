@@ -1,2 +1,2 @@
-<%= render "shared/scaffold/header" %>
-<%= render "shared/scaffold/description_list", contents: { "Actual word count": @resource.actual_word_count, "Notes": @resource.notes, "Work type": @resource.work_type.name } %>
+<%= render "shared/scaffold/header", resource: @word_count_file %>
+<%= render "shared/scaffold/description_list", contents: { "Actual word count": @word_count_file.actual_word_count, "Notes": @word_count_file.notes, "Work type": @word_count_file.work_type.name } %>

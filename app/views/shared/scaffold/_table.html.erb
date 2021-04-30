@@ -11,9 +11,7 @@
     </thead>
 
     <tbody class="text-gray-600 bg-orange-50 divide-y divide-gray-300">
-      <% @resources.each do |resource| %>
-        <%= yield resource %>
-      <% end %>
+      <%= yield %>
     </tbody>
   </table>
 </div>

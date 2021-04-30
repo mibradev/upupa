@@ -1,8 +1,10 @@
-<%= render "shared/scaffold/header" %>
+<%= render "shared/scaffold/header", resources: @word_counts %>
 
-<% if @resources.any? %>
-  <%= render "shared/scaffold/table", th_contents: ["Date", "Notes"] do |resource| %>
-    <%= render "shared/scaffold/table/row", resource: resource, td_contents: [resource.date, resource.notes] %>
+<% if @word_counts.any? %>
+  <%= render "shared/scaffold/table", th_contents: ["Date", "Notes"] do %>
+    <% @word_counts.each do |word_count| %>
+      <%= render "shared/scaffold/table/row", resource: word_count, td_contents: [word_count.date, word_count.notes] %>
+    <% end %>
   <% end %>
 <% else %>
   <%= render "shared/scaffold/empty_collection" %>

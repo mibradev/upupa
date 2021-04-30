@@ -1,2 +1,2 @@
-<%= render "shared/scaffold/header" %>
-<%= render "shared/scaffold/description_list", contents: { "Name": @resource.name, "Multiplicand": @resource.multiplicand } %>
+<%= render "shared/scaffold/header", resource: @work_type %>
+<%= render "shared/scaffold/description_list", contents: { "Name": @work_type.name, "Multiplicand": @work_type.multiplicand } %>
