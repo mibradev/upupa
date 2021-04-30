@@ -1,16 +1,16 @@
 <div class="overflow-x-auto rounded shadow">
-  <table class="w-full whitespace-nowrap">
+  <table class="w-full">
     <thead class="text-sm font-medium tracking-wider text-left uppercase text-orange-100 bg-gray-600">
       <tr>
         <% th_contents.each do |content| %>
-          <th scope="col" class="py-2 px-4"><%= content %></th>
+          <th scope="col" class="p-3"><%= content %></th>
         <% end %>
 
-        <th scope="col" class="py-2 px-4"></th>
+        <th scope="col" class="p-3"></th>
       </tr>
     </thead>
 
-    <tbody class="text-gray-600 bg-orange-50 divide-y divide-gray-300">
+    <tbody class="text-gray-600 align-top bg-orange-50 divide-y divide-gray-300">
       <%= yield %>
     </tbody>
   </table>
