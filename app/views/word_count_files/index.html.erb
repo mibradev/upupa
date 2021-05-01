@@ -16,7 +16,7 @@
           <%= render "shared/scaffold/table/body_cell", content: word_count_file.actual_word_count %>
           <%= render "shared/scaffold/table/body_cell", content: word_count_file.notes %>
           <%= render "shared/scaffold/table/body_cell", content: word_count_file.work_type.name %>
-          <%= render "shared/scaffold/table/actions_cell", resource: word_count_file %>
+          <%= render "shared/scaffold/table/cells/actions", resource: word_count_file %>
         <% end %>
       <% end %>
     <% end %>

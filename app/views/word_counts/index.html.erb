@@ -15,7 +15,7 @@
         <%= render "shared/scaffold/table/body_row" do %>
           <%= render "shared/scaffold/table/body_cell", content: word_count.date %>
           <%= render "shared/scaffold/table/body_cell", content: word_count.notes %>
-          <%= render "shared/scaffold/table/actions_cell", resource: word_count %>
+          <%= render "shared/scaffold/table/cells/actions", resource: word_count %>
         <% end %>
       <% end %>
     <% end %>
