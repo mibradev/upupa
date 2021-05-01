@@ -1,2 +1,13 @@
 <%= render "shared/scaffold/header", resource: @work_type %>
-<%= render "shared/scaffold/description_list", contents: { "Name": @work_type.name, "Multiplicand": @work_type.multiplicand } %>
+
+<%= render "shared/scaffold/description_list" do %>
+  <%= render "shared/scaffold/description_list/row" do %>
+    <%= render "shared/scaffold/description_list/term", term: "Name" %>
+    <%= render "shared/scaffold/description_list/description", description: @work_type.name %>
+  <% end %>
+
+  <%= render "shared/scaffold/description_list/row" do %>
+    <%= render "shared/scaffold/description_list/term", term: "Multiplicand" %>
+    <%= render "shared/scaffold/description_list/description", description: @work_type.multiplicand %>
+  <% end %>
+<% end %>

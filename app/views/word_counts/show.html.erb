@@ -1,2 +1,13 @@
 <%= render "shared/scaffold/header", resource: @word_count %>
-<%= render "shared/scaffold/description_list", contents: { "Date": @word_count.date, "Notes": @word_count.notes } %>
+
+<%= render "shared/scaffold/description_list" do %>
+  <%= render "shared/scaffold/description_list/row" do %>
+    <%= render "shared/scaffold/description_list/term", term: "Date" %>
+    <%= render "shared/scaffold/description_list/description", description: @word_count.date %>
+  <% end %>
+
+  <%= render "shared/scaffold/description_list/row" do %>
+    <%= render "shared/scaffold/description_list/term", term: "Notes" %>
+    <%= render "shared/scaffold/description_list/description", description: @word_count.notes %>
+  <% end %>
+<% end %>

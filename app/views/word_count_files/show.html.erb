@@ -1,2 +1,18 @@
 <%= render "shared/scaffold/header", resource: @word_count_file %>
-<%= render "shared/scaffold/description_list", contents: { "Actual word count": @word_count_file.actual_word_count, "Notes": @word_count_file.notes, "Work type": @word_count_file.work_type.name } %>
+
+<%= render "shared/scaffold/description_list" do %>
+  <%= render "shared/scaffold/description_list/row" do %>
+    <%= render "shared/scaffold/description_list/term", term: "Actual word count" %>
+    <%= render "shared/scaffold/description_list/description", description: @word_count_file.actual_word_count %>
+  <% end %>
+
+  <%= render "shared/scaffold/description_list/row" do %>
+    <%= render "shared/scaffold/description_list/term", term: "Notes" %>
+    <%= render "shared/scaffold/description_list/description", description: @word_count_file.notes %>
+  <% end %>
+
+  <%= render "shared/scaffold/description_list/row" do %>
+    <%= render "shared/scaffold/description_list/term", term: "Work type" %>
+    <%= render "shared/scaffold/description_list/description", description: @word_count_file.work_type.name %>
+  <% end %>
+<% end %>
