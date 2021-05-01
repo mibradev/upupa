@@ -1,4 +1,10 @@
-<%= render "shared/scaffold/header", resources: @work_types %>
+<%= render "shared/scaffold/header" do %>
+  <%= render "shared/scaffold/header/heading", content: "Work Types" %>
+
+  <%= render "shared/scaffold/header/actions" do %>
+    <%= render "shared/scaffold/header/action", body: "New", url: new_work_type_path %>
+  <% end %>
+<% end %>
 
 <% if @work_types %>
   <%= render "shared/scaffold/table" do %>

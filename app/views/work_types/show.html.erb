@@ -1,4 +1,11 @@
-<%= render "shared/scaffold/header", resource: @work_type %>
+<%= render "shared/scaffold/header" do %>
+  <%= render "shared/scaffold/header/heading", content: "Show Work Type" %>
+
+  <%= render "shared/scaffold/header/actions" do %>
+    <%= render "shared/scaffold/header/action", body: "Edit", url: edit_work_type_path(@work_type) %>
+    <%= render "shared/scaffold/header/action", body: "Back", url: work_types_path %>
+  <% end %>
+<% end %>
 
 <%= render "shared/scaffold/description_list" do %>
   <%= render "shared/scaffold/description_list/row" do %>

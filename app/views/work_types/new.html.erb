@@ -1,2 +1,9 @@
-<%= render "shared/scaffold/header", resource: @work_type %>
+<%= render "shared/scaffold/header" do %>
+  <%= render "shared/scaffold/header/heading", content: "New Work Type" %>
+
+  <%= render "shared/scaffold/header/actions" do %>
+    <%= render "shared/scaffold/header/action", body: "Back", url: work_types_path %>
+  <% end %>
+<% end %>
+
 <%= render "form", work_type: @work_type %>

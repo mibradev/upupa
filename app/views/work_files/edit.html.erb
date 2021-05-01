@@ -1,2 +1,10 @@
-<%= render "shared/scaffold/header", resource: @work_file %>
+<%= render "shared/scaffold/header" do %>
+  <%= render "shared/scaffold/header/heading", content: "Editing Work File" %>
+
+  <%= render "shared/scaffold/header/actions" do %>
+    <%= render "shared/scaffold/header/action", body: "Show", url: @work_file %>
+    <%= render "shared/scaffold/header/action", body: "Back", url: work_files_path %>
+  <% end %>
+<% end %>
+
 <%= render "form", work_file: @work_file %>

@@ -1,4 +1,10 @@
-<%= render "shared/scaffold/header", resources: @word_counts %>
+<%= render "shared/scaffold/header" do %>
+  <%= render "shared/scaffold/header/heading", content: "Word Counts" %>
+
+  <%= render "shared/scaffold/header/actions" do %>
+    <%= render "shared/scaffold/header/action", body: "New", url: new_word_count_path %>
+  <% end %>
+<% end %>
 
 <% if @word_counts %>
   <%= render "shared/scaffold/table" do %>

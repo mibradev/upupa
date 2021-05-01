@@ -1,2 +1,9 @@
-<%= render "shared/scaffold/header", resource: @word_count_file %>
+<%= render "shared/scaffold/header" do %>
+  <%= render "shared/scaffold/header/heading", content: "New Word Count File" %>
+
+  <%= render "shared/scaffold/header/actions" do %>
+    <%= render "shared/scaffold/header/action", body: "Back", url: word_count_files_path %>
+  <% end %>
+<% end %>
+
 <%= render "form", word_count_file: @word_count_file %>
