@@ -19,6 +19,11 @@
   <% end %>
 
   <%= render "shared/scaffold/description_list/row" do %>
+    <%= render "shared/scaffold/description_list/term", content: "Work file" %>
+    <%= render "shared/scaffold/description_list/description", content: @word_count_file.work_file.name %>
+  <% end %>
+
+  <%= render "shared/scaffold/description_list/row" do %>
     <%= render "shared/scaffold/description_list/term", content: "Work type" %>
     <%= render "shared/scaffold/description_list/description", content: @word_count_file.work_type.name %>
   <% end %>

@@ -47,6 +47,6 @@ class WordCountFilesController < ApplicationController
   end
 
   def word_count_file_params
-    params.require(:word_count_file).permit(:actual_word_count, :notes, :work_type_id)
+    params.require(:word_count_file).permit(:actual_word_count, :notes, :work_file_id, :work_type_id)
   end
 end
