@@ -1,6 +1,6 @@
 <%= render "shared/scaffold/header", resources: @work_types %>
 
-<% if @work_types.any? %>
+<% if @work_types %>
   <%= render "shared/scaffold/table" do %>
     <%= render "shared/scaffold/table/head" do %>
       <%= render "shared/scaffold/table/head_row" do %>

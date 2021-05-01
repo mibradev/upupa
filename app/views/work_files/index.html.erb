@@ -1,6 +1,6 @@
 <%= render "shared/scaffold/header", resources: @work_files %>
 
-<% if @work_files.any? %>
+<% if @work_files %>
   <%= render "shared/scaffold/table" do %>
     <%= render "shared/scaffold/table/head" do %>
       <%= render "shared/scaffold/table/head_row" do %>
