@@ -9,17 +9,17 @@
 
 <%= render "shared/scaffold/description_list" do %>
   <%= render "shared/scaffold/description_list/row" do %>
-    <%= render "shared/scaffold/description_list/term", term: "Actual word count" %>
-    <%= render "shared/scaffold/description_list/description", description: @word_count_file.actual_word_count %>
+    <%= render "shared/scaffold/description_list/term", content: "Actual word count" %>
+    <%= render "shared/scaffold/description_list/description", content: @word_count_file.actual_word_count %>
   <% end %>
 
   <%= render "shared/scaffold/description_list/row" do %>
-    <%= render "shared/scaffold/description_list/term", term: "Notes" %>
-    <%= render "shared/scaffold/description_list/description", description: @word_count_file.notes %>
+    <%= render "shared/scaffold/description_list/term", content: "Notes" %>
+    <%= render "shared/scaffold/description_list/description", content: @word_count_file.notes %>
   <% end %>
 
   <%= render "shared/scaffold/description_list/row" do %>
-    <%= render "shared/scaffold/description_list/term", term: "Work type" %>
-    <%= render "shared/scaffold/description_list/description", description: @word_count_file.work_type.name %>
+    <%= render "shared/scaffold/description_list/term", content: "Work type" %>
+    <%= render "shared/scaffold/description_list/description", content: @word_count_file.work_type.name %>
   <% end %>
 <% end %>

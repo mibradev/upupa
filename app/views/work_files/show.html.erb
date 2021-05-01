@@ -9,7 +9,7 @@
 
 <%= render "shared/scaffold/description_list" do %>
   <%= render "shared/scaffold/description_list/row" do %>
-    <%= render "shared/scaffold/description_list/term", term: "Name" %>
-    <%= render "shared/scaffold/description_list/description", description: @work_file.name %>
+    <%= render "shared/scaffold/description_list/term", content: "Name" %>
+    <%= render "shared/scaffold/description_list/description", content: @work_file.name %>
   <% end %>
 <% end %>
