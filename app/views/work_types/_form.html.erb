@@ -1,4 +1,6 @@
-<%= render "shared/scaffold/form", resource: work_type do |form| %>
-  <%= render "shared/scaffold/fields/text_field", form: form, method: :name %>
-  <%= render "shared/scaffold/fields/number_field", form: form, method: :multiplicand, options: { step: "any", min: 0 } %>
+<%= render "shared/scaffold/form", model: work_type do |form| %>
+  <%= render "shared/scaffold/form/errors", resource: work_type %>
+  <%= render "shared/scaffold/form/fields/text_field", form: form, method: :name %>
+  <%= render "shared/scaffold/form/fields/number_field", form: form, method: :multiplicand, options: { step: "any", min: 0 } %>
+  <%= render "shared/scaffold/form/submit", form: form %>
 <% end %>

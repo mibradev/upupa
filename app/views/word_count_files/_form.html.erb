@@ -1,5 +1,7 @@
-<%= render "shared/scaffold/form", resource: word_count_file do |form| %>
-  <%= render "shared/scaffold/fields/number_field", form: form, method: :actual_word_count %>
-  <%= render "shared/scaffold/fields/text_area", form: form, method: :notes %>
-  <%= render "shared/scaffold/fields/collection_select", form: form, method: :work_type_id, collection: WorkType.all, value_method: :id, text_method: :name, options: { include_blank: true } %>
+<%= render "shared/scaffold/form", model: word_count_file do |form| %>
+  <%= render "shared/scaffold/form/errors", resource: word_count_file %>
+  <%= render "shared/scaffold/form/fields/number_field", form: form, method: :actual_word_count %>
+  <%= render "shared/scaffold/form/fields/text_area", form: form, method: :notes %>
+  <%= render "shared/scaffold/form/fields/collection_select", form: form, method: :work_type_id, collection: WorkType.all, value_method: :id, text_method: :name, options: { include_blank: true } %>
+  <%= render "shared/scaffold/form/submit", form: form %>
 <% end %>
