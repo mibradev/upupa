@@ -1,9 +1,24 @@
 <%= render "shared/scaffold/header", resources: @word_count_files %>
 
 <% if @word_count_files.any? %>
-  <%= render "shared/scaffold/table", th_contents: ["Actual word count", "Notes", "Work type"] do %>
-    <% @word_count_files.each do |word_count_file| %>
-      <%= render "shared/scaffold/table/row", resource: word_count_file, td_contents: [word_count_file.actual_word_count, word_count_file.notes, word_count_file.work_type.name] %>
+  <%= render "shared/scaffold/table" do %>
+    <%= render "shared/scaffold/table/head" do %>
+      <%= render "shared/scaffold/table/head_row" do %>
+        <% ["Actual word count", "Notes", "Work type", ""].each do |title| %>
+          <%= render "shared/scaffold/table/head_cell", content: title %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <%= render "shared/scaffold/table/body" do %>
+      <% @word_count_files.each do |word_count_file| %>
+        <%= render "shared/scaffold/table/body_row" do %>
+          <%= render "shared/scaffold/table/body_cell", content: word_count_file.actual_word_count %>
+          <%= render "shared/scaffold/table/body_cell", content: word_count_file.notes %>
+          <%= render "shared/scaffold/table/body_cell", content: word_count_file.work_type.name %>
+          <%= render "shared/scaffold/table/actions_cell", resource: word_count_file %>
+        <% end %>
+      <% end %>
     <% end %>
   <% end %>
 <% else %>

@@ -1,9 +1,23 @@
 <%= render "shared/scaffold/header", resources: @word_counts %>
 
 <% if @word_counts.any? %>
-  <%= render "shared/scaffold/table", th_contents: ["Date", "Notes"] do %>
-    <% @word_counts.each do |word_count| %>
-      <%= render "shared/scaffold/table/row", resource: word_count, td_contents: [word_count.date, word_count.notes] %>
+  <%= render "shared/scaffold/table" do %>
+    <%= render "shared/scaffold/table/head" do %>
+      <%= render "shared/scaffold/table/head_row" do %>
+        <% ["Date", "Notes", ""].each do |title| %>
+          <%= render "shared/scaffold/table/head_cell", content: title %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <%= render "shared/scaffold/table/body" do %>
+      <% @word_counts.each do |word_count| %>
+        <%= render "shared/scaffold/table/body_row" do %>
+          <%= render "shared/scaffold/table/body_cell", content: word_count.date %>
+          <%= render "shared/scaffold/table/body_cell", content: word_count.notes %>
+          <%= render "shared/scaffold/table/actions_cell", resource: word_count %>
+        <% end %>
+      <% end %>
     <% end %>
   <% end %>
 <% else %>

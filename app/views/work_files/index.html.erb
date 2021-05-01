@@ -1,9 +1,22 @@
 <%= render "shared/scaffold/header", resources: @work_files %>
 
 <% if @work_files.any? %>
-  <%= render "shared/scaffold/table", th_contents: ["Name"] do %>
-    <% @work_files.each do |work_file| %>
-      <%= render "shared/scaffold/table/row", resource: work_file, td_contents: [work_file.name] %>
+  <%= render "shared/scaffold/table" do %>
+    <%= render "shared/scaffold/table/head" do %>
+      <%= render "shared/scaffold/table/head_row" do %>
+        <% ["Name", ""].each do |title| %>
+          <%= render "shared/scaffold/table/head_cell", content: title %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <%= render "shared/scaffold/table/body" do %>
+      <% @work_files.each do |work_file| %>
+        <%= render "shared/scaffold/table/body_row" do %>
+          <%= render "shared/scaffold/table/body_cell", content: work_file.name %>
+          <%= render "shared/scaffold/table/actions_cell", resource: work_file %>
+        <% end %>
+      <% end %>
     <% end %>
   <% end %>
 <% else %>
