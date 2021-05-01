@@ -36,7 +36,6 @@ class WordCountFileTest < ActiveSupport::TestCase
 
   test "setting work_type_multiplicand" do
     new_word_count_file = @word_count_file.dup
-    new_word_count_file.work_files << work_files(:one)
     new_word_count_file.word_counts << word_counts(:one)
     new_word_count_file.work_type_multiplicand = nil
     assert new_word_count_file.save
@@ -61,21 +60,10 @@ class WordCountFileTest < ActiveSupport::TestCase
     assert @word_count_file.errors.added?(:work_type, :blank)
   end
 
-  test "has many work_files" do
-    @word_count_file.work_files = work_files(:one, :two)
-    assert_equal 2, @word_count_file.work_files.count
-  end
-
-  test "uniqueness of work_file" do
-    assert_raise(ActiveRecord::RecordNotUnique) do
-      @word_count_file.work_files << work_files(:one, :one)
-    end
-  end
-
-  test "presence of work_files" do
-    @word_count_file.work_files.clear
+  test "presence of work_file" do
+    @word_count_file.work_file = nil
     assert_not @word_count_file.valid?
-    assert @word_count_file.errors.added?(:work_files, :blank)
+    assert @word_count_file.errors.added?(:work_file, :blank)
   end
 
   test "has many word_counts" do

@@ -2,14 +2,14 @@ one:
   actual_word_count: 2000
   work_type_multiplicand: 1.0
   total: 2000.0
+  work_file: has_many_word_count_files
   work_type: has_many_word_count_files
-  work_files: has_and_belongs_to_many_word_count_files
   word_counts: has_and_belongs_to_many_word_count_files
 
 two:
   actual_word_count: 2000
   work_type_multiplicand: 1.0
   total: 2000.0
+  work_file: has_many_word_count_files
   work_type: has_many_word_count_files
-  work_files: has_and_belongs_to_many_word_count_files
   word_counts: has_and_belongs_to_many_word_count_files
