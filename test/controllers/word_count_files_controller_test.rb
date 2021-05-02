@@ -16,10 +16,14 @@ class WordCountFilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create word_count_file" do
-    skip
-
     assert_difference("WordCountFile.count") do
-      post word_count_files_url, params: { word_count_file: { actual_word_count: @word_count_file.actual_word_count, notes: @word_count_file.notes } }
+      post word_count_files_url, params: { word_count_file: {
+        actual_word_count: @word_count_file.actual_word_count,
+        notes: @word_count_file.notes,
+        word_count_id: @word_count_file.word_count_id,
+        work_file_id: @word_count_file.work_file_id,
+        work_type_id: @word_count_file.work_type_id
+      } }
     end
 
     assert_redirected_to word_count_file_url(WordCountFile.last)
