@@ -36,7 +36,6 @@ class WordCountFileTest < ActiveSupport::TestCase
 
   test "setting work_type_multiplicand" do
     new_word_count_file = @word_count_file.dup
-    new_word_count_file.word_counts << word_counts(:one)
     new_word_count_file.work_type_multiplicand = nil
     assert new_word_count_file.save
     assert_equal new_word_count_file.work_type.multiplicand, new_word_count_file.work_type_multiplicand
@@ -54,6 +53,12 @@ class WordCountFileTest < ActiveSupport::TestCase
     assert_equal @word_count_file.actual_word_count * @word_count_file.work_type_multiplicand, @word_count_file.total
   end
 
+  test "presence of word_count" do
+    @word_count_file.word_count = nil
+    assert_not @word_count_file.valid?
+    assert @word_count_file.errors.added?(:word_count, :blank)
+  end
+
   test "presence of work_type" do
     @word_count_file.work_type = nil
     assert_not @word_count_file.valid?
@@ -64,22 +69,5 @@ class WordCountFileTest < ActiveSupport::TestCase
     @word_count_file.work_file = nil
     assert_not @word_count_file.valid?
     assert @word_count_file.errors.added?(:work_file, :blank)
-  end
-
-  test "has many word_counts" do
-    @word_count_file.word_counts = word_counts(:one, :two)
-    assert_equal 2, @word_count_file.word_counts.count
-  end
-
-  test "uniqueness of word_count" do
-    assert_raise(ActiveRecord::RecordNotUnique) do
-      @word_count_file.word_counts << word_counts(:one, :one)
-    end
-  end
-
-  test "presence of word_counts" do
-    @word_count_file.word_counts.clear
-    assert_not @word_count_file.valid?
-    assert @word_count_file.errors.added?(:word_counts, :blank)
   end
 end

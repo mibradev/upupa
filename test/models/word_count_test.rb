@@ -40,9 +40,9 @@ class WordCountTest < ActiveSupport::TestCase
     assert_equal 2, @word_count.word_count_files.count
   end
 
-  test "uniqueness of word_count_file" do
-    assert_raise(ActiveRecord::RecordNotUnique) do
-      @word_count.word_count_files << word_count_files(:one, :one)
-    end
+  test "dependent word_count_files" do
+    @word_count.word_count_files << word_count_files(:one)
+    assert_not @word_count.destroy
+    assert @word_count.errors.added?(:base, :"restrict_dependent_destroy.has_many", record: "word count files")
   end
 end

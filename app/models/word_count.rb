@@ -4,7 +4,7 @@ class WordCount < ApplicationRecord
   validate :date_cannot_be_in_the_future
 
   belongs_to :user
-  has_and_belongs_to_many :word_count_files
+  has_many :word_count_files, dependent: :restrict_with_error
 
   private
 

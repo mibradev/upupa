@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_040541) do
+ActiveRecord::Schema.define(version: 2020_05_11_040540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,19 +60,14 @@ ActiveRecord::Schema.define(version: 2020_05_11_040541) do
     t.decimal "work_type_multiplicand", null: false
     t.decimal "total", null: false
     t.text "notes"
+    t.bigint "word_count_id", null: false
     t.bigint "work_file_id", null: false
     t.bigint "work_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["word_count_id"], name: "index_word_count_files_on_word_count_id"
     t.index ["work_file_id"], name: "index_word_count_files_on_work_file_id"
     t.index ["work_type_id"], name: "index_word_count_files_on_work_type_id"
-  end
-
-  create_table "word_count_files_counts", id: false, force: :cascade do |t|
-    t.bigint "word_count_file_id", null: false
-    t.bigint "word_count_id", null: false
-    t.index ["word_count_file_id"], name: "index_word_count_files_counts_on_word_count_file_id"
-    t.index ["word_count_id", "word_count_file_id"], name: "index_word_count_files_on_word_count_id_and_word_count_file_id", unique: true
   end
 
   create_table "word_counts", force: :cascade do |t|
@@ -100,6 +95,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_040541) do
     t.index ["name"], name: "index_work_types_on_name", unique: true
   end
 
+  add_foreign_key "word_count_files", "word_counts"
   add_foreign_key "word_count_files", "work_files"
   add_foreign_key "word_count_files", "work_types"
   add_foreign_key "word_counts", "users"

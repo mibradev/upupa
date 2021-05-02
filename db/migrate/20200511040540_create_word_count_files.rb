@@ -5,6 +5,7 @@ class CreateWordCountFiles < ActiveRecord::Migration[6.0]
       t.decimal :work_type_multiplicand, null: false
       t.decimal :total, null: false
       t.text :notes
+      t.references :word_count, null: false, foreign_key: true
       t.references :work_file, null: false, foreign_key: true
       t.references :work_type, null: false, foreign_key: true
       t.timestamps
