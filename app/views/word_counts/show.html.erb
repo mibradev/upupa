@@ -18,3 +18,15 @@
     <%= render "shared/scaffold/description_list/description", content: @word_count.notes %>
   <% end %>
 <% end %>
+
+<%= render "shared/scaffold/section" do %>
+  <%= render "shared/scaffold/header" do %>
+    <%= render "shared/scaffold/header/heading3", content: "Word count files" %>
+
+    <%= render "shared/scaffold/header/actions" do %>
+      <%= render "shared/scaffold/header/action", body: "Add", url: new_word_count_file_path %>
+    <% end %>
+  <% end %>
+
+  <%= render "word_count_files/table", word_count_files: @word_count.word_count_files %>
+<% end %>
