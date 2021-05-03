@@ -1,13 +1,14 @@
 class WordCountsController < ApplicationController
   layout "scaffold"
 
-  before_action :set_word_count, only: [:show, :edit, :update, :destroy]
+  before_action :set_word_count, only: [:edit, :update, :destroy]
 
   def index
     @word_counts = WordCount.all
   end
 
   def show
+    @word_count = WordCount.includes(word_count_files: [:work_file, :work_type]).find(params[:id])
   end
 
   def new

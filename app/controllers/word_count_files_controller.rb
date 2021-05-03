@@ -4,7 +4,7 @@ class WordCountFilesController < ApplicationController
   before_action :set_word_count_file, only: [:show, :edit, :update, :destroy]
 
   def index
-    @word_count_files = WordCountFile.all
+    @word_count_files = WordCountFile.includes(:word_count, :work_file, :work_type)
   end
 
   def show
