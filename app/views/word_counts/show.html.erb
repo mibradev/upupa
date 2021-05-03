@@ -38,5 +38,7 @@
     <% end %>
   <% end %>
 
-  <%= render "word_count_files/table", word_count_files: @word_count.word_count_files %>
+  <% unless @word_count.word_count_files.empty? %>
+    <%= render "word_count_files/table", word_count_files: @word_count.word_count_files %>
+  <% end %>
 <% end %>
