@@ -1,7 +1,7 @@
 <%= render "shared/scaffold/table" do %>
   <%= render "shared/scaffold/table/head" do %>
     <%= render "shared/scaffold/table/head_row" do %>
-      <% ["Work file", "Actual word count", "Work type", "Notes", ""].each do |title| %>
+      <% ["Work file", "Actual word count", "Work type", "Total", "Notes", ""].each do |title| %>
         <%= render "shared/scaffold/table/head_cell", content: title %>
       <% end %>
     <% end %>
@@ -13,6 +13,7 @@
       <%= render "shared/scaffold/table/body_cell", content: word_count_file.work_file.name %>
         <%= render "shared/scaffold/table/body_cell", content: word_count_file.actual_word_count %>
         <%= render "shared/scaffold/table/body_cell", content: word_count_file.work_type.name %>
+        <%= render "shared/scaffold/table/body_cell", content: number_with_precision(word_count_file.total, precision: 2) %>
         <%= render "shared/scaffold/table/body_cell", content: truncate(word_count_file.notes) %>
         <%= render "shared/scaffold/table/cells/actions", resource: word_count_file %>
       <% end %>

@@ -29,6 +29,11 @@
   <% end %>
 
   <%= render "shared/scaffold/description_list/row" do %>
+    <%= render "shared/scaffold/description_list/term", content: "Total" %>
+    <%= render "shared/scaffold/description_list/description", content: number_with_precision(@word_count_file.total, precision: 2) %>
+  <% end %>
+
+  <%= render "shared/scaffold/description_list/row" do %>
     <%= render "shared/scaffold/description_list/term", content: "Notes" %>
     <%= render "shared/scaffold/description_list/description", content: @word_count_file.notes %>
   <% end %>
