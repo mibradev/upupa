@@ -9,16 +9,6 @@
 
 <%= render "shared/scaffold/description_list" do %>
   <%= render "shared/scaffold/description_list/row" do %>
-    <%= render "shared/scaffold/description_list/term", content: "Actual word count" %>
-    <%= render "shared/scaffold/description_list/description", content: @word_count_file.actual_word_count %>
-  <% end %>
-
-  <%= render "shared/scaffold/description_list/row" do %>
-    <%= render "shared/scaffold/description_list/term", content: "Notes" %>
-    <%= render "shared/scaffold/description_list/description", content: @word_count_file.notes %>
-  <% end %>
-
-  <%= render "shared/scaffold/description_list/row" do %>
     <%= render "shared/scaffold/description_list/term", content: "Word count" %>
     <%= render "shared/scaffold/description_list/description", content: @word_count_file.word_count.date %>
   <% end %>
@@ -29,7 +19,17 @@
   <% end %>
 
   <%= render "shared/scaffold/description_list/row" do %>
+    <%= render "shared/scaffold/description_list/term", content: "Actual word count" %>
+    <%= render "shared/scaffold/description_list/description", content: @word_count_file.actual_word_count %>
+  <% end %>
+
+  <%= render "shared/scaffold/description_list/row" do %>
     <%= render "shared/scaffold/description_list/term", content: "Work type" %>
     <%= render "shared/scaffold/description_list/description", content: @word_count_file.work_type.name %>
+  <% end %>
+
+  <%= render "shared/scaffold/description_list/row" do %>
+    <%= render "shared/scaffold/description_list/term", content: "Notes" %>
+    <%= render "shared/scaffold/description_list/description", content: @word_count_file.notes %>
   <% end %>
 <% end %>
