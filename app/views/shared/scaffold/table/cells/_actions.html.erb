@@ -1,5 +1,5 @@
 <td class="p-3 text-right">
   <%= link_to "Show", resource, class: "p-2 text-sm text-orange-50 bg-gray-600 rounded hover:bg-gray-700" %>
-  <%= link_to "Edit", [:edit, resource], class: "p-2 text-sm text-orange-50 bg-gray-600 rounded hover:bg-gray-700" %>
+  <%= link_to "Edit", [:edit, resource].flatten, class: "p-2 text-sm text-orange-50 bg-gray-600 rounded hover:bg-gray-700" %>
   <%= link_to "Destroy", resource, method: :delete, data: { confirm: "Are you sure?" }, class: "p-2 text-sm text-orange-50 bg-gray-600 rounded hover:bg-gray-700" %>
 </td>

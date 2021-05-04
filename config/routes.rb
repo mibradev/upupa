@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     delete "logout", to: "devise/sessions#destroy", as: "destroy_user_session"
   end
 
-  resources :word_count_files
-  resources :word_counts
+  resources :word_counts do
+    resources :word_count_files, except: :index
+  end
+
   resources :work_files
   resources :work_types
 end

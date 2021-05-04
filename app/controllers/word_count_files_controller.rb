@@ -1,27 +1,24 @@
 class WordCountFilesController < ApplicationController
   layout "scaffold"
 
+  before_action :set_word_count
   before_action :set_word_count_file, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @word_count_files = WordCountFile.includes(:word_count, :work_file, :work_type)
-  end
 
   def show
   end
 
   def new
-    @word_count_file = WordCountFile.new
+    @word_count_file = @word_count.word_count_files.build
   end
 
   def edit
   end
 
   def create
-    @word_count_file = WordCountFile.new(word_count_file_params)
+    @word_count_file = @word_count.word_count_files.build(word_count_file_params)
 
     if @word_count_file.save
-      redirect_to @word_count_file, notice: "Word count file was successfully created"
+      redirect_to @word_count, notice: "Word count file was successfully created"
     else
       render :new
     end
@@ -29,7 +26,7 @@ class WordCountFilesController < ApplicationController
 
   def update
     if @word_count_file.update(word_count_file_params)
-      redirect_to @word_count_file, notice: "Word count file was successfully updated"
+      redirect_to @word_count, notice: "Word count file was successfully updated"
     else
       render :edit
     end
@@ -37,16 +34,20 @@ class WordCountFilesController < ApplicationController
 
   def destroy
     @word_count_file.destroy
-    redirect_to word_count_files_url, notice: "Word count file was successfully destroyed"
+    redirect_to @word_count, notice: "Word count file was successfully destroyed"
   end
 
   private
 
+  def set_word_count
+    @word_count = WordCount.find(params[:word_count_id])
+  end
+
   def set_word_count_file
-    @word_count_file = WordCountFile.find(params[:id])
+    @word_count_file = @word_count.word_count_files.find(params[:id])
   end
 
   def word_count_file_params
-    params.require(:word_count_file).permit(:actual_word_count, :notes, :word_count_id, :work_file_id, :work_type_id)
+    params.require(:word_count_file).permit(:actual_word_count, :notes, :work_file_id, :work_type_id)
   end
 end
