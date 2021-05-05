@@ -20,7 +20,12 @@
       <% @work_files.each do |work_file| %>
         <%= render "shared/scaffold/table/body_row" do %>
           <%= render "shared/scaffold/table/body_cell", content: work_file.name %>
-          <%= render "shared/scaffold/table/cells/actions", resource: work_file %>
+
+          <%= render "shared/scaffold/table/actions" do %>
+            <%= render "shared/scaffold/table/action", body: "Show", url: work_file %>
+            <%= render "shared/scaffold/table/action", body: "Edit", url: edit_work_file_path(work_file) %>
+            <%= render "shared/scaffold/table/action", body: "Destroy", url: work_file, method: :delete, data: { confirm: "Are you sure?" } %>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>

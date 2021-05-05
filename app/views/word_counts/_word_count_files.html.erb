@@ -15,7 +15,12 @@
         <%= render "shared/scaffold/table/body_cell", content: word_count_file.work_type.name %>
         <%= render "shared/scaffold/table/body_cell", content: number_with_precision(word_count_file.total, precision: 2) %>
         <%= render "shared/scaffold/table/body_cell", content: truncate(word_count_file.notes) %>
-        <%= render "shared/scaffold/table/cells/actions", resource: [word_count, word_count_file] %>
+
+        <%= render "shared/scaffold/table/actions" do %>
+          <%= render "shared/scaffold/table/action", body: "Show", url: [word_count, word_count_file] %>
+          <%= render "shared/scaffold/table/action", body: "Edit", url: edit_word_count_word_count_file_path(word_count, word_count_file) %>
+          <%= render "shared/scaffold/table/action", body: "Destroy", url: [word_count, word_count_file], method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
