@@ -22,7 +22,7 @@ group :development, :test do
   gem "rubocop", "~> 1.14.0", require: false
   gem "rubocop-minitest", "~> 0.12.0", require: false
   gem "rubocop-performance", "~> 1.11.0", require: false
-  gem "rubocop-rails", "~> 2.9.0", require: false
+  gem "rubocop-rails", "~> 2.10.0", require: false
 end
 
 group :development do
