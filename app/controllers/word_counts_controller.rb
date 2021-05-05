@@ -13,6 +13,7 @@ class WordCountsController < ApplicationController
 
   def new
     @word_count = WordCount.new
+    @word_count.date = Date.current
   end
 
   def edit

@@ -17,7 +17,8 @@ class WordCountsTest < ApplicationSystemTestCase
 
     visit word_counts_url
     click_on "New"
-    fill_in "Date", with: Date.current
+    find_field "Date", with: Date.current
+    fill_in "Date", with: Date.yesterday
     fill_in "Notes", with: @word_count.notes
     click_on "Create"
     assert_text "Word count was successfully created"
