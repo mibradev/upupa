@@ -1,6 +1,6 @@
-<%= render "shared/scaffold/form", model: word_count do |form| %>
-  <%= render "shared/scaffold/form/errors", resource: word_count %>
-  <%= render "shared/scaffold/form/fields/date_field", form: form, method: :date %>
-  <%= render "shared/scaffold/form/fields/text_area", form: form, method: :notes %>
-  <%= render "shared/scaffold/form/submit", form: form %>
+<%= render "shared/form", model: word_count do |form| %>
+  <%= render "shared/form/errors", resource: word_count %>
+  <%= render "shared/form/fields/date_field", form: form, method: :date %>
+  <%= render "shared/form/fields/text_area", form: form, method: :notes %>
+  <%= render "shared/form/submit", form: form %>
 <% end %>

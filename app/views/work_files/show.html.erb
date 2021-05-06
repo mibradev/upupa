@@ -1,15 +1,15 @@
-<%= render "shared/scaffold/header" do %>
-  <%= render "shared/scaffold/header/heading2", content: "Show Work File" %>
+<%= render "shared/header" do %>
+  <%= render "shared/header/heading2", content: "Show Work File" %>
 
-  <%= render "shared/scaffold/header/actions" do %>
-    <%= render "shared/scaffold/header/action", body: "Edit", url: edit_work_file_path(@work_file) %>
-    <%= render "shared/scaffold/header/action", body: "Back", url: work_files_path %>
+  <%= render "shared/header/actions" do %>
+    <%= render "shared/header/action", body: "Edit", url: edit_work_file_path(@work_file) %>
+    <%= render "shared/header/action", body: "Back", url: work_files_path %>
   <% end %>
 <% end %>
 
-<%= render "shared/scaffold/description_list" do %>
-  <%= render "shared/scaffold/description_list/row" do %>
-    <%= render "shared/scaffold/description_list/term", content: "Name" %>
-    <%= render "shared/scaffold/description_list/description", content: @work_file.name %>
+<%= render "shared/description_list" do %>
+  <%= render "shared/description_list/row" do %>
+    <%= render "shared/description_list/term", content: "Name" %>
+    <%= render "shared/description_list/description", content: @work_file.name %>
   <% end %>
 <% end %>

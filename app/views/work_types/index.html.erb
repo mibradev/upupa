@@ -1,36 +1,36 @@
-<%= render "shared/scaffold/header" do %>
-  <%= render "shared/scaffold/header/heading2", content: "Work Types" %>
+<%= render "shared/header" do %>
+  <%= render "shared/header/heading2", content: "Work Types" %>
 
-  <%= render "shared/scaffold/header/actions" do %>
-    <%= render "shared/scaffold/header/action", body: "New", url: new_work_type_path %>
+  <%= render "shared/header/actions" do %>
+    <%= render "shared/header/action", body: "New", url: new_work_type_path %>
   <% end %>
 <% end %>
 
 <% if @work_types %>
-  <%= render "shared/scaffold/table" do %>
-    <%= render "shared/scaffold/table/head" do %>
-      <%= render "shared/scaffold/table/head_row" do %>
+  <%= render "shared/table" do %>
+    <%= render "shared/table/head" do %>
+      <%= render "shared/table/head_row" do %>
         <% ["Name", "Multiplicand", ""].each do |title| %>
-          <%= render "shared/scaffold/table/head_cell", content: title %>
+          <%= render "shared/table/head_cell", content: title %>
         <% end %>
       <% end %>
     <% end %>
 
-    <%= render "shared/scaffold/table/body" do %>
+    <%= render "shared/table/body" do %>
       <% @work_types.each do |work_type| %>
-        <%= render "shared/scaffold/table/body_row" do %>
-          <%= render "shared/scaffold/table/body_cell", content: work_type.name %>
-          <%= render "shared/scaffold/table/body_cell", content: work_type.multiplicand %>
+        <%= render "shared/table/body_row" do %>
+          <%= render "shared/table/body_cell", content: work_type.name %>
+          <%= render "shared/table/body_cell", content: work_type.multiplicand %>
 
-          <%= render "shared/scaffold/table/actions" do %>
-            <%= render "shared/scaffold/table/action", body: "Show", url: work_type %>
-            <%= render "shared/scaffold/table/action", body: "Edit", url: edit_work_type_path(work_type) %>
-            <%= render "shared/scaffold/table/action", body: "Destroy", url: work_type, method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= render "shared/table/actions" do %>
+            <%= render "shared/table/action", body: "Show", url: work_type %>
+            <%= render "shared/table/action", body: "Edit", url: edit_work_type_path(work_type) %>
+            <%= render "shared/table/action", body: "Destroy", url: work_type, method: :delete, data: { confirm: "Are you sure?" } %>
           <% end %>
         <% end %>
       <% end %>
     <% end %>
   <% end %>
 <% else %>
-  <%= render "shared/scaffold/empty_collection" %>
+  <%= render "shared/empty_collection" %>
 <% end %>

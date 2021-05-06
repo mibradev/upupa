@@ -1,20 +1,20 @@
-<%= render "shared/scaffold/header" do %>
-  <%= render "shared/scaffold/header/heading2", content: "Show Work Type" %>
+<%= render "shared/header" do %>
+  <%= render "shared/header/heading2", content: "Show Work Type" %>
 
-  <%= render "shared/scaffold/header/actions" do %>
-    <%= render "shared/scaffold/header/action", body: "Edit", url: edit_work_type_path(@work_type) %>
-    <%= render "shared/scaffold/header/action", body: "Back", url: work_types_path %>
+  <%= render "shared/header/actions" do %>
+    <%= render "shared/header/action", body: "Edit", url: edit_work_type_path(@work_type) %>
+    <%= render "shared/header/action", body: "Back", url: work_types_path %>
   <% end %>
 <% end %>
 
-<%= render "shared/scaffold/description_list" do %>
-  <%= render "shared/scaffold/description_list/row" do %>
-    <%= render "shared/scaffold/description_list/term", content: "Name" %>
-    <%= render "shared/scaffold/description_list/description", content: @work_type.name %>
+<%= render "shared/description_list" do %>
+  <%= render "shared/description_list/row" do %>
+    <%= render "shared/description_list/term", content: "Name" %>
+    <%= render "shared/description_list/description", content: @work_type.name %>
   <% end %>
 
-  <%= render "shared/scaffold/description_list/row" do %>
-    <%= render "shared/scaffold/description_list/term", content: "Multiplicand" %>
-    <%= render "shared/scaffold/description_list/description", content: @work_type.multiplicand %>
+  <%= render "shared/description_list/row" do %>
+    <%= render "shared/description_list/term", content: "Multiplicand" %>
+    <%= render "shared/description_list/description", content: @work_type.multiplicand %>
   <% end %>
 <% end %>

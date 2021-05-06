@@ -1,37 +1,37 @@
-<%= render "shared/scaffold/header" do %>
-  <%= render "shared/scaffold/header/heading2", content: "Word Counts" %>
+<%= render "shared/header" do %>
+  <%= render "shared/header/heading2", content: "Word Counts" %>
 
-  <%= render "shared/scaffold/header/actions" do %>
-    <%= render "shared/scaffold/header/action", body: "New", url: new_word_count_path %>
+  <%= render "shared/header/actions" do %>
+    <%= render "shared/header/action", body: "New", url: new_word_count_path %>
   <% end %>
 <% end %>
 
 <% if @word_counts %>
-  <%= render "shared/scaffold/table" do %>
-    <%= render "shared/scaffold/table/head" do %>
-      <%= render "shared/scaffold/table/head_row" do %>
+  <%= render "shared/table" do %>
+    <%= render "shared/table/head" do %>
+      <%= render "shared/table/head_row" do %>
         <% ["Day", "Date", "Notes", ""].each do |title| %>
-          <%= render "shared/scaffold/table/head_cell", content: title %>
+          <%= render "shared/table/head_cell", content: title %>
         <% end %>
       <% end %>
     <% end %>
 
-    <%= render "shared/scaffold/table/body" do %>
+    <%= render "shared/table/body" do %>
       <% @word_counts.each do |word_count| %>
-        <%= render "shared/scaffold/table/body_row" do %>
-          <%= render "shared/scaffold/table/body_cell", content: word_count.date.strftime("%A") %>
-          <%= render "shared/scaffold/table/body_cell", content: word_count.date %>
-          <%= render "shared/scaffold/table/body_cell", content: truncate(word_count.notes) %>
+        <%= render "shared/table/body_row" do %>
+          <%= render "shared/table/body_cell", content: word_count.date.strftime("%A") %>
+          <%= render "shared/table/body_cell", content: word_count.date %>
+          <%= render "shared/table/body_cell", content: truncate(word_count.notes) %>
 
-          <%= render "shared/scaffold/table/actions" do %>
-            <%= render "shared/scaffold/table/action", body: "Show", url: word_count %>
-            <%= render "shared/scaffold/table/action", body: "Edit", url: edit_word_count_path(word_count) %>
-            <%= render "shared/scaffold/table/action", body: "Destroy", url: word_count, method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= render "shared/table/actions" do %>
+            <%= render "shared/table/action", body: "Show", url: word_count %>
+            <%= render "shared/table/action", body: "Edit", url: edit_word_count_path(word_count) %>
+            <%= render "shared/table/action", body: "Destroy", url: word_count, method: :delete, data: { confirm: "Are you sure?" } %>
           <% end %>
         <% end %>
       <% end %>
     <% end %>
   <% end %>
 <% else %>
-  <%= render "shared/scaffold/empty_collection" %>
+  <%= render "shared/empty_collection" %>
 <% end %>

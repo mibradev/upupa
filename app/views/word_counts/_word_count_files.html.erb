@@ -1,25 +1,25 @@
-<%= render "shared/scaffold/table" do %>
-  <%= render "shared/scaffold/table/head" do %>
-    <%= render "shared/scaffold/table/head_row" do %>
+<%= render "shared/table" do %>
+  <%= render "shared/table/head" do %>
+    <%= render "shared/table/head_row" do %>
       <% ["Work file", "Actual word count", "Work type", "Total", "Notes", ""].each do |title| %>
-        <%= render "shared/scaffold/table/head_cell", content: title %>
+        <%= render "shared/table/head_cell", content: title %>
       <% end %>
     <% end %>
   <% end %>
 
-  <%= render "shared/scaffold/table/body" do %>
+  <%= render "shared/table/body" do %>
     <% word_count.word_count_files.each do |word_count_file| %>
-      <%= render "shared/scaffold/table/body_row" do %>
-      <%= render "shared/scaffold/table/body_cell", content: word_count_file.work_file.name %>
-        <%= render "shared/scaffold/table/body_cell", content: word_count_file.actual_word_count %>
-        <%= render "shared/scaffold/table/body_cell", content: word_count_file.work_type.name %>
-        <%= render "shared/scaffold/table/body_cell", content: number_with_precision(word_count_file.total, precision: 2) %>
-        <%= render "shared/scaffold/table/body_cell", content: truncate(word_count_file.notes) %>
+      <%= render "shared/table/body_row" do %>
+      <%= render "shared/table/body_cell", content: word_count_file.work_file.name %>
+        <%= render "shared/table/body_cell", content: word_count_file.actual_word_count %>
+        <%= render "shared/table/body_cell", content: word_count_file.work_type.name %>
+        <%= render "shared/table/body_cell", content: number_with_precision(word_count_file.total, precision: 2) %>
+        <%= render "shared/table/body_cell", content: truncate(word_count_file.notes) %>
 
-        <%= render "shared/scaffold/table/actions" do %>
-          <%= render "shared/scaffold/table/action", body: "Show", url: [word_count, word_count_file] %>
-          <%= render "shared/scaffold/table/action", body: "Edit", url: edit_word_count_word_count_file_path(word_count, word_count_file) %>
-          <%= render "shared/scaffold/table/action", body: "Destroy", url: [word_count, word_count_file], method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= render "shared/table/actions" do %>
+          <%= render "shared/table/action", body: "Show", url: [word_count, word_count_file] %>
+          <%= render "shared/table/action", body: "Edit", url: edit_word_count_word_count_file_path(word_count, word_count_file) %>
+          <%= render "shared/table/action", body: "Destroy", url: [word_count, word_count_file], method: :delete, data: { confirm: "Are you sure?" } %>
         <% end %>
       <% end %>
     <% end %>
