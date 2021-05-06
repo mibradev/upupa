@@ -1,6 +1,4 @@
 class WorkFilesController < ApplicationController
-  layout "scaffold"
-
   before_action :set_work_file, only: [:show, :edit, :update, :destroy]
 
   def index

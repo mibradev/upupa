@@ -1,6 +1,4 @@
 class WordCountFilesController < ApplicationController
-  layout "scaffold"
-
   before_action :set_word_count
   before_action :set_word_count_file, only: [:show, :edit, :update, :destroy]
 

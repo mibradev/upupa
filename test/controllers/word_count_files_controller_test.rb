@@ -2,6 +2,7 @@ require "test_helper"
 
 class WordCountFilesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in users(:one)
     @word_count_file = word_count_files(:one)
   end
 

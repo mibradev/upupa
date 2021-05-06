@@ -1,9 +1,8 @@
 require "application_system_test_case"
 
 class WordCountsTest < ApplicationSystemTestCase
-  include Devise::Test::IntegrationHelpers
-
   setup do
+    sign_in users(:one)
     @word_count = word_counts(:one)
   end
 
@@ -13,8 +12,6 @@ class WordCountsTest < ApplicationSystemTestCase
   end
 
   test "creating a Word count" do
-    sign_in users(:one)
-
     visit word_counts_url
     click_on "New"
     find_field "Date", with: Date.current

@@ -2,6 +2,7 @@ require "application_system_test_case"
 
 class WordCountFilesTest < ApplicationSystemTestCase
   setup do
+    sign_in users(:one)
     @word_count_file = word_count_files(:one)
   end
 

@@ -2,6 +2,7 @@ require "test_helper"
 
 class WorkTypesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in users(:one)
     @work_type = work_types(:one)
   end
 

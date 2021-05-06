@@ -1,5 +1,24 @@
-<% content_for :body do %>
-  <%= yield %>
-<% end %>
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<%= yield :page_description %>">
 
-<%= render template: "layouts/base" %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <title><%= yield :page_title %></title>
+
+    <%= stylesheet_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+  </head>
+
+  <body class="text-gray-600 bg-orange-100">
+    <% if user_signed_in? %>
+      <%= render "shared/scaffold/layout" %>
+    <% else %>
+      <%= yield %>
+    <% end %>
+  </body>
+</html>

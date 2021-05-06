@@ -2,6 +2,7 @@ require "application_system_test_case"
 
 class WorkFilesTest < ApplicationSystemTestCase
   setup do
+    sign_in users(:one)
     @work_file = work_files(:one)
   end
 

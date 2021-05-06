@@ -1,6 +1,4 @@
 class WordCountsController < ApplicationController
-  layout "scaffold"
-
   before_action :set_word_count, only: [:edit, :update, :destroy]
 
   def index

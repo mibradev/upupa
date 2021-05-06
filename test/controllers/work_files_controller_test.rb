@@ -2,6 +2,7 @@ require "test_helper"
 
 class WorkFilesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in users(:one)
     @work_file = work_files(:one)
   end
 
