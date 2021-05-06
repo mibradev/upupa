@@ -7,3 +7,9 @@
   <%= link_to "Work Files", work_files_path, class: "block py-4 px-8 hover:bg-gray-600" %>
   <%= link_to "Work Types", work_types_path, class: "block py-4 px-8 hover:bg-gray-600" %>
 </nav>
+
+<hr class="mx-8 border-gray-500">
+
+<div class="py-8 px-8 text-sm font-medium">
+  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "hover:text-orange-300" %>
+</div>
