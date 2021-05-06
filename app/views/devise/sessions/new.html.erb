@@ -3,7 +3,17 @@
 
 <main class="flex justify-center items-center p-10 min-h-screen">
   <div class="space-y-10 w-full sm:py-16 sm:px-10 sm:w-auto sm:bg-white sm:rounded sm:shadow">
-    <%= render "shared/flash" %>
+    <% if flash.alert %>
+      <div class="p-5 text-red-900 bg-red-300">
+        <%= flash.alert %>
+      </div>
+    <% end %>
+
+    <% if flash.notice %>
+      <div class="p-5 text-green-900 bg-green-300">
+        <%= flash.notice %>
+      </div>
+    <% end %>
 
     <h2 class="text-3xl text-center">Log in</h2>
 
