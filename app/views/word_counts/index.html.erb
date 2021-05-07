@@ -10,9 +10,10 @@
   <%= render "shared/table" do %>
     <%= render "shared/table/head" do %>
       <%= render "shared/table/head_row" do %>
-        <% ["Day", "Date", "Notes", ""].each do |title| %>
-          <%= render "shared/table/head_cell", content: title %>
-        <% end %>
+        <%= render "shared/table/head_cell", content: "Day" %>
+        <%= render "shared/table/head_cell", content: "Date" %>
+        <%= render "shared/table/head_cell", content: "Notes" %>
+        <%= render "shared/table/head_cell", content: "" %>
       <% end %>
     <% end %>
 

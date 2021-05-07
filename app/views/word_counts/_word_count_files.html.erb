@@ -1,9 +1,12 @@
 <%= render "shared/table" do %>
   <%= render "shared/table/head" do %>
     <%= render "shared/table/head_row" do %>
-      <% ["Work file", "Actual word count", "Work type", "Total", "Notes", ""].each do |title| %>
-        <%= render "shared/table/head_cell", content: title %>
-      <% end %>
+      <%= render "shared/table/head_cell", content: "Work file" %>
+      <%= render "shared/table/head_cell", content: "Actual word count" %>
+      <%= render "shared/table/head_cell", content: "Work type" %>
+      <%= render "shared/table/head_cell", content: "Total" %>
+      <%= render "shared/table/head_cell", content: "Notes" %>
+      <%= render "shared/table/head_cell", content: "" %>
     <% end %>
   <% end %>
 
