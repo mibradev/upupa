@@ -6,7 +6,7 @@
   <% end %>
 <% end %>
 
-<% if @work_files %>
+<% unless @work_files.empty? %>
   <%= render "shared/table" do %>
     <%= render "shared/table/head" do %>
       <%= render "shared/table/head_row" do %>

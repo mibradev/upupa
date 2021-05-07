@@ -6,7 +6,7 @@
   <% end %>
 <% end %>
 
-<% if @word_counts %>
+<% unless @word_counts.empty? %>
   <%= render "shared/table" do %>
     <%= render "shared/table/head" do %>
       <%= render "shared/table/head_row" do %>
