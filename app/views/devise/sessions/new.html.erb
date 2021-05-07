@@ -2,40 +2,42 @@
 <% page_description "Log into #{t :app_name} to access your account." %>
 
 <main class="flex justify-center items-center p-8 min-h-screen">
-  <div class="space-y-8 w-full sm:py-16 sm:px-8 sm:w-auto sm:bg-white sm:rounded sm:shadow">
+  <div class="space-y-8 w-full sm:space-y-0 sm:w-auto sm:bg-white sm:rounded sm:shadow">
     <% if flash.alert %>
-      <div class="p-4 text-red-900 bg-red-300">
+      <div class="p-4 text-red-900 bg-red-300 sm:rounded-t">
         <%= flash.alert %>
       </div>
     <% end %>
 
     <% if flash.notice %>
-      <div class="p-4 text-green-900 bg-green-300">
+      <div class="p-4 text-green-900 bg-green-300 sm:rounded-t">
         <%= flash.notice %>
       </div>
     <% end %>
 
-    <h2 class="text-3xl text-center">Log in</h2>
+    <div class="space-y-8 sm:py-16 sm:px-8">
+      <h2 class="text-3xl text-center">Log in</h2>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-4" }) do |f| %>
-      <div class="space-y-2">
-        <%= f.label :email, class: "block font-medium" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: :email, class: "block p-2 w-full rounded shadow sm:border focus:border-0 focus:ring-2 focus:ring-orange-300 focus:outline-none" %>
-      </div>
-
-      <div class="space-y-2">
-        <%= f.label :password, class: "block font-medium" %>
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "*" * 8, class: "block p-2 w-full rounded shadow sm:border focus:border-0 focus:ring-2 focus:ring-orange-300 focus:outline-none" %>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
-        <div>
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-4" }) do |f| %>
+        <div class="space-y-2">
+          <%= f.label :email, class: "block font-medium" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: :email, class: "block p-2 w-full rounded shadow sm:border focus:border-0 focus:ring-2 focus:ring-orange-300 focus:outline-none" %>
         </div>
-      <% end %>
 
-      <%= f.submit "Log in", class: "block p-2 w-full bg-orange-300 rounded shadow cursor-pointer hover:text-orange-300 hover:bg-gray-600 focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50 focus:outline-none" %>
-    <% end %>
+        <div class="space-y-2">
+          <%= f.label :password, class: "block font-medium" %>
+          <%= f.password_field :password, autocomplete: "current-password", placeholder: "*" * 8, class: "block p-2 w-full rounded shadow sm:border focus:border-0 focus:ring-2 focus:ring-orange-300 focus:outline-none" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <%= f.submit "Log in", class: "block p-2 w-full bg-orange-300 rounded shadow cursor-pointer hover:text-orange-300 hover:bg-gray-600 focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50 focus:outline-none" %>
+      <% end %>
+    </div>
   </div>
 </main>
