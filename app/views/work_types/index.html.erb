@@ -23,9 +23,9 @@
           <%= render "shared/table/body_cell", content: work_type.multiplicand %>
 
           <%= render "shared/table/actions" do %>
-            <%= render "shared/table/action", body: "Show", url: work_type %>
-            <%= render "shared/table/action", body: "Edit", url: edit_work_type_path(work_type) %>
-            <%= render "shared/table/action", body: "Destroy", url: work_type, method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= render "shared/table/actions/show", url: work_type %>
+            <%= render "shared/table/actions/edit", url: edit_work_type_path(work_type) %>
+            <%= render "shared/table/actions/destroy", url: work_type %>
           <% end %>
         <% end %>
       <% end %>

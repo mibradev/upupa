@@ -25,9 +25,9 @@
           <%= render "shared/table/body_cell", content: truncate(word_count.notes) %>
 
           <%= render "shared/table/actions" do %>
-            <%= render "shared/table/action", body: "Show", url: word_count %>
-            <%= render "shared/table/action", body: "Edit", url: edit_word_count_path(word_count) %>
-            <%= render "shared/table/action", body: "Destroy", url: word_count, method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= render "shared/table/actions/show", url: word_count %>
+            <%= render "shared/table/actions/edit", url: edit_word_count_path(word_count) %>
+            <%= render "shared/table/actions/destroy", url: word_count %>
           <% end %>
         <% end %>
       <% end %>
