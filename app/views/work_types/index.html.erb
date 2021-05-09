@@ -9,11 +9,9 @@
 <% unless @work_types.empty? %>
   <%= render "shared/table" do %>
     <%= render "shared/table/head" do %>
-      <%= render "shared/table/head_row" do %>
-        <%= render "shared/table/head_cell", content: "Name" %>
-        <%= render "shared/table/head_cell", content: "Multiplicand" %>
-        <%= render "shared/table/head_cell", content: "" %>
-      <% end %>
+      <%= render "shared/table/head_cell", content: "Name" %>
+      <%= render "shared/table/head_cell", content: "Multiplicand" %>
+      <%= render "shared/table/head_cell", content: "" %>
     <% end %>
 
     <%= render "shared/table/body" do %>

@@ -9,12 +9,10 @@
 <% unless @word_counts.empty? %>
   <%= render "shared/table" do %>
     <%= render "shared/table/head" do %>
-      <%= render "shared/table/head_row" do %>
-        <%= render "shared/table/head_cell", content: "Day" %>
-        <%= render "shared/table/head_cell", content: "Date" %>
-        <%= render "shared/table/head_cell", content: "Notes" %>
-        <%= render "shared/table/head_cell", content: "" %>
-      <% end %>
+      <%= render "shared/table/head_cell", content: "Day" %>
+      <%= render "shared/table/head_cell", content: "Date" %>
+      <%= render "shared/table/head_cell", content: "Notes" %>
+      <%= render "shared/table/head_cell", content: "" %>
     <% end %>
 
     <%= render "shared/table/body" do %>

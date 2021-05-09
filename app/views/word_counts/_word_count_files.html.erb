@@ -1,13 +1,11 @@
 <%= render "shared/table" do %>
   <%= render "shared/table/head" do %>
-    <%= render "shared/table/head_row" do %>
-      <%= render "shared/table/head_cell", content: "Work file" %>
-      <%= render "shared/table/head_cell", content: "Actual word count" %>
-      <%= render "shared/table/head_cell", content: "Work type" %>
-      <%= render "shared/table/head_cell", content: "Total" %>
-      <%= render "shared/table/head_cell", content: "Notes" %>
-      <%= render "shared/table/head_cell", content: "" %>
-    <% end %>
+    <%= render "shared/table/head_cell", content: "Work file" %>
+    <%= render "shared/table/head_cell", content: "Actual word count" %>
+    <%= render "shared/table/head_cell", content: "Work type" %>
+    <%= render "shared/table/head_cell", content: "Total" %>
+    <%= render "shared/table/head_cell", content: "Notes" %>
+    <%= render "shared/table/head_cell", content: "" %>
   <% end %>
 
   <%= render "shared/table/body" do %>
