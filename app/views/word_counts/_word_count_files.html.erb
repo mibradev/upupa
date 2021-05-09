@@ -13,7 +13,7 @@
   <%= render "shared/table/body" do %>
     <% word_count.word_count_files.each do |word_count_file| %>
       <%= render "shared/table/body_row" do %>
-      <%= render "shared/table/body_cell", content: word_count_file.work_file.name %>
+        <%= render "shared/table/body_cell", content: word_count_file.work_file.name %>
         <%= render "shared/table/body_cell", content: word_count_file.actual_word_count %>
         <%= render "shared/table/body_cell", content: word_count_file.work_type.name %>
         <%= render "shared/table/body_cell", content: number_with_precision(word_count_file.total, precision: 2) %>
