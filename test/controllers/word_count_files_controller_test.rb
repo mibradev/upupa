@@ -6,6 +6,11 @@ class WordCountFilesControllerTest < ActionDispatch::IntegrationTest
     @word_count_file = word_count_files(:one)
   end
 
+  test "should get index" do
+    get word_count_word_count_files_url(@word_count_file.word_count_id)
+    assert_response :ok
+  end
+
   test "should get new" do
     get new_word_count_word_count_file_url(@word_count_file.word_count_id)
     assert_response :ok

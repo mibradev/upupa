@@ -2,6 +2,10 @@ class WordCountFilesController < ApplicationController
   before_action :set_word_count
   before_action :set_word_count_file, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @word_count_files = @word_count.word_count_files
+  end
+
   def show
   end
 

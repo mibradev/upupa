@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :word_counts do
-    resources :word_count_files, except: :index
+    resources :word_count_files
   end
 
   resources :work_files

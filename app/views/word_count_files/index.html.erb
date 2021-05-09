@@ -1,0 +1,13 @@
+<%= render "shared/header" do %>
+  <%= render "shared/header/heading2", content: "Word Count Files" %>
+
+  <%= render "shared/header/actions" do %>
+    <%= render "shared/header/actions/new", url: new_word_count_word_count_file_path %>
+  <% end %>
+<% end %>
+
+<% unless @word_count_files.empty? %>
+  <%= render "table", word_count_files: @word_count_files %>
+<% else %>
+  <%= render "shared/empty_collection" %>
+<% end %>
