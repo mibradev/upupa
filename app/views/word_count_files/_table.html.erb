@@ -1,24 +1,24 @@
-<%= render "shared/table" do %>
-  <%= render "shared/table/head" do %>
-    <%= render "shared/table/head_cell", content: "Work file" %>
-    <%= render "shared/table/head_cell", content: "Actual word count" %>
-    <%= render "shared/table/head_cell", content: "Work type" %>
-    <%= render "shared/table/head_cell", content: "Total" %>
-    <%= render "shared/table/head_cell", content: "Notes" %>
-    <%= render "shared/table/head_cell", content: "" %>
+<%= render "application/table" do %>
+  <%= render "application/table/head" do %>
+    <%= render "application/table/head_cell", content: "Work file" %>
+    <%= render "application/table/head_cell", content: "Actual word count" %>
+    <%= render "application/table/head_cell", content: "Work type" %>
+    <%= render "application/table/head_cell", content: "Total" %>
+    <%= render "application/table/head_cell", content: "Notes" %>
+    <%= render "application/table/head_cell", content: "" %>
   <% end %>
 
-  <%= render "shared/table/body", collection: word_count_files do |word_count_file| %>
-    <%= render "shared/table/body_cell", content: word_count_file.work_file.name %>
-    <%= render "shared/table/body_cell", content: word_count_file.actual_word_count %>
-    <%= render "shared/table/body_cell", content: word_count_file.work_type.name %>
-    <%= render "shared/table/body_cell", content: number_with_precision(word_count_file.total, precision: 2) %>
-    <%= render "shared/table/body_cell", content: truncate(word_count_file.notes) %>
+  <%= render "application/table/body", collection: word_count_files do |word_count_file| %>
+    <%= render "application/table/body_cell", content: word_count_file.work_file.name %>
+    <%= render "application/table/body_cell", content: word_count_file.actual_word_count %>
+    <%= render "application/table/body_cell", content: word_count_file.work_type.name %>
+    <%= render "application/table/body_cell", content: number_with_precision(word_count_file.total, precision: 2) %>
+    <%= render "application/table/body_cell", content: truncate(word_count_file.notes) %>
 
-    <%= render "shared/table/actions" do %>
-      <%= render "shared/table/actions/show", url: [word_count_file.word_count, word_count_file] %>
-      <%= render "shared/table/actions/edit", url: edit_word_count_word_count_file_path(word_count_file.word_count, word_count_file) %>
-      <%= render "shared/table/actions/destroy", url: [word_count_file.word_count, word_count_file] %>
+    <%= render "application/table/actions" do %>
+      <%= render "application/table/actions/show", url: [word_count_file.word_count, word_count_file] %>
+      <%= render "application/table/actions/edit", url: edit_word_count_word_count_file_path(word_count_file.word_count, word_count_file) %>
+      <%= render "application/table/actions/destroy", url: [word_count_file.word_count, word_count_file] %>
     <% end %>
   <% end %>
 <% end %>

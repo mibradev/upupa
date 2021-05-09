@@ -1,30 +1,30 @@
-<%= render "shared/header" do %>
-  <%= render "shared/header/heading2", content: "Work Types" %>
+<%= render "application/header" do %>
+  <%= render "application/header/heading2", content: "Work Types" %>
 
-  <%= render "shared/header/actions" do %>
-    <%= render "shared/header/actions/new", url: new_work_type_path %>
+  <%= render "application/header/actions" do %>
+    <%= render "application/header/actions/new", url: new_work_type_path %>
   <% end %>
 <% end %>
 
 <% unless @work_types.empty? %>
-  <%= render "shared/table" do %>
-    <%= render "shared/table/head" do %>
-      <%= render "shared/table/head_cell", content: "Name" %>
-      <%= render "shared/table/head_cell", content: "Multiplicand" %>
-      <%= render "shared/table/head_cell", content: "" %>
+  <%= render "application/table" do %>
+    <%= render "application/table/head" do %>
+      <%= render "application/table/head_cell", content: "Name" %>
+      <%= render "application/table/head_cell", content: "Multiplicand" %>
+      <%= render "application/table/head_cell", content: "" %>
     <% end %>
 
-    <%= render "shared/table/body", collection: @work_types do |work_type| %>
-      <%= render "shared/table/body_cell", content: work_type.name %>
-      <%= render "shared/table/body_cell", content: work_type.multiplicand %>
+    <%= render "application/table/body", collection: @work_types do |work_type| %>
+      <%= render "application/table/body_cell", content: work_type.name %>
+      <%= render "application/table/body_cell", content: work_type.multiplicand %>
 
-      <%= render "shared/table/actions" do %>
-        <%= render "shared/table/actions/show", url: work_type %>
-        <%= render "shared/table/actions/edit", url: edit_work_type_path(work_type) %>
-        <%= render "shared/table/actions/destroy", url: work_type %>
+      <%= render "application/table/actions" do %>
+        <%= render "application/table/actions/show", url: work_type %>
+        <%= render "application/table/actions/edit", url: edit_work_type_path(work_type) %>
+        <%= render "application/table/actions/destroy", url: work_type %>
       <% end %>
     <% end %>
   <% end %>
 <% else %>
-  <%= render "shared/empty_collection" %>
+  <%= render "application/empty_collection" %>
 <% end %>

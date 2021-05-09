@@ -16,7 +16,7 @@
 
   <body class="text-gray-600 bg-orange-100">
     <% if user_signed_in? %>
-      <%= render "shared/layout" %>
+      <%= render "application/layout" %>
     <% else %>
       <%= yield %>
     <% end %>

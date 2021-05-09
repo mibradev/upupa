@@ -1,25 +1,25 @@
-<%= render "shared/header" do %>
-  <%= render "shared/header/heading2", content: "Show Word Count" %>
+<%= render "application/header" do %>
+  <%= render "application/header/heading2", content: "Show Word Count" %>
 
-  <%= render "shared/header/actions" do %>
-    <%= render "shared/header/actions/edit", url: edit_word_count_path(@word_count) %>
-    <%= render "shared/header/actions/index", url: word_counts_path %>
+  <%= render "application/header/actions" do %>
+    <%= render "application/header/actions/edit", url: edit_word_count_path(@word_count) %>
+    <%= render "application/header/actions/index", url: word_counts_path %>
   <% end %>
 <% end %>
 
-<%= render "shared/description_list" do %>
-  <%= render "shared/description_list/group", term: "Day", description: @word_count.date.strftime("%A") %>
-  <%= render "shared/description_list/group", term: "Date", description: @word_count.date %>
-  <%= render "shared/description_list/group", term: "Total", description: number_with_precision(@word_count.word_count_files.sum(:total), precision: 2) %>
-  <%= render "shared/description_list/group", term: "Notes", description: @word_count.notes %>
+<%= render "application/description_list" do %>
+  <%= render "application/description_list/group", term: "Day", description: @word_count.date.strftime("%A") %>
+  <%= render "application/description_list/group", term: "Date", description: @word_count.date %>
+  <%= render "application/description_list/group", term: "Total", description: number_with_precision(@word_count.word_count_files.sum(:total), precision: 2) %>
+  <%= render "application/description_list/group", term: "Notes", description: @word_count.notes %>
 <% end %>
 
-<%= render "shared/section" do %>
-  <%= render "shared/header" do %>
-    <%= render "shared/header/heading3", content: "Word count files" %>
+<%= render "application/section" do %>
+  <%= render "application/header" do %>
+    <%= render "application/header/heading3", content: "Word count files" %>
 
-    <%= render "shared/header/actions" do %>
-      <%= render "shared/header/actions/new", url: new_word_count_word_count_file_path(@word_count) %>
+    <%= render "application/header/actions" do %>
+      <%= render "application/header/actions/new", url: new_word_count_word_count_file_path(@word_count) %>
     <% end %>
   <% end %>
 

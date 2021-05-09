@@ -1,9 +1,9 @@
-<%= render "shared/header" do %>
-  <%= render "shared/header/heading2", content: "Editing Word Count" %>
+<%= render "application/header" do %>
+  <%= render "application/header/heading2", content: "Editing Word Count" %>
 
-  <%= render "shared/header/actions" do %>
-    <%= render "shared/header/actions/show", url: @word_count %>
-    <%= render "shared/header/actions/index", url: word_counts_path %>
+  <%= render "application/header/actions" do %>
+    <%= render "application/header/actions/show", url: @word_count %>
+    <%= render "application/header/actions/index", url: word_counts_path %>
   <% end %>
 <% end %>
 

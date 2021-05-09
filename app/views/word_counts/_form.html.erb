@@ -1,4 +1,4 @@
-<%= render "shared/form", model: word_count do |form| %>
-  <%= render "shared/fields/date_field", form: form, method: :date %>
-  <%= render "shared/fields/text_area", form: form, method: :notes %>
+<%= render "application/form", model: word_count do |form| %>
+  <%= render "application/fields/date_field", form: form, method: :date %>
+  <%= render "application/fields/text_area", form: form, method: :notes %>
 <% end %>

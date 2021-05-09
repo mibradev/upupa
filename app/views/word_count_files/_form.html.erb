@@ -1,7 +1,7 @@
-<%= render "shared/form", model: [word_count_file.word_count, word_count_file] do |form| %>
-  <%= render "shared/fields/text_field", form: form, method: :word_count_id, options: { disabled: true, value: word_count_file.word_count.date } %>
-  <%= render "shared/fields/collection_select", form: form, method: :work_file_id, collection: WorkFile.all, value_method: :id, text_method: :name, options: { include_blank: true } %>
-  <%= render "shared/fields/number_field", form: form, method: :actual_word_count %>
-  <%= render "shared/fields/collection_select", form: form, method: :work_type_id, collection: WorkType.all, value_method: :id, text_method: :name, options: { include_blank: true } %>
-  <%= render "shared/fields/text_area", form: form, method: :notes %>
+<%= render "application/form", model: [word_count_file.word_count, word_count_file] do |form| %>
+  <%= render "application/fields/text_field", form: form, method: :word_count_id, options: { disabled: true, value: word_count_file.word_count.date } %>
+  <%= render "application/fields/collection_select", form: form, method: :work_file_id, collection: WorkFile.all, value_method: :id, text_method: :name, options: { include_blank: true } %>
+  <%= render "application/fields/number_field", form: form, method: :actual_word_count %>
+  <%= render "application/fields/collection_select", form: form, method: :work_type_id, collection: WorkType.all, value_method: :id, text_method: :name, options: { include_blank: true } %>
+  <%= render "application/fields/text_area", form: form, method: :notes %>
 <% end %>

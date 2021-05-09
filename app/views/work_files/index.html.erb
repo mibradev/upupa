@@ -1,28 +1,28 @@
-<%= render "shared/header" do %>
-  <%= render "shared/header/heading2", content: "Work Files" %>
+<%= render "application/header" do %>
+  <%= render "application/header/heading2", content: "Work Files" %>
 
-  <%= render "shared/header/actions" do %>
-    <%= render "shared/header/actions/new", url: new_work_file_path %>
+  <%= render "application/header/actions" do %>
+    <%= render "application/header/actions/new", url: new_work_file_path %>
   <% end %>
 <% end %>
 
 <% unless @work_files.empty? %>
-  <%= render "shared/table" do %>
-    <%= render "shared/table/head" do %>
-      <%= render "shared/table/head_cell", content: "Name" %>
-      <%= render "shared/table/head_cell", content: "" %>
+  <%= render "application/table" do %>
+    <%= render "application/table/head" do %>
+      <%= render "application/table/head_cell", content: "Name" %>
+      <%= render "application/table/head_cell", content: "" %>
     <% end %>
 
-    <%= render "shared/table/body", collection: @work_files do |work_file| %>
-      <%= render "shared/table/body_cell", content: work_file.name %>
+    <%= render "application/table/body", collection: @work_files do |work_file| %>
+      <%= render "application/table/body_cell", content: work_file.name %>
 
-      <%= render "shared/table/actions" do %>
-        <%= render "shared/table/actions/show", url: work_file %>
-        <%= render "shared/table/actions/edit", url: edit_work_file_path(work_file) %>
-        <%= render "shared/table/actions/destroy", url: work_file %>
+      <%= render "application/table/actions" do %>
+        <%= render "application/table/actions/show", url: work_file %>
+        <%= render "application/table/actions/edit", url: edit_work_file_path(work_file) %>
+        <%= render "application/table/actions/destroy", url: work_file %>
       <% end %>
     <% end %>
   <% end %>
 <% else %>
-  <%= render "shared/empty_collection" %>
+  <%= render "application/empty_collection" %>
 <% end %>

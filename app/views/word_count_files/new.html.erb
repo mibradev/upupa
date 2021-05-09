@@ -1,8 +1,8 @@
-<%= render "shared/header" do %>
-  <%= render "shared/header/heading2", content: "New Word Count File" %>
+<%= render "application/header" do %>
+  <%= render "application/header/heading2", content: "New Word Count File" %>
 
-  <%= render "shared/header/actions" do %>
-    <%= render "shared/header/actions/index", url: @word_count %>
+  <%= render "application/header/actions" do %>
+    <%= render "application/header/actions/index", url: @word_count %>
   <% end %>
 <% end %>
 

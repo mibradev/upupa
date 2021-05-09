@@ -1,32 +1,32 @@
-<%= render "shared/header" do %>
-  <%= render "shared/header/heading2", content: "Word Counts" %>
+<%= render "application/header" do %>
+  <%= render "application/header/heading2", content: "Word Counts" %>
 
-  <%= render "shared/header/actions" do %>
-    <%= render "shared/header/actions/new", url: new_word_count_path %>
+  <%= render "application/header/actions" do %>
+    <%= render "application/header/actions/new", url: new_word_count_path %>
   <% end %>
 <% end %>
 
 <% unless @word_counts.empty? %>
-  <%= render "shared/table" do %>
-    <%= render "shared/table/head" do %>
-      <%= render "shared/table/head_cell", content: "Day" %>
-      <%= render "shared/table/head_cell", content: "Date" %>
-      <%= render "shared/table/head_cell", content: "Notes" %>
-      <%= render "shared/table/head_cell", content: "" %>
+  <%= render "application/table" do %>
+    <%= render "application/table/head" do %>
+      <%= render "application/table/head_cell", content: "Day" %>
+      <%= render "application/table/head_cell", content: "Date" %>
+      <%= render "application/table/head_cell", content: "Notes" %>
+      <%= render "application/table/head_cell", content: "" %>
     <% end %>
 
-    <%= render "shared/table/body", collection: @word_counts do |word_count| %>
-      <%= render "shared/table/body_cell", content: word_count.date.strftime("%A") %>
-      <%= render "shared/table/body_cell", content: word_count.date %>
-      <%= render "shared/table/body_cell", content: truncate(word_count.notes) %>
+    <%= render "application/table/body", collection: @word_counts do |word_count| %>
+      <%= render "application/table/body_cell", content: word_count.date.strftime("%A") %>
+      <%= render "application/table/body_cell", content: word_count.date %>
+      <%= render "application/table/body_cell", content: truncate(word_count.notes) %>
 
-      <%= render "shared/table/actions" do %>
-        <%= render "shared/table/actions/show", url: word_count %>
-        <%= render "shared/table/actions/edit", url: edit_word_count_path(word_count) %>
-        <%= render "shared/table/actions/destroy", url: word_count %>
+      <%= render "application/table/actions" do %>
+        <%= render "application/table/actions/show", url: word_count %>
+        <%= render "application/table/actions/edit", url: edit_word_count_path(word_count) %>
+        <%= render "application/table/actions/destroy", url: word_count %>
       <% end %>
     <% end %>
   <% end %>
 <% else %>
-  <%= render "shared/empty_collection" %>
+  <%= render "application/empty_collection" %>
 <% end %>
