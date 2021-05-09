@@ -1,5 +1,3 @@
 <%= render "shared/form", model: work_file do |form| %>
-  <%= render "shared/form/errors", resource: work_file %>
-  <%= render "shared/form/fields/text_field", form: form, method: :name %>
-  <%= render "shared/form/submit", form: form %>
+  <%= render "shared/fields/text_field", form: form, method: :name %>
 <% end %>
