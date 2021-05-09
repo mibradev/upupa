@@ -8,21 +8,17 @@
     <%= render "shared/table/head_cell", content: "" %>
   <% end %>
 
-  <%= render "shared/table/body" do %>
-    <% word_count.word_count_files.each do |word_count_file| %>
-      <%= render "shared/table/body_row" do %>
-        <%= render "shared/table/body_cell", content: word_count_file.work_file.name %>
-        <%= render "shared/table/body_cell", content: word_count_file.actual_word_count %>
-        <%= render "shared/table/body_cell", content: word_count_file.work_type.name %>
-        <%= render "shared/table/body_cell", content: number_with_precision(word_count_file.total, precision: 2) %>
-        <%= render "shared/table/body_cell", content: truncate(word_count_file.notes) %>
+  <%= render "shared/table/body", collection: word_count.word_count_files do |word_count_file| %>
+    <%= render "shared/table/body_cell", content: word_count_file.work_file.name %>
+    <%= render "shared/table/body_cell", content: word_count_file.actual_word_count %>
+    <%= render "shared/table/body_cell", content: word_count_file.work_type.name %>
+    <%= render "shared/table/body_cell", content: number_with_precision(word_count_file.total, precision: 2) %>
+    <%= render "shared/table/body_cell", content: truncate(word_count_file.notes) %>
 
-        <%= render "shared/table/actions" do %>
-          <%= render "shared/table/actions/show", url: [word_count, word_count_file] %>
-          <%= render "shared/table/actions/edit", url: edit_word_count_word_count_file_path(word_count, word_count_file) %>
-          <%= render "shared/table/actions/destroy", url: [word_count, word_count_file] %>
-        <% end %>
-      <% end %>
+    <%= render "shared/table/actions" do %>
+      <%= render "shared/table/actions/show", url: [word_count, word_count_file] %>
+      <%= render "shared/table/actions/edit", url: edit_word_count_word_count_file_path(word_count, word_count_file) %>
+      <%= render "shared/table/actions/destroy", url: [word_count, word_count_file] %>
     <% end %>
   <% end %>
 <% end %>

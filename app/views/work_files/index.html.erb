@@ -13,17 +13,13 @@
       <%= render "shared/table/head_cell", content: "" %>
     <% end %>
 
-    <%= render "shared/table/body" do %>
-      <% @work_files.each do |work_file| %>
-        <%= render "shared/table/body_row" do %>
-          <%= render "shared/table/body_cell", content: work_file.name %>
+    <%= render "shared/table/body", collection: @work_files do |work_file| %>
+      <%= render "shared/table/body_cell", content: work_file.name %>
 
-          <%= render "shared/table/actions" do %>
-            <%= render "shared/table/actions/show", url: work_file %>
-            <%= render "shared/table/actions/edit", url: edit_work_file_path(work_file) %>
-            <%= render "shared/table/actions/destroy", url: work_file %>
-          <% end %>
-        <% end %>
+      <%= render "shared/table/actions" do %>
+        <%= render "shared/table/actions/show", url: work_file %>
+        <%= render "shared/table/actions/edit", url: edit_work_file_path(work_file) %>
+        <%= render "shared/table/actions/destroy", url: work_file %>
       <% end %>
     <% end %>
   <% end %>
