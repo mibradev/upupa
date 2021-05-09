@@ -8,33 +8,10 @@
 <% end %>
 
 <%= render "shared/description_list" do %>
-  <%= render "shared/description_list/row" do %>
-    <%= render "shared/description_list/term", content: "Word count" %>
-    <%= render "shared/description_list/description", content: @word_count_file.word_count.date %>
-  <% end %>
-
-  <%= render "shared/description_list/row" do %>
-    <%= render "shared/description_list/term", content: "Work file" %>
-    <%= render "shared/description_list/description", content: @word_count_file.work_file.name %>
-  <% end %>
-
-  <%= render "shared/description_list/row" do %>
-    <%= render "shared/description_list/term", content: "Actual word count" %>
-    <%= render "shared/description_list/description", content: @word_count_file.actual_word_count %>
-  <% end %>
-
-  <%= render "shared/description_list/row" do %>
-    <%= render "shared/description_list/term", content: "Work type" %>
-    <%= render "shared/description_list/description", content: @word_count_file.work_type.name %>
-  <% end %>
-
-  <%= render "shared/description_list/row" do %>
-    <%= render "shared/description_list/term", content: "Total" %>
-    <%= render "shared/description_list/description", content: number_with_precision(@word_count_file.total, precision: 2) %>
-  <% end %>
-
-  <%= render "shared/description_list/row" do %>
-    <%= render "shared/description_list/term", content: "Notes" %>
-    <%= render "shared/description_list/description", content: @word_count_file.notes %>
-  <% end %>
+  <%= render "shared/description_list/group", term: "Word count", description: @word_count_file.word_count.date %>
+  <%= render "shared/description_list/group", term: "Work file", description: @word_count_file.work_file.name %>
+  <%= render "shared/description_list/group", term: "Actual word count", description: @word_count_file.actual_word_count %>
+  <%= render "shared/description_list/group", term: "Work type", description: @word_count_file.work_type.name %>
+  <%= render "shared/description_list/group", term: "Total", description: number_with_precision(@word_count_file.total, precision: 2) %>
+  <%= render "shared/description_list/group", term: "Notes", description: @word_count_file.notes %>
 <% end %>

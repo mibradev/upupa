@@ -8,25 +8,10 @@
 <% end %>
 
 <%= render "shared/description_list" do %>
-  <%= render "shared/description_list/row" do %>
-    <%= render "shared/description_list/term", content: "Day" %>
-    <%= render "shared/description_list/description", content: @word_count.date.strftime("%A") %>
-  <% end %>
-
-  <%= render "shared/description_list/row" do %>
-    <%= render "shared/description_list/term", content: "Date" %>
-    <%= render "shared/description_list/description", content: @word_count.date %>
-  <% end %>
-
-  <%= render "shared/description_list/row" do %>
-    <%= render "shared/description_list/term", content: "Total" %>
-    <%= render "shared/description_list/description", content: number_with_precision(@word_count.word_count_files.sum(:total), precision: 2) %>
-  <% end %>
-
-  <%= render "shared/description_list/row" do %>
-    <%= render "shared/description_list/term", content: "Notes" %>
-    <%= render "shared/description_list/description", content: @word_count.notes %>
-  <% end %>
+  <%= render "shared/description_list/group", term: "Day", description: @word_count.date.strftime("%A") %>
+  <%= render "shared/description_list/group", term: "Date", description: @word_count.date %>
+  <%= render "shared/description_list/group", term: "Total", description: number_with_precision(@word_count.word_count_files.sum(:total), precision: 2) %>
+  <%= render "shared/description_list/group", term: "Notes", description: @word_count.notes %>
 <% end %>
 
 <%= render "shared/section" do %>

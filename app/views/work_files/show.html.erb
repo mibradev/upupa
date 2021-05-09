@@ -8,8 +8,5 @@
 <% end %>
 
 <%= render "shared/description_list" do %>
-  <%= render "shared/description_list/row" do %>
-    <%= render "shared/description_list/term", content: "Name" %>
-    <%= render "shared/description_list/description", content: @work_file.name %>
-  <% end %>
+  <%= render "shared/description_list/group", term: "Name", description: @work_file.name %>
 <% end %>
