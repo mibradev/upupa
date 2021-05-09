@@ -2,8 +2,8 @@
   <%= render "shared/header/heading2", content: "Editing Work File" %>
 
   <%= render "shared/header/actions" do %>
-    <%= render "shared/header/action", body: "Show", url: @work_file %>
-    <%= render "shared/header/action", body: "Back", url: work_files_path %>
+    <%= render "shared/header/actions/show", url: @work_file %>
+    <%= render "shared/header/actions/index", url: work_files_path %>
   <% end %>
 <% end %>
 

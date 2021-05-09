@@ -8,7 +8,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
 
   test "creating a Word count file" do
     visit word_count_url(@word_count_file.word_count_id)
-    within("section") { click_on "Add" }
+    within("section") { click_on "New" }
     fill_in "Actual word count", with: @word_count_file.actual_word_count
     fill_in "Notes", with: @word_count_file.notes
     select @word_count_file.work_file.name, from: "Work file"

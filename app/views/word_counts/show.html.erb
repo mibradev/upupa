@@ -2,8 +2,8 @@
   <%= render "shared/header/heading2", content: "Show Word Count" %>
 
   <%= render "shared/header/actions" do %>
-    <%= render "shared/header/action", body: "Edit", url: edit_word_count_path(@word_count) %>
-    <%= render "shared/header/action", body: "Back", url: word_counts_path %>
+    <%= render "shared/header/actions/edit", url: edit_word_count_path(@word_count) %>
+    <%= render "shared/header/actions/index", url: word_counts_path %>
   <% end %>
 <% end %>
 
@@ -34,7 +34,7 @@
     <%= render "shared/header/heading3", content: "Word count files" %>
 
     <%= render "shared/header/actions" do %>
-      <%= render "shared/header/action", body: "Add", url: new_word_count_word_count_file_path(@word_count) %>
+      <%= render "shared/header/actions/new", url: new_word_count_word_count_file_path(@word_count) %>
     <% end %>
   <% end %>
 
