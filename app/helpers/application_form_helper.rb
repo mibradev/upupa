@@ -35,7 +35,7 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
   end
 
   def collection_select(method, collection, value_method, text_method, options = {}, html_options = {})
-    html_options[:class] = "block py-2 px-3 w-full bg-white rounded border focus:border-0 focus:shadow focus:outline-none"
+    html_options[:class] = "block p-2 w-full bg-white rounded border focus:border-0 focus:shadow focus:outline-none"
     @template.tag.div(class: "space-y-2") { label(method) + super }
   end
 
