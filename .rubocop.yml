@@ -12,6 +12,9 @@ Bundler/GemComment:
 Bundler/GemVersion:
   Enabled: false
 
+Layout/EmptyLinesAroundArguments:
+  Enabled: false
+
 Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
 
@@ -27,6 +30,9 @@ Layout/LineLength:
 Layout/MultilineMethodArgumentLineBreaks:
   Enabled: false
 
+Layout/MultilineOperationIndentation:
+  Enabled: false
+
 Layout/RedundantLineBreak:
   Enabled: false
 
@@ -40,6 +46,9 @@ Metrics/AbcSize:
   Enabled: false
 
 Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ParameterLists:
   Enabled: false
 
 Rails/HasAndBelongsToMany:
@@ -76,6 +85,9 @@ Style/InlineComment:
   Enabled: false
 
 Style/MethodCallWithArgsParentheses:
+  Enabled: false
+
+Style/MethodCalledOnDoEndBlock:
   Enabled: false
 
 Style/MissingElse:

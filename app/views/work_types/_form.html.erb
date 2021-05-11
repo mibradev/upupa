@@ -1,4 +1,4 @@
-<%= render "application/form", model: work_type do |form| %>
-  <%= render "application/fields/text_field", form: form, method: :name %>
-  <%= render "application/fields/number_field", form: form, method: :multiplicand, options: { step: "any", min: 0 } %>
+<%= application_form_with(model: work_type) do |form| %>
+  <%= form.text_field :name %>
+  <%= form.number_field :multiplicand, step: "any", min: 0.0 %>
 <% end %>

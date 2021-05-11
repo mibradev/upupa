@@ -1,3 +1,3 @@
-<%= render "application/form", model: work_file do |form| %>
-  <%= render "application/fields/text_field", form: form, method: :name %>
+<%= application_form_with(model: work_file) do |form| %>
+  <%= form.text_field :name %>
 <% end %>

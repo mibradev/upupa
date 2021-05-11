@@ -1,4 +1,4 @@
-<%= render "application/form", model: word_count do |form| %>
-  <%= render "application/fields/date_field", form: form, method: :date %>
-  <%= render "application/fields/text_area", form: form, method: :notes %>
+<%= application_form_with(model: word_count) do |form| %>
+  <%= form.date_field :date %>
+  <%= form.text_area :notes %>
 <% end %>
