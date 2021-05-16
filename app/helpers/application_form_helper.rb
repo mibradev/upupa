@@ -6,7 +6,6 @@ module ApplicationFormHelper
       tag.div(class: "space-y-4 sm:p-8 sm:text-gray-600 sm:bg-orange-50 sm:rounded sm:shadow") do
         concat form.errors
         yield form
-        concat form.submit
       end
     end
   end
