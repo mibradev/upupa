@@ -24,6 +24,17 @@ module PageHelper
       end
     end
 
+    def form(model: nil, scope: nil, url: nil, format: nil, **options)
+      options[:builder] = Form::FormBuilder
+
+      @template.form_with(model: model, scope: scope, url: url, format: format, **options) do |form|
+        @template.tag.div(class: "space-y-4 sm:p-8 sm:text-gray-600 sm:bg-orange-50 sm:rounded sm:shadow") do
+          @template.concat form.errors
+          yield form
+        end
+      end
+    end
+
     def section
       @template.tag.section(class: "space-y-8") do
         yield Section.new(@template)

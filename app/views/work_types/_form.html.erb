@@ -1,4 +1,4 @@
-<%= application_form_with(model: work_type) do |form| %>
+<%= page.form(model: work_type) do |form| %>
   <%= form.text_field :name %>
   <%= form.number_field :multiplicand, step: "any", min: 0.0 %>
   <%= form.submit %>
