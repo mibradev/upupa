@@ -54,6 +54,9 @@ Metrics/ParameterLists:
 Rails/HasAndBelongsToMany:
   Enabled: false
 
+Rails/HelperInstanceVariable:
+  Enabled: false
+
 Rails/RakeEnvironment:
   Enabled: false
 

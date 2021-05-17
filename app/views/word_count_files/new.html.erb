@@ -1,8 +1,8 @@
-<%= render "application/header" do %>
-  <%= render "application/header/heading2", content: "New Word Count File" %>
+<%= page.header do |header| %>
+  <%= header.heading "New Word Count File" %>
 
-  <%= render "application/header/actions" do %>
-    <%= render "application/header/actions/index", url: @word_count %>
+  <%= header.actions do |action| %>
+    <%= action.index @word_count %>
   <% end %>
 <% end %>
 

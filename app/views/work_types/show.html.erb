@@ -1,9 +1,9 @@
-<%= render "application/header" do %>
-  <%= render "application/header/heading2", content: "Work Type" %>
+<%= page.header do |header| %>
+  <%= header.heading "Work Type" %>
 
-  <%= render "application/header/actions" do %>
-    <%= render "application/header/actions/edit", url: edit_work_type_path(@work_type) %>
-    <%= render "application/header/actions/index", url: work_types_path %>
+  <%= header.actions do |action| %>
+    <%= action.edit edit_work_type_path(@work_type) %>
+    <%= action.index work_types_path %>
   <% end %>
 <% end %>
 

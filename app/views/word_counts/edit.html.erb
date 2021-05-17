@@ -1,9 +1,9 @@
-<%= render "application/header" do %>
-  <%= render "application/header/heading2", content: "Editing Word Count" %>
+<%= page.header do |header| %>
+  <%= header.heading "Editing Word Count" %>
 
-  <%= render "application/header/actions" do %>
-    <%= render "application/header/actions/show", url: @word_count %>
-    <%= render "application/header/actions/index", url: word_counts_path %>
+  <%= header.actions do |action| %>
+    <%= action.show @word_count %>
+    <%= action.index word_counts_path %>
   <% end %>
 <% end %>
 

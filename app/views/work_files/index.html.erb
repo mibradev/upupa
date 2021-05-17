@@ -1,8 +1,8 @@
-<%= render "application/header" do %>
-  <%= render "application/header/heading2", content: "Work Files" %>
+<%= page.header do |header| %>
+  <%= header.heading "Work Files" %>
 
-  <%= render "application/header/actions" do %>
-    <%= render "application/header/actions/new", url: new_work_file_path %>
+  <%= header.actions do |action| %>
+    <%= action.new new_work_file_path %>
   <% end %>
 <% end %>
 
