@@ -1,5 +1,14 @@
 module PageHelper
   class Page < Base
+    def title(title)
+      title = "#{title} - #{I18n.t :app_name}" unless @template.current_page?(@template.root_path)
+      @template.content_for(:page_title, title)
+    end
+
+    def description(content)
+      @template.content_for(:page_description, content)
+    end
+
     def header
       @template.tag.header(class: "flex justify-between items-start") do
         yield Header.new(@template)
