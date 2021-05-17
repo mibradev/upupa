@@ -7,11 +7,11 @@
   <% end %>
 <% end %>
 
-<%= render "application/description_list" do %>
-  <%= render "application/description_list/group", term: "Day", description: @word_count.date.strftime("%A") %>
-  <%= render "application/description_list/group", term: "Date", description: @word_count.date %>
-  <%= render "application/description_list/group", term: "Total", description: number_with_precision(@word_count.word_count_files.sum(:total), precision: 2) %>
-  <%= render "application/description_list/group", term: "Notes", description: @word_count.notes %>
+<%= page.description_list do |description_list| %>
+  <%= description_list.group "Day", @word_count.date.strftime("%A") %>
+  <%= description_list.group "Date", @word_count.date %>
+  <%= description_list.group "Total", number_with_precision(@word_count.word_count_files.sum(:total), precision: 2) %>
+  <%= description_list.group "Notes", @word_count.notes %>
 <% end %>
 
 <%= page.section do |section| %>

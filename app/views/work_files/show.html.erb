@@ -7,6 +7,6 @@
   <% end %>
 <% end %>
 
-<%= render "application/description_list" do %>
-  <%= render "application/description_list/group", term: "Name", description: @work_file.name %>
+<%= page.description_list do |description_list| %>
+  <%= description_list.group "Name", @work_file.name %>
 <% end %>

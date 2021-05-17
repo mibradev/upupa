@@ -7,11 +7,11 @@
   <% end %>
 <% end %>
 
-<%= render "application/description_list" do %>
-  <%= render "application/description_list/group", term: "Word count", description: @word_count_file.word_count.date %>
-  <%= render "application/description_list/group", term: "Work file", description: @word_count_file.work_file.name %>
-  <%= render "application/description_list/group", term: "Actual word count", description: @word_count_file.actual_word_count %>
-  <%= render "application/description_list/group", term: "Work type", description: @word_count_file.work_type.name %>
-  <%= render "application/description_list/group", term: "Total", description: number_with_precision(@word_count_file.total, precision: 2) %>
-  <%= render "application/description_list/group", term: "Notes", description: @word_count_file.notes %>
+<%= page.description_list do |description_list| %>
+  <%= description_list.group "Word count", @word_count_file.word_count.date %>
+  <%= description_list.group "Work file", @word_count_file.work_file.name %>
+  <%= description_list.group "Actual word count", @word_count_file.actual_word_count %>
+  <%= description_list.group "Work type", @word_count_file.work_type.name %>
+  <%= description_list.group "Total", number_with_precision(@word_count_file.total, precision: 2) %>
+  <%= description_list.group "Notes", @word_count_file.notes %>
 <% end %>
