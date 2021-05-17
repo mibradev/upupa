@@ -14,12 +14,12 @@
   <%= render "application/description_list/group", term: "Notes", description: @word_count.notes %>
 <% end %>
 
-<%= render "application/section" do %>
-  <%= render "application/header" do %>
-    <%= render "application/header/heading3", content: "Word count files" %>
+<%= page.section do |section| %>
+  <%= section.header do |header| %>
+    <%= header.heading "Word count files" %>
 
-    <%= render "application/header/actions" do %>
-      <%= render "application/header/actions/new", url: new_word_count_word_count_file_path(@word_count) %>
+    <%= header.actions do |action| %>
+      <%= action.new new_word_count_word_count_file_path(@word_count) %>
     <% end %>
   <% end %>
 
