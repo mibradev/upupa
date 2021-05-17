@@ -1,9 +1,9 @@
 <%= page.header do |header| %>
   <%= header.heading "Editing Work Type" %>
 
-  <%= header.actions do |action| %>
-    <%= action.show @work_type %>
-    <%= action.index work_types_path %>
+  <%= header.actions do |actions| %>
+    <%= actions.show @work_type %>
+    <%= actions.index work_types_path %>
   <% end %>
 <% end %>
 

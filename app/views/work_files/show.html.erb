@@ -1,9 +1,9 @@
 <%= page.header do |header| %>
   <%= header.heading "Work File" %>
 
-  <%= header.actions do |action| %>
-    <%= action.edit edit_work_file_path(@work_file) %>
-    <%= action.index work_files_path %>
+  <%= header.actions do |actions| %>
+    <%= actions.edit edit_work_file_path(@work_file) %>
+    <%= actions.index work_files_path %>
   <% end %>
 <% end %>
 
