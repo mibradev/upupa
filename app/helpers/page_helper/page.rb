@@ -1,8 +1,7 @@
 module PageHelper
   class Page < Base
-    def title(title)
-      title = "#{title} - #{I18n.t :app_name}" unless @template.current_page?(@template.root_path)
-      @template.content_for(:page_title, title)
+    def title(content)
+      @template.content_for(:page_title, content)
     end
 
     def description(content)

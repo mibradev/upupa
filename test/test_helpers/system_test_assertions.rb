@@ -2,7 +2,6 @@ class ActionDispatch::SystemTestCase
   include Devise::Test::IntegrationHelpers
 
   def assert_page_title(title)
-    title = "#{title} - #{I18n.t :app_name}" unless current_path == root_path
     assert page.has_title?(title)
   end
 

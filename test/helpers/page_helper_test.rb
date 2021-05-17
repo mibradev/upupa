@@ -3,12 +3,6 @@ require "test_helper"
 class PageHelperTest < ActionView::TestCase
   test "page title" do
     view.page.title "Page Title"
-    assert_equal "Page Title - #{I18n.t :app_name}", view.content_for(:page_title)
-  end
-
-  test "page title in home page" do
-    view.request.path = root_path
-    view.page.title "Page Title"
     assert_equal "Page Title", view.content_for(:page_title)
   end
 
