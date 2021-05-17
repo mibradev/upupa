@@ -7,21 +7,21 @@
 <% end %>
 
 <% unless @work_types.empty? %>
-  <%= render "application/table" do %>
-    <%= render "application/table/head" do %>
-      <%= render "application/table/head_cell", content: "Name" %>
-      <%= render "application/table/head_cell", content: "Multiplicand" %>
-      <%= render "application/table/head_cell", content: "" %>
+  <%= page.table do |table| %>
+    <%= table.head do |head| %>
+      <%= head.cell "Name" %>
+      <%= head.cell "Multiplicand" %>
+      <%= head.cell %>
     <% end %>
 
-    <%= render "application/table/body", collection: @work_types do |work_type| %>
-      <%= render "application/table/body_cell", content: work_type.name %>
-      <%= render "application/table/body_cell", content: work_type.multiplicand %>
+    <%= table.body(@work_types) do |work_type| %>
+      <%= table.cell work_type.name %>
+      <%= table.cell work_type.multiplicand %>
 
-      <%= render "application/table/actions" do %>
-        <%= render "application/table/actions/show", url: work_type %>
-        <%= render "application/table/actions/edit", url: edit_work_type_path(work_type) %>
-        <%= render "application/table/actions/destroy", url: work_type %>
+      <%= table.actions do |actions| %>
+        <%= actions.show work_type %>
+        <%= actions.edit edit_work_type_path(work_type) %>
+        <%= actions.destroy work_type %>
       <% end %>
     <% end %>
   <% end %>

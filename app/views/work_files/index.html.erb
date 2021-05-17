@@ -7,19 +7,19 @@
 <% end %>
 
 <% unless @work_files.empty? %>
-  <%= render "application/table" do %>
-    <%= render "application/table/head" do %>
-      <%= render "application/table/head_cell", content: "Name" %>
-      <%= render "application/table/head_cell", content: "" %>
+  <%= page.table do |table| %>
+    <%= table.head do |head| %>
+      <%= head.cell "Name" %>
+      <%= head.cell %>
     <% end %>
 
-    <%= render "application/table/body", collection: @work_files do |work_file| %>
-      <%= render "application/table/body_cell", content: work_file.name %>
+    <%= table.body(@work_files) do |work_file| %>
+      <%= table.cell work_file.name %>
 
-      <%= render "application/table/actions" do %>
-        <%= render "application/table/actions/show", url: work_file %>
-        <%= render "application/table/actions/edit", url: edit_work_file_path(work_file) %>
-        <%= render "application/table/actions/destroy", url: work_file %>
+      <%= table.actions do |actions| %>
+        <%= actions.show work_file %>
+        <%= actions.edit edit_work_file_path(work_file) %>
+        <%= actions.destroy work_file %>
       <% end %>
     <% end %>
   <% end %>

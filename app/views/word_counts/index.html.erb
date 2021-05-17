@@ -7,23 +7,23 @@
 <% end %>
 
 <% unless @word_counts.empty? %>
-  <%= render "application/table" do %>
-    <%= render "application/table/head" do %>
-      <%= render "application/table/head_cell", content: "Day" %>
-      <%= render "application/table/head_cell", content: "Date" %>
-      <%= render "application/table/head_cell", content: "Notes" %>
-      <%= render "application/table/head_cell", content: "" %>
+  <%= page.table do |table| %>
+    <%= table.head do |head| %>
+      <%= head.cell "Day" %>
+      <%= head.cell "Date" %>
+      <%= head.cell "Notes" %>
+      <%= head.cell %>
     <% end %>
 
-    <%= render "application/table/body", collection: @word_counts do |word_count| %>
-      <%= render "application/table/body_cell", content: word_count.date.strftime("%A") %>
-      <%= render "application/table/body_cell", content: word_count.date %>
-      <%= render "application/table/body_cell", content: truncate(word_count.notes) %>
+    <%= table.body(@word_counts) do |word_count| %>
+      <%= table.cell word_count.date.strftime("%A") %>
+      <%= table.cell word_count.date %>
+      <%= table.cell truncate(word_count.notes) %>
 
-      <%= render "application/table/actions" do %>
-        <%= render "application/table/actions/show", url: word_count %>
-        <%= render "application/table/actions/edit", url: edit_word_count_path(word_count) %>
-        <%= render "application/table/actions/destroy", url: word_count %>
+      <%= table.actions do |actions| %>
+        <%= actions.show word_count %>
+        <%= actions.edit edit_word_count_path(word_count) %>
+        <%= actions.destroy word_count %>
       <% end %>
     <% end %>
   <% end %>

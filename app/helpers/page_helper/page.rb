@@ -6,6 +6,14 @@ module PageHelper
       end
     end
 
+    def table
+      @template.tag.div(class: "overflow-x-auto rounded shadow") do
+        @template.tag.table(class: "w-full whitespace-nowrap") do
+          yield Table.new(@template)
+        end
+      end
+    end
+
     def description_list
       @template.tag.dl(class: "text-gray-600 bg-orange-50 rounded divide-y divide-gray-300 shadow") do
         yield DescriptionList.new(@template)

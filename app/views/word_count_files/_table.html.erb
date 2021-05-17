@@ -1,24 +1,24 @@
-<%= render "application/table" do %>
-  <%= render "application/table/head" do %>
-    <%= render "application/table/head_cell", content: "Work file" %>
-    <%= render "application/table/head_cell", content: "Actual word count" %>
-    <%= render "application/table/head_cell", content: "Work type" %>
-    <%= render "application/table/head_cell", content: "Total" %>
-    <%= render "application/table/head_cell", content: "Notes" %>
-    <%= render "application/table/head_cell", content: "" %>
+<%= page.table do |table| %>
+  <%= table.head do |head| %>
+    <%= head.cell "Work file" %>
+    <%= head.cell "Actual word count" %>
+    <%= head.cell "Work type" %>
+    <%= head.cell "Total" %>
+    <%= head.cell "Notes" %>
+    <%= head.cell %>
   <% end %>
 
-  <%= render "application/table/body", collection: word_count_files do |word_count_file| %>
-    <%= render "application/table/body_cell", content: word_count_file.work_file.name %>
-    <%= render "application/table/body_cell", content: word_count_file.actual_word_count %>
-    <%= render "application/table/body_cell", content: word_count_file.work_type.name %>
-    <%= render "application/table/body_cell", content: number_with_precision(word_count_file.total, precision: 2) %>
-    <%= render "application/table/body_cell", content: truncate(word_count_file.notes) %>
+  <%= table.body(word_count_files) do |word_count_file| %>
+    <%= table.cell word_count_file.work_file.name %>
+    <%= table.cell word_count_file.actual_word_count %>
+    <%= table.cell word_count_file.work_type.name %>
+    <%= table.cell number_with_precision(word_count_file.total, precision: 2) %>
+    <%= table.cell truncate(word_count_file.notes) %>
 
-    <%= render "application/table/actions" do %>
-      <%= render "application/table/actions/show", url: [word_count_file.word_count, word_count_file] %>
-      <%= render "application/table/actions/edit", url: edit_word_count_word_count_file_path(word_count_file.word_count, word_count_file) %>
-      <%= render "application/table/actions/destroy", url: [word_count_file.word_count, word_count_file] %>
+    <%= table.actions do |actions| %>
+      <%= actions.show [word_count_file.word_count, word_count_file] %>
+      <%= actions.edit edit_word_count_word_count_file_path(word_count_file.word_count, word_count_file) %>
+      <%= actions.destroy [word_count_file.word_count, word_count_file] %>
     <% end %>
   <% end %>
 <% end %>
