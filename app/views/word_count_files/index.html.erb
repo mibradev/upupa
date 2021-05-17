@@ -9,5 +9,5 @@
 <% unless @word_count_files.empty? %>
   <%= render "table", word_count_files: @word_count_files %>
 <% else %>
-  <%= render "application/empty_collection" %>
+  <%= page.empty_collection %>
 <% end %>

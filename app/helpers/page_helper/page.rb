@@ -14,6 +14,10 @@ module PageHelper
       end
     end
 
+    def empty_collection
+      @template.tag.div "No records found.", class: "py-32 px-8 text-center text-orange-100 bg-gray-600"
+    end
+
     def description_list
       @template.tag.dl(class: "text-gray-600 bg-orange-50 rounded divide-y divide-gray-300 shadow") do
         yield DescriptionList.new(@template)
