@@ -1,5 +1,5 @@
 module PageHelper
   def page
-    Page.new(self)
+    @page ||= Page.new(self)
   end
 end
