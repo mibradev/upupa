@@ -1,4 +1,5 @@
 <%= page.form(model: [word_count_file.word_count, word_count_file]) do |form| %>
+  <%= form.errors %>
   <%= form.text_field :word_count_id, disabled: true, value: word_count_file.word_count.date %>
   <%= form.collection_select :work_file_id, WorkFile.all, :id, :name, include_blank: true %>
   <%= form.number_field :actual_word_count %>

@@ -1,4 +1,5 @@
 <%= page.form(model: word_count) do |form| %>
+  <%= form.errors %>
   <%= form.date_field :date %>
   <%= form.text_area :notes %>
   <%= form.submit %>

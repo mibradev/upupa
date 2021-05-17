@@ -1,25 +1,39 @@
 module PageHelper
   class Section < Base
-    def header
-      @template.tag.header(class: "flex justify-between items-start") do
-        yield Header.new(@template)
+    def render(&block)
+      @template.tag.section(class: "space-y-8") do
+        @template.capture(self, &block)
       end
     end
 
-    class Header < Base
-      def heading(content)
-        @template.tag.h3 content, class: "text-xl font-bold"
-      end
+    def header(&block)
+      Header.new(@template).render(&block)
+    end
 
-      def actions
-        @template.tag.div(class: "flex text-sm font-medium text-orange-100 bg-gray-600 rounded") do
-          yield Actions.new(@template)
+    class Header < Base
+      def render(&block)
+        @template.tag.header(class: "flex justify-between items-start") do
+          @template.capture(self, &block)
         end
       end
 
+      def heading(content)
+        @template.tag.h3(content, class: "text-xl font-bold")
+      end
+
+      def actions(&block)
+        Actions.new(@template).render(&block)
+      end
+
       class Actions < Base
+        def render(&block)
+          @template.tag.div(class: "flex text-sm font-medium text-orange-100 bg-gray-600 rounded") do
+            @template.capture(self, &block)
+          end
+        end
+
         def new(url)
-          @template.link_to "New", url, class: "py-2 px-4 hover:bg-gray-700 rounded"
+          @template.link_to("New", url, class: "py-2 px-4 hover:bg-gray-700 rounded")
         end
       end
     end

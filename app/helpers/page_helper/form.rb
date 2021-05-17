@@ -1,5 +1,15 @@
 module PageHelper
-  module Form
+  class Form < Base
+    def render(model: nil, scope: nil, url: nil, format: nil, **options, &block)
+      options[:builder] = FormBuilder
+
+      @template.form_with(model: model, scope: scope, url: url, format: format, **options) do |form|
+        @template.tag.div(class: "space-y-4 sm:p-8 sm:text-gray-600 sm:bg-orange-50 sm:rounded sm:shadow") do
+          @template.capture(form, &block)
+        end
+      end
+    end
+
     class FormBuilder < ActionView::Helpers::FormBuilder
       def errors
         return unless object&.errors&.any?
