@@ -11,7 +11,7 @@ gem "pg", "~> 1.2.0"
 gem "puma", "~> 5.3.0"
 gem "sass-rails", "~> 6.0.0"
 gem "turbolinks", "~> 5.2.0"
-gem "webpacker", "~> 5.3.0"
+gem "webpacker", "~> 5.4.0"
 
 gem "devise", "~> 4.8.0"
 gem "pundit", "~> 2.1.0"
