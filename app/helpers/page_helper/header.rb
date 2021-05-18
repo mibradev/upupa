@@ -11,7 +11,8 @@ module PageHelper
     end
 
     def actions(&block)
-      Actions.new(@template).render(&block)
+      @actions ||= Actions.new(@template)
+      @actions.render(&block)
     end
 
     class Actions < Base

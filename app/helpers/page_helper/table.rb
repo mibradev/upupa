@@ -9,7 +9,8 @@ module PageHelper
     end
 
     def head(&block)
-      Head.new(@template).render(&block)
+      @head ||= Head.new(@template)
+      @head.render(&block)
     end
 
     def body(collection, &block)
@@ -25,7 +26,8 @@ module PageHelper
     end
 
     def actions(&block)
-      Actions.new(@template).render(&block)
+      @actions ||= Actions.new(@template)
+      @actions.render(&block)
     end
 
     class Head < Base

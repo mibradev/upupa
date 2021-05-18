@@ -7,7 +7,8 @@ module PageHelper
     end
 
     def header(&block)
-      Header.new(@template).render(&block)
+      @header ||= Header.new(@template)
+      @header.render(&block)
     end
 
     class Header < Base
@@ -22,7 +23,8 @@ module PageHelper
       end
 
       def actions(&block)
-        Actions.new(@template).render(&block)
+        @actions ||= Actions.new(@template)
+        @actions.render(&block)
       end
 
       class Actions < Base

@@ -9,27 +9,33 @@ module PageHelper
     end
 
     def header(&block)
-      Header.new(@template).render(&block)
+      @header ||= Header.new(@template)
+      @header.render(&block)
     end
 
     def table(&block)
-      Table.new(@template).render(&block)
+      @table ||= Table.new(@template)
+      @table.render(&block)
     end
 
     def empty_collection
-      EmptyCollection.new(@template).render
+      @empty_collection ||= EmptyCollection.new(@template)
+      @empty_collection.render
     end
 
     def description_list(&block)
-      DescriptionList.new(@template).render(&block)
+      @description_list ||= DescriptionList.new(@template)
+      @description_list.render(&block)
     end
 
     def form(model: nil, scope: nil, url: nil, format: nil, **options, &block)
-      Form.new(@template).render(model: model, scope: scope, url: url, format: format, **options, &block)
+      @form ||= Form.new(@template)
+      @form.render(model: model, scope: scope, url: url, format: format, **options, &block)
     end
 
     def section(&block)
-      Section.new(@template).render(&block)
+      @section ||= Section.new(@template)
+      @section.render(&block)
     end
   end
 end
