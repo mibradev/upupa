@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<%= yield :page_description %>">
+    <meta name="description" content="<%= page.description %>">
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <title><%= yield :page_title %></title>
+    <title><%= page.title %></title>
 
     <%= stylesheet_pack_tag "application", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
