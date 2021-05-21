@@ -8,11 +8,6 @@ module PageHelper
       @actions ||= Actions.new
     end
 
-    def header(&block)
-      @header ||= Header.new(@template)
-      @header.render(&block)
-    end
-
     def table(&block)
       @table ||= Table.new(@template)
       @table.render(&block)
