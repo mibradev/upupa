@@ -1,10 +1,5 @@
-<%= page.header do |header| %>
-  <%= header.heading "Editing Word Count File" %>
-
-  <%= header.actions do |actions| %>
-    <%= actions.show [@word_count, @word_count_file] %>
-    <%= actions.index @word_count %>
-  <% end %>
-<% end %>
+<% page.heading = "Editing Word Count File" %>
+<% page.actions.index = @word_count %>
+<% page.actions.show = [@word_count, @word_count_file] %>
 
 <%= render "form", word_count_file: @word_count_file %>

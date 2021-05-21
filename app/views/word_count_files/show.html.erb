@@ -1,11 +1,6 @@
-<%= page.header do |header| %>
-  <%= header.heading "Word Count File" %>
-
-  <%= header.actions do |actions| %>
-    <%= actions.edit edit_word_count_word_count_file_path(@word_count, @word_count_file) %>
-    <%= actions.index @word_count %>
-  <% end %>
-<% end %>
+<% page.heading = "Word Count File" %>
+<% page.actions.index = @word_count %>
+<% page.actions.edit = edit_word_count_word_count_file_path(@word_count, @word_count_file) %>
 
 <%= page.description_list do |description_list| %>
   <%= description_list.group "Word count", @word_count_file.word_count.date %>

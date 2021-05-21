@@ -1,0 +1,13 @@
+<header class="flex justify-between items-start">
+  <h2 class="text-2xl font-bold"><%= page.heading %></h2>
+
+  <% unless page.actions.empty? %>
+    <div class="flex text-sm font-medium text-orange-100 bg-gray-600 rounded">
+      <%= link_to("Show", page.actions.show, class: "py-2 px-4 hover:bg-gray-700 rounded") if page.actions.show %>
+      <%= link_to("New", page.actions.new, class: "py-2 px-4 hover:bg-gray-700 rounded") if page.actions.new %>
+      <%= link_to("Edit", page.actions.edit, class: "py-2 px-4 hover:bg-gray-700 rounded") if page.actions.edit %>
+      <%= link_to("Destroy", page.actions.destroy, method: :delete, data: { confirm: "Are you sure?" }, class: "py-2 px-4 hover:bg-gray-700 rounded") if page.actions.destroy %>
+      <%= link_to("Back", page.actions.index, class: "py-2 px-4 hover:bg-gray-700 rounded") if page.actions.index %>
+    </div>
+  <% end %>
+</header>

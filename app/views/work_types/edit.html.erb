@@ -1,10 +1,5 @@
-<%= page.header do |header| %>
-  <%= header.heading "Editing Work Type" %>
-
-  <%= header.actions do |actions| %>
-    <%= actions.show @work_type %>
-    <%= actions.index work_types_path %>
-  <% end %>
-<% end %>
+<% page.heading = "Editing Work Type" %>
+<% page.actions.index = work_types_path %>
+<% page.actions.show = @work_type %>
 
 <%= render "form", work_type: @work_type %>

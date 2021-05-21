@@ -1,11 +1,17 @@
 module PageHelper
   class Page < Base
+    attr_accessor :heading
+
     def title(content)
       @template.content_for(:page_title, content)
     end
 
     def description(content)
       @template.content_for(:page_description, content)
+    end
+
+    def actions
+      @actions ||= Actions.new
     end
 
     def header(&block)

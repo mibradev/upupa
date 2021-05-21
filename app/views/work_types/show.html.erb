@@ -1,11 +1,6 @@
-<%= page.header do |header| %>
-  <%= header.heading "Work Type" %>
-
-  <%= header.actions do |actions| %>
-    <%= actions.edit edit_work_type_path(@work_type) %>
-    <%= actions.index work_types_path %>
-  <% end %>
-<% end %>
+<% page.heading = "Work Type" %>
+<% page.actions.index = work_types_path %>
+<% page.actions.edit = edit_work_type_path(@work_type) %>
 
 <%= page.description_list do |description_list| %>
   <%= description_list.group "Name", @work_type.name %>

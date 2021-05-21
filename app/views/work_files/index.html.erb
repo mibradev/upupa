@@ -1,10 +1,5 @@
-<%= page.header do |header| %>
-  <%= header.heading "Work Files" %>
-
-  <%= header.actions do |actions| %>
-    <%= actions.new new_work_file_path %>
-  <% end %>
-<% end %>
+<% page.heading = "Work Files" %>
+<% page.actions.new = new_work_file_path %>
 
 <% unless @work_files.empty? %>
   <%= page.table do |table| %>

@@ -63,6 +63,9 @@ Rails/RakeEnvironment:
 Rails/SaveBang:
   Enabled: false
 
+Style/AccessorGrouping:
+  EnforcedStyle: separated
+
 Style/ClassAndModuleChildren:
   Enabled: false
 

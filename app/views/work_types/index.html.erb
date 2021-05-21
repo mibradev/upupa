@@ -1,10 +1,5 @@
-<%= page.header do |header| %>
-  <%= header.heading "Work Types" %>
-
-  <%= header.actions do |actions| %>
-    <%= actions.new new_work_type_path %>
-  <% end %>
-<% end %>
+<% page.heading = "Work Types" %>
+<% page.actions.new = new_work_type_path %>
 
 <% unless @work_types.empty? %>
   <%= page.table do |table| %>
