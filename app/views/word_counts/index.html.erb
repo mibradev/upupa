@@ -1,5 +1,4 @@
 <% page.index(@word_counts) do |page| %>
-  <% page.heading = "Word Counts" %>
   <% page.actions.new = new_word_count_path %>
 
   <% unless @word_counts.empty? %>

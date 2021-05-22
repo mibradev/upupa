@@ -4,19 +4,23 @@ module PageHelper
     attr_accessor :description
     attr_accessor :heading
 
-    def index(_collection)
+    def index(collection)
+      self.heading = collection.model_name.human.titleize.pluralize
       yield self
     end
 
-    def show(_object)
+    def show(object)
+      self.heading = object.model_name.human.titleize
       yield self
     end
 
-    def new(_object)
+    def new(object)
+      self.heading = "New #{object.model_name.human.titleize}"
       yield self
     end
 
-    def edit(_object)
+    def edit(object)
+      self.heading = "Editing #{object.model_name.human.titleize}"
       yield self
     end
 
