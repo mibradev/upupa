@@ -1,4 +1,4 @@
-<% page.show(@word_count) do |page| %>
+<% page.show(@word_count) do %>
   <%= page.description_list do |description_list| %>
     <%= description_list.group "Day", @word_count.date.strftime("%A") %>
     <%= description_list.group "Date", @word_count.date %>

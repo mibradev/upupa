@@ -1,4 +1,4 @@
-<% page.show(@work_type) do |page| %>
+<% page.show(@work_type) do %>
   <%= page.description_list do |description_list| %>
     <%= description_list.group "Name", @work_type.name %>
     <%= description_list.group "Multiplicand", @work_type.multiplicand %>

@@ -14,7 +14,7 @@ module PageHelper
         actions.index = collection.second_to_last
       end
 
-      yield self
+      yield
     end
 
     def show(object)
@@ -28,7 +28,7 @@ module PageHelper
         actions.index = object.second_to_last
       end
 
-      yield self
+      yield
     end
 
     def new(object)
@@ -40,7 +40,7 @@ module PageHelper
         actions.index = object.second_to_last
       end
 
-      yield self
+      yield
     end
 
     def edit(object)
@@ -54,7 +54,7 @@ module PageHelper
         actions.index = object.second_to_last
       end
 
-      yield self
+      yield
     end
 
     def actions

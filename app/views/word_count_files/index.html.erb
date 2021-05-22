@@ -1,4 +1,4 @@
-<% page.index([@word_count, @word_count_files]) do |page| %>
+<% page.index([@word_count, @word_count_files]) do %>
   <% unless @word_count_files.empty? %>
     <%= render "table", word_count_files: @word_count_files %>
   <% else %>

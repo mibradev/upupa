@@ -1,4 +1,4 @@
-<% page.show([@word_count, @word_count_file]) do |page| %>
+<% page.show([@word_count, @word_count_file]) do %>
   <%= page.description_list do |description_list| %>
     <%= description_list.group "Word count", @word_count_file.word_count.date %>
     <%= description_list.group "Work file", @word_count_file.work_file.name %>
