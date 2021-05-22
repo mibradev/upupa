@@ -75,6 +75,9 @@ Style/Copyright:
 Style/Documentation:
   Enabled: false
 
+Style/ConditionalAssignment:
+  Enabled: false
+
 Style/DocumentationMethod:
   Enabled: false
 
