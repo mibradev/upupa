@@ -2,6 +2,16 @@
   <%= link_to I18n.t(:app_name), root_path %>
 </h1>
 
+<% unless page.actions.empty? %>
+  <div class="py-4 text-sm font-medium">
+    <% page.actions.each do |action| %>
+      <%= link_to action[:body], action[:url], action[:html_options].merge!(class: "block py-2 px-8 hover:bg-gray-600") %>
+    <% end %>
+  </div>
+
+  <hr class="mx-8 border-gray-500">
+<% end %>
+
 <nav class="py-4 text-sm font-medium">
   <%= link_to "Word Counts", word_counts_path, class: "block py-4 px-8 hover:bg-gray-600" %>
   <%= link_to "Work Files", work_files_path, class: "block py-4 px-8 hover:bg-gray-600" %>

@@ -1,11 +1,3 @@
-<header class="flex flex-col items-center space-y-4 sm:flex-row sm:justify-between sm:items-start sm:space-y-0">
+<header>
   <h2 class="text-2xl font-bold"><%= page.heading %></h2>
-
-  <% unless page.actions.empty? %>
-    <div class="flex text-sm font-medium text-orange-100 bg-gray-600 rounded">
-      <% page.actions.each do |action| %>
-        <%= link_to action[:body], action[:url], action[:html_options].merge!(class: "py-2 px-4 hover:bg-gray-700 rounded") %>
-      <% end %>
-    </div>
-  <% end %>
 </header>
