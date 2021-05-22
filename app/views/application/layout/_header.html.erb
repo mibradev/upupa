@@ -3,11 +3,9 @@
 
   <% unless page.actions.empty? %>
     <div class="flex text-sm font-medium text-orange-100 bg-gray-600 rounded">
-      <%= link_to("Show", page.actions.show, class: "py-2 px-4 hover:bg-gray-700 rounded") if page.actions.show %>
-      <%= link_to("New", page.actions.new, class: "py-2 px-4 hover:bg-gray-700 rounded") if page.actions.new %>
-      <%= link_to("Edit", page.actions.edit, class: "py-2 px-4 hover:bg-gray-700 rounded") if page.actions.edit %>
-      <%= link_to("Destroy", page.actions.destroy, method: :delete, data: { confirm: "Are you sure?" }, class: "py-2 px-4 hover:bg-gray-700 rounded") if page.actions.destroy %>
-      <%= link_to("Back", page.actions.index, class: "py-2 px-4 hover:bg-gray-700 rounded") if page.actions.index %>
+      <% page.actions.each do |action| %>
+        <%= link_to action[:body], action[:url], action[:html_options].merge!(class: "py-2 px-4 hover:bg-gray-700 rounded") %>
+      <% end %>
     </div>
   <% end %>
 </header>

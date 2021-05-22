@@ -1,40 +1,23 @@
 module PageHelper
-  class Actions
-    attr_reader :index
-    attr_reader :show
-    attr_reader :new
-    attr_reader :edit
-    attr_reader :destroy
-
-    delegate :empty?, to: :@urls
-
-    def initialize
-      @urls = []
-    end
-
+  class Actions < Array
     def index=(url)
-      @urls.push(url)
-      @index = url
+      push({ body: "Back", url: url, html_options: {} })
     end
 
     def show=(url)
-      @urls.push(url)
-      @show = url
+      push({ body: "Show", url: url, html_options: {} })
     end
 
     def new=(url)
-      @urls.push(url)
-      @new = url
+      push({ body: "New", url: url, html_options: {} })
     end
 
     def edit=(url)
-      @urls.push(url)
-      @edit = url
+      push({ body: "Edit", url: url, html_options: {} })
     end
 
     def destroy=(url)
-      @urls.push(url)
-      @destroy = url
+      push({ body: "Destroy", url: url, html_options: { method: :delete, data: { confirm: "Are you sure?" } } })
     end
   end
 end
