@@ -1,12 +1,14 @@
-<% page.heading = "Word Count File" %>
-<% page.actions.index = @word_count %>
-<% page.actions.edit = edit_word_count_word_count_file_path(@word_count, @word_count_file) %>
+<% page.show(@word_count_file) do |page| %>
+  <% page.heading = "Word Count File" %>
+  <% page.actions.index = @word_count %>
+  <% page.actions.edit = edit_word_count_word_count_file_path(@word_count, @word_count_file) %>
 
-<%= page.description_list do |description_list| %>
-  <%= description_list.group "Word count", @word_count_file.word_count.date %>
-  <%= description_list.group "Work file", @word_count_file.work_file.name %>
-  <%= description_list.group "Actual word count", @word_count_file.actual_word_count %>
-  <%= description_list.group "Work type", @word_count_file.work_type.name %>
-  <%= description_list.group "Total", number_with_precision(@word_count_file.total, precision: 2) %>
-  <%= description_list.group "Notes", @word_count_file.notes %>
+  <%= page.description_list do |description_list| %>
+    <%= description_list.group "Word count", @word_count_file.word_count.date %>
+    <%= description_list.group "Work file", @word_count_file.work_file.name %>
+    <%= description_list.group "Actual word count", @word_count_file.actual_word_count %>
+    <%= description_list.group "Work type", @word_count_file.work_type.name %>
+    <%= description_list.group "Total", number_with_precision(@word_count_file.total, precision: 2) %>
+    <%= description_list.group "Notes", @word_count_file.notes %>
+  <% end %>
 <% end %>

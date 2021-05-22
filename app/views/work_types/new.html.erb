@@ -1,4 +1,6 @@
-<% page.heading = "New Work Type" %>
-<% page.actions.index = work_types_path %>
+<% page.new(@work_type) do |page| %>
+  <% page.heading = "New Work Type" %>
+  <% page.actions.index = work_types_path %>
 
-<%= render "form", work_type: @work_type %>
+  <%= render "form", work_type: @work_type %>
+<% end %>

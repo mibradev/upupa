@@ -1,8 +1,10 @@
-<% page.heading = "Word Count Files" %>
-<% page.actions.new = new_word_count_word_count_file_path %>
+<% page.index(@word_count_files) do |page| %>
+  <% page.heading = "Word Count Files" %>
+  <% page.actions.new = new_word_count_word_count_file_path %>
 
-<% unless @word_count_files.empty? %>
-  <%= render "table", word_count_files: @word_count_files %>
-<% else %>
-  <%= page.empty_collection %>
+  <% unless @word_count_files.empty? %>
+    <%= render "table", word_count_files: @word_count_files %>
+  <% else %>
+    <%= page.empty_collection %>
+  <% end %>
 <% end %>

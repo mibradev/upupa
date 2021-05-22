@@ -4,6 +4,22 @@ module PageHelper
     attr_accessor :description
     attr_accessor :heading
 
+    def index(_collection)
+      yield self
+    end
+
+    def show(_object)
+      yield self
+    end
+
+    def new(_object)
+      yield self
+    end
+
+    def edit(_object)
+      yield self
+    end
+
     def actions
       @actions ||= Actions.new
     end

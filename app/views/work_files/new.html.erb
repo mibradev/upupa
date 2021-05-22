@@ -1,4 +1,6 @@
-<% page.heading = "New Work File" %>
-<% page.actions.index = work_files_path %>
+<% page.new(@work_file) do |page| %>
+  <% page.heading = "New Work File" %>
+  <% page.actions.index = work_files_path %>
 
-<%= render "form", work_file: @work_file %>
+  <%= render "form", work_file: @work_file %>
+<% end %>
