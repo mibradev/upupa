@@ -2,50 +2,33 @@ module PageHelper
   class Page < Base
     attr_accessor :title
     attr_accessor :description
-    attr_accessor :heading
 
     def index(collection)
-      unless collection.is_a?(Array)
-        self.heading = collection.model_name.human.titleize.pluralize
-      else
-        self.heading = collection.last.model_name.human.titleize.pluralize
-      end
-
+      heading.for_index(collection)
       actions.for_index(collection)
       yield
     end
 
     def show(object)
-      unless object.is_a?(Array)
-        self.heading = object.model_name.human.titleize
-      else
-        self.heading = object.last.model_name.human.titleize
-      end
-
+      heading.for_show(object)
       actions.for_show(object)
       yield
     end
 
     def new(object)
-      unless object.is_a?(Array)
-        self.heading = "New #{object.model_name.human.titleize}"
-      else
-        self.heading = "New #{object.last.model_name.human.titleize}"
-      end
-
+      heading.for_new(object)
       actions.for_new(object)
       yield
     end
 
     def edit(object)
-      unless object.is_a?(Array)
-        self.heading = "Editing #{object.model_name.human.titleize}"
-      else
-        self.heading = "Editing #{object.last.model_name.human.titleize}"
-      end
-
+      heading.for_edit(object)
       actions.for_edit(object)
       yield
+    end
+
+    def heading
+      @heading ||= Heading.new
     end
 
     def actions

@@ -4,10 +4,10 @@
   </div>
 
   <main class="lg:col-span-3 xl:col-span-4 2xl:col-span-5">
-    <%= render "application/layout/flash" if flash.any? %>
+    <%= render "application/layout/flash" unless flash.blank? %>
 
     <div class="p-8 space-y-8">
-      <%= render "application/layout/header" if page.heading %>
+      <%= render "application/layout/header" unless page.heading.blank? %>
       <%= yield %>
     </div>
   </main>
