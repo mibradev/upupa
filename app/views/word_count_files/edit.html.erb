@@ -1,6 +1,3 @@
-<% page.edit(@word_count_file) do |page| %>
-  <% page.actions.index = @word_count %>
-  <% page.actions.show = [@word_count, @word_count_file] %>
-
+<% page.edit([@word_count, @word_count_file]) do |page| %>
   <%= render "form", word_count_file: @word_count_file %>
 <% end %>

@@ -5,22 +5,55 @@ module PageHelper
     attr_accessor :heading
 
     def index(collection)
-      self.heading = collection.model_name.human.titleize.pluralize
+      unless collection.is_a?(Array)
+        self.heading = collection.model_name.human.titleize.pluralize
+        actions.new = { action: :new }
+      else
+        self.heading = collection.last.model_name.human.titleize.pluralize
+        actions.new = { action: :new }
+        actions.index = collection.second_to_last
+      end
+
       yield self
     end
 
     def show(object)
-      self.heading = object.model_name.human.titleize
+      unless object.is_a?(Array)
+        self.heading = object.model_name.human.titleize
+        actions.edit = { action: :edit }
+        actions.index = { action: :index }
+      else
+        self.heading = object.last.model_name.human.titleize
+        actions.edit = { action: :edit }
+        actions.index = object.second_to_last
+      end
+
       yield self
     end
 
     def new(object)
-      self.heading = "New #{object.model_name.human.titleize}"
+      unless object.is_a?(Array)
+        self.heading = "New #{object.model_name.human.titleize}"
+        actions.index = { action: :index }
+      else
+        self.heading = "New #{object.last.model_name.human.titleize}"
+        actions.index = object.second_to_last
+      end
+
       yield self
     end
 
     def edit(object)
-      self.heading = "Editing #{object.model_name.human.titleize}"
+      unless object.is_a?(Array)
+        self.heading = "Editing #{object.model_name.human.titleize}"
+        actions.show = { action: :show }
+        actions.index = { action: :index }
+      else
+        self.heading = "Editing #{object.last.model_name.human.titleize}"
+        actions.show = { action: :show }
+        actions.index = object.second_to_last
+      end
+
       yield self
     end
 

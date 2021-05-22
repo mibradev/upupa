@@ -1,7 +1,4 @@
-<% page.show(@word_count_file) do |page| %>
-  <% page.actions.index = @word_count %>
-  <% page.actions.edit = edit_word_count_word_count_file_path(@word_count, @word_count_file) %>
-
+<% page.show([@word_count, @word_count_file]) do |page| %>
   <%= page.description_list do |description_list| %>
     <%= description_list.group "Word count", @word_count_file.word_count.date %>
     <%= description_list.group "Work file", @word_count_file.work_file.name %>
