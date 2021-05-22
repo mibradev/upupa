@@ -3,6 +3,7 @@ module PageHelper
     def for_index(collection)
       push_new({ action: :new })
       push_index(collection.second_to_last) if collection.is_a?(Array)
+      self
     end
 
     def for_show(object)
