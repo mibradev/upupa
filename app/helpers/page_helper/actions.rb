@@ -1,22 +1,22 @@
 module PageHelper
   class Actions < Array
-    def for_index(collection)
+    def for_index!(collection)
       push_new({ action: :new })
       push_index(collection.second_to_last) if collection.is_a?(Array)
       self
     end
 
-    def for_show(object)
+    def for_show!(object)
       push_edit({ action: :edit })
       push_destroy({ action: :destroy })
       push_index(object.is_a?(Array) ? object.second_to_last : { action: :index })
     end
 
-    def for_new(object)
+    def for_new!(object)
       push_index(object.is_a?(Array) ? object.second_to_last : { action: :index })
     end
 
-    def for_edit(object)
+    def for_edit!(object)
       push_show({ action: :show })
       push_destroy({ action: :destroy })
       push_index(object.is_a?(Array) ? object.second_to_last : { action: :index })

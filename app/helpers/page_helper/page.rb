@@ -4,26 +4,26 @@ module PageHelper
     attr_accessor :description
 
     def index(collection)
-      heading.for_index(collection)
-      actions.for_index(collection)
+      heading.for_index!(collection)
+      actions.for_index!(collection)
       yield
     end
 
     def show(object)
-      heading.for_show(object)
-      actions.for_show(object)
+      heading.for_show!(object)
+      actions.for_show!(object)
       yield
     end
 
     def new(object)
-      heading.for_new(object)
-      actions.for_new(object)
+      heading.for_new!(object)
+      actions.for_new!(object)
       yield
     end
 
     def edit(object)
-      heading.for_edit(object)
-      actions.for_edit(object)
+      heading.for_edit!(object)
+      actions.for_edit!(object)
       yield
     end
 
