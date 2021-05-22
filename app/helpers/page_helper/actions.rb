@@ -8,6 +8,7 @@ module PageHelper
 
     def for_show(object)
       push_edit({ action: :edit })
+      push_destroy({ action: :destroy })
       push_index(object.is_a?(Array) ? object.second_to_last : { action: :index })
     end
 
@@ -17,6 +18,7 @@ module PageHelper
 
     def for_edit(object)
       push_show({ action: :show })
+      push_destroy({ action: :destroy })
       push_index(object.is_a?(Array) ? object.second_to_last : { action: :index })
     end
 
