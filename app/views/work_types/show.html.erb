@@ -1,6 +1,11 @@
-<% page.show(@work_type) do %>
-  <%= page.description_list do |description_list| %>
-    <%= description_list.group "Name", @work_type.name %>
-    <%= description_list.group "Multiplicand", @work_type.multiplicand %>
-  <% end %>
+<% page.title = "Work Type" %>
+<% page.heading = "Work Type" %>
+
+<% page.actions.edit = edit_work_type_path(@work_type) %>
+<% page.actions.destroy = @work_type %>
+<% page.actions.index = work_types_path %>
+
+<%= page.description_list do |description_list| %>
+  <%= description_list.group "Name", @work_type.name %>
+  <%= description_list.group "Multiplicand", @work_type.multiplicand %>
 <% end %>

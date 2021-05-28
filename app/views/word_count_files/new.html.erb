@@ -1,3 +1,6 @@
-<% page.new([@word_count, @word_count_file]) do %>
-  <%= render "form", word_count_file: @word_count_file %>
-<% end %>
+<% page.title = "New Word Count File" %>
+<% page.heading = "New Word Count File" %>
+
+<% page.actions.index = @word_count %>
+
+<%= render "form", word_count_file: @word_count_file %>

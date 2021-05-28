@@ -1,22 +1,25 @@
-<% page.index(@work_files) do %>
-  <% unless @work_files.empty? %>
-    <%= page.table do |table| %>
-      <%= table.head do |head| %>
-        <%= head.cell "Name" %>
-        <%= head.cell %>
-      <% end %>
+<% page.title = "Work Files" %>
+<% page.heading = "Work Files" %>
 
-      <%= table.body(@work_files) do |work_file| %>
-        <%= table.cell work_file.name %>
+<% page.actions.new = new_work_file_path %>
 
-        <%= table.actions do |actions| %>
-          <%= actions.show work_file %>
-          <%= actions.edit edit_work_file_path(work_file) %>
-          <%= actions.destroy work_file %>
-        <% end %>
+<% unless @work_files.empty? %>
+  <%= page.table do |table| %>
+    <%= table.head do |head| %>
+      <%= head.cell "Name" %>
+      <%= head.cell %>
+    <% end %>
+
+    <%= table.body(@work_files) do |work_file| %>
+      <%= table.cell work_file.name %>
+
+      <%= table.actions do |actions| %>
+        <%= actions.show work_file %>
+        <%= actions.edit edit_work_file_path(work_file) %>
+        <%= actions.destroy work_file %>
       <% end %>
     <% end %>
-  <% else %>
-    <%= page.empty_collection %>
   <% end %>
+<% else %>
+  <%= page.empty_collection %>
 <% end %>

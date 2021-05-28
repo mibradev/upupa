@@ -1,26 +1,29 @@
-<% page.index(@word_counts) do %>
-  <% unless @word_counts.empty? %>
-    <%= page.table do |table| %>
-      <%= table.head do |head| %>
-        <%= head.cell "Day" %>
-        <%= head.cell "Date" %>
-        <%= head.cell "Notes" %>
-        <%= head.cell %>
-      <% end %>
+<% page.title = "Word Counts" %>
+<% page.heading = "Word Counts" %>
 
-      <%= table.body(@word_counts) do |word_count| %>
-        <%= table.cell word_count.date.strftime("%A") %>
-        <%= table.cell word_count.date %>
-        <%= table.cell truncate(word_count.notes) %>
+<% page.actions.new = new_word_count_path %>
 
-        <%= table.actions do |actions| %>
-          <%= actions.show word_count %>
-          <%= actions.edit edit_word_count_path(word_count) %>
-          <%= actions.destroy word_count %>
-        <% end %>
+<% unless @word_counts.empty? %>
+  <%= page.table do |table| %>
+    <%= table.head do |head| %>
+      <%= head.cell "Day" %>
+      <%= head.cell "Date" %>
+      <%= head.cell "Notes" %>
+      <%= head.cell %>
+    <% end %>
+
+    <%= table.body(@word_counts) do |word_count| %>
+      <%= table.cell word_count.date.strftime("%A") %>
+      <%= table.cell word_count.date %>
+      <%= table.cell truncate(word_count.notes) %>
+
+      <%= table.actions do |actions| %>
+        <%= actions.show word_count %>
+        <%= actions.edit edit_word_count_path(word_count) %>
+        <%= actions.destroy word_count %>
       <% end %>
     <% end %>
-  <% else %>
-    <%= page.empty_collection %>
   <% end %>
+<% else %>
+  <%= page.empty_collection %>
 <% end %>

@@ -1,24 +1,27 @@
-<% page.index(@work_types) do %>
-  <% unless @work_types.empty? %>
-    <%= page.table do |table| %>
-      <%= table.head do |head| %>
-        <%= head.cell "Name" %>
-        <%= head.cell "Multiplicand" %>
-        <%= head.cell %>
-      <% end %>
+<% page.title = "Work Types" %>
+<% page.heading = "Work Types" %>
 
-      <%= table.body(@work_types) do |work_type| %>
-        <%= table.cell work_type.name %>
-        <%= table.cell work_type.multiplicand %>
+<% page.actions.new = new_work_type_path %>
 
-        <%= table.actions do |actions| %>
-          <%= actions.show work_type %>
-          <%= actions.edit edit_work_type_path(work_type) %>
-          <%= actions.destroy work_type %>
-        <% end %>
+<% unless @work_types.empty? %>
+  <%= page.table do |table| %>
+    <%= table.head do |head| %>
+      <%= head.cell "Name" %>
+      <%= head.cell "Multiplicand" %>
+      <%= head.cell %>
+    <% end %>
+
+    <%= table.body(@work_types) do |work_type| %>
+      <%= table.cell work_type.name %>
+      <%= table.cell work_type.multiplicand %>
+
+      <%= table.actions do |actions| %>
+        <%= actions.show work_type %>
+        <%= actions.edit edit_work_type_path(work_type) %>
+        <%= actions.destroy work_type %>
       <% end %>
     <% end %>
-  <% else %>
-    <%= page.empty_collection %>
   <% end %>
+<% else %>
+  <%= page.empty_collection %>
 <% end %>

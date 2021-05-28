@@ -1,3 +1,6 @@
-<% page.new(@work_type) do %>
-  <%= render "form", work_type: @work_type %>
-<% end %>
+<% page.title = "New Work Type" %>
+<% page.heading = "New Work Type" %>
+
+<% page.actions.index = work_types_path %>
+
+<%= render "form", work_type: @work_type %>

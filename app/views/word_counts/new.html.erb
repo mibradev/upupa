@@ -1,3 +1,6 @@
-<% page.new(@word_count) do %>
-  <%= render "form", word_count: @word_count %>
-<% end %>
+<% page.title = "New Word Count" %>
+<% page.heading = "New Word Count" %>
+
+<% page.actions.index = word_counts_path %>
+
+<%= render "form", word_count: @word_count %>
