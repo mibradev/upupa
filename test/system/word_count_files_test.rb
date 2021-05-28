@@ -17,7 +17,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
     fill_in "Actual word count", with: @word_count_file.actual_word_count
     fill_in "Notes", with: @word_count_file.notes
     select @word_count_file.work_file.name, from: "Work file"
-    select @word_count_file.work_type.name, from: "Work type"
+    select work_types(:two).name, from: "Work type"
     click_on "Create"
     assert_text "Word count file was successfully created"
   end

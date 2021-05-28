@@ -4,7 +4,7 @@ one:
   total: 2000.0
   word_count: has_many_word_count_files
   work_file: has_many_word_count_files
-  work_type: has_many_word_count_files
+  work_type: translation
 
 two:
   actual_word_count: 2000
@@ -12,4 +12,4 @@ two:
   total: 2000.0
   word_count: has_many_word_count_files
   work_file: has_many_word_count_files
-  work_type: has_many_word_count_files
+  work_type: revision

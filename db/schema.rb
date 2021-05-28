@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_040540) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["word_count_id"], name: "index_word_count_files_on_word_count_id"
+    t.index ["work_file_id", "work_type_id", "word_count_id"], name: "index_word_count_files_on_work_file_&_work_type_&_word_count", unique: true
     t.index ["work_file_id"], name: "index_word_count_files_on_work_file_id"
     t.index ["work_type_id"], name: "index_word_count_files_on_work_type_id"
   end

@@ -34,8 +34,18 @@ class WordCountFileTest < ActiveSupport::TestCase
     assert @word_count_file.errors.added?(:actual_word_count, :greater_than, value: @word_count_file.actual_word_count, count: 0)
   end
 
+  test "uniquness of work_file" do
+    word_count_file_two = word_count_files(:two)
+    word_count_file_two.work_file = @word_count_file.work_file
+    word_count_file_two.work_type = @word_count_file.work_type
+    word_count_file_two.word_count = @word_count_file.word_count
+    assert_not word_count_file_two.valid?
+    assert word_count_file_two.errors.added?(:work_file, :taken, value: word_count_file_two.work_file)
+  end
+
   test "setting work_type_multiplicand" do
     new_word_count_file = @word_count_file.dup
+    new_word_count_file.work_type = work_types(:two)
     new_word_count_file.work_type_multiplicand = nil
     assert new_word_count_file.save
     assert_equal new_word_count_file.work_type.multiplicand, new_word_count_file.work_type_multiplicand
