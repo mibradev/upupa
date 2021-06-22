@@ -31,6 +31,9 @@ jobs:
           name: Standardrb Checks
           command: bundle exec standardrb
       - run:
+          name: Standardjs Checks
+          command: yarn standard
+      - run:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
