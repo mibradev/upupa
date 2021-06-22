@@ -7,7 +7,7 @@
     <%= link_to("Show", page.actions.show, class: "block py-2 px-8 hover:bg-gray-600") unless page.actions.show.blank? %>
     <%= link_to("New", page.actions.new, class: "block py-2 px-8 hover:bg-gray-600") unless page.actions.new.blank? %>
     <%= link_to("Edit", page.actions.edit, class: "block py-2 px-8 hover:bg-gray-600") unless page.actions.edit.blank? %>
-    <%= link_to("Destroy", page.actions.destroy, method: :delete, data: { confirm: "Are you sure?" }, class: "block py-2 px-8 hover:bg-gray-600") unless page.actions.destroy.blank? %>
+    <%= link_to("Destroy", page.actions.destroy, method: :delete, data: {confirm: "Are you sure?"}, class: "block py-2 px-8 hover:bg-gray-600") unless page.actions.destroy.blank? %>
     <%= link_to("Back", page.actions.index, class: "block py-2 px-8 hover:bg-gray-600") unless page.actions.index.blank? %>
   </div>
 
