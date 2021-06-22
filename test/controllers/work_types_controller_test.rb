@@ -18,7 +18,7 @@ class WorkTypesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create work_type" do
     assert_difference("WorkType.count") do
-      post work_types_url, params: { work_type: { multiplicand: @work_type.multiplicand, name: "New Work Type" } }
+      post work_types_url, params: {work_type: {multiplicand: @work_type.multiplicand, name: "New Work Type"}}
     end
 
     assert_redirected_to work_type_url(WorkType.last)
@@ -35,7 +35,7 @@ class WorkTypesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update work_type" do
-    patch work_type_url(@work_type), params: { work_type: { multiplicand: @work_type.multiplicand, name: "Edited Work Type" } }
+    patch work_type_url(@work_type), params: {work_type: {multiplicand: @work_type.multiplicand, name: "Edited Work Type"}}
     assert_redirected_to work_type_url(@work_type)
   end
 

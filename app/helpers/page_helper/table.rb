@@ -56,7 +56,7 @@ module PageHelper
       end
 
       def destroy(url)
-        @template.link_to("Destroy", url, method: :delete, data: { confirm: "Are you sure?" }, class: "p-2 text-sm text-orange-50 bg-gray-600 rounded hover:bg-gray-700")
+        @template.link_to("Destroy", url, method: :delete, data: {confirm: "Are you sure?"}, class: "p-2 text-sm text-orange-50 bg-gray-600 rounded hover:bg-gray-700")
       end
     end
   end

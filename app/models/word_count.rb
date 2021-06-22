@@ -1,6 +1,6 @@
 class WordCount < ApplicationRecord
   validates :date, presence: true
-  validates :date, uniqueness: { scope: :user }
+  validates :date, uniqueness: {scope: :user}
   validate :date_cannot_be_in_the_future
 
   belongs_to :user

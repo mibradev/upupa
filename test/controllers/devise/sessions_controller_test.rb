@@ -20,30 +20,30 @@ class Devise::SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should log in" do
-    post user_session_url, params: { user: { email: @user.email, password: @password } }
+    post user_session_url, params: {user: {email: @user.email, password: @password}}
     assert controller.user_signed_in?
     assert_equal I18n.t("devise.sessions.signed_in"), flash[:notice]
     assert_redirected_to root_url
   end
 
   test "should not log in with invalid email and password" do
-    post user_session_url, params: { user: { email: nil, password: nil } }
+    post user_session_url, params: {user: {email: nil, password: nil}}
     assert_not_signed_in
   end
 
   test "should not log in with invalid email" do
-    post user_session_url, params: { user: { email: nil, password: @password } }
+    post user_session_url, params: {user: {email: nil, password: @password}}
     assert_not_signed_in
   end
 
   test "should not log in with invalid password" do
-    post user_session_url, params: { user: { email: @user.email, password: nil } }
+    post user_session_url, params: {user: {email: @user.email, password: nil}}
     assert_not_signed_in
   end
 
   test "should not log in if already authenticated" do
     sign_in @user
-    post user_session_url, params: { user: { email: @user.email, password: @password } }
+    post user_session_url, params: {user: {email: @user.email, password: @password}}
     assert controller.user_signed_in?
     assert_equal I18n.t("devise.failure.already_authenticated"), flash[:alert]
     assert_redirected_to root_url

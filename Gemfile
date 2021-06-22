@@ -19,10 +19,7 @@ gem "pundit", "~> 2.1.0"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 
-  gem "rubocop", "~> 1.17.0", require: false
-  gem "rubocop-minitest", "~> 0.12.0", require: false
-  gem "rubocop-performance", "~> 1.11.0", require: false
-  gem "rubocop-rails", "~> 2.10.0", require: false
+  gem "standard"
 end
 
 group :development do

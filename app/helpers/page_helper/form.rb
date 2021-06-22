@@ -16,14 +16,13 @@ module PageHelper
 
         @template.tag.div(class: "p-4 bg-red-900 rounded") do
           @template.tag.h4(class: "mb-2 font-medium text-red-300") do
-            "#{@template.pluralize(object.errors.count, 'error')} prohibited this record from being saved:"
+            "#{@template.pluralize(object.errors.count, "error")} prohibited this record from being saved:"
           end +
-
-          @template.tag.ul(class: "pl-4 list-disc list-inside text-red-200") do
-            object.errors.each do |error|
-              @template.concat @template.tag.li(error.full_message)
+            @template.tag.ul(class: "pl-4 list-disc list-inside text-red-200") do
+              object.errors.each do |error|
+                @template.concat @template.tag.li(error.full_message)
+              end
             end
-          end
         end
       end
 

@@ -22,15 +22,15 @@ word_counts = WordCount.create!([
 ])
 
 work_files = WorkFile.create!([
-  { name: "file1.doc" },
-  { name: "file2.doc" },
-  { name: "file3.doc" }
+  {name: "file1.doc"},
+  {name: "file2.doc"},
+  {name: "file3.doc"}
 ])
 
 work_types = WorkType.create!([
-  { name: "Translation", multiplicand: 1.0 },
-  { name: "Revision", multiplicand: 0.5 },
-  { name: "Check", multiplicand: 0.25 }
+  {name: "Translation", multiplicand: 1.0},
+  {name: "Revision", multiplicand: 0.5},
+  {name: "Check", multiplicand: 0.25}
 ])
 
 WordCountFile.create!([
