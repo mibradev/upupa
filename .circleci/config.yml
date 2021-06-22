@@ -49,4 +49,4 @@ jobs:
           name: System Tests
           command: bin/rails test:system
       - store_artifacts:
-          path: /tmp/screenshots
+          path: tmp/screenshots
