@@ -21,7 +21,7 @@ class WorkFilesController < ApplicationController
     if @work_file.save
       redirect_to @work_file, notice: "Work file was successfully created"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class WorkFilesController < ApplicationController
     if @work_file.update(work_file_params)
       redirect_to @work_file, notice: "Work file was successfully updated"
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

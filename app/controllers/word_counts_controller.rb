@@ -24,7 +24,7 @@ class WordCountsController < ApplicationController
     if @word_count.save
       redirect_to @word_count, notice: "Word count was successfully created"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -32,7 +32,7 @@ class WordCountsController < ApplicationController
     if @word_count.update(word_count_params)
       redirect_to @word_count, notice: "Word count was successfully updated"
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

@@ -21,7 +21,7 @@ class WorkTypesController < ApplicationController
     if @work_type.save
       redirect_to @work_type, notice: "Work type was successfully created"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class WorkTypesController < ApplicationController
     if @work_type.update(work_type_params)
       redirect_to @work_type, notice: "Work type was successfully updated"
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
