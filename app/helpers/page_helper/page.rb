@@ -1,7 +1,5 @@
 module PageHelper
   class Page < Base
-    attr_accessor :heading
-
     def actions
       @actions ||= Actions.new
     end
