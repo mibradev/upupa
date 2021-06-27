@@ -5,9 +5,4 @@ class PageHelperTest < ActionView::TestCase
     view.page.title = "Page Title"
     assert_equal "Page Title", view.page.title
   end
-
-  test "page description" do
-    view.page.description = "Page description."
-    assert_equal "Page description.", view.page.description
-  end
 end
