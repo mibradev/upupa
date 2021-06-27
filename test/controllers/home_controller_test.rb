@@ -5,7 +5,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:one)
     get root_url
     assert_response :ok
-    assert_page_title I18n.t(:app_name)
+    assert_select "title", I18n.t(:app_name)
     assert_select "h2", "Welcome to #{I18n.t :app_name}!"
   end
 end
