@@ -1,9 +1,9 @@
 <% provide :title, "Word Count" %>
 <% provide :heading, "Word Count" %>
 
-<% page.actions.edit = edit_word_count_path(@word_count) %>
-<% page.actions.destroy = @word_count %>
-<% page.actions.index = word_counts_path %>
+<% provide :actions do %>
+  <%= render "application/layout/actions", edit: edit_word_count_path(@word_count), destroy: @word_count, index: word_counts_path %>
+<% end %>
 
 <%= page.description_list do |description_list| %>
   <%= description_list.group "Day", @word_count.date.strftime("%A") %>

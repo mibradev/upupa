@@ -1,9 +1,5 @@
 module PageHelper
   class Page < Base
-    def actions
-      @actions ||= Actions.new
-    end
-
     def table(&block)
       @table ||= Table.new(@template)
       @table.render(&block)

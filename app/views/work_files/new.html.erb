@@ -1,6 +1,8 @@
 <% provide :title, "New Work File" %>
 <% provide :heading, "New Work File" %>
 
-<% page.actions.index = work_files_path %>
+<% provide :actions do %>
+  <%= render "application/layout/actions", index: work_files_path %>
+<% end %>
 
 <%= render "form", work_file: @work_file %>

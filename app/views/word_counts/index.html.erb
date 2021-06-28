@@ -1,7 +1,9 @@
 <% provide :title, "Word Counts" %>
 <% provide :heading, "Word Counts" %>
 
-<% page.actions.new = new_word_count_path %>
+<% provide :actions do %>
+  <%= render "application/layout/actions", new: new_word_count_path %>
+<% end %>
 
 <% unless @word_counts.empty? %>
   <%= page.table do |table| %>

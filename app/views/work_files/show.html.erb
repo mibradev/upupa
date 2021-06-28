@@ -1,9 +1,9 @@
 <% provide :title, "Work File" %>
 <% provide :heading, "Work File" %>
 
-<% page.actions.edit = edit_work_file_path(@work_file) %>
-<% page.actions.destroy = @work_file %>
-<% page.actions.index = work_files_path %>
+<% provide :actions do %>
+  <%= render "application/layout/actions", edit: edit_work_file_path(@work_file), destroy: @work_file, index: work_files_path %>
+<% end %>
 
 <%= page.description_list do |description_list| %>
   <%= description_list.group "Name", @work_file.name %>

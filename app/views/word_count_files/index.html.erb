@@ -1,7 +1,9 @@
 <% provide :title, "Word Count Files" %>
 <% provide :heading, "Word Count Files" %>
 
-<% page.actions.new = new_word_count_word_count_file_path(@word_count) %>
+<% provide :actions do %>
+  <%= render "application/layout/actions", new: new_word_count_word_count_file_path(@word_count) %>
+<% end %>
 
 <% unless @word_count_files.empty? %>
   <%= render "table", word_count_files: @word_count_files %>

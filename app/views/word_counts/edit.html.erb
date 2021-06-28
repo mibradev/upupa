@@ -1,7 +1,8 @@
 <% provide :title, "Editing Word Count" %>
 <% provide :heading, "Editing Word Count" %>
 
-<% page.actions.show = @word_count %>
-<% page.actions.index = word_counts_path %>
+<% provide :actions do %>
+  <%= render "application/layout/actions", show: @word_count, index: word_counts_path %>
+<% end %>
 
 <%= render "form", word_count: @word_count %>

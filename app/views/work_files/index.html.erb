@@ -1,7 +1,9 @@
 <% provide :title, "Work Files" %>
 <% provide :heading, "Work Files" %>
 
-<% page.actions.new = new_work_file_path %>
+<% provide :actions do %>
+  <%= render "application/layout/actions", new: new_work_file_path %>
+<% end %>
 
 <% unless @work_files.empty? %>
   <%= page.table do |table| %>
