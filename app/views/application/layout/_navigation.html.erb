@@ -3,10 +3,7 @@
 </h1>
 
 <% if content_for?(:actions) %>
-  <div class="py-4 text-sm font-medium text-orange-300">
-    <%= yield :actions %>
-  </div>
-
+  <%= yield :actions %>
   <hr class="mx-8 border-gray-500">
 <% end %>
 
