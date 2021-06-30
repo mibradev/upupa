@@ -33,8 +33,9 @@ class RoleTest < ActiveSupport::TestCase
   end
 
   test "has many users" do
-    @role.users = users(:one, :two)
-    assert_equal 2, @role.users.count
+    assert_difference("@role.users.count") do
+      @role.users << users(:one)
+    end
   end
 
   test "uniqueness of user" do

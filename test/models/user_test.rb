@@ -66,8 +66,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "has many word_counts" do
-    @user.word_counts = word_counts(:one, :two)
-    assert_equal 2, @user.word_counts.count
+    assert_difference("@user.word_counts.count") do
+      @user.word_counts << word_counts(:one)
+    end
   end
 
   test "dependent word_counts" do
@@ -77,8 +78,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "has many roles" do
-    @user.roles = roles(:one, :two)
-    assert_equal 2, @user.roles.count
+    assert_difference("@user.roles.count") do
+      @user.roles << roles(:one)
+    end
   end
 
   test "uniqueness of role" do

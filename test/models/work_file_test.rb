@@ -33,8 +33,9 @@ class WorkFileTest < ActiveSupport::TestCase
   end
 
   test "has many word_count_files" do
-    @work_file.word_count_files = word_count_files(:one, :two)
-    assert_equal 2, @work_file.word_count_files.count
+    assert_difference("@work_file.word_count_files.count") do
+      @work_file.word_count_files << word_count_files(:one)
+    end
   end
 
   test "dependent word_count_files" do
