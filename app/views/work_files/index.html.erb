@@ -5,7 +5,7 @@
   <%= render "application/layout/actions", new: new_work_file_path %>
 <% end %>
 
-<% unless @work_files.empty? %>
+<% unless @work_files.length.zero? %>
   <%= page.table do |table| %>
     <%= table.head do |head| %>
       <%= head.cell "Name" %>
