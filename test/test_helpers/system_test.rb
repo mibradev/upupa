@@ -1,4 +1,4 @@
-Capybara.default_max_wait_time = 5
+Capybara.default_max_wait_time = 10
 
 class ActionDispatch::SystemTestCase
   include Devise::Test::IntegrationHelpers
