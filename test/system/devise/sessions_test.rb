@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class SessionsTest < ApplicationSystemTestCase
+class Devise::SessionsTest < ApplicationSystemTestCase
   test "logging in" do
     visit new_user_session_url
     fill_in "Email", with: users(:with_password).email
