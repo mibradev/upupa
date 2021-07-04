@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class WordCountsTest < ApplicationSystemTestCase
   setup do
-    sign_in users(:has_many_word_counts)
+    sign_in users(:for_word_counts)
     @word_count = word_counts(:one)
   end
 

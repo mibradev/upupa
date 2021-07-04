@@ -1,15 +1,15 @@
 one:
-  name: One
+  name: one
   multiplicand: 1.0
 
 two:
-  name: Two
+  name: two
   multiplicand: 1.0
 
-translation:
-  name: Translation
+for_word_count_file_one:
+  name: for_word_count_file_one
   multiplicand: 1.0
 
-revision:
-  name: Revision
+for_word_count_file_two:
+  name: for_word_count_file_two
   multiplicand: 1.0

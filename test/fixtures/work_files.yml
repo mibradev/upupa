@@ -1,8 +1,8 @@
 one:
-  name: One.doc
+  name: one
 
 two:
-  name: Two.doc
+  name: two
 
-has_many_word_count_files:
-  name: has_many_word_count_files.doc
+for_word_count_files:
+  name: for_word_count_files

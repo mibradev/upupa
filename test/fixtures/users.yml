@@ -8,5 +8,5 @@ with_password:
   email: with_password@localhost
   encrypted_password: <%= Devise::Encryptor.digest(User, "12345678") %>
 
-has_many_word_counts:
-  email: has_many_word_counts@localhost
+for_word_counts:
+  email: for_word_counts@localhost
