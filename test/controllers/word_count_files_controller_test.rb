@@ -41,10 +41,10 @@ class WordCountFilesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update word_count_file" do
     patch word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file), params: {word_count_file: {
-      actual_word_count: @word_count_file.actual_word_count + 1,
-      notes: "edited note",
-      work_file_id: work_files(:one).id,
-      work_type_id: work_types(:one).id
+      actual_word_count: @word_count_file.actual_word_count,
+      notes: @word_count_file.notes,
+      work_file_id: @word_count_file.work_file_id,
+      work_type_id: @word_count_file.work_type_id
     }}
 
     assert_redirected_to word_count_url(@word_count_file.word_count_id)

@@ -18,7 +18,7 @@ class WorkFilesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create work_file" do
     assert_difference("WorkFile.count") do
-      post work_files_url, params: {work_file: {name: "new.doc"}}
+      post work_files_url, params: {work_file: {name: "new"}}
     end
 
     assert_redirected_to work_file_url(WorkFile.last)
@@ -35,7 +35,7 @@ class WorkFilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update work_file" do
-    patch work_file_url(@work_file), params: {work_file: {name: "edited.doc"}}
+    patch work_file_url(@work_file), params: {work_file: {name: @work_file.name}}
     assert_redirected_to work_file_url(@work_file)
   end
 

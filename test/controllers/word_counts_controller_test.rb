@@ -18,7 +18,7 @@ class WordCountsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create word_count" do
     assert_difference("WordCount.count") do
-      post word_counts_url, params: {word_count: {date: Date.current, notes: "new note"}}
+      post word_counts_url, params: {word_count: {date: Date.current, notes: @word_count.notes}}
     end
 
     assert_redirected_to word_count_url(WordCount.last)
@@ -35,7 +35,7 @@ class WordCountsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update word_count" do
-    patch word_count_url(@word_count), params: {word_count: {date: Date.current, notes: "edited note"}}
+    patch word_count_url(@word_count), params: {word_count: {date: @word_count.date, notes: @word_count.notes}}
     assert_redirected_to word_count_url(@word_count)
   end
 
