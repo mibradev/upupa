@@ -14,7 +14,7 @@ class WorkFilesTest < ApplicationSystemTestCase
   test "creating a Work file" do
     visit work_files_url
     click_on "New"
-    fill_in "Name", with: "new.doc"
+    fill_in "Name", with: "new"
     click_on "Create"
     assert_text "Work file was successfully created"
     click_on "Back"
@@ -23,7 +23,7 @@ class WorkFilesTest < ApplicationSystemTestCase
   test "updating a Work file" do
     visit work_files_url
     click_on "Edit", match: :first
-    fill_in "Name", with: "edited.doc"
+    fill_in "Name", with: @work_file.name
     click_on "Update"
     assert_text "Work file was successfully updated"
     click_on "Back"
@@ -31,11 +31,7 @@ class WorkFilesTest < ApplicationSystemTestCase
 
   test "destroying a Work file" do
     visit work_files_url
-
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
-
+    page.accept_confirm { click_on "Destroy", match: :first }
     assert_text "Work file was successfully destroyed"
   end
 end
