@@ -36,4 +36,11 @@ class WordCountsTest < ApplicationSystemTestCase
     page.accept_confirm { click_on "Destroy", match: :first }
     assert_text "Word count was successfully destroyed"
   end
+
+  test "destroying a Word count with dependent word count file" do
+    @word_count.word_count_files << word_count_files(:one)
+    visit word_counts_url
+    page.accept_confirm { click_on "Destroy", match: :first }
+    assert_text "Cannot delete record because dependent word count files exist"
+  end
 end

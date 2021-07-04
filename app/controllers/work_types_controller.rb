@@ -35,12 +35,10 @@ class WorkTypesController < ApplicationController
 
   def destroy
     if @work_type.destroy
-      flash.notice = "Work type was successfully destroyed"
+      redirect_to work_types_url, notice: "Work type was successfully destroyed"
     else
-      flash.alert = @work_type.errors.full_messages.first
+      redirect_to @work_type, alert: @work_type.errors.full_messages.first
     end
-
-    redirect_to work_types_url
   end
 
   private

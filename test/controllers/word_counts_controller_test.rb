@@ -47,6 +47,12 @@ class WordCountsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to word_counts_url
   end
 
+  test "should not destroy word_count with dependent word_count_file" do
+    @word_count.word_count_files << word_count_files(:one)
+    delete word_count_url(@word_count)
+    assert_redirected_to @word_count
+  end
+
   class InvalidParametersTest < ActionDispatch::IntegrationTest
     setup do
       sign_in users(:has_many_word_counts)

@@ -35,12 +35,10 @@ class WorkFilesController < ApplicationController
 
   def destroy
     if @work_file.destroy
-      flash.notice = "Work file was successfully destroyed"
+      redirect_to work_files_url, notice: "Work file was successfully destroyed"
     else
-      flash.alert = @work_file.errors.full_messages.first
+      redirect_to @work_file, alert: @work_file.errors.full_messages.first
     end
-
-    redirect_to work_files_url
   end
 
   private

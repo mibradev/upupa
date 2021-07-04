@@ -47,6 +47,12 @@ class WorkFilesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to work_files_url
   end
 
+  test "should not destroy work_file with dependent word_count_file" do
+    @work_file.word_count_files << word_count_files(:one)
+    delete work_file_url(@work_file)
+    assert_redirected_to @work_file
+  end
+
   class InvalidParametersTest < ActionDispatch::IntegrationTest
     setup do
       sign_in users(:one)
