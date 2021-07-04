@@ -47,6 +47,23 @@ class WordCountsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to word_counts_url
   end
 
+  class InvalidParametersTest < ActionDispatch::IntegrationTest
+    setup do
+      sign_in users(:has_many_word_counts)
+      @word_count = word_counts(:one)
+    end
+
+    test "should not create word_count" do
+      post word_counts_url, params: {word_count: {date: nil}}
+      assert_response :unprocessable_entity
+    end
+
+    test "should not update word_count" do
+      patch word_count_url(@word_count), params: {word_count: {date: nil}}
+      assert_response :unprocessable_entity
+    end
+  end
+
   class UnauthenticatedTest < ActionDispatch::IntegrationTest
     teardown do
       assert_redirected_to new_user_session_url

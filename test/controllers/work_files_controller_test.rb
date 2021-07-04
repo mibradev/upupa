@@ -47,6 +47,23 @@ class WorkFilesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to work_files_url
   end
 
+  class InvalidParametersTest < ActionDispatch::IntegrationTest
+    setup do
+      sign_in users(:one)
+      @work_file = work_files(:one)
+    end
+
+    test "should not create work_file" do
+      post work_files_url, params: {work_file: {name: nil}}
+      assert_response :unprocessable_entity
+    end
+
+    test "should not update work_file" do
+      patch work_file_url(@work_file), params: {work_file: {name: nil}}
+      assert_response :unprocessable_entity
+    end
+  end
+
   class UnauthenticatedTest < ActionDispatch::IntegrationTest
     teardown do
       assert_redirected_to new_user_session_url

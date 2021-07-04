@@ -47,6 +47,23 @@ class WorkTypesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to work_types_url
   end
 
+  class InvalidParametersTest < ActionDispatch::IntegrationTest
+    setup do
+      sign_in users(:one)
+      @work_type = work_types(:one)
+    end
+
+    test "should not create work_type" do
+      post work_types_url, params: {work_type: {name: nil}}
+      assert_response :unprocessable_entity
+    end
+
+    test "should not update work_type" do
+      patch work_type_url(@work_type), params: {work_type: {name: nil}}
+      assert_response :unprocessable_entity
+    end
+  end
+
   class UnauthenticatedTest < ActionDispatch::IntegrationTest
     teardown do
       assert_redirected_to new_user_session_url
