@@ -1,58 +1,33 @@
-user = User.create!(email: "user@localhost", password: "12345678")
-role = Role.create!(name: "User")
+role = Role.create!(name: "Translator")
+user = User.create!(email: "translator@localhost", password: "12345678", roles: [role])
 
-user.roles << role
+10.times do
+  WorkFile.create!(name: "#{Faker::Food.unique.dish}.doc")
+end
 
-word_counts = WordCount.create!([
-  {
-    date: Date.current,
-    notes: nil,
+WorkType.create!(name: "Translation", multiplicand: 1.0)
+WorkType.create!(name: "Revision", multiplicand: 0.5)
+WorkType.create!(name: "Check", multiplicand: 0.25)
+
+work_file_ids = WorkFile.ids
+work_type_ids = WorkType.ids
+
+10.times do
+  word_count = WordCount.create!(
+    date: Faker::Date.unique.backward,
+    notes: Faker::Lorem.paragraph(sentence_count: 0, random_sentences_to_add: 3),
     user: user
-  },
-  {
-    date: Date.yesterday,
-    notes: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    user: user
-  },
-  {
-    date: 2.days.ago,
-    notes: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    user: user
-  }
-])
+  )
 
-work_files = WorkFile.create!([
-  {name: "file1.doc"},
-  {name: "file2.doc"},
-  {name: "file3.doc"}
-])
-
-work_types = WorkType.create!([
-  {name: "Translation", multiplicand: 1.0},
-  {name: "Revision", multiplicand: 0.5},
-  {name: "Check", multiplicand: 0.25}
-])
-
-WordCountFile.create!([
-  {
-    actual_word_count: 2000,
-    notes: nil,
-    word_count: word_counts.sample,
-    work_file: work_files.sample,
-    work_type: work_types.sample
-  },
-  {
-    actual_word_count: 3350,
-    notes: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    word_count: word_counts.sample,
-    work_file: work_files.sample,
-    work_type: work_types.sample
-  },
-  {
-    actual_word_count: 1555,
-    notes: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    word_count: word_counts.sample,
-    work_file: work_files.sample,
-    work_type: work_types.sample
-  }
-])
+  rand(0..3).times do
+    WordCountFile.create!(
+      actual_word_count: Faker::Number.within(range: 300..3000),
+      notes: Faker::Lorem.paragraph(sentence_count: 0, random_sentences_to_add: 3),
+      word_count: word_count,
+      work_file_id: work_file_ids.sample,
+      work_type_id: work_type_ids.sample
+    )
+  rescue => error
+    error.message == "Validation failed: Work file has already been taken" ? retry : raise
+  end
+end
