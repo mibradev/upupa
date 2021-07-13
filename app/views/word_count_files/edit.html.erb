@@ -1,5 +1,5 @@
 <% provide :title, "Editing Word Count File" %>
-<% provide :heading, "Editing Word Count File" %>
+<% page.heading = "Editing Word Count File" %>
 <% page.actions = {show: [@word_count, @word_count_file], index: @word_count} %>
 
 <%= render "form", word_count_file: @word_count_file %>

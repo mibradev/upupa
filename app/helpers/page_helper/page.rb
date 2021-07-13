@@ -1,5 +1,6 @@
 module PageHelper
   class Page < Base
+    attr_accessor :heading
     attr_accessor :actions
 
     def initialize(template)

@@ -1,5 +1,5 @@
 <% provide :title, "Editing Work Type" %>
-<% provide :heading, "Editing Work Type" %>
+<% page.heading = "Editing Work Type" %>
 <% page.actions = {show: @work_type, index: work_types_path} %>
 
 <%= render "form", work_type: @work_type %>
