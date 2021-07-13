@@ -2,8 +2,15 @@
   <%= link_to I18n.t(:app_name), root_path %>
 </h1>
 
-<% if content_for?(:actions) %>
-  <%= yield :actions %>
+<% if page.actions.any? %>
+  <div class="py-4 text-sm font-medium text-orange-300">
+    <%= link_to "Show", page.actions[:show], class: "block py-2 px-8 hover:bg-gray-600" if page.actions[:show] %>
+    <%= link_to "New", page.actions[:new], class: "block py-2 px-8 hover:bg-gray-600" if page.actions[:new] %>
+    <%= link_to "Edit", page.actions[:edit], class: "block py-2 px-8 hover:bg-gray-600" if page.actions[:edit] %>
+    <%= link_to "Destroy", page.actions[:destroy], class: "block py-2 px-8 hover:bg-gray-600", method: :delete, data: {confirm: "Are you sure?"} if page.actions[:destroy] %>
+    <%= link_to "Back", page.actions[:index], class: "block py-2 px-8 hover:bg-gray-600" if page.actions[:index] %>
+  </div>
+
   <hr class="mx-8 border-gray-500">
 <% end %>
 

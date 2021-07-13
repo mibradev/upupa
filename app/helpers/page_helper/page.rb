@@ -1,5 +1,12 @@
 module PageHelper
   class Page < Base
+    attr_accessor :actions
+
+    def initialize(template)
+      @actions = {}
+      super
+    end
+
     def table(&block)
       @table ||= Table.new(@template)
       @table.render(&block)

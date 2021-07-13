@@ -1,9 +1,6 @@
 <% provide :title, "Work Type" %>
 <% provide :heading, "Work Type" %>
-
-<% provide :actions do %>
-  <%= render "application/layout/actions", edit: edit_work_type_path(@work_type), destroy: @work_type, index: work_types_path %>
-<% end %>
+<% page.actions = {edit: edit_work_type_path(@work_type), destroy: @work_type, index: work_types_path} %>
 
 <%= page.description_list do |description_list| %>
   <%= description_list.group "Name", @work_type.name %>

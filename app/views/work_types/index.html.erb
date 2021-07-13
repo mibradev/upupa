@@ -1,9 +1,6 @@
 <% provide :title, "Work Types" %>
 <% provide :heading, "Work Types" %>
-
-<% provide :actions do %>
-  <%= render "application/layout/actions", new: new_work_type_path %>
-<% end %>
+<% page.actions = {new: new_work_type_path} %>
 
 <% unless @work_types.length.zero? %>
   <%= page.table do |table| %>

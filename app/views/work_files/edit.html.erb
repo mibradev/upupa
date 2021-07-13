@@ -1,8 +1,5 @@
 <% provide :title, "Editing Work File" %>
 <% provide :heading, "Editing Work File" %>
-
-<% provide :actions do %>
-  <%= render "application/layout/actions", show: @work_file, index: work_files_path %>
-<% end %>
+<% page.actions = {show: @work_file, index: work_files_path} %>
 
 <%= render "form", work_file: @work_file %>
