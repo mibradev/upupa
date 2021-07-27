@@ -3,12 +3,12 @@
 </h1>
 
 <% if page.actions.any? %>
-  <div class="py-4 text-sm font-medium text-orange-300">
-    <%= link_to "Show", page.actions[:show], class: "block py-2 px-8 hover:bg-gray-600" if page.actions[:show] %>
-    <%= link_to "New", page.actions[:new], class: "block py-2 px-8 hover:bg-gray-600" if page.actions[:new] %>
-    <%= link_to "Edit", page.actions[:edit], class: "block py-2 px-8 hover:bg-gray-600" if page.actions[:edit] %>
-    <%= link_to "Destroy", page.actions[:destroy], class: "block py-2 px-8 hover:bg-gray-600", method: :delete, data: {confirm: "Are you sure?"} if page.actions[:destroy] %>
-    <%= link_to "Back", page.actions[:index], class: "block py-2 px-8 hover:bg-gray-600" if page.actions[:index] %>
+  <div class="py-4">
+    <%= link_to "Show", page.actions[:show], class: "block py-2 px-8 w-full text-sm font-medium text-left text-orange-300 bg-transparent appearance-none cursor-pointer hover:bg-gray-600" if page.actions[:show] %>
+    <%= link_to "New", page.actions[:new], class: "block py-2 px-8 w-full text-sm font-medium text-left text-orange-300 bg-transparent appearance-none cursor-pointer hover:bg-gray-600" if page.actions[:new] %>
+    <%= link_to "Edit", page.actions[:edit], class: "block py-2 px-8 w-full text-sm font-medium text-left text-orange-300 bg-transparent appearance-none cursor-pointer hover:bg-gray-600" if page.actions[:edit] %>
+    <%= button_to "Destroy", page.actions[:destroy], class: "block py-2 px-8 w-full text-sm font-medium text-left text-orange-300 bg-transparent appearance-none cursor-pointer hover:bg-gray-600", method: :delete if page.actions[:destroy] %>
+    <%= link_to "Back", page.actions[:index], class: "block py-2 px-8 w-full text-sm font-medium text-left text-orange-300 bg-transparent appearance-none cursor-pointer hover:bg-gray-600" if page.actions[:index] %>
   </div>
 
   <hr class="mx-8 border-gray-500">
@@ -22,6 +22,4 @@
 
 <hr class="mx-8 border-gray-500">
 
-<div class="py-8 px-8 text-sm font-medium">
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "hover:text-orange-300" %>
-</div>
+<%= button_to "Log out", destroy_user_session_path, method: :delete, class: "font-medium bg-transparent appearance-none cursor-pointer hover:text-orange-300", form_class: "p-8 text-sm" %>

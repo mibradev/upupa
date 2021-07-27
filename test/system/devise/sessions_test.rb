@@ -20,7 +20,7 @@ class Devise::SessionsTest < ApplicationSystemTestCase
   test "logging out" do
     sign_in users(:one)
     visit root_url
-    click_link "Log out"
+    click_button "Log out"
     assert_text I18n.t("devise.failure.unauthenticated")
   end
 end

@@ -35,7 +35,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
 
   test "destroying a Word count file" do
     visit word_count_url(@word_count_file.word_count_id)
-    within("section") { page.accept_confirm { click_on "Destroy", match: :first } }
+    within("section") { click_on "Destroy", match: :first }
     assert_text "Word count file was successfully destroyed"
   end
 end

@@ -33,14 +33,14 @@ class WorkTypesTest < ApplicationSystemTestCase
 
   test "destroying a Work type" do
     visit work_types_url
-    page.accept_confirm { click_on "Destroy", match: :first }
+    click_on "Destroy", match: :first
     assert_text "Work type was successfully destroyed"
   end
 
   test "destroying a Work type with dependent word count file" do
     @work_type.word_count_files << word_count_files(:one)
     visit work_types_url
-    page.accept_confirm { click_on "Destroy", match: :first }
+    click_on "Destroy", match: :first
     assert_text "Cannot delete record because dependent word count files exist"
   end
 end

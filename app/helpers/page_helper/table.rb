@@ -48,15 +48,15 @@ module PageHelper
       end
 
       def show(url)
-        @template.link_to("Show", url, class: "p-2 text-sm text-orange-50 bg-gray-600 rounded hover:bg-gray-700")
+        @template.link_to("Show", url, class: "inline-block px-2 text-sm font-medium bg-transparent rounded appearance-none cursor-pointer hover:text-gray-500")
       end
 
       def edit(url)
-        @template.link_to("Edit", url, class: "p-2 text-sm text-orange-50 bg-gray-600 rounded hover:bg-gray-700")
+        @template.link_to("Edit", url, class: "inline-block px-2 text-sm font-medium bg-transparent rounded appearance-none cursor-pointer hover:text-gray-500")
       end
 
       def destroy(url)
-        @template.link_to("Destroy", url, class: "p-2 text-sm text-orange-50 bg-gray-600 rounded hover:bg-gray-700", method: :delete, data: {confirm: "Are you sure?"})
+        @template.button_to("Destroy", url, class: "inline-block px-2 text-sm font-medium bg-transparent rounded appearance-none cursor-pointer hover:text-gray-500", method: :delete, form_class: "inline-block")
       end
     end
   end
