@@ -10,8 +10,7 @@ module ApplicationHelper
       end
 
       def head(&block)
-        @head ||= Head.new(@template)
-        @head.render(&block)
+        Head.new(@template).render(&block)
       end
 
       def body(collection, &block)
@@ -27,8 +26,7 @@ module ApplicationHelper
       end
 
       def actions(&block)
-        @actions ||= Actions.new(@template)
-        @actions.render(&block)
+        Actions.new(@template).render(&block)
       end
 
       class Head < Base

@@ -8,8 +8,7 @@ module ApplicationHelper
       end
 
       def header(&block)
-        @header ||= Header.new(@template)
-        @header.render(&block)
+        Header.new(@template).render(&block)
       end
 
       class Header < Base
@@ -24,8 +23,7 @@ module ApplicationHelper
         end
 
         def actions(&block)
-          @actions ||= Actions.new(@template)
-          @actions.render(&block)
+          Actions.new(@template).render(&block)
         end
 
         class Actions < Base
