@@ -1,5 +1,4 @@
 <%= page.form(model: work_type) do |form| %>
-  <%= form.errors %>
   <%= form.text_field :name %>
   <%= form.number_field :multiplicand, step: "any", min: 0.0 %>
   <%= form.submit %>
