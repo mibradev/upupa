@@ -6,17 +6,17 @@
 
 <% unless @work_types.length.zero? %>
   <%= page.table do |table| %>
-    <%= table.head do |head| %>
-      <%= head.cell "Name" %>
-      <%= head.cell "Multiplicand" %>
-      <%= head.cell %>
+    <%= table.head do |row| %>
+      <%= row.cell "Name" %>
+      <%= row.cell "Multiplicand" %>
+      <%= row.cell %>
     <% end %>
 
-    <%= table.body(@work_types) do |work_type| %>
-      <%= table.cell work_type.name %>
-      <%= table.cell work_type.multiplicand %>
+    <%= table.body(@work_types) do |row, work_type| %>
+      <%= row.cell work_type.name %>
+      <%= row.cell work_type.multiplicand %>
 
-      <%= table.actions do |actions| %>
+      <%= row.actions do |actions| %>
         <%= actions.show work_type %>
         <%= actions.edit edit_work_type_path(work_type) %>
         <%= actions.destroy work_type %>
