@@ -7,7 +7,7 @@
     <%= render "application/layout/flash" if flash.any? %>
 
     <div class="p-8 space-y-8">
-      <%= render "application/layout/header" if page.heading %>
+      <%= render "application/layout/header" if content_for?(:page_heading) %>
       <%= yield %>
     </div>
   </main>

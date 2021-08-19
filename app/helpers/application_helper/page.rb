@@ -1,10 +1,19 @@
 module ApplicationHelper
   class Page
-    attr_accessor :title
-    attr_accessor :heading
-
     def initialize(template)
       @template = template
+    end
+
+    def title(content)
+      @template.provide(:page_title, content)
+    end
+
+    def description(content)
+      @template.provide(:page_description, content)
+    end
+
+    def heading(content)
+      @template.provide(:page_heading, content)
     end
 
     def actions(&block)
