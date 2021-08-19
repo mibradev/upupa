@@ -1,4 +1,8 @@
 <% page.heading = "Editing Work File" %>
-<% page.actions = {show: @work_file, index: work_files_path} %>
+
+<% page.actions do |actions| %>
+  <%= actions.show @work_file %>
+  <%= actions.index work_files_path %>
+<% end %>
 
 <%= render "form", work_file: @work_file %>

@@ -2,13 +2,9 @@
   <%= link_to I18n.t(:app_name), root_path %>
 </h1>
 
-<% if page.actions.any? %>
+<% if content_for?(:page_actions) %>
   <div class="py-4">
-    <%= link_to "Show", page.actions[:show], class: "block py-2 px-8 w-full text-sm font-medium text-left text-orange-300 bg-transparent appearance-none cursor-pointer hover:bg-gray-600" if page.actions[:show] %>
-    <%= link_to "New", page.actions[:new], class: "block py-2 px-8 w-full text-sm font-medium text-left text-orange-300 bg-transparent appearance-none cursor-pointer hover:bg-gray-600" if page.actions[:new] %>
-    <%= link_to "Edit", page.actions[:edit], class: "block py-2 px-8 w-full text-sm font-medium text-left text-orange-300 bg-transparent appearance-none cursor-pointer hover:bg-gray-600" if page.actions[:edit] %>
-    <%= button_to "Destroy", page.actions[:destroy], class: "block py-2 px-8 w-full text-sm font-medium text-left text-orange-300 bg-transparent appearance-none cursor-pointer hover:bg-gray-600", method: :delete if page.actions[:destroy] %>
-    <%= link_to "Back", page.actions[:index], class: "block py-2 px-8 w-full text-sm font-medium text-left text-orange-300 bg-transparent appearance-none cursor-pointer hover:bg-gray-600" if page.actions[:index] %>
+    <%= yield :page_actions %>
   </div>
 
   <hr class="mx-8 border-gray-500">

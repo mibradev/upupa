@@ -1,5 +1,10 @@
 <% page.heading = "Work Type" %>
-<% page.actions = {edit: edit_work_type_path(@work_type), destroy: @work_type, index: work_types_path} %>
+
+<% page.actions do |actions| %>
+  <%= actions.edit edit_work_type_path(@work_type) %>
+  <%= actions.destroy @work_type %>
+  <%= actions.index work_types_path %>
+<% end %>
 
 <%= page.description_list do |description_list| %>
   <%= description_list.group "Name", @work_type.name %>

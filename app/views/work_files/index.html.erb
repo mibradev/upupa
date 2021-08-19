@@ -1,5 +1,8 @@
 <% page.heading = "Work Files" %>
-<% page.actions = {new: new_work_file_path} %>
+
+<% page.actions do |actions| %>
+  <%= actions.new new_work_file_path %>
+<% end %>
 
 <% unless @work_files.length.zero? %>
   <%= page.table do |table| %>

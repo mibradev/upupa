@@ -1,5 +1,8 @@
 <% page.heading = "Work Types" %>
-<% page.actions = {new: new_work_type_path} %>
+
+<% page.actions do |actions| %>
+  <%= actions.new new_work_type_path %>
+<% end %>
 
 <% unless @work_types.length.zero? %>
   <%= page.table do |table| %>

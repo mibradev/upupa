@@ -2,11 +2,13 @@ module ApplicationHelper
   class Page
     attr_accessor :title
     attr_accessor :heading
-    attr_accessor :actions
 
     def initialize(template)
       @template = template
-      @actions = {}
+    end
+
+    def actions(&block)
+      Actions.new(@template).render(&block)
     end
 
     def description_list(&block)
