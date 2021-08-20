@@ -34,7 +34,7 @@ module ApplicationHelper
           end
 
           def new(url)
-            @template.link_to("New", url, class: "py-2 px-4 hover:bg-gray-700 rounded")
+            @template.link_to("New", url, class: "py-2 px-4 rounded shadow hover:bg-gray-700")
           end
         end
       end

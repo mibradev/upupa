@@ -59,7 +59,7 @@ module ApplicationHelper
         end
 
         def submit(value = nil, options = {})
-          options[:class] = "block py-2 px-4 text-orange-50 bg-gray-600 rounded cursor-pointer hover:bg-gray-700 focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50 focus:outline-none"
+          options[:class] = "block py-2 px-4 text-orange-50 bg-gray-600 rounded shadow cursor-pointer hover:bg-gray-700 focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50 focus:outline-none"
           super
         end
       end
