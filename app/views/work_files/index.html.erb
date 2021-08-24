@@ -6,18 +6,22 @@
 
 <% unless @work_files.length.zero? %>
   <%= page.table do |table| %>
-    <%= table.head do |row| %>
-      <%= row.cell "Name" %>
-      <%= row.cell %>
+    <%= table.head do |head| %>
+      <%= head.row do |row| %>
+        <%= row.cell "Name" %>
+        <%= row.cell %>
+      <% end %>
     <% end %>
 
-    <%= table.body(@work_files) do |row, work_file| %>
-      <%= row.cell work_file.name %>
+    <%= table.body(@work_files) do |body, work_file| %>
+      <%= body.row do |row| %>
+        <%= row.cell work_file.name %>
 
-      <%= row.actions do |actions| %>
-        <%= actions.show work_file %>
-        <%= actions.edit edit_work_file_path(work_file) %>
-        <%= actions.destroy work_file %>
+        <%= row.actions do |actions| %>
+          <%= actions.show work_file %>
+          <%= actions.edit edit_work_file_path(work_file) %>
+          <%= actions.destroy work_file %>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>

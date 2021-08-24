@@ -20,7 +20,7 @@ module ApplicationHelper
       class Head < Base
         def render(&block)
           @template.tag.thead(class: "text-sm font-medium tracking-wider text-left uppercase text-orange-100 bg-gray-600") do
-            row(&block)
+            @template.capture(self, &block)
           end
         end
 
@@ -43,18 +43,18 @@ module ApplicationHelper
         def render(collection, &block)
           @template.tag.tbody(class: "text-gray-600 align-top bg-orange-50 divide-y divide-gray-300") do
             collection.each do |member|
-              row(member, &block)
+              @template.concat @template.capture(self, member, &block)
             end
           end
         end
 
-        def row(member, &block)
-          Row.new(@template).render(member, &block)
+        def row(&block)
+          Row.new(@template).render(&block)
         end
 
         class Row < Base
-          def render(member, &block)
-            @template.concat(@template.tag.tr { @template.capture(self, member, &block) })
+          def render(&block)
+            @template.tag.tr { @template.capture(self, &block) }
           end
 
           def cell(content)

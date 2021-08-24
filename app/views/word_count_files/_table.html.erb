@@ -1,24 +1,28 @@
 <%= page.table do |table| %>
-  <%= table.head do |row| %>
-    <%= row.cell "Work file" %>
-    <%= row.cell "Actual word count" %>
-    <%= row.cell "Work type" %>
-    <%= row.cell "Total" %>
-    <%= row.cell "Notes" %>
-    <%= row.cell %>
+  <%= table.head do |head| %>
+    <%= head.row do |row| %>
+      <%= row.cell "Work file" %>
+      <%= row.cell "Actual word count" %>
+      <%= row.cell "Work type" %>
+      <%= row.cell "Total" %>
+      <%= row.cell "Notes" %>
+      <%= row.cell %>
+    <% end %>
   <% end %>
 
-  <%= table.body(word_count_files) do |row, word_count_file| %>
-    <%= row.cell word_count_file.work_file.name %>
-    <%= row.cell word_count_file.actual_word_count %>
-    <%= row.cell word_count_file.work_type.name %>
-    <%= row.cell number_with_precision(word_count_file.total, precision: 2) %>
-    <%= row.cell truncate(word_count_file.notes) %>
+  <%= table.body(word_count_files) do |body, word_count_file| %>
+    <%= body.row do |row| %>
+      <%= row.cell word_count_file.work_file.name %>
+      <%= row.cell word_count_file.actual_word_count %>
+      <%= row.cell word_count_file.work_type.name %>
+      <%= row.cell number_with_precision(word_count_file.total, precision: 2) %>
+      <%= row.cell truncate(word_count_file.notes) %>
 
-    <%= row.actions do |actions| %>
-      <%= actions.show [word_count_file.word_count, word_count_file] %>
-      <%= actions.edit edit_word_count_word_count_file_path(word_count_file.word_count, word_count_file) %>
-      <%= actions.destroy [word_count_file.word_count, word_count_file] %>
+      <%= row.actions do |actions| %>
+        <%= actions.show [word_count_file.word_count, word_count_file] %>
+        <%= actions.edit edit_word_count_word_count_file_path(word_count_file.word_count, word_count_file) %>
+        <%= actions.destroy [word_count_file.word_count, word_count_file] %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

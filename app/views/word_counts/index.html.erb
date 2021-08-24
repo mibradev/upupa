@@ -6,22 +6,26 @@
 
 <% unless @word_counts.length.zero? %>
   <%= page.table do |table| %>
-    <%= table.head do |row| %>
-      <%= row.cell "Day" %>
-      <%= row.cell "Date" %>
-      <%= row.cell "Notes" %>
-      <%= row.cell %>
+    <%= table.head do |head| %>
+      <%= head.row do |row| %>
+        <%= row.cell "Day" %>
+        <%= row.cell "Date" %>
+        <%= row.cell "Notes" %>
+        <%= row.cell %>
+      <% end %>
     <% end %>
 
-    <%= table.body(@word_counts) do |row, word_count| %>
-      <%= row.cell word_count.date.strftime("%A") %>
-      <%= row.cell word_count.date %>
-      <%= row.cell truncate(word_count.notes) %>
+    <%= table.body(@word_counts) do |body, word_count| %>
+      <%= body.row do |row| %>
+        <%= row.cell word_count.date.strftime("%A") %>
+        <%= row.cell word_count.date %>
+        <%= row.cell truncate(word_count.notes) %>
 
-      <%= row.actions do |actions| %>
-        <%= actions.show word_count %>
-        <%= actions.edit edit_word_count_path(word_count) %>
-        <%= actions.destroy word_count %>
+        <%= row.actions do |actions| %>
+          <%= actions.show word_count %>
+          <%= actions.edit edit_word_count_path(word_count) %>
+          <%= actions.destroy word_count %>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
