@@ -71,15 +71,15 @@ module ApplicationHelper
             end
 
             def show(url)
-              @template.link_to("Show", url, class: "inline-block px-2 text-sm font-medium uppercase bg-transparent appearance-none cursor-pointer hover:text-gray-500")
+              @template.link_to("Show", url, class: "inline-block px-1 text-sm font-medium uppercase bg-transparent appearance-none cursor-pointer hover:text-gray-500")
             end
 
             def edit(url)
-              @template.link_to("Edit", url, class: "inline-block px-2 text-sm font-medium uppercase bg-transparent appearance-none cursor-pointer hover:text-gray-500")
+              @template.link_to("Edit", url, class: "inline-block px-1 text-sm font-medium uppercase bg-transparent appearance-none cursor-pointer hover:text-gray-500")
             end
 
             def destroy(url)
-              @template.button_to("Destroy", url, class: "inline-block px-2 text-sm font-medium uppercase bg-transparent appearance-none cursor-pointer hover:text-gray-500", method: :delete, form_class: "inline-block")
+              @template.button_to("Destroy", url, class: "inline-block px-1 text-sm font-medium uppercase bg-transparent appearance-none cursor-pointer hover:text-gray-500", method: :delete, form_class: "inline-block")
             end
           end
         end
