@@ -4,7 +4,7 @@
   <%= actions.new new_word_count_word_count_file_path(@word_count) %>
 <% end %>
 
-<% unless @word_count_files.length.zero? %>
+<% if @word_count_files.load.any? %>
   <%= render "table", word_count_files: @word_count_files %>
 <% else %>
   <%= page.empty_collection %>

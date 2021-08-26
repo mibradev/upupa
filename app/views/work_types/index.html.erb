@@ -4,7 +4,7 @@
   <%= actions.new new_work_type_path %>
 <% end %>
 
-<% unless @work_types.length.zero? %>
+<% if @work_types.load.any? %>
   <%= page.table do |table| %>
     <%= table.head do |head| %>
       <%= head.row do |row| %>

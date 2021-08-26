@@ -22,7 +22,7 @@
     <% end %>
   <% end %>
 
-  <% unless @word_count.word_count_files.length.zero? %>
+  <% if @word_count.word_count_files.load.any? %>
     <%= render "word_count_files/table", word_count_files: @word_count.word_count_files %>
   <% end %>
 <% end %>

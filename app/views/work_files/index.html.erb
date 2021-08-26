@@ -4,7 +4,7 @@
   <%= actions.new new_work_file_path %>
 <% end %>
 
-<% unless @work_files.length.zero? %>
+<% if @work_files.load.any? %>
   <%= page.table do |table| %>
     <%= table.head do |head| %>
       <%= head.row do |row| %>
