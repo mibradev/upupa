@@ -10,7 +10,7 @@ gem "jbuilder", "~> 2.11.0"
 gem "pg", "~> 1.2.0"
 gem "puma", "~> 5.4.0"
 gem "sass-rails", "~> 6.0.0"
-gem "webpacker", "6.0.0.rc.1"
+gem "webpacker", "6.0.0.rc.5"
 
 gem "devise", "~> 4.8.0"
 gem "hotwire-rails", "~> 0.1.0"
