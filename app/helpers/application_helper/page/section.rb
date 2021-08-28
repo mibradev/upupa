@@ -19,7 +19,7 @@ module ApplicationHelper
         end
 
         def heading(content)
-          @template.tag.h3(content, class: "text-2xl font-bold")
+          @template.tag.h2(content, class: "text-xl font-bold")
         end
 
         def actions(&block)
