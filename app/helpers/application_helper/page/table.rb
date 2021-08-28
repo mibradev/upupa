@@ -3,7 +3,7 @@ module ApplicationHelper
     class Table < Base
       def render(&block)
         @template.tag.div(class: "overflow-x-auto rounded shadow") do
-          @template.tag.table(class: "w-full whitespace-nowrap") do
+          @template.tag.table(class: "w-full text-sm text-left text-gray-700 whitespace-nowrap bg-orange-50 divide-y divide-black divide-opacity-10") do
             @template.capture(self, &block)
           end
         end
@@ -19,7 +19,7 @@ module ApplicationHelper
 
       class Head < Base
         def render(&block)
-          @template.tag.thead(class: "text-sm font-medium tracking-wider text-left uppercase text-orange-100 bg-gray-600") do
+          @template.tag.thead do
             @template.capture(self, &block)
           end
         end
@@ -34,14 +34,14 @@ module ApplicationHelper
           end
 
           def cell(content = nil)
-            @template.tag.th(content, scope: "col", class: "py-2 px-4")
+            @template.tag.th(content, scope: "col", class: "p-4 font-medium")
           end
         end
       end
 
       class Body < Base
         def render(collection, &block)
-          @template.tag.tbody(class: "text-gray-600 align-top bg-orange-50 divide-y divide-gray-300") do
+          @template.tag.tbody(class: "divide-y divide-black divide-opacity-10") do
             collection.each do |member|
               @template.concat @template.capture(self, member, &block)
             end
@@ -67,19 +67,19 @@ module ApplicationHelper
 
           class Actions < Base
             def render(&block)
-              @template.tag.td(class: "p-4 text-right") { @template.capture(self, &block) }
+              @template.tag.td(class: "p-2 text-right") { @template.capture(self, &block) }
             end
 
             def show(url)
-              @template.link_to("Show", url, class: "inline-block px-1 text-sm font-medium uppercase bg-transparent appearance-none cursor-pointer hover:text-gray-500")
+              @template.link_to("Show", url, class: "inline-block p-2 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10")
             end
 
             def edit(url)
-              @template.link_to("Edit", url, class: "inline-block px-1 text-sm font-medium uppercase bg-transparent appearance-none cursor-pointer hover:text-gray-500")
+              @template.link_to("Edit", url, class: "inline-block p-2 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10")
             end
 
             def destroy(url)
-              @template.button_to("Destroy", url, class: "inline-block px-1 text-sm font-medium uppercase bg-transparent appearance-none cursor-pointer hover:text-gray-500", method: :delete, form_class: "inline-block")
+              @template.button_to("Destroy", url, class: "inline-block p-2 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10", method: :delete, form_class: "inline-block")
             end
           end
         end

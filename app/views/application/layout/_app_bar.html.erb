@@ -1,0 +1,4 @@
+<header class="flex flex-column justify-between items-center px-8 py-4 space-x-4 text-orange-100 bg-gray-700 shadow">
+  <span class="overflow-hidden text-xl font-medium tracking-wide"><%= I18n.t(:app_name) %></span>
+  <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "p-2 text-sm font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10", form_class: "overflow-hidden" %>
+</header>

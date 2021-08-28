@@ -8,7 +8,7 @@ class WordCountsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit word_counts_url
-    assert_selector "h2", text: "Word Counts"
+    assert_selector "h1", text: "Word Counts"
   end
 
   test "creating a Word count" do

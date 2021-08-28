@@ -1,11 +1,13 @@
-<% if flash.alert %>
-  <div class="py-4 px-8 font-medium text-red-900 bg-red-300">
-    <%= flash.alert %>
-  </div>
-<% end %>
+<div class="space-y-4">
+  <% if flash.alert %>
+    <div class="p-4 font-medium text-red-100 bg-red-700 rounded shadow">
+      <%= flash.alert %>
+    </div>
+  <% end %>
 
-<% if flash.notice %>
-  <div class="py-4 px-8 font-medium text-green-900 bg-green-300">
-    <%= flash.notice %>
-  </div>
-<% end %>
+  <% if flash.notice %>
+    <div class="p-4 font-medium text-green-100 bg-green-700 rounded shadow">
+      <%= flash.notice %>
+    </div>
+  <% end %>
+</div>
