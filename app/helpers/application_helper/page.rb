@@ -14,6 +14,7 @@ module ApplicationHelper
 
     def heading(content)
       @template.provide(:page_heading, content)
+      title(content)
     end
 
     def actions(&block)
