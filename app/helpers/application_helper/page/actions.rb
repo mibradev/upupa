@@ -2,7 +2,7 @@ module ApplicationHelper
   class Page
     class Actions < Base
       def render(&block)
-        @template.provide(:page_actions) do
+        @template.content_for(:page_actions) do
           @template.capture(self, &block)
         end
       end

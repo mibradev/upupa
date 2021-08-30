@@ -5,15 +5,15 @@ module ApplicationHelper
     end
 
     def title(content)
-      @template.provide(:page_title, content)
+      @template.content_for(:page_title, content)
     end
 
     def description(content)
-      @template.provide(:page_description, content)
+      @template.content_for(:page_description, content)
     end
 
     def heading(content)
-      @template.provide(:page_heading, content)
+      @template.content_for(:page_heading, content)
       title(content)
     end
 
