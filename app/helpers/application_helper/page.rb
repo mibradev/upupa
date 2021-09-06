@@ -17,28 +17,28 @@ module ApplicationHelper
       title(content)
     end
 
-    def actions(&block)
-      Actions.new(@template).render(&block)
+    def actions(...)
+      Actions.new(@template).render(...)
     end
 
-    def description_list(&block)
-      DescriptionList.new(@template).render(&block)
+    def description_list(...)
+      DescriptionList.new(@template).render(...)
     end
 
-    def empty_collection
-      EmptyCollection.new(@template).render
+    def empty_collection(...)
+      EmptyCollection.new(@template).render(...)
     end
 
-    def form(model: nil, scope: nil, url: nil, format: nil, **options, &block)
-      Form.new(@template).render(model: model, scope: scope, url: url, format: format, **options, &block)
+    def form(...)
+      Form.new(@template).render(...)
     end
 
-    def section(&block)
-      Section.new(@template).render(&block)
+    def section(...)
+      Section.new(@template).render(...)
     end
 
-    def table(&block)
-      Table.new(@template).render(&block)
+    def table(...)
+      Table.new(@template).render(...)
     end
   end
 end
