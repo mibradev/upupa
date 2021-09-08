@@ -1,3 +1,1 @@
-Rake::Task[:default].clear
-
-task default: ["standard", "standardjs", "webpacker:compile", "test:all"]
+Rake::Task[:default].enhance ["standard", "standardjs", "test:all"]
