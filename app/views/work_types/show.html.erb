@@ -7,6 +7,13 @@
 <% end %>
 
 <%= page.description_list do |description_list| %>
-  <%= description_list.group "Name", @work_type.name %>
-  <%= description_list.group "Multiplicand", @work_type.multiplicand %>
+  <%= description_list.group do |group| %>
+    <%= group.term "Name" %>
+    <%= group.description @work_type.name %>
+  <% end %>
+
+  <%= description_list.group do |group| %>
+    <%= group.term "Multiplicand" %>
+    <%= group.description @work_type.multiplicand %>
+  <% end %>
 <% end %>

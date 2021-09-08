@@ -7,10 +7,23 @@ module ApplicationHelper
         end
       end
 
-      def group(term, description)
-        @template.tag.div(class: "p-4 sm:grid sm:grid-cols-4 sm:gap-4") do
-          @template.concat @template.tag.dt(term, class: "text-sm font-medium")
-          @template.concat @template.tag.dd(description, class: "mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0")
+      def group(&block)
+        Group.new(@template).render(&block)
+      end
+
+      class Group < Base
+        def render(&block)
+          @template.tag.div(class: "p-4 sm:grid sm:grid-cols-4 sm:gap-4") do
+            @template.capture(self, &block)
+          end
+        end
+
+        def term(content)
+          @template.tag.dt(content, class: "text-sm font-medium")
+        end
+
+        def description(content)
+          @template.tag.dd(content, class: "mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0")
         end
       end
     end
