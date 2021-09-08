@@ -7,8 +7,8 @@ module ApplicationHelper
         end
       end
 
-      def header(&block)
-        Header.new(@template).render(&block)
+      def header(...)
+        Header.new(@template).render(...)
       end
 
       class Header < Base
@@ -22,8 +22,8 @@ module ApplicationHelper
           @template.tag.h2(content, class: "text-xl font-bold")
         end
 
-        def actions(&block)
-          Actions.new(@template).render(&block)
+        def actions(...)
+          Actions.new(@template).render(...)
         end
 
         class Actions < Base

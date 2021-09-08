@@ -7,8 +7,8 @@ module ApplicationHelper
         end
       end
 
-      def group(&block)
-        Group.new(@template).render(&block)
+      def group(...)
+        Group.new(@template).render(...)
       end
 
       class Group < Base

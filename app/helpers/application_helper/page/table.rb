@@ -9,12 +9,12 @@ module ApplicationHelper
         end
       end
 
-      def head(&block)
-        Head.new(@template).render(&block)
+      def head(...)
+        Head.new(@template).render(...)
       end
 
-      def body(collection, &block)
-        Body.new(@template).render(collection, &block)
+      def body(...)
+        Body.new(@template).render(...)
       end
 
       class Head < Base
@@ -24,8 +24,8 @@ module ApplicationHelper
           end
         end
 
-        def row(&block)
-          Row.new(@template).render(&block)
+        def row(...)
+          Row.new(@template).render(...)
         end
 
         class Row < Base
@@ -48,8 +48,8 @@ module ApplicationHelper
           end
         end
 
-        def row(&block)
-          Row.new(@template).render(&block)
+        def row(...)
+          Row.new(@template).render(...)
         end
 
         class Row < Base
@@ -61,8 +61,8 @@ module ApplicationHelper
             @template.tag.td(content, class: "p-4")
           end
 
-          def actions(&block)
-            Actions.new(@template).render(&block)
+          def actions(...)
+            Actions.new(@template).render(...)
           end
 
           class Actions < Base
