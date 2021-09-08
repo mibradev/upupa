@@ -1,5 +1,13 @@
 <%= page.form(model: work_type) do |form| %>
-  <%= form.text_field :name %>
-  <%= form.number_field :multiplicand, step: "any", min: 0.0 %>
+  <%= form.field do %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  <% end %>
+
+  <%= form.field do %>
+    <%= form.label :multiplicand %>
+    <%= form.number_field :multiplicand, step: "any", min: 0.0 %>
+  <% end %>
+
   <%= form.submit %>
 <% end %>
