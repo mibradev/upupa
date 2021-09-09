@@ -28,12 +28,6 @@ module ApplicationHelper
           end
         end
 
-        def field(&block)
-          @template.tag.div(class: "space-y-2") do
-            @template.capture(&block)
-          end
-        end
-
         def label(method, text = nil, options = {}, &block)
           options[:class] = "block font-medium appearance-none"
           super
@@ -41,27 +35,27 @@ module ApplicationHelper
 
         def collection_select(method, collection, value_method, text_method, options = {}, html_options = {})
           html_options[:class] = "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none"
-          super
+          @template.tag.div(class: "space-y-2") { label(method) + super }
         end
 
         def date_field(method, options = {})
           options[:class] = "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none"
-          super
+          @template.tag.div(class: "space-y-2") { label(method) + super }
         end
 
         def number_field(method, options = {})
           options[:class] = "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none"
-          super
+          @template.tag.div(class: "space-y-2") { label(method) + super }
         end
 
         def text_area(method, options = {})
           options[:class] = "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none"
-          super
+          @template.tag.div(class: "space-y-2") { label(method) + super }
         end
 
         def text_field(method, options = {})
           options[:class] = "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none"
-          super
+          @template.tag.div(class: "space-y-2") { label(method) + super }
         end
 
         def submit(value = nil, options = {})

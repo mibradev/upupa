@@ -1,13 +1,5 @@
 <%= page.form(model: word_count) do |form| %>
-  <%= form.field do %>
-    <%= form.label :date %>
-    <%= form.date_field :date %>
-  <% end %>
-
-  <%= form.field do %>
-    <%= form.label :notes %>
-    <%= form.text_area :notes %>
-  <% end %>
-
+  <%= form.date_field :date %>
+  <%= form.text_area :notes %>
   <%= form.submit %>
 <% end %>

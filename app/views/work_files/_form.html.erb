@@ -1,8 +1,4 @@
 <%= page.form(model: work_file) do |form| %>
-  <%= form.field do %>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  <% end %>
-
+  <%= form.text_field :name %>
   <%= form.submit %>
 <% end %>
