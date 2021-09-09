@@ -7,8 +7,5 @@
 <% end %>
 
 <%= page.description_list do |description_list| %>
-  <%= description_list.group do |group| %>
-    <%= group.term "Name" %>
-    <%= group.description @work_file.name %>
-  <% end %>
+  <%= description_list.group "Name", @work_file.name %>
 <% end %>

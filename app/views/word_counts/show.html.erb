@@ -7,25 +7,10 @@
 <% end %>
 
 <%= page.description_list do |description_list| %>
-  <%= description_list.group do |group| %>
-    <%= group.term "Day" %>
-    <%= group.description @word_count.date.strftime("%A") %>
-  <% end %>
-
-  <%= description_list.group do |group| %>
-    <%= group.term "Date" %>
-    <%= group.description @word_count.date %>
-  <% end %>
-
-  <%= description_list.group do |group| %>
-    <%= group.term "Total" %>
-    <%= group.description number_with_precision(@word_count.word_count_files.sum(:total), precision: 2) %>
-  <% end %>
-
-  <%= description_list.group do |group| %>
-    <%= group.term "Notes" %>
-    <%= group.description @word_count.notes %>
-  <% end %>
+  <%= description_list.group "Day", @word_count.date.strftime("%A") %>
+  <%= description_list.group "Date", @word_count.date %>
+  <%= description_list.group "Total", number_with_precision(@word_count.word_count_files.sum(:total), precision: 2) %>
+  <%= description_list.group "Notes", @word_count.notes %>
 <% end %>
 
 <%= page.section do |section| %>
