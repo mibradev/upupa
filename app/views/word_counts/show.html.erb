@@ -1,28 +1,45 @@
-<%= page.heading "Word Count" %>
+<% content_for :title, "Word Count" %>
 
-<% page.actions do |actions| %>
-  <%= actions.edit edit_word_count_path(@word_count) %>
-  <%= actions.destroy @word_count %>
-  <%= actions.index word_counts_path %>
+<h1 class="text-2xl font-bold">Word Count</h1>
+
+<% content_for :actions do %>
+  <%= link_to "Edit", edit_word_count_path(@word_count), class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= button_to "Destroy", @word_count, method: :delete, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= link_to "Back", word_counts_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 <% end %>
 
-<%= page.description_list do |description_list| %>
-  <%= description_list.group "Day", @word_count.date.strftime("%A") %>
-  <%= description_list.group "Date", @word_count.date %>
-  <%= description_list.group "Total", number_with_precision(@word_count.word_count_files.sum(:total), precision: 2) %>
-  <%= description_list.group "Notes", @word_count.notes %>
-<% end %>
+<dl class="text-gray-700 bg-orange-50 rounded divide-y divide-black divide-opacity-10 shadow">
+  <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
+    <dt class="text-sm font-medium">Day</dt>
+    <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count.date.strftime("%A") %></dd>
+  </div>
 
-<%= page.section do |section| %>
-  <%= section.header do |header| %>
-    <%= header.heading "Word count files" %>
+  <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
+    <dt class="text-sm font-medium">Date</dt>
+    <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count.date %></dd>
+  </div>
 
-    <%= header.actions do |actions| %>
-      <%= actions.new new_word_count_word_count_file_path(@word_count) %>
-    <% end %>
-  <% end %>
+  <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
+    <dt class="text-sm font-medium">Total</dt>
+    <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= number_with_precision(@word_count.word_count_files.sum(:total), precision: 2) %></dd>
+  </div>
+
+  <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
+    <dt class="text-sm font-medium">Notes</dt>
+    <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count.notes %></dd>
+  </div>
+</dl>
+
+<section class="space-y-8">
+  <header class="flex justify-between items-start space-x-4">
+    <h2 class="text-xl font-bold">Word count files</h2>
+
+    <div class="flex bg-gray-700 rounded">
+      <%= link_to "New", new_word_count_word_count_file_path(@word_count), class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 rounded shadow appearance-none cursor-pointer hover:bg-gray-600 hover:shadow-md focus:bg-gray-500 focus:shadow-md focus:outline-none" %>
+    </div>
+  </header>
 
   <% if @word_count.word_count_files.load.any? %>
     <%= render "word_count_files/table", word_count_files: @word_count.word_count_files %>
   <% end %>
-<% end %>
+</section>

@@ -1,28 +1,32 @@
-<%= page.table do |table| %>
-  <%= table.head do |head| %>
-    <%= head.row do |row| %>
-      <%= row.cell "Work file" %>
-      <%= row.cell "Actual word count" %>
-      <%= row.cell "Work type" %>
-      <%= row.cell "Total" %>
-      <%= row.cell "Notes" %>
-      <%= row.cell %>
-    <% end %>
-  <% end %>
+<div class="overflow-x-auto rounded shadow">
+  <table class="w-full text-sm text-left text-gray-700 whitespace-nowrap bg-orange-50 divide-y divide-black divide-opacity-10">
+    <thead>
+      <tr>
+        <th scope="col" class="p-4 font-medium">Work file</th>
+        <th scope="col" class="p-4 font-medium">Actual word count</th>
+        <th scope="col" class="p-4 font-medium">Work type</th>
+        <th scope="col" class="p-4 font-medium">Total</th>
+        <th scope="col" class="p-4 font-medium">Notes</th>
+        <th scope="col" class="p-4 font-medium"></th>
+      </tr>
+    </thead>
 
-  <%= table.body(word_count_files) do |body, word_count_file| %>
-    <%= body.row do |row| %>
-      <%= row.cell word_count_file.work_file.name %>
-      <%= row.cell word_count_file.actual_word_count %>
-      <%= row.cell word_count_file.work_type.name %>
-      <%= row.cell number_with_precision(word_count_file.total, precision: 2) %>
-      <%= row.cell truncate(word_count_file.notes) %>
+    <tbody class="divide-y divide-black divide-opacity-10">
+      <% word_count_files.each do |word_count_file| %>
+        <tr>
+          <td class="p-4"><%= word_count_file.work_file.name %></td>
+          <td class="p-4"><%= word_count_file.actual_word_count %></td>
+          <td class="p-4"><%= word_count_file.work_type.name %></td>
+          <td class="p-4"><%= number_with_precision(word_count_file.total, precision: 2) %></td>
+          <td class="p-4"><%= truncate(word_count_file.notes) %></td>
 
-      <%= row.actions do |actions| %>
-        <%= actions.show [word_count_file.word_count, word_count_file] %>
-        <%= actions.edit edit_word_count_word_count_file_path(word_count_file.word_count, word_count_file) %>
-        <%= actions.destroy [word_count_file.word_count, word_count_file] %>
+          <td class="p-2 text-right">
+            <%= link_to "Show", [word_count_file.word_count, word_count_file], class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+            <%= link_to "Edit", edit_word_count_word_count_file_path(word_count_file.word_count, word_count_file), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+            <%= button_to "Destroy", [word_count_file.word_count, word_count_file], method: :delete, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+          </td>
+        </tr>
       <% end %>
-    <% end %>
-  <% end %>
-<% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,11 +1,16 @@
-<%= page.heading "Work File" %>
+<% content_for :title, "Work File" %>
 
-<% page.actions do |actions| %>
-  <%= actions.edit edit_work_file_path(@work_file) %>
-  <%= actions.destroy @work_file %>
-  <%= actions.index work_files_path %>
+<h1 class="text-2xl font-bold">Work File</h1>
+
+<% content_for :actions do %>
+  <%= link_to "Edit", edit_work_file_path(@work_file), class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= button_to "Destroy", @work_file, method: :delete, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= link_to "Back", work_files_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 <% end %>
 
-<%= page.description_list do |description_list| %>
-  <%= description_list.group "Name", @work_file.name %>
-<% end %>
+<dl class="text-gray-700 bg-orange-50 rounded divide-y divide-black divide-opacity-10 shadow">
+  <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
+    <dt class="text-sm font-medium">Name</dt>
+    <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @work_file.name %></dd>
+  </div>
+</dl>

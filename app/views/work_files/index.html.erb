@@ -1,30 +1,38 @@
-<%= page.heading "Work Files" %>
+<% content_for :title, "Work Files" %>
 
-<% page.actions do |actions| %>
-  <%= actions.new new_work_file_path %>
+<h1 class="text-2xl font-bold">Work Files</h1>
+
+<% content_for :actions do %>
+  <%= link_to "New", new_work_file_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 <% end %>
 
 <% if @work_files.load.any? %>
-  <%= page.table do |table| %>
-    <%= table.head do |head| %>
-      <%= head.row do |row| %>
-        <%= row.cell "Name" %>
-        <%= row.cell %>
-      <% end %>
-    <% end %>
+  <div class="overflow-x-auto rounded shadow">
+    <table class="w-full text-sm text-left text-gray-700 whitespace-nowrap bg-orange-50 divide-y divide-black divide-opacity-10">
+      <thead>
+        <tr>
+          <th scope="col" class="p-4 font-medium">Name</th>
+          <th scope="col" class="p-4 font-medium"></th>
+        </tr>
+      </thead>
 
-    <%= table.body(@work_files) do |body, work_file| %>
-      <%= body.row do |row| %>
-        <%= row.cell work_file.name %>
+      <tbody class="divide-y divide-black divide-opacity-10">
+        <% @work_files.each do |work_file| %>
+          <tr>
+            <td class="p-4"><%= work_file.name %></td>
 
-        <%= row.actions do |actions| %>
-          <%= actions.show work_file %>
-          <%= actions.edit edit_work_file_path(work_file) %>
-          <%= actions.destroy work_file %>
+            <td class="p-2 text-right">
+              <%= link_to "Show", work_file, class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              <%= link_to "Edit", edit_work_file_path(work_file), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              <%= button_to "Destroy", work_file, method: :delete, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+            </td>
+          </tr>
         <% end %>
-      <% end %>
-    <% end %>
-  <% end %>
+      </tbody>
+    </table>
+  </div>
 <% else %>
-  <%= page.empty_collection %>
+  <div class="py-32 px-4 text-lg font-medium text-center text-orange-100 bg-gray-700">
+    No records found.
+  </div>
 <% end %>

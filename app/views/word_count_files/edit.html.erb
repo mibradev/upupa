@@ -1,8 +1,10 @@
-<%= page.heading "Editing Word Count File" %>
+<% content_for :title, "Editing Word Count File" %>
 
-<% page.actions do |actions| %>
-  <%= actions.show [@word_count, @word_count_file] %>
-  <%= actions.index @word_count %>
+<h1 class="text-2xl font-bold">Editing Word Count File</h1>
+
+<% content_for :actions do %>
+  <%= link_to "Show", [@word_count, @word_count_file], class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= link_to "Back", @word_count, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 <% end %>
 
 <%= render "form", word_count_file: @word_count_file %>

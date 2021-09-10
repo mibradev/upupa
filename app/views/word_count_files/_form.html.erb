@@ -1,8 +1,42 @@
-<%= page.form(model: [word_count_file.word_count, word_count_file]) do |form| %>
-  <%= form.text_field :word_count_id, disabled: true, value: word_count_file.word_count.date %>
-  <%= form.collection_select :work_file_id, WorkFile.all, :id, :name, include_blank: true %>
-  <%= form.number_field :actual_word_count %>
-  <%= form.collection_select :work_type_id, WorkType.all, :id, :name, include_blank: true %>
-  <%= form.text_area :notes %>
-  <%= form.submit %>
+<%= form_with(model: [word_count_file.word_count, word_count_file]) do |form| %>
+  <div class="space-y-4">
+    <% if word_count_file.errors.any? %>
+      <div class="p-4 bg-red-700 rounded">
+        <h4 class="mb-2 font-medium text-red-300"><%= pluralize word_count_file.errors.count, "error" %> prohibited this record from being saved:</h4>
+
+        <ul class="pl-4 list-disc list-inside text-sm font-medium text-red-100">
+          <% word_count_file.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="space-y-2">
+      <%= form.label :word_count_id, class: "block font-medium appearance-none" %>
+      <%= form.text_field :word_count_id, disabled: true, value: word_count_file.word_count.date, class: "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none" %>
+    </div>
+
+    <div class="space-y-2">
+      <%= form.label :work_file_id, class: "block font-medium appearance-none" %>
+      <%= form.collection_select :work_file_id, WorkFile.all, :id, :name, {include_blank: true}, class: "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none" %>
+    </div>
+
+    <div class="space-y-2">
+      <%= form.label :actual_word_count, class: "block font-medium appearance-none" %>
+      <%= form.number_field :actual_word_count, class: "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none" %>
+    </div>
+
+    <div class="space-y-2">
+      <%= form.label :work_type_id, class: "block font-medium appearance-none" %>
+      <%= form.collection_select :work_type_id, WorkType.all, :id, :name, {include_blank: true}, class: "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none" %>
+    </div>
+
+    <div class="space-y-2">
+      <%= form.label :notes, class: "block font-medium appearance-none" %>
+      <%= form.text_area :notes, class: "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none" %>
+    </div>
+
+    <%= form.submit class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 rounded shadow appearance-none cursor-pointer hover:bg-gray-600 hover:shadow-md focus:bg-gray-500 focus:shadow-md focus:outline-none" %>
+  </div>
 <% end %>

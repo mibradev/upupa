@@ -1,16 +1,41 @@
-<%= page.heading "Word Count File" %>
+<% content_for :title, "Word Count File" %>
 
-<% page.actions do |actions| %>
-  <%= actions.edit edit_word_count_word_count_file_path(@word_count, @word_count_file) %>
-  <%= actions.destroy [@word_count, @word_count_file] %>
-  <%= actions.index @word_count %>
+<h1 class="text-2xl font-bold">Word Count File</h1>
+
+<% content_for :actions do %>
+  <%= link_to "Edit", edit_word_count_word_count_file_path(@word_count, @word_count_file), class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= button_to "Destroy", [@word_count, @word_count_file], method: :delete, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= link_to "Back", @word_count, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 <% end %>
 
-<%= page.description_list do |description_list| %>
-  <%= description_list.group "Word count", @word_count_file.word_count.date %>
-  <%= description_list.group "Work file", @word_count_file.work_file.name %>
-  <%= description_list.group "Actual word count", @word_count_file.actual_word_count %>
-  <%= description_list.group "Work type", @word_count_file.work_type.name %>
-  <%= description_list.group "Total", number_with_precision(@word_count_file.total, precision: 2) %>
-  <%= description_list.group "Notes", @word_count_file.notes %>
-<% end %>
+<dl class="text-gray-700 bg-orange-50 rounded divide-y divide-black divide-opacity-10 shadow">
+  <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
+    <dt class="text-sm font-medium">Word count</dt>
+    <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.word_count.date %></dd>
+  </div>
+
+  <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
+    <dt class="text-sm font-medium">Work file</dt>
+    <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.work_file.name %></dd>
+  </div>
+
+  <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
+    <dt class="text-sm font-medium">Actual word count</dt>
+    <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.actual_word_count %></dd>
+  </div>
+
+  <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
+    <dt class="text-sm font-medium">Work type</dt>
+    <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.work_type.name %></dd>
+  </div>
+
+  <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
+    <dt class="text-sm font-medium">Total</dt>
+    <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= number_with_precision(@word_count_file.total, precision: 2) %></dd>
+  </div>
+
+  <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
+    <dt class="text-sm font-medium">Notes</dt>
+    <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.notes %></dd>
+  </div>
+</dl>
