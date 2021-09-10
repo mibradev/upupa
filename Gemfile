@@ -24,7 +24,6 @@ end
 
 group :development do
   gem "listen"
-  gem "rack-mini-profiler"
   gem "web-console"
 
   gem "faker"
