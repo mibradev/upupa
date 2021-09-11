@@ -2,32 +2,20 @@
   "name": "upupa",
   "private": true,
   "dependencies": {
+    "@hotwired/stimulus": "^3.0.0-beta.1",
     "@hotwired/turbo-rails": "^7.0.0-rc.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
-    "@rails/webpacker": "6.0.0-rc.5",
     "autoprefixer": "^10.0.0",
-    "css-loader": "^6.0.0",
-    "css-minimizer-webpack-plugin": "^3.0.0",
-    "mini-css-extract-plugin": "^2.0.0",
+    "esbuild": "^0.12.0",
     "postcss": "^8.0.0",
-    "postcss-loader": "^6.0.0",
-    "stimulus": "^2.0.0",
-    "tailwindcss": "^2.0.0",
-    "webpack": "^5.51.1",
-    "webpack-cli": "^4.8.0"
+    "tailwindcss": "^2.0.0"
   },
   "devDependencies": {
-    "@webpack-cli/serve": "^1.5.2",
-    "standard": "^16.0.0",
-    "webpack-dev-server": "^4.0.0"
+    "standard": "^16.0.0"
   },
-  "babel": {
-    "presets": [
-      "./node_modules/@rails/webpacker/package/babel/preset.js"
-    ]
-  },
-  "browserslist": [
-    "defaults"
-  ]
+  "scripts": {
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css",
+    "build": "esbuild app/javascript/*.* --bundle --outdir=app/assets/builds"
+  }
 }

@@ -1,9 +1,9 @@
 desc "Lint with the Standard JavaScript style guide"
 task :standardjs do
-  system "bin/yarn standard", exception: true
+  system "yarn run standard", exception: true
 end
 
 desc "Lint and automatically fix with the Standard JavaScript style guide"
 task "standardjs:fix" do
-  system "bin/yarn standard --fix", exception: true
+  system "yarn run standard --fix", exception: true
 end
