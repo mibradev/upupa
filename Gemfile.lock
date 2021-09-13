@@ -90,6 +90,7 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.10.0)
+    execjs (2.8.1)
     faker (2.19.0)
       i18n (>= 1.6, < 2)
     ffi (1.15.4)
@@ -189,6 +190,16 @@ GEM
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -204,7 +215,10 @@ GEM
       rubocop-performance (= 1.11.5)
     stimulus-rails (0.5.1)
       rails (>= 6.0.0)
+    terser (1.1.5)
+      execjs (>= 0.3.0, < 3)
     thor (1.1.0)
+    tilt (2.0.10)
     turbo-rails (0.7.11)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
@@ -246,8 +260,10 @@ DEPENDENCIES
   puma (~> 5.4.0)
   pundit (~> 2.1.0)
   rails (~> 6.1.0)
+  sass-rails (~> 6.0.0)
   selenium-webdriver
   standard
+  terser (~> 1.1.0)
   tzinfo-data
   web-console
   webdrivers
