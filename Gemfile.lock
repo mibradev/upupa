@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ruby/debug.git
-  revision: 86d31dea62b1fa5177a5188c334cdb163761dc79
+  revision: 48359e9859210250e9ec7e91849e3e40c05cc0d4
   specs:
     debug (1.1.0)
       irb
@@ -218,15 +218,15 @@ GEM
       rubocop-performance (= 1.11.5)
     stimulus-rails (0.5.3)
       rails (>= 6.0.0)
-    terser (1.1.5)
+    terser (1.1.6)
       execjs (>= 0.3.0, < 3)
     thor (1.1.0)
     tilt (2.0.10)
-    turbo-rails (0.7.11)
+    turbo-rails (0.7.12)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (2.0.0)
+    unicode-display_width (2.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.1.0)

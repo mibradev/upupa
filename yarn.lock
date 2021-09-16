@@ -45,17 +45,17 @@
   integrity sha512-rp2XojlugD0mvqi3qbqM660PbjqS7hnq/8FYa7SK/DL2rvWDu0/Ka3KW8cyXtcB1RiVG4nX5Oh4oq3nmuDjENQ==
 
 "@hotwired/turbo-rails@^7.0.0-rc.1":
-  version "7.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@hotwired/turbo-rails/-/turbo-rails-7.0.0-rc.3.tgz#ebb088a0c9f6eed23a99b396c2ae59d0c57644e0"
-  integrity sha512-J5NLTGSvlFW86pRxEm2WlYKdNeIkmQT9ZmIo1Rputj7BLymZYDCglaZ2vhMVFnQJ4qXEq4ttS3xeQt3cCG2Tdg==
+  version "7.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@hotwired/turbo-rails/-/turbo-rails-7.0.0-rc.4.tgz#647e7f976b1bb645a2902c131c235d7440c28e29"
+  integrity sha512-ibCoMPnJRz/1CTsMywYLotq0zz2G4VZUeMiYSupzjmGFesGSJiCRiC42+iXPK/P1qwqp0WdWxSBRhfXI/wbH0A==
   dependencies:
-    "@hotwired/turbo" "^7.0.0-rc.3"
+    "@hotwired/turbo" "^7.0.0-rc.4"
     "@rails/actioncable" "^6.0.0"
 
-"@hotwired/turbo@^7.0.0-rc.3":
-  version "7.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-7.0.0-rc.3.tgz#f31289fc185e09524445471d1b46b59cac0f99cb"
-  integrity sha512-Xiqtb2fvKcnkc/6cJNx8x2+KHswJeMmNLXPSc8jIE6sYAhnL8pDY2ewiV3x5JS/y+/yWhQSMMHONBwHt8ykYKQ==
+"@hotwired/turbo@^7.0.0-rc.4":
+  version "7.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-7.0.0-rc.4.tgz#d3ab9555544534f5ec649613553e72ff6c7d7122"
+  integrity sha512-4qx+6O6mUN+cSN+ZLGCOGc+2MxNrs7cFbmnWD6LIfiHAQyuNiIuB87Y5IAtOo8xj16fOBd2CdU1WRJya4Wkw0A==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -501,9 +501,9 @@ doctrine@^3.0.0:
     esutils "^2.0.2"
 
 electron-to-chromium@^1.3.830:
-  version "1.3.839"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.839.tgz#27a5b21468e9fefb0e328a029403617f20acec9c"
-  integrity sha512-0O7uPs9LJNjQ/U5mW78qW8gXv9H6Ba3DHZ5/yt8aBsvomOWDkV3MddT7enUYvLQEUVOURjWmgJJWVZ3K98tIwQ==
+  version "1.3.840"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.840.tgz#3f2a1df97015d9b1db5d86a4c6bd4cdb920adcbb"
+  integrity sha512-yRoUmTLDJnkIJx23xLY7GbSvnmDCq++NSuxHDQ0jiyDJ9YZBUGJcrdUqm+ZwZFzMbCciVzfem2N2AWiHJcWlbw==
 
 emoji-regex@^7.0.1:
   version "7.0.3"
