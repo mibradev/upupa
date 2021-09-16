@@ -17,7 +17,6 @@ gem "terser", "~> 1.1.0"
 gem "turbo-rails", "~> 0.7.0"
 
 gem "devise", "~> 4.8.0"
-gem "pundit", "~> 2.1.0"
 
 group :development, :test do
   gem "debug", platforms: [:mri, :mingw, :x64_mingw], github: "ruby/debug"
