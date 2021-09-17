@@ -2,14 +2,14 @@ class WordCountsController < ApplicationController
   before_action :set_word_count, only: [:show, :edit, :update, :destroy]
 
   def index
-    @word_counts = current_user.word_counts
+    @word_counts = WordCount.all
   end
 
   def show
   end
 
   def new
-    @word_count = current_user.word_counts.new
+    @word_count = WordCount.new
     @word_count.date = Date.current
   end
 
@@ -17,7 +17,8 @@ class WordCountsController < ApplicationController
   end
 
   def create
-    @word_count = current_user.word_counts.new(word_count_params)
+    @word_count = WordCount.new(word_count_params)
+    @word_count.user = User.first
 
     if @word_count.save
       redirect_to @word_count, notice: "Word count was successfully created"
@@ -45,7 +46,7 @@ class WordCountsController < ApplicationController
   private
 
   def set_word_count
-    @word_count = current_user.word_counts.find(params[:id])
+    @word_count = WordCount.find(params[:id])
   end
 
   def word_count_params

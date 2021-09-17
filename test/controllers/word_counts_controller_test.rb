@@ -2,7 +2,6 @@ require "test_helper"
 
 class WordCountsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    sign_in users(:for_word_counts)
     @word_count = word_counts(:one)
   end
 
@@ -55,7 +54,6 @@ class WordCountsControllerTest < ActionDispatch::IntegrationTest
 
   class InvalidParametersTest < ActionDispatch::IntegrationTest
     setup do
-      sign_in users(:for_word_counts)
       @word_count = word_counts(:one)
     end
 
@@ -67,40 +65,6 @@ class WordCountsControllerTest < ActionDispatch::IntegrationTest
     test "should not update word_count" do
       patch word_count_url(@word_count), params: {word_count: {date: nil}}
       assert_response :unprocessable_entity
-    end
-  end
-
-  class UnauthenticatedTest < ActionDispatch::IntegrationTest
-    teardown do
-      assert_redirected_to new_user_session_url
-    end
-
-    test "should not get index" do
-      get word_counts_url
-    end
-
-    test "should not get new" do
-      get new_word_count_url
-    end
-
-    test "should not create word_count" do
-      post word_counts_url
-    end
-
-    test "should not show word_count" do
-      get word_count_url(1)
-    end
-
-    test "should not get edit" do
-      get edit_word_count_url(1)
-    end
-
-    test "should not update word_count" do
-      patch word_count_url(1)
-    end
-
-    test "should not destroy word_count" do
-      delete word_count_url(1)
     end
   end
 end

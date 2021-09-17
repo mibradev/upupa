@@ -2,7 +2,6 @@ require "test_helper"
 
 class WordCountFilesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    sign_in users(:for_word_counts)
     @word_count_file = word_count_files(:one)
   end
 
@@ -60,7 +59,6 @@ class WordCountFilesControllerTest < ActionDispatch::IntegrationTest
 
   class InvalidParametersTest < ActionDispatch::IntegrationTest
     setup do
-      sign_in users(:for_word_counts)
       @word_count_file = word_count_files(:one)
     end
 
@@ -72,40 +70,6 @@ class WordCountFilesControllerTest < ActionDispatch::IntegrationTest
     test "should not update word_count_file" do
       patch word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file), params: {word_count_file: {actual_word_count: nil}}
       assert_response :unprocessable_entity
-    end
-  end
-
-  class UnauthenticatedTest < ActionDispatch::IntegrationTest
-    teardown do
-      assert_redirected_to new_user_session_url
-    end
-
-    test "should not get index" do
-      get word_count_word_count_files_url(1)
-    end
-
-    test "should not get new" do
-      get new_word_count_word_count_file_url(1)
-    end
-
-    test "should not create word_count_file" do
-      post word_count_word_count_files_url(1)
-    end
-
-    test "should not show word_count_file" do
-      get word_count_word_count_file_url(1, 1)
-    end
-
-    test "should not get edit" do
-      get edit_word_count_word_count_file_url(1, 1)
-    end
-
-    test "should not update word_count_file" do
-      patch word_count_word_count_file_url(1, 1)
-    end
-
-    test "should not destroy word_count_file" do
-      delete word_count_word_count_file_url(1, 1)
     end
   end
 end

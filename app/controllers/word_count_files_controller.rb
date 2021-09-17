@@ -42,7 +42,7 @@ class WordCountFilesController < ApplicationController
   private
 
   def set_word_count
-    @word_count = current_user.word_counts.find(params[:word_count_id])
+    @word_count = WordCount.find(params[:word_count_id])
   end
 
   def set_word_count_file
