@@ -2,6 +2,7 @@ require "test_helper"
 
 class WordCountsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    log_in users(:for_word_counts)
     @word_count = word_counts(:one)
   end
 
@@ -54,6 +55,7 @@ class WordCountsControllerTest < ActionDispatch::IntegrationTest
 
   class InvalidParametersTest < ActionDispatch::IntegrationTest
     setup do
+      log_in users(:for_word_counts)
       @word_count = word_counts(:one)
     end
 

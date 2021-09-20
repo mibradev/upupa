@@ -2,6 +2,7 @@ require "application_system_test_case"
 
 class WorkTypesTest < ApplicationSystemTestCase
   setup do
+    log_in users(:with_password)
     @work_type = work_types(:one)
   end
 

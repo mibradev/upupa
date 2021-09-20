@@ -10,3 +10,10 @@ en:
     submit:
       create: "Create"
       update: "Update"
+
+  sessions:
+    already_logged_in: "You are already logged in."
+    already_logged_out: "You are already logged out."
+    invalid_credentials: "Invalid email or password."
+    logged_in: "Logged in successfully."
+    logged_out: "Logged out successfully."

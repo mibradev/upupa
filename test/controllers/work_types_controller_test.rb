@@ -2,6 +2,7 @@ require "test_helper"
 
 class WorkTypesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    log_in users(:with_password)
     @work_type = work_types(:one)
   end
 
@@ -54,6 +55,7 @@ class WorkTypesControllerTest < ActionDispatch::IntegrationTest
 
   class InvalidParametersTest < ActionDispatch::IntegrationTest
     setup do
+      log_in users(:with_password)
       @work_type = work_types(:one)
     end
 

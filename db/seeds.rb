@@ -1,5 +1,5 @@
 role = Role.create!(name: "Translator")
-user = User.create!(email: "translator@localhost", roles: [role])
+user = User.create!(email: "translator@localhost", password: "12345678", roles: [role])
 
 10.times do
   WorkFile.create!(name: "#{Faker::Food.unique.dish}.doc")

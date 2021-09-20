@@ -2,6 +2,7 @@ require "test_helper"
 
 class WorkFilesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    log_in users(:with_password)
     @work_file = work_files(:one)
   end
 
@@ -54,6 +55,7 @@ class WorkFilesControllerTest < ActionDispatch::IntegrationTest
 
   class InvalidParametersTest < ActionDispatch::IntegrationTest
     setup do
+      log_in users(:with_password)
       @work_file = work_files(:one)
     end
 

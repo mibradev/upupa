@@ -5,6 +5,7 @@ ruby "3.0.2"
 
 gem "rails", "~> 6.1.0"
 
+gem "bcrypt", "~> 3.1.0"
 gem "bootsnap", "~> 1.8.0", require: false
 gem "cssbundling-rails", "~> 0.1.0"
 gem "jbuilder", "~> 2.11.0"

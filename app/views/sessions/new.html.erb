@@ -1,0 +1,38 @@
+<% content_for :title, "Login - #{I18n.t :app_name}" %>
+<% content_for :description, "Log into #{I18n.t :app_name} to access your account." %>
+
+<main class="flex justify-center items-center p-8 min-h-screen">
+  <div class="space-y-8 w-full sm:space-y-0 sm:w-auto sm:bg-white sm:rounded sm:shadow">
+    <% if flash.alert %>
+      <div class="p-4 text-red-900 bg-red-300 sm:rounded-t">
+        <%= flash.alert %>
+      </div>
+    <% end %>
+
+    <% if flash.notice %>
+      <div class="p-4 text-green-900 bg-green-300 sm:rounded-t">
+        <%= flash.notice %>
+      </div>
+    <% end %>
+
+    <div class="space-y-8 sm:p-16">
+      <h1 class="text-3xl text-center">Login</h1>
+
+      <%= form_with(url: login_path) do |form| %>
+        <div class="space-y-4">
+          <div class="space-y-2">
+            <%= form.label :email, class: "block font-medium" %>
+            <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "user@example.com", class: "block p-2 w-full rounded shadow sm:border focus:border-0 focus:ring-2 focus:ring-orange-300 focus:outline-none" %>
+          </div>
+
+          <div class="space-y-2">
+            <%= form.label :password, class: "block font-medium" %>
+            <%= form.password_field :password, autocomplete: "current-password", placeholder: "********", class: "block p-2 w-full rounded shadow sm:border focus:border-0 focus:ring-2 focus:ring-orange-300 focus:outline-none" %>
+          </div>
+
+          <%= form.submit "Log in", class: "block p-2 w-full bg-orange-300 rounded shadow cursor-pointer hover:text-orange-300 hover:bg-gray-700 focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50 focus:outline-none" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>
