@@ -41,10 +41,11 @@ class SessionsController < ActionController::Base
   end
 
   def log_in(user)
+    reset_session
     session[:user_id] = user.id
   end
 
   def log_out
-    session[:user_id] = nil
+    reset_session
   end
 end
