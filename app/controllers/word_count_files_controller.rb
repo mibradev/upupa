@@ -10,14 +10,14 @@ class WordCountFilesController < ApplicationController
   end
 
   def new
-    @word_count_file = @word_count.word_count_files.build
+    @word_count_file = @word_count.word_count_files.new
   end
 
   def edit
   end
 
   def create
-    @word_count_file = @word_count.word_count_files.build(word_count_file_params)
+    @word_count_file = @word_count.word_count_files.new(word_count_file_params)
 
     if @word_count_file.save
       redirect_to @word_count, notice: "Word count file was successfully created"
