@@ -23,6 +23,7 @@ group :development, :test do
   # TODO: Remove after fixing issues with debug
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 
+  gem "benchmark-ips"
   gem "standard"
 end
 
