@@ -5,6 +5,6 @@ class WorkFile < ApplicationRecord
   has_many :word_count_files, dependent: :restrict_with_error
 
   def name=(value)
-    super(value&.squish!)
+    super value&.squish!
   end
 end

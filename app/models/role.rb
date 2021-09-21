@@ -5,6 +5,6 @@ class Role < ApplicationRecord
   has_and_belongs_to_many :users
 
   def name=(value)
-    super(value&.squish!)
+    super value&.squish!
   end
 end
