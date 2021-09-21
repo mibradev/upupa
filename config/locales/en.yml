@@ -17,3 +17,4 @@ en:
     invalid_credentials: "Invalid email or password."
     logged_in: "Logged in successfully."
     logged_out: "Logged out successfully."
+    unauthenticated: "You need to log in before continuing."

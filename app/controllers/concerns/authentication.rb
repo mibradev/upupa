@@ -10,7 +10,7 @@ module Authentication
   def authenticate
     unless (Current.user = User.find_by(id: session[:user_id]))
       reset_session
-      redirect_to login_url
+      redirect_to login_url, alert: I18n.t("sessions.unauthenticated")
     end
   end
 end
