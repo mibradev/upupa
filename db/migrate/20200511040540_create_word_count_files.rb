@@ -1,4 +1,4 @@
-class CreateWordCountFiles < ActiveRecord::Migration[6.0]
+class CreateWordCountFiles < ActiveRecord::Migration[7.0]
   def change
     create_table :word_count_files do |t|
       t.integer :actual_word_count, null: false
