@@ -8,6 +8,9 @@ module Authentication
   private
 
   def authenticate
-    Current.user = User.find_by(id: session[:user_id]) or redirect_to(login_url)
+    unless (Current.user = User.find_by(id: session[:user_id]))
+      reset_session
+      redirect_to login_url
+    end
   end
 end

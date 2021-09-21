@@ -63,4 +63,12 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_equal I18n.t("sessions.already_logged_out"), flash.alert
     assert_redirected_to login_url
   end
+
+  test "should not cause too many redirects after destroying logged in user" do
+    user = users(:with_password)
+    log_in user
+    user.destroy!
+    get login_url
+    assert_response :ok
+  end
 end
