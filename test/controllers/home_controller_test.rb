@@ -6,7 +6,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get root_url
     assert_response :ok
     assert_select "title", I18n.t(:app_name)
-    assert_select "h2", "Welcome to #{I18n.t :app_name}!"
+    assert_select "h1", "Welcome to #{I18n.t :app_name}!"
   end
 
   test "should not get index if not logged in" do
