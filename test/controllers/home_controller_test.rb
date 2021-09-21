@@ -14,13 +14,4 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_equal I18n.t("sessions.unauthenticated"), flash.alert
     assert_redirected_to login_url
   end
-
-  test "should not cause too many redirects after destroying logged in user" do
-    user = users(:with_password)
-    log_in user
-    user.destroy!
-    get root_url
-    follow_redirect!
-    assert_response :ok
-  end
 end
