@@ -35,19 +35,19 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   test "should not log in with invalid email and password" do
     post login_url, params: {email: nil, password: nil}
     assert_equal I18n.t("sessions.invalid_credentials"), flash.alert
-    assert_equal login_path, path
+    assert_response :unprocessable_entity
   end
 
   test "should not log in with invalid email" do
     post login_url, params: {email: nil, password: @password}
     assert_equal I18n.t("sessions.invalid_credentials"), flash.alert
-    assert_equal login_path, path
+    assert_response :unprocessable_entity
   end
 
   test "should not log in with invalid password" do
     post login_url, params: {email: @user.email, password: nil}
     assert_equal I18n.t("sessions.invalid_credentials"), flash.alert
-    assert_equal login_path, path
+    assert_response :unprocessable_entity
   end
 
   test "should log out" do
