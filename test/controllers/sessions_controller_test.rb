@@ -71,4 +71,9 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     get login_url
     assert_response :ok
   end
+
+  test "should not throw error if user has no password" do
+    post login_url, params: {email: users(:without_password).email, password: nil}
+    assert_response :unprocessable_entity
+  end
 end

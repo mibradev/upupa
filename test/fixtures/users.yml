@@ -8,6 +8,9 @@ with_password:
   email: with_password@localhost
   password_digest: <%= BCrypt::Password.create("12345678") %>
 
+without_password:
+  email: without_password@localhost
+
 for_word_counts:
   email: for_word_counts@localhost
   password_digest: <%= BCrypt::Password.create("12345678") %>
