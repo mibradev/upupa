@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ruby/debug.git
-  revision: 0b326f308eaebe2d7357ef8ceee2162d4ba7e82e
+  revision: cb41b9934741177cb95949ddce2959b6fb4fb459
   specs:
     debug (1.1.0)
       irb
@@ -207,13 +207,13 @@ GEM
     standard (1.3.0)
       rubocop (= 1.20.0)
       rubocop-performance (= 1.11.5)
-    stimulus-rails (0.5.4)
+    stimulus-rails (0.6.0)
       rails (>= 6.0.0)
-    terser (1.1.6)
+    terser (1.1.7)
       execjs (>= 0.3.0, < 3)
     thor (1.1.0)
     tilt (2.0.10)
-    turbo-rails (0.7.14)
+    turbo-rails (0.8.1)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -254,9 +254,9 @@ DEPENDENCIES
   sass-rails (~> 6.0.0)
   selenium-webdriver
   standard
-  stimulus-rails (~> 0.5.0)
+  stimulus-rails (~> 0.6.0)
   terser (~> 1.1.0)
-  turbo-rails (~> 0.7.0)
+  turbo-rails (~> 0.8.0)
   tzinfo-data
   web-console
   webdrivers
@@ -265,4 +265,4 @@ RUBY VERSION
    ruby 3.0.2p107
 
 BUNDLED WITH
-   2.2.27
+   2.2.28
