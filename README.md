@@ -1,3 +1,3 @@
 # Upupa
 
-[![CircleCI](https://circleci.com/gh/mibradev/upupa.svg?style=svg)](https://circleci.com/gh/mibradev/upupa)
+![ci workflow](https://github.com/mibradev/upupa/actions/workflows/ci.yml/badge.svg)
