@@ -105,9 +105,6 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (0.1.7)
       railties (>= 6.0.0)
-    kredis (0.4.0)
-      activesupport (>= 6.0.0)
-      redis (~> 4.2)
     loofah (2.12.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -247,10 +244,10 @@ DEPENDENCIES
   faker
   jbuilder (~> 2.11.0)
   jsbundling-rails (~> 0.1.0)
-  kredis (~> 0.4.0)
   pg (~> 1.2.0)
   puma (~> 5.5.0)
   rails (= 7.0.0.alpha2)
+  redis (~> 4.4.0)
   sass-rails (~> 6.0.0)
   selenium-webdriver
   standard
