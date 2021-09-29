@@ -11,9 +11,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-      DATABASE_URL: postgres://postgres:postgres@localhost:5432/upupa_test
-      RAILS_ENV: test
     services:
       postgres:
         image: postgres
@@ -36,3 +33,6 @@ jobs:
       - run: bundle exec standardrb
       - run: yarn run standard
       - run: bin/rails test:all
+        env:
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/upupa_test
+          RAILS_ENV: test
