@@ -19,7 +19,7 @@ gem "terser", "~> 1.1.0"
 gem "turbo-rails", "~> 0.8.0"
 
 group :development, :test do
-  gem "debug", platforms: [:mri, :mingw, :x64_mingw], github: "ruby/debug"
+  gem "debug", platforms: [:mri, :mingw, :x64_mingw]
 
   gem "benchmark-ips"
   gem "standard"

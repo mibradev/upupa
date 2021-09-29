@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/ruby/debug.git
-  revision: cb41b9934741177cb95949ddce2959b6fb4fb459
-  specs:
-    debug (1.1.0)
-      irb
-      reline (>= 0.2.7)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -87,8 +79,11 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
-    cssbundling-rails (0.2.2)
+    cssbundling-rails (0.2.4)
       railties (>= 6.0.0)
+    debug (1.2.0)
+      irb
+      reline (>= 0.2.7)
     erubi (1.10.0)
     execjs (2.8.1)
     faker (2.19.0)
@@ -103,7 +98,7 @@ GEM
       reline (>= 0.2.7)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
-    jsbundling-rails (0.1.7)
+    jsbundling-rails (0.1.9)
       railties (>= 6.0.0)
     loofah (2.12.0)
       crass (~> 1.0.2)
@@ -174,7 +169,7 @@ GEM
       rubocop-ast (>= 1.9.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.11.0)
+    rubocop-ast (1.12.0)
       parser (>= 3.0.1.1)
     rubocop-performance (1.11.5)
       rubocop (>= 1.7.0, < 2.0)
@@ -229,7 +224,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.5.0.beta4)
+    zeitwerk (2.5.0.beta5)
 
 PLATFORMS
   ruby
@@ -240,7 +235,7 @@ DEPENDENCIES
   bootsnap (~> 1.9.0)
   capybara
   cssbundling-rails (~> 0.2.0)
-  debug!
+  debug
   faker
   jbuilder (~> 2.11.0)
   jsbundling-rails (~> 0.1.0)
