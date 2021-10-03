@@ -2,12 +2,7 @@
   "name": "upupa",
   "private": true,
   "dependencies": {
-    "@hotwired/stimulus": "^3.0.0",
-    "@hotwired/turbo-rails": "^7.0.0",
-    "@rails/actioncable": "7.0.0-alpha2",
-    "@rails/activestorage": "7.0.0-alpha2",
     "autoprefixer": "^10.0.0",
-    "esbuild": "^0.13.0",
     "postcss": "^8.0.0",
     "tailwindcss": "^2.0.0"
   },
@@ -15,7 +10,6 @@
     "standard": "^16.0.0"
   },
   "scripts": {
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css",
-    "build": "esbuild app/javascript/*.* --bundle --outdir=app/assets/builds"
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
   }
 }
