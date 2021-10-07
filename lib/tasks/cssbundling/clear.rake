@@ -1,6 +1,6 @@
 namespace :css do
   desc "Clear CSS builds"
-  task "clear" do
+  task :clear do
     rm_rf Dir["app/assets/builds/[^.]*.css"], verbose: false
   end
 end
