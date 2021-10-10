@@ -7,5 +7,3 @@ class ActionDispatch::SystemTestCase
     has_text? I18n.t("sessions.logged_in")
   end
 end
-
-Capybara.default_max_wait_time = 10
