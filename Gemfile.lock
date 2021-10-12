@@ -215,23 +215,23 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt (~> 3.1.0)
+  bcrypt (~> 3.1.16)
   benchmark-ips
-  bootsnap (~> 1.9.0)
+  bootsnap (~> 1.9.1)
   capybara
-  cssbundling-rails (~> 0.2.0)
+  cssbundling-rails (~> 0.2.4)
   debug
   faker
   importmap-rails (~> 0.8.0)
-  jbuilder (~> 2.11.0)
-  pg (~> 1.2.0)
+  jbuilder (~> 2.11.2)
+  pg (~> 1.2.3)
   puma (~> 5.5.1)
   rails (= 7.0.0.alpha2)
   redis (~> 4.4.0)
   selenium-webdriver
   standard
   stimulus-rails (~> 0.7.0)
-  turbo-rails (~> 0.8.0)
+  turbo-rails (~> 0.8.1)
   tzinfo-data
   web-console
   webdrivers
@@ -240,4 +240,4 @@ RUBY VERSION
    ruby 3.0.2p107
 
 BUNDLED WITH
-   2.2.28
+   2.2.29
