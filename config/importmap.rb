@@ -1,9 +1,6 @@
-# Use direct uploads for Active Storage (remember to import "@rails/activestorage" in your application.js)
-# pin "@rails/activestorage", to: "activestorage.esm.js"
+# Pin npm packages by running ./bin/importmap
 
-# Use npm packages from a JavaScript CDN by running ./bin/importmap
-
-pin "application"
+pin "application", preload: true
 pin "@hotwired/turbo-rails", to: "turbo.js"
 pin "@hotwired/stimulus", to: "stimulus.js"
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
