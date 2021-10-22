@@ -12,9 +12,9 @@ gem "importmap-rails", "~> 0.8.1"
 gem "jbuilder", "~> 2.11.2"
 gem "pg", "~> 1.2.3"
 gem "puma", "~> 5.5.2"
-gem "redis", "~> 4.5.0"
+gem "redis", "~> 4.5.1"
 gem "stimulus-rails", "~> 0.7.1"
-gem "turbo-rails", "~> 7.1.0"
+gem "turbo-rails", "~> 7.1.1"
 
 group :development, :test do
   gem "debug", platforms: [:mri, :mingw, :x64_mingw]
