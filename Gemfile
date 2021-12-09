@@ -6,7 +6,7 @@ ruby "3.0.2"
 gem "rails", "7.0.0.alpha2"
 
 gem "bcrypt", "~> 3.1.16"
-gem "bootsnap", "~> 1.9.1", require: false
+gem "bootsnap", "~> 1.9.3", require: false
 gem "cssbundling-rails", "~> 0.2.4"
 gem "importmap-rails", "~> 0.8.1"
 gem "jbuilder", "~> 2.11.2"
