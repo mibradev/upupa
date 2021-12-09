@@ -13,7 +13,7 @@ gem "jbuilder", "~> 2.11.3"
 gem "pg", "~> 1.2.3"
 gem "puma", "~> 5.5.2"
 gem "redis", "~> 4.5.1"
-gem "stimulus-rails", "~> 0.7.1"
+gem "stimulus-rails", "~> 0.7.3"
 gem "turbo-rails", "~> 7.1.1"
 
 group :development, :test do
