@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.2"
 
-gem "rails", "7.0.0.alpha2"
+gem "rails", "7.0.0.rc1"
 
 gem "bcrypt", "~> 3.1.16"
 gem "bootsnap", "~> 1.9.3", require: false
@@ -13,8 +13,9 @@ gem "jbuilder", "~> 2.11.3"
 gem "pg", "~> 1.2.3"
 gem "puma", "~> 5.5.2"
 gem "redis", "~> 4.5.1"
+gem "sprockets-rails", "~> 3.4.1"
 gem "stimulus-rails", "~> 0.7.3"
-gem "turbo-rails", "~> 7.1.1"
+gem "turbo-rails", "~> 0.9.0"
 
 group :development, :test do
   gem "debug", platforms: [:mri, :mingw, :x64_mingw]
