@@ -8,7 +8,7 @@ class SessionsController < ActionController::Base
   def create
     user = User.find_by(email: params[:email])
 
-    if user&.password_digest? && user&.authenticate(params[:password])
+    if user&.authenticate(params[:password])
       log_in user
       redirect_to root_url, notice: I18n.t("sessions.logged_in")
     else
