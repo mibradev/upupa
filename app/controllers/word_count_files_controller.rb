@@ -35,8 +35,11 @@ class WordCountFilesController < ApplicationController
   end
 
   def destroy
-    @word_count_file.destroy
-    redirect_to @word_count, notice: "Word count file was successfully destroyed"
+    if @word_count_file.destroy
+      redirect_to @word_count, notice: "Word count file was successfully destroyed"
+    else
+      redirect_to @word_count_file, alert: @word_count_file.errors.full_messages.first
+    end
   end
 
   private

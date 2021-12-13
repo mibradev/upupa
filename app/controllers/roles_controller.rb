@@ -34,8 +34,11 @@ class RolesController < ApplicationController
   end
 
   def destroy
-    @role.destroy
-    redirect_to roles_url, notice: "Role was successfully destroyed"
+    if @role.destroy
+      redirect_to roles_url, notice: "Role was successfully destroyed"
+    else
+      redirect_to @role, alert: @role.errors.full_messages.first
+    end
   end
 
   private
