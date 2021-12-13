@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
 
   resources :roles
+  resources :users
 
   resources :word_counts do
     resources :word_count_files
