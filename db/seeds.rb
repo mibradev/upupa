@@ -1,5 +1,12 @@
-role = Role.create!(name: "Translator")
-user = User.create!(email: "translator@localhost", password: "12345678", roles: [role])
+roles = {
+  admin: Role.create!(name: "Admin"),
+  translator: Role.create!(name: "Translator")
+}
+
+users = {
+  admin: User.create!(email: "admin@localhost", password: "12345678", roles: roles.values),
+  translator: User.create!(email: "translator@localhost", password: "12345678", roles: [roles[:translator]])
+}
 
 10.times do
   WorkFile.create!(name: "#{Faker::Food.unique.dish}.doc")
@@ -16,7 +23,7 @@ work_type_ids = WorkType.ids
   word_count = WordCount.create!(
     date: Faker::Date.unique.backward,
     notes: Faker::Lorem.paragraph(sentence_count: 0, random_sentences_to_add: 3),
-    user: user
+    user: users[:admin]
   )
 
   rand(0..3).times do

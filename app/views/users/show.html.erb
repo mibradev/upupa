@@ -14,3 +14,29 @@
     <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @user.email %></dd>
   </div>
 </dl>
+
+<section class="space-y-8">
+  <header class="flex justify-between items-start space-x-4">
+    <h2 class="text-xl font-bold">Roles</h2>
+  </header>
+
+  <% if @user.roles.load.any? %>
+    <div class="overflow-x-auto rounded shadow">
+      <table class="w-full text-sm text-left text-gray-700 whitespace-nowrap bg-orange-50 divide-y divide-black divide-opacity-10">
+        <thead>
+          <tr>
+            <th scope="col" class="p-4 font-medium">Name</th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-black divide-opacity-10">
+          <% @user.roles.each do |role| %>
+            <tr>
+              <td class="p-4"><%= role.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+</section>
