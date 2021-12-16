@@ -37,6 +37,7 @@
         <thead>
           <tr>
             <th scope="col" class="p-4 font-medium">Name</th>
+            <th scope="col" class="p-4 font-medium"></th>
           </tr>
         </thead>
 
@@ -44,6 +45,10 @@
           <% @user.roles.each do |role| %>
             <tr>
               <td class="p-4"><%= role.name %></td>
+
+              <td class="p-2 text-right">
+                <%= button_to "Remove", user_role_path(@user, role), method: :delete, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              </td>
             </tr>
           <% end %>
         </tbody>

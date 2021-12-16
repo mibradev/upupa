@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :users do
     scope module: :users do
-      resources :roles, only: :create
+      resources :roles, only: [:create, :destroy]
     end
   end
 

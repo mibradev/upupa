@@ -13,4 +13,14 @@ class Users::RolesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to @user
   end
+
+  test "should destroy role" do
+    user = users(:with_role)
+
+    assert_difference("user.roles.count", -1) do
+      delete user_role_url(user, user.roles.first)
+    end
+
+    assert_redirected_to user
+  end
 end
