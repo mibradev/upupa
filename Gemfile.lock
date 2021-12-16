@@ -93,7 +93,7 @@ GEM
       activesupport (>= 5.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
-    importmap-rails (1.0.0)
+    importmap-rails (1.0.1)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.5.9)
@@ -227,7 +227,7 @@ DEPENDENCIES
   cssbundling-rails (~> 1.0.0)
   debug
   faker
-  importmap-rails (~> 1.0.0)
+  importmap-rails (~> 1.0.1)
   jbuilder (~> 2.11.3)
   pg (~> 1.2.3)
   puma (~> 5.5.2)
