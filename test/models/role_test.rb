@@ -43,4 +43,16 @@ class RoleTest < ActiveSupport::TestCase
       @role.users << users(:one, :one)
     end
   end
+
+  test "cannot update a system role" do
+    @role.system_role = true
+    assert_not @role.save
+    assert @role.errors.added?(:base, :system_role)
+  end
+
+  test "cannot destroy a system role" do
+    @role.system_role = true
+    assert_not @role.destroy
+    assert @role.errors.added?(:base, :system_role)
+  end
 end

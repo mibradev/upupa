@@ -1,6 +1,6 @@
 roles = {
-  admin: Role.create!(name: "Admin"),
-  translator: Role.create!(name: "Translator")
+  admin: Role.create!(name: "Admin", system_role: true),
+  translator: Role.create!(name: "Translator", system_role: true)
 }
 
 users = {
