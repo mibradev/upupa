@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class RolesTest < ApplicationSystemTestCase
   setup do
-    log_in users(:with_password)
+    log_in users(:admin)
     @role = roles(:one)
   end
 

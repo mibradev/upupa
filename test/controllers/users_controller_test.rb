@@ -2,7 +2,7 @@ require "test_helper"
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    log_in users(:with_password)
+    log_in users(:admin)
     @user = users(:one)
   end
 
@@ -55,7 +55,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   class InvalidParametersTest < ActionDispatch::IntegrationTest
     setup do
-      log_in users(:with_password)
+      log_in users(:admin)
       @user = users(:one)
     end
 
@@ -67,6 +67,47 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     test "should not update user" do
       patch user_url(@user), params: {user: {email: nil}}
       assert_response :unprocessable_entity
+    end
+  end
+
+  class ForbiddenTest < ActionDispatch::IntegrationTest
+    setup do
+      log_in users(:with_password)
+    end
+
+    test "should not get index" do
+      get users_url
+      assert_response :forbidden
+    end
+
+    test "should not get new" do
+      get new_user_url
+      assert_response :forbidden
+    end
+
+    test "should not create user" do
+      post users_url
+      assert_response :forbidden
+    end
+
+    test "should not show user" do
+      get user_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not get edit" do
+      get edit_user_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not update user" do
+      patch user_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not destroy user" do
+      delete user_url(1)
+      assert_response :forbidden
     end
   end
 end

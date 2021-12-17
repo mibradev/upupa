@@ -1,4 +1,5 @@
 class Users::RolesController < ApplicationController
+  before_action :authorize_admin
   before_action :set_user
 
   def create

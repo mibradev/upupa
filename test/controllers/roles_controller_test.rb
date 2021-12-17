@@ -2,7 +2,7 @@ require "test_helper"
 
 class RolesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    log_in users(:with_password)
+    log_in users(:admin)
     @role = roles(:one)
   end
 
@@ -49,7 +49,7 @@ class RolesControllerTest < ActionDispatch::IntegrationTest
 
   class InvalidParametersTest < ActionDispatch::IntegrationTest
     setup do
-      log_in users(:with_password)
+      log_in users(:admin)
       @role = roles(:one)
     end
 
@@ -61,6 +61,47 @@ class RolesControllerTest < ActionDispatch::IntegrationTest
     test "should not update role" do
       patch role_url(@role), params: {role: {name: nil}}
       assert_response :unprocessable_entity
+    end
+  end
+
+  class ForbiddenTest < ActionDispatch::IntegrationTest
+    setup do
+      log_in users(:with_password)
+    end
+
+    test "should not get index" do
+      get roles_url
+      assert_response :forbidden
+    end
+
+    test "should not get new" do
+      get new_role_url
+      assert_response :forbidden
+    end
+
+    test "should not create role" do
+      post roles_url
+      assert_response :forbidden
+    end
+
+    test "should not show role" do
+      get role_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not get edit" do
+      get edit_role_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not update role" do
+      patch role_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not destroy role" do
+      delete role_url(1)
+      assert_response :forbidden
     end
   end
 end

@@ -39,12 +39,14 @@
               <%= link_to "Work Types", work_types_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
             </div>
 
-            <hr class="border-black border-opacity-10">
+            <% if Current.user.admin? %>
+              <hr class="border-black border-opacity-10">
 
-            <div class="py-3">
-              <%= link_to "Roles", roles_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
-              <%= link_to "Users", users_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
-            </div>
+              <div class="py-3">
+                <%= link_to "Roles", roles_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
+                <%= link_to "Users", users_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
+              </div>
+            <% end %>
           </nav>
         </aside>
 

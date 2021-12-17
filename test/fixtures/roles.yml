@@ -9,3 +9,4 @@ for_user:
 
 admin:
   name: Admin
+  system_role: true

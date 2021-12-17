@@ -2,7 +2,7 @@ require "test_helper"
 
 class Users::RolesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    log_in users(:with_password)
+    log_in users(:admin)
     @user = users(:one)
   end
 
@@ -22,5 +22,21 @@ class Users::RolesControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to user
+  end
+
+  class ForbiddenTest < ActionDispatch::IntegrationTest
+    setup do
+      log_in users(:with_password)
+    end
+
+    test "should not create role" do
+      post user_roles_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not destroy role" do
+      delete user_role_url(1, 1)
+      assert_response :forbidden
+    end
   end
 end
