@@ -10,4 +10,8 @@ class User < ApplicationRecord
 
   has_many :word_counts, dependent: :restrict_with_error
   has_and_belongs_to_many :roles
+
+  def has_role?(name)
+    roles.any? { |role| role.name == name }
+  end
 end

@@ -88,4 +88,10 @@ class UserTest < ActiveSupport::TestCase
       @user.roles << roles(:one, :one)
     end
   end
+
+  test "checking if the user has a role" do
+    role_one = roles(:one)
+    @user.roles << role_one
+    assert @user.has_role?(role_one.name)
+  end
 end
