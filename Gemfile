@@ -14,7 +14,7 @@ gem "pg", "~> 1.2.3"
 gem "puma", "~> 5.5.2"
 gem "redis", "~> 4.5.1"
 gem "sprockets-rails", "~> 3.4.2"
-gem "stimulus-rails", "~> 1.0.0"
+gem "stimulus-rails", "~> 1.0.2"
 gem "turbo-rails", "~> 1.0.0"
 
 group :development, :test do
