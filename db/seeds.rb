@@ -3,6 +3,10 @@ roles = {
   translator: Role.create!(name: "Translator", system_role: true)
 }
 
+10.times do
+  Role.create!(name: Faker::Job.position)
+end
+
 users = {
   admin: User.create!(email: "admin@localhost", password: "12345678", roles: roles.values),
   translator: User.create!(email: "translator@localhost", password: "12345678", roles: [roles[:translator]])
