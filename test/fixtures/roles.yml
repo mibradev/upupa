@@ -6,3 +6,6 @@ two:
 
 for_user:
   name: for user
+
+admin:
+  name: Admin

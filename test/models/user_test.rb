@@ -94,4 +94,9 @@ class UserTest < ActiveSupport::TestCase
     @user.roles << role_one
     assert @user.has_role?(role_one.name)
   end
+
+  test "checking if the user is admin" do
+    @user.roles << roles(:admin)
+    assert @user.admin?
+  end
 end

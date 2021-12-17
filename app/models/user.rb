@@ -14,4 +14,8 @@ class User < ApplicationRecord
   def has_role?(name)
     roles.any? { |role| role.name == name }
   end
+
+  def admin?
+    has_role? "Admin"
+  end
 end
