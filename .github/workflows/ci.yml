@@ -33,6 +33,7 @@ jobs:
       - run: bundle exec brakeman --run-all-checks
       - run: bundle exec standardrb
       - run: yarn run standard
+      - run: bundle exec erblint --lint-all
       - run: bin/rails test:all
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/upupa_test

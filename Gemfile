@@ -22,6 +22,7 @@ group :development, :test do
 
   gem "benchmark-ips"
   gem "brakeman"
+  gem "erb_lint", require: false
   gem "standard"
 end
 
