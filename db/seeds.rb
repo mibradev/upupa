@@ -4,7 +4,7 @@ roles = {
 }
 
 10.times do
-  Role.create!(name: Faker::Job.position)
+  Role.create!(name: Faker::Job.unique.position)
 end
 
 users = {
