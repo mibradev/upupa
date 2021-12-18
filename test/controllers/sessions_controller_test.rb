@@ -50,6 +50,12 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
   end
 
+  test "should redirect to the desired page after login" do
+    get word_counts_url
+    post login_url, params: {email: @user.email, password: @password}
+    assert_redirected_to word_counts_url
+  end
+
   test "should log out" do
     log_in @user
     delete logout_url
