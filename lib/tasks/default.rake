@@ -1,3 +1,3 @@
 Rake::Task[:default].clear
 
-task default: ["standard", "standardjs", "test:all"]
+task default: ["brakeman", "standard", "standardjs", "test:all"]

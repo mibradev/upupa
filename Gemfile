@@ -21,6 +21,7 @@ group :development, :test do
   gem "debug", platforms: [:mri, :mingw, :x64_mingw]
 
   gem "benchmark-ips"
+  gem "brakeman"
   gem "standard"
 end
 

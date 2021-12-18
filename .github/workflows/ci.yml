@@ -30,6 +30,7 @@ jobs:
         with:
           cache: yarn
       - run: yarn install --frozen-lockfile
+      - run: bundle exec brakeman --run-all-checks
       - run: bundle exec standardrb
       - run: yarn run standard
       - run: bin/rails test:all
