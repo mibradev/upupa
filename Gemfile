@@ -9,7 +9,7 @@ gem "bcrypt", "~> 3.1.16"
 gem "bootsnap", "~> 1.9.3", require: false
 gem "cssbundling-rails", "~> 1.0.0"
 gem "importmap-rails", "~> 1.0.1"
-gem "jbuilder", "~> 2.11.3"
+gem "jbuilder", "~> 2.11.4"
 gem "pg", "~> 1.2.3"
 gem "puma", "~> 5.5.2"
 gem "redis", "~> 4.5.1"
