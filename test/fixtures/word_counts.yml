@@ -2,10 +2,6 @@ one:
   date: 2020-01-01
   user: for_word_counts
 
-two:
-  date: 2020-01-02
-  user: for_word_counts
-
 for_word_count_files:
   date: 2020-01-03
   user: for_word_counts

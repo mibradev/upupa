@@ -1,9 +1,6 @@
 one:
   email: one@localhost
 
-two:
-  email: two@localhost
-
 with_password:
   email: with_password@localhost
   password_digest: <%= BCrypt::Password.create("12345678") %>

@@ -1,9 +1,6 @@
 one:
   name: one
 
-two:
-  name: two
-
 for_user:
   name: for user
 

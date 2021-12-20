@@ -16,10 +16,9 @@ class RoleTest < ActiveSupport::TestCase
   end
 
   test "uniqueness of name" do
-    role_two = roles(:two)
-    role_two.name = @role.name.swapcase
-    assert_not role_two.valid?
-    assert role_two.errors.added?(:name, :taken, value: role_two.name)
+    new_role = Role.new(name: @role.name.swapcase)
+    assert_not new_role.valid?
+    assert new_role.errors.added?(:name, :taken, value: new_role.name)
   end
 
   test "squishing name" do

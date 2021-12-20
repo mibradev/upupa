@@ -1,8 +1,5 @@
 one:
   name: one
 
-two:
-  name: two
-
 for_word_count_files:
   name: for_word_count_files

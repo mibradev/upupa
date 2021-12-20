@@ -15,12 +15,10 @@ class WordCountTest < ActiveSupport::TestCase
     assert @word_count.errors.added?(:date, :blank)
   end
 
-  test "uniquness of date" do
-    word_count_two = word_counts(:two)
-    word_count_two.date = @word_count.date
-    word_count_two.user_id = @word_count.user_id
-    assert_not word_count_two.valid?
-    assert word_count_two.errors.added?(:date, :taken, value: word_count_two.date)
+  test "uniqueness of date" do
+    new_word_count = WordCount.new(date: @word_count.date, user_id: @word_count.user_id)
+    assert_not new_word_count.valid?
+    assert new_word_count.errors.added?(:date, :taken, value: new_word_count.date)
   end
 
   test "range of date" do

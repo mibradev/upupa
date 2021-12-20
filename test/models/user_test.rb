@@ -28,10 +28,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "uniqueness of email" do
-    user_two = users(:two)
-    user_two.email = @user.email
-    assert_not user_two.valid?
-    assert user_two.errors.added?(:email, :taken, value: user_two.email)
+    new_user = User.new(email: @user.email)
+    assert_not new_user.valid?
+    assert new_user.errors.added?(:email, :taken, value: new_user.email)
   end
 
   test "format of email" do

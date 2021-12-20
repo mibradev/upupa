@@ -16,10 +16,9 @@ class WorkFileTest < ActiveSupport::TestCase
   end
 
   test "uniqueness of name" do
-    work_file_two = work_files(:two)
-    work_file_two.name = @work_file.name.swapcase
-    assert_not work_file_two.valid?
-    assert work_file_two.errors.added?(:name, :taken, value: work_file_two.name)
+    new_work_file = WorkFile.new(name: @work_file.name.swapcase)
+    assert_not new_work_file.valid?
+    assert new_work_file.errors.added?(:name, :taken, value: new_work_file.name)
   end
 
   test "squishing name" do

@@ -16,10 +16,9 @@ class WorkTypeTest < ActiveSupport::TestCase
   end
 
   test "uniqueness of name" do
-    work_type_two = work_types(:two)
-    work_type_two.name = @work_type.name.swapcase
-    assert_not work_type_two.valid?
-    assert work_type_two.errors.added?(:name, :taken, value: work_type_two.name)
+    new_work_type = WorkType.new(name: @work_type.name.swapcase)
+    assert_not new_work_type.valid?
+    assert new_work_type.errors.added?(:name, :taken, value: new_work_type.name)
   end
 
   test "squishing name" do
