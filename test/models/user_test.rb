@@ -83,9 +83,11 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
-  test "uniqueness of role" do
-    assert_raise(ActiveRecord::RecordNotUnique) do
-      @user.roles << roles(:one, :one)
+  test "destroying dependent user_roles" do
+    @user.roles << roles(:one)
+
+    assert_difference("UserRole.count", -1) do
+      @user.destroy
     end
   end
 

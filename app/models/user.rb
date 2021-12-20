@@ -9,7 +9,8 @@ class User < ApplicationRecord
   validates :password, confirmation: true
 
   has_many :word_counts, dependent: :restrict_with_error
-  has_and_belongs_to_many :roles
+  has_many :user_roles, dependent: :destroy
+  has_many :roles, through: :user_roles
 
   def has_role?(name)
     roles.any? { |role| role.name == name }

@@ -13,7 +13,6 @@ without_password:
 
 with_role:
   email: with_role@localhost
-  roles: for_user
 
 for_word_counts:
   email: for_word_counts@localhost

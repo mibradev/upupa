@@ -3,11 +3,11 @@ require "test_helper"
 class Users::RolesControllerTest < ActionDispatch::IntegrationTest
   setup do
     log_in users(:admin)
-    @user = users(:one)
+    @user = users(:with_role)
   end
 
   test "should create role" do
-    assert_difference("@user.roles.count") do
+    assert_difference("@user.user_roles.count") do
       post user_roles_url(@user), params: {role: {role_id: roles(:one).id}}
     end
 
@@ -15,13 +15,11 @@ class Users::RolesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy role" do
-    user = users(:with_role)
-
-    assert_difference("user.roles.count", -1) do
-      delete user_role_url(user, user.roles.first)
+    assert_difference("@user.user_roles.count", -1) do
+      delete user_role_url(@user, @user.roles.first)
     end
 
-    assert_redirected_to user
+    assert_redirected_to @user
   end
 
   class ForbiddenTest < ActionDispatch::IntegrationTest

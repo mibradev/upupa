@@ -3,9 +3,11 @@ class Users::RolesController < ApplicationController
   before_action :set_user
 
   def create
-    return if role_params[:role_id].blank?
-    @user.roles << Role.find(role_params[:role_id])
-    redirect_to @user, notice: "Role was successfully added"
+    @user_role = @user.user_roles.new(role_params)
+
+    if @user_role.save
+      redirect_to @user, notice: "Role was successfully added"
+    end
   end
 
   def destroy
