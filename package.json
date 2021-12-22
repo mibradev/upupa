@@ -1,7 +1,0 @@
-{
-  "name": "upupa",
-  "private": true,
-  "devDependencies": {
-    "standard": "^16.0.4"
-  }
-}

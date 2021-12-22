@@ -26,13 +26,8 @@ jobs:
           bundler-cache: true
         env:
           BUNDLE_WITHOUT: development:production
-      - uses: actions/setup-node@v2
-        with:
-          cache: yarn
-      - run: yarn install --frozen-lockfile
       - run: bundle exec brakeman --run-all-checks
       - run: bundle exec standardrb
-      - run: yarn run standard
       - run: bundle exec erblint --lint-all
       - run: bin/rails test:all
         env:
