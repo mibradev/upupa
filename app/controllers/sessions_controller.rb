@@ -11,26 +11,26 @@ class SessionsController < ActionController::Base
 
     if user&.authenticate(params[:password])
       log_in user
-      redirect_to @stored_location, notice: I18n.t("sessions.logged_in")
+      redirect_to @stored_location, notice: I18n.t("notices.sessions.logged_in")
     else
-      flash.now.alert = I18n.t("sessions.invalid_credentials")
+      flash.now.alert = I18n.t("alerts.sessions.invalid_credentials")
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     log_out
-    redirect_to login_url, notice: I18n.t("sessions.logged_out")
+    redirect_to login_url, notice: I18n.t("notices.sessions.logged_out")
   end
 
   private
 
   def redirect_if_already_logged_in
-    redirect_to root_url, alert: I18n.t("sessions.already_logged_in") if logged_in?
+    redirect_to root_url, alert: I18n.t("alerts.sessions.already_logged_in") if logged_in?
   end
 
   def redirect_if_already_logged_out
-    redirect_to login_url, alert: I18n.t("sessions.already_logged_out") if logged_out?
+    redirect_to login_url, alert: I18n.t("alerts.sessions.already_logged_out") if logged_out?
   end
 
   def set_stored_location

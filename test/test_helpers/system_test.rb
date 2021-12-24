@@ -4,6 +4,6 @@ class ActionDispatch::SystemTestCase
     fill_in "Email", with: user.email
     fill_in "Password", with: password
     click_button "Log in"
-    has_text? I18n.t("sessions.logged_in")
+    has_text? I18n.t("notices.sessions.logged_in")
   end
 end

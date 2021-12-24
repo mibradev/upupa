@@ -12,15 +12,17 @@ en:
       create: "Create"
       update: "Update"
 
-  sessions:
-    already_logged_in: "You are already logged in."
-    already_logged_out: "You are already logged out."
-    invalid_credentials: "Invalid email or password."
-    logged_in: "Logged in successfully."
-    logged_out: "Logged out successfully."
-    unauthenticated: "You need to log in before continuing."
-
   notices:
     created: "%{record} was successfully created"
     updated: "%{record} was successfully updated"
     destroyed: "%{record} was successfully destroyed"
+    sessions:
+      logged_in: "Logged in successfully."
+      logged_out: "Logged out successfully."
+
+  alerts:
+    sessions:
+      already_logged_in: "You are already logged in."
+      already_logged_out: "You are already logged out."
+      invalid_credentials: "Invalid email or password."
+      unauthenticated: "You need to log in before continuing."

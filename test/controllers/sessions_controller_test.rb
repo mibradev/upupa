@@ -14,39 +14,39 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   test "should not get login if already logged in" do
     log_in @user
     get login_url
-    assert_equal I18n.t("sessions.already_logged_in"), flash.alert
+    assert_equal I18n.t("alerts.sessions.already_logged_in"), flash.alert
     assert_redirected_to root_url
   end
 
   test "should log in" do
     post login_url, params: {email: @user.email, password: @password}
     assert_equal @user.id, session[:user_id]
-    assert_equal I18n.t("sessions.logged_in"), flash.notice
+    assert_equal I18n.t("notices.sessions.logged_in"), flash.notice
     assert_redirected_to root_url
   end
 
   test "should not log in if already logged in" do
     log_in @user
     post login_url, params: {email: @user.email, password: @password}
-    assert_equal I18n.t("sessions.already_logged_in"), flash.alert
+    assert_equal I18n.t("alerts.sessions.already_logged_in"), flash.alert
     assert_redirected_to root_url
   end
 
   test "should not log in with invalid email and password" do
     post login_url, params: {email: nil, password: nil}
-    assert_equal I18n.t("sessions.invalid_credentials"), flash.alert
+    assert_equal I18n.t("alerts.sessions.invalid_credentials"), flash.alert
     assert_response :unprocessable_entity
   end
 
   test "should not log in with invalid email" do
     post login_url, params: {email: nil, password: @password}
-    assert_equal I18n.t("sessions.invalid_credentials"), flash.alert
+    assert_equal I18n.t("alerts.sessions.invalid_credentials"), flash.alert
     assert_response :unprocessable_entity
   end
 
   test "should not log in with invalid password" do
     post login_url, params: {email: @user.email, password: nil}
-    assert_equal I18n.t("sessions.invalid_credentials"), flash.alert
+    assert_equal I18n.t("alerts.sessions.invalid_credentials"), flash.alert
     assert_response :unprocessable_entity
   end
 
@@ -60,13 +60,13 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     log_in @user
     delete logout_url
     assert_nil session[:user_id]
-    assert_equal I18n.t("sessions.logged_out"), flash.notice
+    assert_equal I18n.t("notices.sessions.logged_out"), flash.notice
     assert_redirected_to login_url
   end
 
   test "should not log out if already logged out" do
     delete logout_url
-    assert_equal I18n.t("sessions.already_logged_out"), flash.alert
+    assert_equal I18n.t("alerts.sessions.already_logged_out"), flash.alert
     assert_redirected_to login_url
   end
 

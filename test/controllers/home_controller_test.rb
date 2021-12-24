@@ -11,7 +11,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
 
   test "should not get index if not logged in" do
     get root_url
-    assert_equal I18n.t("sessions.unauthenticated"), flash.alert
+    assert_equal I18n.t("alerts.sessions.unauthenticated"), flash.alert
     assert_redirected_to login_url
   end
 end
