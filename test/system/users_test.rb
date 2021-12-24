@@ -7,26 +7,22 @@ class UsersTest < ApplicationSystemTestCase
   end
 
   test "creating a User" do
-    visit users_url
-    click_on "New"
+    visit new_user_url
     fill_in "Email", with: "new@localhost"
     click_on "Create"
     assert_text "User was successfully created"
-    click_on "Back"
   end
 
   test "updating a User" do
-    visit users_url
-    click_on "Edit", match: :first
+    visit edit_user_url(@user)
     fill_in "Email", with: @user.email
     click_on "Update"
     assert_text "User was successfully updated"
-    click_on "Back"
   end
 
   test "destroying a User" do
-    visit users_url
-    click_on "Destroy", match: :first
+    visit user_url(@user)
+    click_on "Destroy"
     assert_text "User was successfully destroyed"
   end
 end

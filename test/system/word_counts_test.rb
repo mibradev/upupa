@@ -7,28 +7,24 @@ class WordCountsTest < ApplicationSystemTestCase
   end
 
   test "creating a Word count" do
-    visit word_counts_url
-    click_on "New"
+    visit new_word_count_url
     find_field "Date", with: Date.current
     fill_in "Notes", with: @word_count.notes
     click_on "Create"
     assert_text "Word count was successfully created"
-    click_on "Back"
   end
 
   test "updating a Word count" do
-    visit word_counts_url
-    click_on "Edit", match: :first
+    visit edit_word_count_url(@word_count)
     fill_in "Date", with: @word_count.date
     fill_in "Notes", with: @word_count.notes
     click_on "Update"
     assert_text "Word count was successfully updated"
-    click_on "Back"
   end
 
   test "destroying a Word count" do
-    visit word_counts_url
-    click_on "Destroy", match: :first
+    visit word_count_url(@word_count)
+    click_on "Destroy"
     assert_text "Word count was successfully destroyed"
   end
 end

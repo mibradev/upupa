@@ -7,26 +7,22 @@ class RolesTest < ApplicationSystemTestCase
   end
 
   test "creating a Role" do
-    visit roles_url
-    click_on "New"
+    visit new_role_url
     fill_in "Name", with: "new"
     click_on "Create"
     assert_text "Role was successfully created"
-    click_on "Back"
   end
 
   test "updating a Role" do
-    visit roles_url
-    click_on "Edit", match: :first
+    visit edit_role_url(@role)
     fill_in "Name", with: @role.name
     click_on "Update"
     assert_text "Role was successfully updated"
-    click_on "Back"
   end
 
   test "destroying a Role" do
-    visit roles_url
-    click_on "Destroy", match: :first
+    visit role_url(@role)
+    click_on "Destroy"
     assert_text "Role was successfully destroyed"
   end
 end

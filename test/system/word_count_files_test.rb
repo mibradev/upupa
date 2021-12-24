@@ -7,8 +7,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
   end
 
   test "creating a Word count file" do
-    visit word_count_url(@word_count_file.word_count_id)
-    within("section") { click_on "New" }
+    visit new_word_count_word_count_file_url(@word_count_file.word_count_id)
     fill_in "Actual word count", with: @word_count_file.actual_word_count
     fill_in "Notes", with: @word_count_file.notes
     select @word_count_file.work_file.name, from: "Work file"
@@ -18,8 +17,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
   end
 
   test "updating a Word count file" do
-    visit word_count_url(@word_count_file.word_count_id)
-    within("section") { click_on "Edit", match: :first }
+    visit edit_word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file)
     fill_in "Actual word count", with: @word_count_file.actual_word_count
     fill_in "Notes", with: @word_count_file.notes
     select @word_count_file.work_file.name, from: "Work file"
@@ -29,8 +27,8 @@ class WordCountFilesTest < ApplicationSystemTestCase
   end
 
   test "destroying a Word count file" do
-    visit word_count_url(@word_count_file.word_count_id)
-    within("section") { click_on "Destroy", match: :first }
+    visit word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file)
+    click_on "Destroy"
     assert_text "Word count file was successfully destroyed"
   end
 end
