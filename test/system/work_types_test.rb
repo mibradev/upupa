@@ -6,7 +6,7 @@ class WorkTypesTest < ApplicationSystemTestCase
     @work_type = work_types(:one)
   end
 
-  test "creating a Work type" do
+  test "creating a work type" do
     visit new_work_type_url
     fill_in "Name", with: "new"
     fill_in "Multiplicand", with: @work_type.multiplicand
@@ -14,7 +14,7 @@ class WorkTypesTest < ApplicationSystemTestCase
     assert_text "Work type was successfully created"
   end
 
-  test "updating a Work type" do
+  test "updating a work type" do
     visit edit_work_type_url(@work_type)
     fill_in "Name", with: @work_type.name
     fill_in "Multiplicand", with: @work_type.multiplicand
@@ -22,7 +22,7 @@ class WorkTypesTest < ApplicationSystemTestCase
     assert_text "Work type was successfully updated"
   end
 
-  test "destroying a Work type" do
+  test "destroying a work type" do
     visit work_type_url(@work_type)
     click_on "Destroy"
     assert_text "Work type was successfully destroyed"

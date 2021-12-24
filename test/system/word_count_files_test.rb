@@ -6,7 +6,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
     @word_count_file = word_count_files(:one)
   end
 
-  test "creating a Word count file" do
+  test "creating a word count file" do
     visit new_word_count_word_count_file_url(@word_count_file.word_count_id)
     fill_in "Actual word count", with: @word_count_file.actual_word_count
     fill_in "Notes", with: @word_count_file.notes
@@ -16,7 +16,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
     assert_text "Word count file was successfully created"
   end
 
-  test "updating a Word count file" do
+  test "updating a word count file" do
     visit edit_word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file)
     fill_in "Actual word count", with: @word_count_file.actual_word_count
     fill_in "Notes", with: @word_count_file.notes
@@ -26,7 +26,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
     assert_text "Word count file was successfully updated"
   end
 
-  test "destroying a Word count file" do
+  test "destroying a word count file" do
     visit word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file)
     click_on "Destroy"
     assert_text "Word count file was successfully destroyed"
