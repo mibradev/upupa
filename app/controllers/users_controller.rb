@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, notice: "User was successfully created"
+      redirect_to @user, notice: I18n.t("notices.created", record: User.model_name.human)
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: "User was successfully updated"
+      redirect_to @user, notice: I18n.t("notices.updated", record: User.model_name.human)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      redirect_to users_url, notice: "User was successfully destroyed"
+      redirect_to users_url, notice: I18n.t("notices.destroyed", record: User.model_name.human)
     else
       redirect_to @user, alert: @user.errors.full_messages.first
     end

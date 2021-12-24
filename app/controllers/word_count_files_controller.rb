@@ -20,7 +20,7 @@ class WordCountFilesController < ApplicationController
     @word_count_file = @word_count.word_count_files.new(word_count_file_params)
 
     if @word_count_file.save
-      redirect_to @word_count, notice: "Word count file was successfully created"
+      redirect_to @word_count, notice: I18n.t("notices.created", record: WordCountFile.model_name.human)
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class WordCountFilesController < ApplicationController
 
   def update
     if @word_count_file.update(word_count_file_params)
-      redirect_to @word_count, notice: "Word count file was successfully updated"
+      redirect_to @word_count, notice: I18n.t("notices.updated", record: WordCountFile.model_name.human)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class WordCountFilesController < ApplicationController
 
   def destroy
     if @word_count_file.destroy
-      redirect_to @word_count, notice: "Word count file was successfully destroyed"
+      redirect_to @word_count, notice: I18n.t("notices.destroyed", record: WordCountFile.model_name.human)
     else
       redirect_to @word_count_file, alert: @word_count_file.errors.full_messages.first
     end

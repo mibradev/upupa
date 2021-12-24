@@ -20,7 +20,7 @@ class WordCountsController < ApplicationController
     @word_count = Current.user.word_counts.new(word_count_params)
 
     if @word_count.save
-      redirect_to @word_count, notice: "Word count was successfully created"
+      redirect_to @word_count, notice: I18n.t("notices.created", record: WordCount.model_name.human)
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class WordCountsController < ApplicationController
 
   def update
     if @word_count.update(word_count_params)
-      redirect_to @word_count, notice: "Word count was successfully updated"
+      redirect_to @word_count, notice: I18n.t("notices.updated", record: WordCount.model_name.human)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class WordCountsController < ApplicationController
 
   def destroy
     if @word_count.destroy
-      redirect_to word_counts_url, notice: "Word count was successfully destroyed"
+      redirect_to word_counts_url, notice: I18n.t("notices.destroyed", record: WordCount.model_name.human)
     else
       redirect_to @word_count, alert: @word_count.errors.full_messages.first
     end

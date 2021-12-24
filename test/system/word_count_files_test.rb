@@ -13,7 +13,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
     select @word_count_file.work_file.name, from: "Work file"
     select work_types(:one).name, from: "Work type"
     click_on "Create"
-    assert_text "Word count file was successfully created"
+    assert_text I18n.t("notices.created", record: WordCountFile.model_name.human)
   end
 
   test "updating a word count file" do
@@ -23,12 +23,12 @@ class WordCountFilesTest < ApplicationSystemTestCase
     select @word_count_file.work_file.name, from: "Work file"
     select @word_count_file.work_type.name, from: "Work type"
     click_on "Update"
-    assert_text "Word count file was successfully updated"
+    assert_text I18n.t("notices.updated", record: WordCountFile.model_name.human)
   end
 
   test "destroying a word count file" do
     visit word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file)
     click_on "Destroy"
-    assert_text "Word count file was successfully destroyed"
+    assert_text I18n.t("notices.destroyed", record: WordCountFile.model_name.human)
   end
 end

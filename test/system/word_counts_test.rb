@@ -11,7 +11,7 @@ class WordCountsTest < ApplicationSystemTestCase
     find_field "Date", with: Date.current
     fill_in "Notes", with: @word_count.notes
     click_on "Create"
-    assert_text "Word count was successfully created"
+    assert_text I18n.t("notices.created", record: WordCount.model_name.human)
   end
 
   test "updating a word count" do
@@ -19,12 +19,12 @@ class WordCountsTest < ApplicationSystemTestCase
     fill_in "Date", with: @word_count.date
     fill_in "Notes", with: @word_count.notes
     click_on "Update"
-    assert_text "Word count was successfully updated"
+    assert_text I18n.t("notices.updated", record: WordCount.model_name.human)
   end
 
   test "destroying a word count" do
     visit word_count_url(@word_count)
     click_on "Destroy"
-    assert_text "Word count was successfully destroyed"
+    assert_text I18n.t("notices.destroyed", record: WordCount.model_name.human)
   end
 end
