@@ -29,11 +29,4 @@ class WorkFilesTest < ApplicationSystemTestCase
     click_on "Destroy", match: :first
     assert_text "Work file was successfully destroyed"
   end
-
-  test "destroying a Work file with dependent word count file" do
-    @work_file.word_count_files << word_count_files(:one)
-    visit work_files_url
-    click_on "Destroy", match: :first
-    assert_text "Cannot delete record because dependent word count files exist"
-  end
 end

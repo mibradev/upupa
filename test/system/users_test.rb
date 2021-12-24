@@ -29,11 +29,4 @@ class UsersTest < ApplicationSystemTestCase
     click_on "Destroy", match: :first
     assert_text "User was successfully destroyed"
   end
-
-  test "destroying a User with dependent word count" do
-    @user.word_counts << word_counts(:one)
-    visit users_url
-    click_on "Destroy", match: :first
-    assert_text "Cannot delete record because dependent word counts exist"
-  end
 end
