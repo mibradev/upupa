@@ -6,11 +6,6 @@ class WordCountFilesTest < ApplicationSystemTestCase
     @word_count_file = word_count_files(:one)
   end
 
-  test "visiting the index" do
-    visit word_count_word_count_files_url(@word_count_file.word_count_id)
-    assert_selector "h1", text: "Word Count Files"
-  end
-
   test "creating a Word count file" do
     visit word_count_url(@word_count_file.word_count_id)
     within("section") { click_on "New" }

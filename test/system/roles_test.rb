@@ -6,11 +6,6 @@ class RolesTest < ApplicationSystemTestCase
     @role = roles(:one)
   end
 
-  test "visiting the index" do
-    visit roles_url
-    assert_selector "h1", text: "Roles"
-  end
-
   test "creating a Role" do
     visit roles_url
     click_on "New"

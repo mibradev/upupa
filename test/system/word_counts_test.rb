@@ -6,11 +6,6 @@ class WordCountsTest < ApplicationSystemTestCase
     @word_count = word_counts(:one)
   end
 
-  test "visiting the index" do
-    visit word_counts_url
-    assert_selector "h1", text: "Word Counts"
-  end
-
   test "creating a Word count" do
     visit word_counts_url
     click_on "New"

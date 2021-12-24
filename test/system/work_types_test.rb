@@ -6,11 +6,6 @@ class WorkTypesTest < ApplicationSystemTestCase
     @work_type = work_types(:one)
   end
 
-  test "visiting the index" do
-    visit work_types_url
-    assert_selector "h1", text: "Work Types"
-  end
-
   test "creating a Work type" do
     visit work_types_url
     click_on "New"

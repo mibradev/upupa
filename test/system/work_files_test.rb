@@ -6,11 +6,6 @@ class WorkFilesTest < ApplicationSystemTestCase
     @work_file = work_files(:one)
   end
 
-  test "visiting the index" do
-    visit work_files_url
-    assert_selector "h1", text: "Work Files"
-  end
-
   test "creating a Work file" do
     visit work_files_url
     click_on "New"
