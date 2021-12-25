@@ -23,6 +23,6 @@ class Users::RolesController < ApplicationController
   end
 
   def role_params
-    params.require(:role).permit(:role_id)
+    params.require(:user_role).permit(:role_id)
   end
 end

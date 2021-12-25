@@ -20,7 +20,7 @@
     <h2 class="text-xl font-bold">Roles</h2>
   </header>
 
-  <%= form_with(scope: :role, url: user_roles_path(@user)) do |form| %>
+  <%= form_with(scope: :user_role, url: user_roles_path(@user)) do |form| %>
     <div class="flex gap-2">
       <div class="w-full">
         <%= form.label :role_id, class: "sr-only" %>

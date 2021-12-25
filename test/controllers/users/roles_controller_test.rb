@@ -8,7 +8,7 @@ class Users::RolesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create role" do
     assert_difference("@user.user_roles.count") do
-      post user_roles_url(@user), params: {role: {role_id: roles(:one).id}}
+      post user_roles_url(@user), params: {user_role: {role_id: roles(:one).id}}
     end
 
     assert_redirected_to @user
