@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true
   validates :email, uniqueness: {case_sensitive: false}
-  validates :email, format: URI::MailTo::EMAIL_REGEXP
+  validates :email, format: URI::MailTo::EMAIL_REGEXP, allow_blank: true
   validates :password, presence: true, unless: -> { password.nil? }
   validates :password, length: {minimum: 8, maximum: 128}, unless: -> { password.nil? }
   validates :password, confirmation: true
