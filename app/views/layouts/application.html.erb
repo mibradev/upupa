@@ -33,18 +33,18 @@
 
           <nav class="text-sm font-medium">
             <div class="py-3">
-              <%= link_to "Home", root_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
-              <%= link_to "Word Counts", word_counts_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
-              <%= link_to "Work Files", work_files_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
-              <%= link_to "Work Types", work_types_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
+              <%= link_to I18n.t("pages.home"), root_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
+              <%= link_to WordCount.model_name.human(count: 20), word_counts_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
+              <%= link_to WorkFile.model_name.human(count: 20), work_files_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
+              <%= link_to WorkType.model_name.human(count: 20), work_types_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
             </div>
 
             <% if Current.user.admin? %>
               <hr class="border-black border-opacity-10">
 
               <div class="py-3">
-                <%= link_to "Roles", roles_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
-                <%= link_to "Users", users_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
+                <%= link_to Role.model_name.human(count: 20), roles_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
+                <%= link_to User.model_name.human(count: 20), users_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
               </div>
             <% end %>
           </nav>
