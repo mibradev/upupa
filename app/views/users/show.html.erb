@@ -3,9 +3,9 @@
 <h1 class="text-2xl font-bold">User</h1>
 
 <% content_for(:actions) do %>
-  <%= link_to "Edit", edit_user_path(@user), class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-  <%= button_to "Destroy", @user, method: :delete, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-  <%= link_to "Back", users_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= link_to I18n.t("actions.edit"), edit_user_path(@user), class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= button_to I18n.t("actions.destroy"), @user, method: :delete, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= link_to I18n.t("actions.back"), users_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 <% end %>
 
 <dl class="text-gray-700 bg-orange-50 rounded divide-y divide-black divide-opacity-10 shadow">
@@ -27,7 +27,7 @@
         <%= form.collection_select :role_id, Role.where.not(id: @user.roles), :id, :name, {include_blank: true}, class: "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none" %>
       </div>
 
-      <%= form.submit, class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 rounded shadow appearance-none cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+      <%= form.submit class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 rounded shadow appearance-none cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
     </div>
   <% end %>
 
@@ -47,7 +47,7 @@
               <td class="p-4"><%= role.name %></td>
 
               <td class="p-2 text-right">
-                <%= button_to "Remove", user_role_path(@user, role), method: :delete, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+                <%= button_to I18n.t("actions.destroy"), user_role_path(@user, role), method: :delete, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
               </td>
             </tr>
           <% end %>

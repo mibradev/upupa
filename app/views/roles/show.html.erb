@@ -4,11 +4,11 @@
 
 <% content_for(:actions) do %>
   <% unless @role.system_role? %>
-    <%= link_to "Edit", edit_role_path(@role), class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-    <%= button_to "Destroy", @role, method: :delete, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+    <%= link_to I18n.t("actions.edit"), edit_role_path(@role), class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+    <%= button_to I18n.t("actions.destroy"), @role, method: :delete, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
   <% end %>
 
-  <%= link_to "Back", roles_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= link_to I18n.t("actions.back"), roles_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 <% end %>
 
 <dl class="text-gray-700 bg-orange-50 rounded divide-y divide-black divide-opacity-10 shadow">

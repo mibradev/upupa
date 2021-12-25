@@ -3,7 +3,7 @@
 <h1 class="text-2xl font-bold">Word Counts</h1>
 
 <% content_for(:actions) do %>
-  <%= link_to "New", new_word_count_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= link_to I18n.t("actions.new"), new_word_count_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 <% end %>
 
 <% if @word_counts.load.any? %>
@@ -26,9 +26,9 @@
             <td class="p-4"><%= truncate(word_count.notes) %></td>
 
             <td class="p-2 text-right">
-              <%= link_to "Show", word_count, class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-              <%= link_to "Edit", edit_word_count_path(word_count), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-              <%= button_to "Destroy", word_count, method: :delete, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              <%= link_to I18n.t("actions.show"), word_count, class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              <%= link_to I18n.t("actions.edit"), edit_word_count_path(word_count), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              <%= button_to I18n.t("actions.destroy"), word_count, method: :delete, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
             </td>
           </tr>
         <% end %>

@@ -3,7 +3,7 @@
 <h1 class="text-2xl font-bold">Word Count Files</h1>
 
 <% content_for(:actions) do %>
-  <%= link_to "New", new_word_count_word_count_file_path(@word_count), class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= link_to I18n.t("actions.new"), new_word_count_word_count_file_path(@word_count), class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 <% end %>
 
 <% if @word_count_files.load.any? %>
