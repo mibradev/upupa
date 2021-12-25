@@ -8,14 +8,14 @@ class WorkFilesTest < ApplicationSystemTestCase
 
   test "creating a work file" do
     visit new_work_file_url
-    fill_in "Name", with: "new"
+    fill_in WorkFile.human_attribute_name(:name), with: "new"
     click_on I18n.t("helpers.submit.create")
     assert_text I18n.t("notices.created", record: WorkFile.model_name.human)
   end
 
   test "updating a work file" do
     visit edit_work_file_url(@work_file)
-    fill_in "Name", with: @work_file.name
+    fill_in WorkFile.human_attribute_name(:name), with: @work_file.name
     click_on I18n.t("helpers.submit.update")
     assert_text I18n.t("notices.updated", record: WorkFile.model_name.human)
   end

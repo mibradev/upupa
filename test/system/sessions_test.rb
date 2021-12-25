@@ -3,16 +3,16 @@ require "application_system_test_case"
 class SessionsTest < ApplicationSystemTestCase
   test "logging in" do
     visit login_url
-    fill_in "Email", with: users(:with_password).email
-    fill_in "Password", with: "12345678"
+    fill_in User.human_attribute_name(:email), with: users(:with_password).email
+    fill_in User.human_attribute_name(:password), with: "12345678"
     click_button "Log in"
     assert_text I18n.t("notices.sessions.logged_in")
   end
 
   test "logging in with invalid data" do
     visit login_url
-    fill_in "Email", with: "invalid@example.com"
-    fill_in "Password", with: "invalid_password"
+    fill_in User.human_attribute_name(:email), with: "invalid@example.com"
+    fill_in User.human_attribute_name(:password), with: "invalid_password"
     click_button "Log in"
     assert_text I18n.t("alerts.sessions.invalid_credentials")
   end

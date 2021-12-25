@@ -2,11 +2,11 @@
   <table class="w-full text-sm text-left text-gray-700 whitespace-nowrap bg-orange-50 divide-y divide-black divide-opacity-10">
     <thead>
       <tr>
-        <th scope="col" class="p-4 font-medium">Work file</th>
-        <th scope="col" class="p-4 font-medium">Actual word count</th>
-        <th scope="col" class="p-4 font-medium">Work type</th>
-        <th scope="col" class="p-4 font-medium">Total</th>
-        <th scope="col" class="p-4 font-medium">Notes</th>
+        <th scope="col" class="p-4 font-medium"><%= WordCountFile.human_attribute_name(:work_file) %></th>
+        <th scope="col" class="p-4 font-medium"><%= WordCountFile.human_attribute_name(:actual_word_count) %></th>
+        <th scope="col" class="p-4 font-medium"><%= WordCountFile.human_attribute_name(:work_type) %></th>
+        <th scope="col" class="p-4 font-medium"><%= WordCountFile.human_attribute_name(:total) %></th>
+        <th scope="col" class="p-4 font-medium"><%= WordCountFile.human_attribute_name(:notes) %></th>
         <th scope="col" class="p-4 font-medium"></th>
       </tr>
     </thead>

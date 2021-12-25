@@ -10,7 +10,7 @@
 
 <dl class="text-gray-700 bg-orange-50 rounded divide-y divide-black divide-opacity-10 shadow">
   <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
-    <dt class="text-sm font-medium">Email</dt>
+    <dt class="text-sm font-medium"><%= User.human_attribute_name(:email) %></dt>
     <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @user.email %></dd>
   </div>
 </dl>
@@ -36,7 +36,7 @@
       <table class="w-full text-sm text-left text-gray-700 whitespace-nowrap bg-orange-50 divide-y divide-black divide-opacity-10">
         <thead>
           <tr>
-            <th scope="col" class="p-4 font-medium">Name</th>
+            <th scope="col" class="p-4 font-medium"><%= Role.human_attribute_name(:name) %></th>
             <th scope="col" class="p-4 font-medium"></th>
           </tr>
         </thead>

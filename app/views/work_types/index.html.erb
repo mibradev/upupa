@@ -11,8 +11,8 @@
     <table class="w-full text-sm text-left text-gray-700 whitespace-nowrap bg-orange-50 divide-y divide-black divide-opacity-10">
       <thead>
         <tr>
-          <th scope="col" class="p-4 font-medium">Name</th>
-          <th scope="col" class="p-4 font-medium">Multiplicand</th>
+          <th scope="col" class="p-4 font-medium"><%= WorkType.human_attribute_name(:name) %></th>
+          <th scope="col" class="p-4 font-medium"><%= WorkType.human_attribute_name(:multiplicand) %></th>
           <th scope="col" class="p-4 font-medium"></th>
         </tr>
       </thead>

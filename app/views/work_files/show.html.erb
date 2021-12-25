@@ -10,7 +10,7 @@
 
 <dl class="text-gray-700 bg-orange-50 rounded divide-y divide-black divide-opacity-10 shadow">
   <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
-    <dt class="text-sm font-medium">Name</dt>
+    <dt class="text-sm font-medium"><%= WorkFile.human_attribute_name(:name) %></dt>
     <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @work_file.name %></dd>
   </div>
 </dl>

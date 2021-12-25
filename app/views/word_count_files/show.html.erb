@@ -10,32 +10,32 @@
 
 <dl class="text-gray-700 bg-orange-50 rounded divide-y divide-black divide-opacity-10 shadow">
   <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
-    <dt class="text-sm font-medium">Word count</dt>
+    <dt class="text-sm font-medium"><%= WordCountFile.human_attribute_name(:word_count) %></dt>
     <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.word_count.date %></dd>
   </div>
 
   <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
-    <dt class="text-sm font-medium">Work file</dt>
+    <dt class="text-sm font-medium"><%= WordCountFile.human_attribute_name(:work_file) %></dt>
     <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.work_file.name %></dd>
   </div>
 
   <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
-    <dt class="text-sm font-medium">Actual word count</dt>
+    <dt class="text-sm font-medium"><%= WordCountFile.human_attribute_name(:actual_word_count) %></dt>
     <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.actual_word_count %></dd>
   </div>
 
   <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
-    <dt class="text-sm font-medium">Work type</dt>
+    <dt class="text-sm font-medium"><%= WordCountFile.human_attribute_name(:work_type) %></dt>
     <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.work_type.name %></dd>
   </div>
 
   <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
-    <dt class="text-sm font-medium">Total</dt>
+    <dt class="text-sm font-medium"><%= WordCountFile.human_attribute_name(:total) %></dt>
     <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= number_with_precision(@word_count_file.total, precision: 2) %></dd>
   </div>
 
   <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
-    <dt class="text-sm font-medium">Notes</dt>
+    <dt class="text-sm font-medium"><%= WordCountFile.human_attribute_name(:notes) %></dt>
     <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.notes %></dd>
   </div>
 </dl>
