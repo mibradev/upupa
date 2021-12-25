@@ -10,7 +10,7 @@ class WordCountsTest < ApplicationSystemTestCase
     visit new_word_count_url
     find_field "Date", with: Date.current
     fill_in "Notes", with: @word_count.notes
-    click_on "Create"
+    click_on I18n.t("helpers.submit.create")
     assert_text I18n.t("notices.created", record: WordCount.model_name.human)
   end
 
@@ -18,7 +18,7 @@ class WordCountsTest < ApplicationSystemTestCase
     visit edit_word_count_url(@word_count)
     fill_in "Date", with: @word_count.date
     fill_in "Notes", with: @word_count.notes
-    click_on "Update"
+    click_on I18n.t("helpers.submit.update")
     assert_text I18n.t("notices.updated", record: WordCount.model_name.human)
   end
 

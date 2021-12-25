@@ -9,14 +9,14 @@ class RolesTest < ApplicationSystemTestCase
   test "creating a role" do
     visit new_role_url
     fill_in "Name", with: "new"
-    click_on "Create"
+    click_on I18n.t("helpers.submit.create")
     assert_text I18n.t("notices.created", record: Role.model_name.human)
   end
 
   test "updating a role" do
     visit edit_role_url(@role)
     fill_in "Name", with: @role.name
-    click_on "Update"
+    click_on I18n.t("helpers.submit.update")
     assert_text I18n.t("notices.updated", record: Role.model_name.human)
   end
 

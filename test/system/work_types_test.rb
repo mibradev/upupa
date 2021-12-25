@@ -10,7 +10,7 @@ class WorkTypesTest < ApplicationSystemTestCase
     visit new_work_type_url
     fill_in "Name", with: "new"
     fill_in "Multiplicand", with: @work_type.multiplicand
-    click_on "Create"
+    click_on I18n.t("helpers.submit.create")
     assert_text I18n.t("notices.created", record: WorkType.model_name.human)
   end
 
@@ -18,7 +18,7 @@ class WorkTypesTest < ApplicationSystemTestCase
     visit edit_work_type_url(@work_type)
     fill_in "Name", with: @work_type.name
     fill_in "Multiplicand", with: @work_type.multiplicand
-    click_on "Update"
+    click_on I18n.t("helpers.submit.update")
     assert_text I18n.t("notices.updated", record: WorkType.model_name.human)
   end
 

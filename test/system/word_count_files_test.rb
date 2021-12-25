@@ -12,7 +12,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
     fill_in "Notes", with: @word_count_file.notes
     select @word_count_file.work_file.name, from: "Work file"
     select work_types(:one).name, from: "Work type"
-    click_on "Create"
+    click_on I18n.t("helpers.submit.create")
     assert_text I18n.t("notices.created", record: WordCountFile.model_name.human)
   end
 
@@ -22,7 +22,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
     fill_in "Notes", with: @word_count_file.notes
     select @word_count_file.work_file.name, from: "Work file"
     select @word_count_file.work_type.name, from: "Work type"
-    click_on "Update"
+    click_on I18n.t("helpers.submit.update")
     assert_text I18n.t("notices.updated", record: WordCountFile.model_name.human)
   end
 
