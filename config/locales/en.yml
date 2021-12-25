@@ -27,3 +27,10 @@ en:
       already_logged_out: "You are already logged out."
       invalid_credentials: "Invalid email or password."
       unauthenticated: "You need to log in before continuing."
+
+  actions:
+    new: "New"
+    show: "Show"
+    edit: "Edit"
+    destroy: "Delete"
+    back: "Back"
