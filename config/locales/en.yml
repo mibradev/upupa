@@ -34,3 +34,6 @@ en:
     edit: "Edit"
     destroy: "Delete"
     back: "Back"
+    sessions:
+      log_in: "Log in"
+      log_out: "Log out"
