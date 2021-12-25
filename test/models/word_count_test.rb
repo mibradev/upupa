@@ -44,4 +44,8 @@ class WordCountTest < ActiveSupport::TestCase
     assert_not @word_count.destroy
     assert @word_count.errors.added?(:base, :"restrict_dependent_destroy.has_many", record: "word count files")
   end
+
+  test "day" do
+    assert_equal @word_count.date.strftime("%A"), @word_count.day
+  end
 end

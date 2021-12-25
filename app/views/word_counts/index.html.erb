@@ -21,7 +21,7 @@
       <tbody class="divide-y divide-black divide-opacity-10">
         <% @word_counts.each do |word_count| %>
           <tr>
-            <td class="p-4"><%= word_count.date.strftime("%A") %></td>
+            <td class="p-4"><%= word_count.day %></td>
             <td class="p-4"><%= word_count.date %></td>
             <td class="p-4"><%= truncate(word_count.notes) %></td>
 
