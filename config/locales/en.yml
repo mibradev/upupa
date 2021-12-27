@@ -55,6 +55,9 @@ en:
       sessions:
         log_in: "Log in"
         log_out: "Log out"
+    form:
+      errors:
+        heading: "Form errors:"
     headings:
       edit: "Editing %{model}"
       index: "%{model}"

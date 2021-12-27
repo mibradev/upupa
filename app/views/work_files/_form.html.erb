@@ -2,7 +2,7 @@
   <div class="space-y-4">
     <% if work_file.errors.any? %>
       <div class="p-4 bg-red-700 rounded">
-        <h4 class="mb-2 font-medium text-red-300"><%= pluralize work_file.errors.count, "error" %> prohibited this record from being saved:</h4>
+        <h4 class="mb-2 font-medium text-red-300"><%= I18n.t("page.form.errors.heading") %></h4>
 
         <ul class="pl-4 list-disc list-inside text-sm font-medium text-red-100">
           <% work_file.errors.each do |error| %>
