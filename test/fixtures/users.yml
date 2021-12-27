@@ -5,9 +5,6 @@ with_password:
   email: with_password@localhost
   password_digest: <%= BCrypt::Password.create("12345678") %>
 
-without_password:
-  email: without_password@localhost
-
 for_user_roles:
   email: for_user_roles@localhost
 
