@@ -1,14 +1,5 @@
 en:
   app_name: "Upupa"
-  actions:
-    back: "Back"
-    destroy: "Delete"
-    edit: "Edit"
-    new: "New"
-    show: "Show"
-    sessions:
-      log_in: "Log in"
-      log_out: "Log out"
   activerecord:
     models:
       role:
@@ -48,5 +39,15 @@ en:
     sessions:
       logged_in: "Logged in successfully."
       logged_out: "Logged out successfully."
+  page:
+    actions:
+      back: "Back"
+      destroy: "Delete"
+      edit: "Edit"
+      new: "New"
+      show: "Show"
+      sessions:
+        log_in: "Log in"
+        log_out: "Log out"
   pages:
     home: "Home"

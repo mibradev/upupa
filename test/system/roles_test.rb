@@ -22,7 +22,7 @@ class RolesTest < ApplicationSystemTestCase
 
   test "destroying a role" do
     visit role_url(@role)
-    click_on I18n.t("actions.destroy")
+    click_on I18n.t("page.actions.destroy")
     assert_text I18n.t("notices.destroyed", record: Role.model_name.human)
   end
 end

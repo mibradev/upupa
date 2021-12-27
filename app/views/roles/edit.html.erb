@@ -3,8 +3,8 @@
 <h1 class="text-2xl font-bold">Editing Role</h1>
 
 <% content_for(:actions) do %>
-  <%= link_to I18n.t("actions.show"), @role, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-  <%= link_to I18n.t("actions.back"), roles_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= link_to I18n.t("page.actions.show"), @role, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= link_to I18n.t("page.actions.back"), roles_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 <% end %>
 
 <%= render "form", role: @role %>

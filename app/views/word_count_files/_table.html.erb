@@ -21,9 +21,9 @@
           <td class="p-4"><%= truncate(word_count_file.notes) %></td>
 
           <td class="p-2 text-right">
-            <%= link_to I18n.t("actions.show"), [word_count_file.word_count, word_count_file], class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-            <%= link_to I18n.t("actions.edit"), edit_word_count_word_count_file_path(word_count_file.word_count, word_count_file), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-            <%= button_to I18n.t("actions.destroy"), [word_count_file.word_count, word_count_file], method: :delete, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+            <%= link_to I18n.t("page.actions.show"), [word_count_file.word_count, word_count_file], class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+            <%= link_to I18n.t("page.actions.edit"), edit_word_count_word_count_file_path(word_count_file.word_count, word_count_file), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+            <%= button_to I18n.t("page.actions.destroy"), [word_count_file.word_count, word_count_file], method: :delete, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
           </td>
         </tr>
       <% end %>

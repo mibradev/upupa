@@ -22,7 +22,7 @@ class WorkFilesTest < ApplicationSystemTestCase
 
   test "destroying a work file" do
     visit work_file_url(@work_file)
-    click_on I18n.t("actions.destroy")
+    click_on I18n.t("page.actions.destroy")
     assert_text I18n.t("notices.destroyed", record: WorkFile.model_name.human)
   end
 end

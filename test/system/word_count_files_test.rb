@@ -28,7 +28,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
 
   test "destroying a word count file" do
     visit word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file)
-    click_on I18n.t("actions.destroy")
+    click_on I18n.t("page.actions.destroy")
     assert_text I18n.t("notices.destroyed", record: WordCountFile.model_name.human)
   end
 end
