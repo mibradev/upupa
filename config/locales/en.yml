@@ -62,5 +62,7 @@ en:
       show: "%{model}"
       sessions:
         login: "Login"
+    messages:
+      no_records: "No records found."
     nav:
       home: "Home"
