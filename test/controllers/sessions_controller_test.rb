@@ -71,9 +71,8 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not cause too many redirects after destroying logged in user" do
-    user = users(:with_password)
-    log_in user
-    user.destroy!
+    log_in @user
+    @user.destroy!
     get login_url
     assert_response :ok
   end
