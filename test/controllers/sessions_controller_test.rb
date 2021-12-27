@@ -75,7 +75,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_url
   end
 
-  test "should not cause too many redirects after destroying logged in user" do
+  test "should not cause too many redirects after destroying a logged in user" do
     post login_url, params: {email: @user.email, password: @password}
     @user.destroy!
     get login_url
