@@ -22,7 +22,7 @@ class Users::RolesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to @user
   end
 
-  class ForbiddenTest < ActionDispatch::IntegrationTest
+  class AuthorizationTest < ActionDispatch::IntegrationTest
     setup do
       log_in users(:with_password)
     end

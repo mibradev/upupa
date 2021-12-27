@@ -70,7 +70,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  class ForbiddenTest < ActionDispatch::IntegrationTest
+  class AuthorizationTest < ActionDispatch::IntegrationTest
     setup do
       log_in users(:with_password)
     end
