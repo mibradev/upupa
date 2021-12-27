@@ -4,4 +4,4 @@ one:
   total: 2000.0
   word_count: for_word_count_files
   work_file: for_word_count_files
-  work_type: for_word_count_file_one
+  work_type: for_word_count_files

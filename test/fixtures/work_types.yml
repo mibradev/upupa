@@ -2,6 +2,6 @@ one:
   name: one
   multiplicand: 1.0
 
-for_word_count_file_one:
-  name: for_word_count_file_one
+for_word_count_files:
+  name: for_word_count_files
   multiplicand: 1.0

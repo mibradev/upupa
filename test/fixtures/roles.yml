@@ -1,8 +1,8 @@
 one:
   name: one
 
-for_user:
-  name: for user
+for_user_roles:
+  name: for_user_roles
 
 admin:
   name: Admin

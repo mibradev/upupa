@@ -8,8 +8,8 @@ with_password:
 without_password:
   email: without_password@localhost
 
-with_role:
-  email: with_role@localhost
+for_user_roles:
+  email: for_user_roles@localhost
 
 for_word_counts:
   email: for_word_counts@localhost
