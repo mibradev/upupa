@@ -1,6 +1,8 @@
-<% content_for :title, "Role" %>
+<% content_for :title, I18n.t("page.headings.show", model: Role.model_name.human) %>
 
-<h1 class="text-2xl font-bold">Role</h1>
+<h1 class="text-2xl font-bold">
+  <%= I18n.t("page.headings.show", model: Role.model_name.human) %>
+</h1>
 
 <% content_for(:actions) do %>
   <% unless @role.system_role? %>

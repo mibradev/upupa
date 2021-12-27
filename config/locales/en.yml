@@ -5,9 +5,15 @@ en:
       role:
         one: Role
         other: Roles
+      user_role:
+        one: User Role
+        other: User Roles
       user:
         one: User
         other: Users
+      word_count_file:
+        one: Word Count File
+        other: Word Count Files
       word_count:
         one: Word Count
         other: Word Counts
@@ -49,5 +55,12 @@ en:
       sessions:
         log_in: "Log in"
         log_out: "Log out"
+    headings:
+      edit: "Editing %{model}"
+      index: "%{model}"
+      new: "New %{model}"
+      show: "%{model}"
+      sessions:
+        login: "Login"
     nav:
       home: "Home"

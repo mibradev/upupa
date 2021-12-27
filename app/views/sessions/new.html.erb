@@ -1,4 +1,4 @@
-<% content_for :title, "Login - #{I18n.t :app_name}" %>
+<% content_for :title, "#{I18n.t "page.headings.sessions.login"} - #{I18n.t :app_name}" %>
 <% content_for :description, "Log into #{I18n.t :app_name} to access your account." %>
 
 <main class="flex justify-center items-center p-8 min-h-screen">
@@ -16,7 +16,7 @@
     <% end %>
 
     <div class="space-y-8 sm:p-16">
-      <h1 class="text-3xl text-center">Login</h1>
+      <h1 class="text-3xl text-center"><%= I18n.t("page.headings.sessions.login") %></h1>
 
       <%= form_with(url: login_path) do |form| %>
         <div class="space-y-4">
