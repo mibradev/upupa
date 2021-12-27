@@ -1,5 +1,5 @@
 <% content_for :title, "#{I18n.t "page.headings.sessions.login"} - #{I18n.t :app_name}" %>
-<% content_for :description, "Log into #{I18n.t :app_name} to access your account." %>
+<% content_for :description, I18n.t("page.descriptions.login", app_name: I18n.t(:app_name)) %>
 
 <main class="flex justify-center items-center p-8 min-h-screen">
   <div class="space-y-8 w-full sm:space-y-0 sm:w-auto sm:bg-white sm:rounded sm:shadow">

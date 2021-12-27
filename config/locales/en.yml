@@ -55,6 +55,8 @@ en:
       sessions:
         log_in: "Log in"
         log_out: "Log out"
+    descriptions:
+      login: "Log into %{app_name} to access your account."
     form:
       errors:
         heading: "Form errors:"
