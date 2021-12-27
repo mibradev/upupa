@@ -1,6 +1,14 @@
 en:
   app_name: "Upupa"
-
+  actions:
+    back: "Back"
+    destroy: "Delete"
+    edit: "Edit"
+    new: "New"
+    show: "Show"
+    sessions:
+      log_in: "Log in"
+      log_out: "Log out"
   activerecord:
     models:
       role:
@@ -22,37 +30,23 @@ en:
       messages:
         future_date: "can't be in the futute"
         system_role: "Cannot change a system role"
-
-  helpers:
-    submit:
-      create: "Create"
-      update: "Update"
-      submit: "Save"
-
-  pages:
-    home: "Home"
-
-  notices:
-    created: "%{record} was successfully created"
-    updated: "%{record} was successfully updated"
-    destroyed: "%{record} was successfully destroyed"
-    sessions:
-      logged_in: "Logged in successfully."
-      logged_out: "Logged out successfully."
-
   alerts:
     sessions:
       already_logged_in: "You are already logged in."
       already_logged_out: "You are already logged out."
       invalid_credentials: "Invalid email or password."
       unauthenticated: "You need to log in before continuing."
-
-  actions:
-    new: "New"
-    show: "Show"
-    edit: "Edit"
-    destroy: "Delete"
-    back: "Back"
+  helpers:
+    submit:
+      create: "Create"
+      submit: "Save"
+      update: "Update"
+  notices:
+    created: "%{record} was successfully created"
+    destroyed: "%{record} was successfully destroyed"
+    updated: "%{record} was successfully updated"
     sessions:
-      log_in: "Log in"
-      log_out: "Log out"
+      logged_in: "Logged in successfully."
+      logged_out: "Logged out successfully."
+  pages:
+    home: "Home"
