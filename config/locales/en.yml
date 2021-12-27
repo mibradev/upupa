@@ -49,5 +49,5 @@ en:
       sessions:
         log_in: "Log in"
         log_out: "Log out"
-  pages:
-    home: "Home"
+    nav:
+      home: "Home"
