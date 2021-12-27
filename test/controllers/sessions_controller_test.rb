@@ -49,6 +49,12 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
   end
 
+  test "should not log in if the user has no password" do
+    post login_url, params: {email: users(:one).email, password: nil}
+    assert_equal I18n.t("alerts.sessions.invalid_credentials"), flash.alert
+    assert_response :unprocessable_entity
+  end
+
   test "should redirect to the desired page after login" do
     get word_counts_url
     post login_url, params: {email: @user.email, password: @password}
@@ -74,10 +80,5 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     @user.destroy!
     get login_url
     assert_response :ok
-  end
-
-  test "should not throw error if user has no password" do
-    post login_url, params: {email: users(:one).email, password: nil}
-    assert_response :unprocessable_entity
   end
 end
