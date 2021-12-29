@@ -40,7 +40,7 @@ en:
       update: "Update"
   notices:
     created: "%{record} was successfully created"
-    destroyed: "%{record} was successfully destroyed"
+    destroyed: "%{record} was successfully deleted"
     updated: "%{record} was successfully updated"
     sessions:
       logged_in: "Logged in successfully."
