@@ -69,5 +69,6 @@ en:
         login: "Login"
     messages:
       no_records: "No records found."
+      turbo_confirm: "Are you sure?"
     nav:
       home: "Home"

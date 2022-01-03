@@ -28,7 +28,7 @@
             <td class="p-2 text-right">
               <%= link_to I18n.t("page.actions.show"), work_type, class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
               <%= link_to I18n.t("page.actions.edit"), edit_work_type_path(work_type), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-              <%= button_to I18n.t("page.actions.destroy"), work_type, method: :delete, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              <%= button_to I18n.t("page.actions.destroy"), work_type, method: :delete, form: {data: {turbo_confirm: I18n.t("page.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
             </td>
           </tr>
         <% end %>
