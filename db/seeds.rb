@@ -34,7 +34,7 @@ work_type_ids = WorkType.ids
     WordCountFile.create!(
       actual_word_count: Faker::Number.within(range: 300..3000),
       notes: Faker::Lorem.paragraph(sentence_count: 0, random_sentences_to_add: 3),
-      word_count: word_count,
+      word_count:,
       work_file_id: work_file_ids.sample,
       work_type_id: work_type_ids.sample
     )
