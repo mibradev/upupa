@@ -3,7 +3,7 @@ class Users::RolesController < ApplicationController
   before_action :set_user
 
   def create
-    @user_role = @user.user_roles.new(role_params)
+    @user_role = @user.user_roles.new(user_role_params)
 
     if @user_role.save
       redirect_to @user, notice: I18n.t("notices.created", record: UserRole.model_name.human)
@@ -22,7 +22,7 @@ class Users::RolesController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-  def role_params
+  def user_role_params
     params.require(:user_role).permit(:role_id)
   end
 end
