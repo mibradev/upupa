@@ -7,6 +7,8 @@ class Users::RolesController < ApplicationController
 
     if @user_role.save
       redirect_to @user, notice: I18n.t("notices.created", record: UserRole.model_name.human)
+    else
+      redirect_to @user, alert: @user_role.errors.full_messages.first
     end
   end
 
