@@ -15,6 +15,13 @@ ActiveRecord::Schema.define(version: 2020_05_11_040540) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "permissions", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_permissions_on_name", unique: true
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name", null: false
     t.boolean "system_role", default: false, null: false

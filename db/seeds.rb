@@ -12,6 +12,10 @@ users = {
   translator: User.create!(email: "translator@localhost", password: "12345678", roles: [roles[:translator]])
 }
 
+["Index", "Show", "New", "Edit", "Create", "Update", "Destroy"].each do |name|
+  Permission.create!(name:)
+end
+
 10.times do
   WorkFile.create!(name: "#{Faker::Food.unique.dish}.doc")
 end
