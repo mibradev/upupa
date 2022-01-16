@@ -12,6 +12,10 @@ class User < ApplicationRecord
   has_many :user_roles, dependent: :destroy
   has_many :roles, through: :user_roles
 
+  def email=(value)
+    super value&.strip
+  end
+
   def has_role?(name)
     roles.any? { |role| role.name == name }
   end

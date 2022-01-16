@@ -39,6 +39,16 @@ class UserTest < ActiveSupport::TestCase
     assert @user.errors.added?(:email, :invalid, value: @user.email)
   end
 
+  test "stripping email" do
+    @user.email = " new@localhost "
+    assert_equal "new@localhost", @user.email
+  end
+
+  test "not stripping absent email" do
+    @user.email = nil
+    assert_nil @user.email
+  end
+
   test "presence of password" do
     @user.password = " "
     assert_not @user.valid?
