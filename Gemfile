@@ -7,7 +7,7 @@ gem "rails", "7.0.1"
 
 gem "bcrypt", "~> 3.1.16"
 gem "bootsnap", "~> 1.9.4", require: false
-gem "importmap-rails", "~> 1.0.1"
+gem "importmap-rails", "~> 1.0.2"
 gem "jbuilder", "~> 2.11.5"
 gem "pg", "~> 1.2.3"
 gem "puma", "~> 5.5.2"
