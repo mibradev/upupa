@@ -50,7 +50,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should not destroy user with dependent word_count" do
     @user.word_counts << word_counts(:one)
     delete user_url(@user)
-    assert_redirected_to @user
+    assert_redirected_to user_url(@user)
   end
 
   class InvalidParametersTest < ActionDispatch::IntegrationTest

@@ -20,7 +20,7 @@ class RolesController < ApplicationController
     @role = Role.new(role_params)
 
     if @role.save
-      redirect_to @role, notice: I18n.t("notices.created", record: Role.model_name.human)
+      redirect_to role_url(@role), notice: I18n.t("notices.created", record: Role.model_name.human)
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class RolesController < ApplicationController
 
   def update
     if @role.update(role_params)
-      redirect_to @role, notice: I18n.t("notices.updated", record: Role.model_name.human)
+      redirect_to role_url(@role), notice: I18n.t("notices.updated", record: Role.model_name.human)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -38,7 +38,7 @@ class RolesController < ApplicationController
     if @role.destroy
       redirect_to roles_url, notice: I18n.t("notices.destroyed", record: Role.model_name.human)
     else
-      redirect_to @role, alert: @role.errors.full_messages.first
+      redirect_to role_url(@role), alert: @role.errors.full_messages.first
     end
   end
 

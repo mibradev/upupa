@@ -19,7 +19,7 @@ class WorkFilesController < ApplicationController
     @work_file = WorkFile.new(work_file_params)
 
     if @work_file.save
-      redirect_to @work_file, notice: I18n.t("notices.created", record: WorkFile.model_name.human)
+      redirect_to work_file_url(@work_file), notice: I18n.t("notices.created", record: WorkFile.model_name.human)
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class WorkFilesController < ApplicationController
 
   def update
     if @work_file.update(work_file_params)
-      redirect_to @work_file, notice: I18n.t("notices.updated", record: WorkFile.model_name.human)
+      redirect_to work_file_url(@work_file), notice: I18n.t("notices.updated", record: WorkFile.model_name.human)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class WorkFilesController < ApplicationController
     if @work_file.destroy
       redirect_to work_files_url, notice: I18n.t("notices.destroyed", record: WorkFile.model_name.human)
     else
-      redirect_to @work_file, alert: @work_file.errors.full_messages.first
+      redirect_to work_file_url(@work_file), alert: @work_file.errors.full_messages.first
     end
   end
 

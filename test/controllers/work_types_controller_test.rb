@@ -50,7 +50,7 @@ class WorkTypesControllerTest < ActionDispatch::IntegrationTest
   test "should not destroy work_type with dependent word_count_file" do
     @work_type.word_count_files << word_count_files(:one)
     delete work_type_url(@work_type)
-    assert_redirected_to @work_type
+    assert_redirected_to work_type_url(@work_type)
   end
 
   class InvalidParametersTest < ActionDispatch::IntegrationTest

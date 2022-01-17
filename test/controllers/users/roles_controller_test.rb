@@ -11,7 +11,7 @@ class Users::RolesControllerTest < ActionDispatch::IntegrationTest
       post user_roles_url(@user), params: {user_role: {role_id: roles(:one).id}}
     end
 
-    assert_redirected_to @user
+    assert_redirected_to user_url(@user)
   end
 
   test "should destroy user role" do
@@ -19,7 +19,7 @@ class Users::RolesControllerTest < ActionDispatch::IntegrationTest
       delete user_role_url(@user, @user.roles.first)
     end
 
-    assert_redirected_to @user
+    assert_redirected_to user_url(@user)
   end
 
   class InvalidParametersTest < ActionDispatch::IntegrationTest
@@ -30,7 +30,7 @@ class Users::RolesControllerTest < ActionDispatch::IntegrationTest
 
     test "should not create user role" do
       post user_roles_url(@user), params: {user_role: {role_id: nil}}
-      assert_redirected_to @user
+      assert_redirected_to user_url(@user)
     end
   end
 

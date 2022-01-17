@@ -19,7 +19,7 @@ class WorkTypesController < ApplicationController
     @work_type = WorkType.new(work_type_params)
 
     if @work_type.save
-      redirect_to @work_type, notice: I18n.t("notices.created", record: WorkType.model_name.human)
+      redirect_to work_type_url(@work_type), notice: I18n.t("notices.created", record: WorkType.model_name.human)
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class WorkTypesController < ApplicationController
 
   def update
     if @work_type.update(work_type_params)
-      redirect_to @work_type, notice: I18n.t("notices.updated", record: WorkType.model_name.human)
+      redirect_to work_type_url(@work_type), notice: I18n.t("notices.updated", record: WorkType.model_name.human)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class WorkTypesController < ApplicationController
     if @work_type.destroy
       redirect_to work_types_url, notice: I18n.t("notices.destroyed", record: WorkType.model_name.human)
     else
-      redirect_to @work_type, alert: @work_type.errors.full_messages.first
+      redirect_to work_type_url(@work_type), alert: @work_type.errors.full_messages.first
     end
   end
 

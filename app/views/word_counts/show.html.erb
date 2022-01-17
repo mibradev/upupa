@@ -6,7 +6,7 @@
 
 <% content_for(:actions) do %>
   <%= link_to I18n.t("page.actions.edit"), edit_word_count_path(@word_count), class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-  <%= button_to I18n.t("page.actions.destroy"), @word_count, method: :delete, form: {data: {turbo_confirm: I18n.t("page.messages.turbo_confirm")}}, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= button_to I18n.t("page.actions.destroy"), word_count_path(@word_count), method: :delete, form: {data: {turbo_confirm: I18n.t("page.messages.turbo_confirm")}}, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
   <%= link_to I18n.t("page.actions.back"), word_counts_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 <% end %>
 

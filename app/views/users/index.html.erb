@@ -24,9 +24,9 @@
             <td class="p-4"><%= user.email %></td>
 
             <td class="p-2 text-right">
-              <%= link_to I18n.t("page.actions.show"), user, class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              <%= link_to I18n.t("page.actions.show"), user_path(user), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
               <%= link_to I18n.t("page.actions.edit"), edit_user_path(user), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-              <%= button_to I18n.t("page.actions.destroy"), user, method: :delete, form: {data: {turbo_confirm: I18n.t("page.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              <%= button_to I18n.t("page.actions.destroy"), user_path(user), method: :delete, form: {data: {turbo_confirm: I18n.t("page.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
             </td>
           </tr>
         <% end %>

@@ -24,11 +24,11 @@
             <td class="p-4"><%= role.name %></td>
 
             <td class="p-2 text-right">
-              <%= link_to I18n.t("page.actions.show"), role, class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              <%= link_to I18n.t("page.actions.show"), role_path(role), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 
               <% unless role.system_role? %>
                 <%= link_to I18n.t("page.actions.edit"), edit_role_path(role), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-                <%= button_to I18n.t("page.actions.destroy"), role, method: :delete, form: {data: {turbo_confirm: I18n.t("page.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+                <%= button_to I18n.t("page.actions.destroy"), role_path(role), method: :delete, form: {data: {turbo_confirm: I18n.t("page.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
               <% end %>
             </td>
           </tr>
