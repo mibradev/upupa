@@ -14,7 +14,7 @@ gem "puma", "~> 5.5.2"
 gem "redis", "~> 4.5.1"
 gem "sprockets-rails", "~> 3.4.2"
 gem "stimulus-rails", "~> 1.0.2"
-gem "tailwindcss-rails", "~> 2.0.4"
+gem "tailwindcss-rails", "~> 2.0.5"
 gem "turbo-rails", "~> 1.0.1"
 
 group :development, :test do
