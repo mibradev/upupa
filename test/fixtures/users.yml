@@ -1,18 +1,18 @@
 one:
-  email: one@localhost
+  email: one@upupa.test
 
 with_password:
-  email: with_password@localhost
+  email: with_password@upupa.test
   password_digest: <%= BCrypt::Password.create("12345678") %>
 
 for_user_roles:
-  email: for_user_roles@localhost
+  email: for_user_roles@upupa.test
 
 for_word_counts:
-  email: for_word_counts@localhost
+  email: for_word_counts@upupa.test
   password_digest: <%= BCrypt::Password.create("12345678") %>
 
 admin:
-  email: admin@localhost
+  email: admin@upupa.test
   password_digest: <%= BCrypt::Password.create("12345678") %>
   roles: admin

@@ -40,8 +40,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "stripping email" do
-    @user.email = " new@localhost "
-    assert_equal "new@localhost", @user.email
+    @user.email = " new@upupa.test "
+    assert_equal "new@upupa.test", @user.email
 
     @user.email = nil
     assert_nil @user.email

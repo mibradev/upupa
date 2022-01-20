@@ -8,7 +8,7 @@ class UsersTest < ApplicationSystemTestCase
 
   test "creating a user" do
     visit new_user_url
-    fill_in User.human_attribute_name(:email), with: "new@localhost"
+    fill_in User.human_attribute_name(:email), with: "new@upupa.test"
     click_on I18n.t("helpers.submit.create")
     assert_text I18n.t("notices.created", record: User.model_name.human)
   end

@@ -4,8 +4,8 @@ roles = {
 }
 
 users = {
-  admin: User.create!(email: "admin@localhost", password: "12345678", roles: roles.values),
-  translator: User.create!(email: "translator@localhost", password: "12345678", roles: [roles[:translator]])
+  admin: User.create!(email: "admin@upupa.test", password: "12345678", roles: roles.values),
+  translator: User.create!(email: "translator@upupa.test", password: "12345678", roles: [roles[:translator]])
 }
 
 10.times do
