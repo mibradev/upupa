@@ -10,13 +10,13 @@ class UserRoleTest < ActiveSupport::TestCase
   end
 
   test "presence of user" do
-    @user_role.user_id = 0
+    @user_role.user_id = nil
     assert_not @user_role.valid?
     assert @user_role.errors.added?(:user, :blank)
   end
 
   test "presence of role" do
-    @user_role.role_id = 0
+    @user_role.role_id = nil
     assert_not @user_role.valid?
     assert @user_role.errors.added?(:role, :blank)
   end
