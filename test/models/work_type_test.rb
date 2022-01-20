@@ -54,10 +54,7 @@ class WorkTypeTest < ActiveSupport::TestCase
     assert_difference("@work_type.word_count_files.count") do
       @work_type.word_count_files << word_count_files(:one)
     end
-  end
 
-  test "dependent word_count_files" do
-    @work_type.word_count_files << word_count_files(:one)
     assert_not @work_type.destroy
     assert @work_type.errors.added?(:base, :"restrict_dependent_destroy.has_many", record: "word count files")
   end

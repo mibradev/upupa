@@ -37,10 +37,7 @@ class WordCountTest < ActiveSupport::TestCase
     assert_difference("@word_count.word_count_files.count") do
       @word_count.word_count_files << word_count_files(:one)
     end
-  end
 
-  test "dependent word_count_files" do
-    @word_count.word_count_files << word_count_files(:one)
     assert_not @word_count.destroy
     assert @word_count.errors.added?(:base, :"restrict_dependent_destroy.has_many", record: "word count files")
   end

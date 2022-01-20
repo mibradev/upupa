@@ -31,17 +31,21 @@ class RoleTest < ActiveSupport::TestCase
     assert_nil @role.name
   end
 
+  test "has many user_roles" do
+    assert_difference("@role.user_roles.count") do
+      @role.user_roles << user_roles(:one)
+    end
+
+    assert @role.destroy
+    assert_not @role.user_roles.exists?
+  end
+
   test "has many users" do
     assert_difference("@role.users.count") do
       @role.users << users(:one)
     end
-  end
 
-  test "destroying dependent user_roles" do
-    @role.users << users(:one)
-
-    assert_difference("UserRole.count", -1) do
-      @role.destroy
-    end
+    assert @role.destroy
+    assert_not @role.users.exists?
   end
 end

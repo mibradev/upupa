@@ -78,26 +78,27 @@ class UserTest < ActiveSupport::TestCase
     assert_difference("@user.word_counts.count") do
       @user.word_counts << word_counts(:one)
     end
-  end
 
-  test "dependent word_counts" do
-    @user.word_counts << word_counts(:one)
     assert_not @user.destroy
     assert @user.errors.added?(:base, :"restrict_dependent_destroy.has_many", record: "word counts")
+  end
+
+  test "has many user_roles" do
+    assert_difference("@user.user_roles.count") do
+      @user.user_roles << user_roles(:one)
+    end
+
+    assert @user.destroy
+    assert_not @user.user_roles.exists?
   end
 
   test "has many roles" do
     assert_difference("@user.roles.count") do
       @user.roles << roles(:one)
     end
-  end
 
-  test "destroying dependent user_roles" do
-    @user.roles << roles(:one)
-
-    assert_difference("UserRole.count", -1) do
-      @user.destroy
-    end
+    assert @user.destroy
+    assert_not @user.roles.exists?
   end
 
   test "checking if the user has a role" do

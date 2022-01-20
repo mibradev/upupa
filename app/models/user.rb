@@ -8,9 +8,9 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 8, maximum: 128}, allow_blank: true
   validates :password, confirmation: true
 
-  has_many :word_counts, dependent: :restrict_with_error
   has_many :user_roles, dependent: :destroy
   has_many :roles, through: :user_roles
+  has_many :word_counts, dependent: :restrict_with_error
 
   def email=(value)
     super value&.strip
