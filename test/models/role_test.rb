@@ -22,11 +22,9 @@ class RoleTest < ActiveSupport::TestCase
   end
 
   test "squishing name" do
-    @role.name = " Rails  Developer "
-    assert_equal "Rails Developer", @role.name
-  end
+    @role.name = " new  name "
+    assert_equal "new name", @role.name
 
-  test "not squishing absent name" do
     @role.name = nil
     assert_nil @role.name
   end

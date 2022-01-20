@@ -22,11 +22,9 @@ class WorkTypeTest < ActiveSupport::TestCase
   end
 
   test "squishing name" do
-    @work_type.name = " MS  Revision "
-    assert_equal "MS Revision", @work_type.name
-  end
+    @work_type.name = " new  name "
+    assert_equal "new name", @work_type.name
 
-  test "not squishing absent name" do
     @work_type.name = nil
     assert_nil @work_type.name
   end

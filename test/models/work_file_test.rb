@@ -22,11 +22,9 @@ class WorkFileTest < ActiveSupport::TestCase
   end
 
   test "squishing name" do
-    @work_file.name = " work  file.doc "
-    assert_equal "work file.doc", @work_file.name
-  end
+    @work_file.name = " new  name "
+    assert_equal "new name", @work_file.name
 
-  test "not stripping absent name" do
     @work_file.name = nil
     assert_nil @work_file.name
   end
