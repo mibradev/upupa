@@ -1,11 +1,7 @@
 roles = {
-  admin: Role.create!(name: "Admin", system_role: true),
-  translator: Role.create!(name: "Translator", system_role: true)
+  admin: Role.create!(name: "Admin"),
+  translator: Role.create!(name: "Translator")
 }
-
-10.times do
-  Role.create!(name: Faker::Job.unique.position)
-end
 
 users = {
   admin: User.create!(email: "admin@localhost", password: "12345678", roles: roles.values),

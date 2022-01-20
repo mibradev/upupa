@@ -26,7 +26,6 @@ en:
     errors:
       messages:
         future_date: "can't be in the futute"
-        system_role: "Cannot change a system role"
   alerts:
     sessions:
       already_logged_in: "You are already logged in."

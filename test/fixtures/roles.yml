@@ -6,4 +6,3 @@ for_user_roles:
 
 admin:
   name: Admin
-  system_role: true

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     delete "logout", action: :destroy
   end
 
-  resources :roles
+  resources :roles, only: [:index, :show]
 
   resources :users do
     scope module: :users do
