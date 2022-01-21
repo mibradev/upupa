@@ -24,6 +24,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to user_url(User.last)
   end
 
+  test "should not create user with invalid parameters" do
+    post users_url, params: {user: {email: nil}}
+    assert_response :unprocessable_entity
+  end
+
   test "should show user" do
     get user_url(@user)
     assert_response :ok
@@ -39,6 +44,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to user_url(@user)
   end
 
+  test "should not update user with invalid parameters" do
+    patch user_url(@user), params: {user: {email: nil}}
+    assert_response :unprocessable_entity
+  end
+
   test "should destroy user" do
     assert_difference("User.count", -1) do
       delete user_url(@user)
@@ -51,23 +61,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     @user.word_counts << word_counts(:one)
     delete user_url(@user)
     assert_redirected_to user_url(@user)
-  end
-
-  class InvalidParametersTest < ActionDispatch::IntegrationTest
-    setup do
-      log_in users(:admin)
-      @user = users(:one)
-    end
-
-    test "should not create user" do
-      post users_url, params: {user: {email: nil}}
-      assert_response :unprocessable_entity
-    end
-
-    test "should not update user" do
-      patch user_url(@user), params: {user: {email: nil}}
-      assert_response :unprocessable_entity
-    end
   end
 
   class AuthorizationTest < ActionDispatch::IntegrationTest

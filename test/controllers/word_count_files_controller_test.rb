@@ -29,6 +29,11 @@ class WordCountFilesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to word_count_url(@word_count_file.word_count_id)
   end
 
+  test "should not create word_count_file with invalid parameters" do
+    post word_count_word_count_files_url(@word_count_file.word_count_id), params: {word_count_file: {actual_word_count: nil}}
+    assert_response :unprocessable_entity
+  end
+
   test "should show word_count_file" do
     get word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file)
     assert_response :ok
@@ -50,28 +55,16 @@ class WordCountFilesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to word_count_url(@word_count_file.word_count_id)
   end
 
+  test "should not update word_count_file with invalid parameters" do
+    patch word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file), params: {word_count_file: {actual_word_count: nil}}
+    assert_response :unprocessable_entity
+  end
+
   test "should destroy word_count_file" do
     assert_difference("WordCountFile.count", -1) do
       delete word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file)
     end
 
     assert_redirected_to word_count_url(@word_count_file.word_count_id)
-  end
-
-  class InvalidParametersTest < ActionDispatch::IntegrationTest
-    setup do
-      log_in users(:for_word_counts)
-      @word_count_file = word_count_files(:one)
-    end
-
-    test "should not create word_count_file" do
-      post word_count_word_count_files_url(@word_count_file.word_count_id), params: {word_count_file: {actual_word_count: nil}}
-      assert_response :unprocessable_entity
-    end
-
-    test "should not update word_count_file" do
-      patch word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file), params: {word_count_file: {actual_word_count: nil}}
-      assert_response :unprocessable_entity
-    end
   end
 end

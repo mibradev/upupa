@@ -24,6 +24,11 @@ class WorkFilesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to work_file_url(WorkFile.last)
   end
 
+  test "should not create work_file with invalid parameters" do
+    post work_files_url, params: {work_file: {name: nil}}
+    assert_response :unprocessable_entity
+  end
+
   test "should show work_file" do
     get work_file_url(@work_file)
     assert_response :ok
@@ -39,6 +44,11 @@ class WorkFilesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to work_file_url(@work_file)
   end
 
+  test "should not update work_file with invalid parameters" do
+    patch work_file_url(@work_file), params: {work_file: {name: nil}}
+    assert_response :unprocessable_entity
+  end
+
   test "should destroy work_file" do
     assert_difference("WorkFile.count", -1) do
       delete work_file_url(@work_file)
@@ -51,22 +61,5 @@ class WorkFilesControllerTest < ActionDispatch::IntegrationTest
     @work_file.word_count_files << word_count_files(:one)
     delete work_file_url(@work_file)
     assert_redirected_to work_file_url(@work_file)
-  end
-
-  class InvalidParametersTest < ActionDispatch::IntegrationTest
-    setup do
-      log_in users(:with_password)
-      @work_file = work_files(:one)
-    end
-
-    test "should not create work_file" do
-      post work_files_url, params: {work_file: {name: nil}}
-      assert_response :unprocessable_entity
-    end
-
-    test "should not update work_file" do
-      patch work_file_url(@work_file), params: {work_file: {name: nil}}
-      assert_response :unprocessable_entity
-    end
   end
 end
