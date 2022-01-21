@@ -101,12 +101,32 @@ class UserTest < ActiveSupport::TestCase
 
   test "checking if the user has a role" do
     role_one = roles(:one)
+    assert_not @user.has_role?(role_one.name)
     @user.roles << role_one
     assert @user.has_role?(role_one.name)
   end
 
   test "checking if the user is an admin" do
+    assert_not @user.admin?
     @user.roles << roles(:admin)
     assert @user.admin?
+  end
+
+  test "checking if the user is a manager" do
+    assert_not @user.manager?
+    @user.roles << roles(:manager)
+    assert @user.manager?
+  end
+
+  test "checking if the user is a project_manager" do
+    assert_not @user.project_manager?
+    @user.roles << roles(:project_manager)
+    assert @user.project_manager?
+  end
+
+  test "checking if the user is a translator" do
+    assert_not @user.translator?
+    @user.roles << roles(:translator)
+    assert @user.translator?
   end
 end

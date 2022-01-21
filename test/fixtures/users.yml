@@ -8,11 +8,22 @@ with_password:
 for_user_roles:
   email: for_user_roles@upupa.test
 
-for_word_counts:
-  email: for_word_counts@upupa.test
-  password_digest: <%= BCrypt::Password.create("12345678") %>
-
 admin:
   email: admin@upupa.test
   password_digest: <%= BCrypt::Password.create("12345678") %>
   roles: admin
+
+manager:
+  email: manager@upupa.test
+  password_digest: <%= BCrypt::Password.create("12345678") %>
+  roles: manager
+
+project_manager:
+  email: project_manager@upupa.test
+  password_digest: <%= BCrypt::Password.create("12345678") %>
+  roles: project_manager
+
+translator:
+  email: translator@upupa.test
+  password_digest: <%= BCrypt::Password.create("12345678") %>
+  roles: translator

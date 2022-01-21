@@ -23,4 +23,16 @@ class User < ApplicationRecord
   def admin?
     has_role? "Admin"
   end
+
+  def manager?
+    has_role? "Manager"
+  end
+
+  def project_manager?
+    has_role? "Project Manager"
+  end
+
+  def translator?
+    has_role? "Translator"
+  end
 end

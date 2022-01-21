@@ -1,4 +1,5 @@
 class WorkFilesController < ApplicationController
+  before_action :authorize_project_manager
   before_action :set_work_file, only: [:show, :edit, :update, :destroy]
 
   def index

@@ -34,9 +34,18 @@
           <nav class="text-sm font-medium">
             <div class="py-3">
               <%= link_to I18n.t("page.nav.home"), root_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
-              <%= link_to WordCount.model_name.human(count: 20), word_counts_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
-              <%= link_to WorkFile.model_name.human(count: 20), work_files_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
-              <%= link_to WorkType.model_name.human(count: 20), work_types_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
+
+              <% if Current.user.translator? %>
+                <%= link_to WordCount.model_name.human(count: 20), word_counts_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
+              <% end %>
+
+              <% if Current.user.project_manager? %>
+                <%= link_to WorkFile.model_name.human(count: 20), work_files_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
+              <% end %>
+
+              <% if Current.user.manager? %>
+                <%= link_to WorkType.model_name.human(count: 20), work_types_path, class: "block py-3 px-8 hover:bg-black hover:bg-opacity-10" %>
+              <% end %>
             </div>
 
             <% if Current.user.admin? %>

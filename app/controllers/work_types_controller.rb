@@ -1,4 +1,5 @@
 class WorkTypesController < ApplicationController
+  before_action :authorize_manager
   before_action :set_work_type, only: [:show, :edit, :update, :destroy]
 
   def index

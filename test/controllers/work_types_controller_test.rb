@@ -2,7 +2,7 @@ require "test_helper"
 
 class WorkTypesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    log_in users(:with_password)
+    log_in users(:manager)
     @work_type = work_types(:one)
   end
 
@@ -61,5 +61,46 @@ class WorkTypesControllerTest < ActionDispatch::IntegrationTest
     @work_type.word_count_files << word_count_files(:one)
     delete work_type_url(@work_type)
     assert_redirected_to work_type_url(@work_type)
+  end
+
+  class AuthorizationTest < ActionDispatch::IntegrationTest
+    setup do
+      log_in users(:with_password)
+    end
+
+    test "should not get index" do
+      get work_types_url
+      assert_response :forbidden
+    end
+
+    test "should not get new" do
+      get new_work_type_url
+      assert_response :forbidden
+    end
+
+    test "should not create work_type" do
+      post work_types_url
+      assert_response :forbidden
+    end
+
+    test "should not show work_type" do
+      get work_type_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not get edit" do
+      get edit_work_type_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not update work_type" do
+      patch work_type_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not destroy work_type" do
+      delete work_type_url(1)
+      assert_response :forbidden
+    end
   end
 end

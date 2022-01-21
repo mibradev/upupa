@@ -2,7 +2,7 @@ require "test_helper"
 
 class WordCountFilesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    log_in users(:for_word_counts)
+    log_in users(:translator)
     @word_count_file = word_count_files(:one)
   end
 
@@ -66,5 +66,46 @@ class WordCountFilesControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to word_count_url(@word_count_file.word_count_id)
+  end
+
+  class AuthorizationTest < ActionDispatch::IntegrationTest
+    setup do
+      log_in users(:with_password)
+    end
+
+    test "should not get index" do
+      get word_count_word_count_files_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not get new" do
+      get new_word_count_word_count_file_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not create word_count_file" do
+      post word_count_word_count_files_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not show word_count_file" do
+      get word_count_word_count_file_url(1, 1)
+      assert_response :forbidden
+    end
+
+    test "should not get edit" do
+      get edit_word_count_word_count_file_url(1, 1)
+      assert_response :forbidden
+    end
+
+    test "should not update word_count_file" do
+      patch word_count_word_count_file_url(1, 1)
+      assert_response :forbidden
+    end
+
+    test "should not destroy word_count_file" do
+      delete word_count_word_count_file_url(1, 1)
+      assert_response :forbidden
+    end
   end
 end

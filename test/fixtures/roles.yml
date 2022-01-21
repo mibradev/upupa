@@ -6,3 +6,12 @@ for_user_roles:
 
 admin:
   name: Admin
+
+manager:
+  name: Manager
+
+project_manager:
+  name: Project Manager
+
+translator:
+  name: Translator

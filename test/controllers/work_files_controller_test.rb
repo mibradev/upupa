@@ -2,7 +2,7 @@ require "test_helper"
 
 class WorkFilesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    log_in users(:with_password)
+    log_in users(:project_manager)
     @work_file = work_files(:one)
   end
 
@@ -61,5 +61,46 @@ class WorkFilesControllerTest < ActionDispatch::IntegrationTest
     @work_file.word_count_files << word_count_files(:one)
     delete work_file_url(@work_file)
     assert_redirected_to work_file_url(@work_file)
+  end
+
+  class AuthorizationTest < ActionDispatch::IntegrationTest
+    setup do
+      log_in users(:with_password)
+    end
+
+    test "should not get index" do
+      get work_files_url
+      assert_response :forbidden
+    end
+
+    test "should not get new" do
+      get new_work_file_url
+      assert_response :forbidden
+    end
+
+    test "should not create work_file" do
+      post work_files_url
+      assert_response :forbidden
+    end
+
+    test "should not show work_file" do
+      get work_file_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not get edit" do
+      get edit_work_file_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not update work_file" do
+      patch work_file_url(1)
+      assert_response :forbidden
+    end
+
+    test "should not destroy work_file" do
+      delete work_file_url(1)
+      assert_response :forbidden
+    end
   end
 end

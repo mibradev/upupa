@@ -1,10 +1,15 @@
 roles = {
   admin: Role.create!(name: "Admin"),
+  manager: Role.create!(name: "Manager"),
+  project_manager: Role.create!(name: "Project Manager"),
   translator: Role.create!(name: "Translator")
 }
 
 users = {
-  admin: User.create!(email: "admin@upupa.test", password: "12345678", roles: roles.values),
+  superadmin: User.create!(email: "superadmin@upupa.test", password: "12345678", roles: roles.values),
+  admin: User.create!(email: "admin@upupa.test", password: "12345678", roles: [roles[:admin]]),
+  manager: User.create!(email: "manager@upupa.test", password: "12345678", roles: [roles[:manager]]),
+  project_manager: User.create!(email: "project_manager@upupa.test", password: "12345678", roles: [roles[:project_manager]]),
   translator: User.create!(email: "translator@upupa.test", password: "12345678", roles: [roles[:translator]])
 }
 
@@ -23,7 +28,7 @@ work_type_ids = WorkType.ids
   word_count = WordCount.create!(
     date: Faker::Date.unique.backward,
     notes: Faker::Lorem.paragraph(sentence_count: 0, random_sentences_to_add: 3),
-    user: users[:admin]
+    user: users[:superadmin]
   )
 
   rand(0..3).times do

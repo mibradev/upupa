@@ -1,4 +1,5 @@
 class WordCountsController < ApplicationController
+  before_action :authorize_translator
   before_action :set_word_count, only: [:show, :edit, :update, :destroy]
 
   def index
