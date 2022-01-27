@@ -10,7 +10,7 @@ gem "bootsnap", "~> 1.10.2", require: false
 gem "importmap-rails", "~> 1.0.2"
 gem "jbuilder", "~> 2.11.5"
 gem "pg", "~> 1.3.0"
-gem "puma", "~> 5.6.0"
+gem "puma", "~> 5.6.1"
 gem "redis", "~> 4.5.1"
 gem "sprockets-rails", "~> 3.4.2"
 gem "stimulus-rails", "~> 1.0.2"
