@@ -7,7 +7,7 @@ class WordCount < ApplicationRecord
   has_many :word_count_files, dependent: :restrict_with_error
 
   def day
-    date.strftime("%A")
+    I18n.localize(date, format: "%A")
   end
 
   private
