@@ -16,6 +16,7 @@ gem "sprockets-rails", "~> 3.4.2"
 gem "stimulus-rails", "~> 1.0.2"
 gem "tailwindcss-rails", "~> 2.0.5"
 gem "turbo-rails", "~> 1.0.1"
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem "debug", platforms: [:mri, :mingw, :x64_mingw]
@@ -37,5 +38,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
