@@ -6,7 +6,7 @@ class WorkTypesTest < ApplicationSystemTestCase
     @work_type = work_types(:one)
   end
 
-  test "creating a work type" do
+  test "creating a work_type" do
     visit new_work_type_url
     fill_in WorkType.human_attribute_name(:name), with: "new"
     fill_in WorkType.human_attribute_name(:multiplicand), with: @work_type.multiplicand
@@ -14,7 +14,7 @@ class WorkTypesTest < ApplicationSystemTestCase
     assert_text I18n.t("notices.created", record: WorkType.model_name.human)
   end
 
-  test "updating a work type" do
+  test "updating a work_type" do
     visit edit_work_type_url(@work_type)
     fill_in WorkType.human_attribute_name(:name), with: @work_type.name
     fill_in WorkType.human_attribute_name(:multiplicand), with: @work_type.multiplicand
@@ -22,7 +22,7 @@ class WorkTypesTest < ApplicationSystemTestCase
     assert_text I18n.t("notices.updated", record: WorkType.model_name.human)
   end
 
-  test "destroying a work type" do
+  test "destroying a work_type" do
     visit work_type_url(@work_type)
     accept_confirm { click_on I18n.t("page.actions.destroy") }
     assert_text I18n.t("notices.destroyed", record: WorkType.model_name.human)

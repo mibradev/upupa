@@ -6,7 +6,7 @@ class Users::RolesTest < ApplicationSystemTestCase
     @user = users(:for_user_roles)
   end
 
-  test "creating a user role" do
+  test "creating a user_role" do
     visit user_url(@user)
 
     within("#user_roles") do
@@ -17,7 +17,7 @@ class Users::RolesTest < ApplicationSystemTestCase
     assert_text I18n.t("notices.created", record: UserRole.model_name.human)
   end
 
-  test "destroying a user role" do
+  test "destroying a user_role" do
     visit user_url(@user)
     within("#user_roles") { accept_confirm { click_on I18n.t("page.actions.destroy") } }
     assert_text I18n.t("notices.destroyed", record: UserRole.model_name.human)

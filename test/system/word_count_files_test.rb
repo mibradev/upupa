@@ -6,7 +6,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
     @word_count_file = word_count_files(:one)
   end
 
-  test "creating a word count file" do
+  test "creating a word_count_file" do
     visit new_word_count_word_count_file_url(@word_count_file.word_count_id)
     fill_in WordCountFile.human_attribute_name(:actual_word_count), with: @word_count_file.actual_word_count
     fill_in WordCountFile.human_attribute_name(:notes), with: @word_count_file.notes
@@ -16,7 +16,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
     assert_text I18n.t("notices.created", record: WordCountFile.model_name.human)
   end
 
-  test "updating a word count file" do
+  test "updating a word_count_file" do
     visit edit_word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file)
     fill_in WordCountFile.human_attribute_name(:actual_word_count), with: @word_count_file.actual_word_count
     fill_in WordCountFile.human_attribute_name(:notes), with: @word_count_file.notes
@@ -26,7 +26,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
     assert_text I18n.t("notices.updated", record: WordCountFile.model_name.human)
   end
 
-  test "destroying a word count file" do
+  test "destroying a word_count_file" do
     visit word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file)
     accept_confirm { click_on I18n.t("page.actions.destroy") }
     assert_text I18n.t("notices.destroyed", record: WordCountFile.model_name.human)
