@@ -12,7 +12,7 @@ class WordCountFilesTest < ApplicationSystemTestCase
     fill_in WordCountFile.human_attribute_name(:notes), with: @word_count_file.notes
     select @word_count_file.work_file.name, from: WordCountFile.human_attribute_name(:work_file)
     select work_types(:one).name, from: WordCountFile.human_attribute_name(:work_type)
-    click_on I18n.t("helpers.submit.create")
+    click_button I18n.t("helpers.submit.create")
     assert_text I18n.t("notices.created", record: WordCountFile.model_name.human)
   end
 
@@ -22,13 +22,13 @@ class WordCountFilesTest < ApplicationSystemTestCase
     fill_in WordCountFile.human_attribute_name(:notes), with: @word_count_file.notes
     select @word_count_file.work_file.name, from: WordCountFile.human_attribute_name(:work_file)
     select @word_count_file.work_type.name, from: WordCountFile.human_attribute_name(:work_type)
-    click_on I18n.t("helpers.submit.update")
+    click_button I18n.t("helpers.submit.update")
     assert_text I18n.t("notices.updated", record: WordCountFile.model_name.human)
   end
 
   test "destroying a word_count_file" do
     visit word_count_word_count_file_url(@word_count_file.word_count_id, @word_count_file)
-    accept_confirm { click_on I18n.t("page.actions.destroy") }
+    accept_confirm { click_button I18n.t("page.actions.destroy") }
     assert_text I18n.t("notices.destroyed", record: WordCountFile.model_name.human)
   end
 end

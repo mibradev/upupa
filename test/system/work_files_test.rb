@@ -9,20 +9,20 @@ class WorkFilesTest < ApplicationSystemTestCase
   test "creating a work_file" do
     visit new_work_file_url
     fill_in WorkFile.human_attribute_name(:name), with: "new"
-    click_on I18n.t("helpers.submit.create")
+    click_button I18n.t("helpers.submit.create")
     assert_text I18n.t("notices.created", record: WorkFile.model_name.human)
   end
 
   test "updating a work_file" do
     visit edit_work_file_url(@work_file)
     fill_in WorkFile.human_attribute_name(:name), with: @work_file.name
-    click_on I18n.t("helpers.submit.update")
+    click_button I18n.t("helpers.submit.update")
     assert_text I18n.t("notices.updated", record: WorkFile.model_name.human)
   end
 
   test "destroying a work_file" do
     visit work_file_url(@work_file)
-    accept_confirm { click_on I18n.t("page.actions.destroy") }
+    accept_confirm { click_button I18n.t("page.actions.destroy") }
     assert_text I18n.t("notices.destroyed", record: WorkFile.model_name.human)
   end
 end

@@ -11,7 +11,7 @@ class Users::RolesTest < ApplicationSystemTestCase
 
     within("#user_roles") do
       select roles(:one).name, from: UserRole.human_attribute_name(:role)
-      click_on I18n.t("helpers.submit.submit")
+      click_button I18n.t("helpers.submit.submit")
     end
 
     assert_text I18n.t("notices.created", record: UserRole.model_name.human)
@@ -19,7 +19,7 @@ class Users::RolesTest < ApplicationSystemTestCase
 
   test "destroying a user_role" do
     visit user_url(@user)
-    within("#user_roles") { accept_confirm { click_on I18n.t("page.actions.destroy") } }
+    within("#user_roles") { accept_confirm { click_button I18n.t("page.actions.destroy") } }
     assert_text I18n.t("notices.destroyed", record: UserRole.model_name.human)
   end
 end
