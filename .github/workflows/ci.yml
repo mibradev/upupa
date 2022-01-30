@@ -26,9 +26,9 @@ jobs:
           bundler-cache: true
         env:
           BUNDLE_WITHOUT: development:production
-      - run: bundle exec brakeman --run-all-checks
-      - run: bundle exec standardrb
-      - run: bundle exec erblint --lint-all
+      - run: bin/bundle exec brakeman --run-all-checks --no-pager
+      - run: bin/bundle exec standardrb
+      - run: bin/bundle exec erblint --lint-all
       - run: bin/rails test:all
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/upupa_test
