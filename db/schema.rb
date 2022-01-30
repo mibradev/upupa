@@ -67,15 +67,15 @@ ActiveRecord::Schema.define(version: 2020_05_11_040540) do
   end
 
   create_table "work_files", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_work_files_on_name", unique: true
   end
 
   create_table "work_types", force: :cascade do |t|
-    t.string "name"
-    t.decimal "multiplicand"
+    t.string "name", null: false
+    t.decimal "multiplicand", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_work_types_on_name", unique: true
