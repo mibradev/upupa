@@ -3,7 +3,7 @@ require "test_helper"
 class UserTest < ActiveSupport::TestCase
   setup do
     @user = users(:one)
-    @password = "12345678"
+    @password = "mysecret"
   end
 
   test "validity" do

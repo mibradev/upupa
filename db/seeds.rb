@@ -6,11 +6,11 @@ roles = {
 }
 
 users = {
-  superadmin: User.create!(email: "superadmin@upupa.test", password: "12345678", roles: roles.values),
-  admin: User.create!(email: "admin@upupa.test", password: "12345678", roles: [roles[:admin]]),
-  manager: User.create!(email: "manager@upupa.test", password: "12345678", roles: [roles[:manager]]),
-  project_manager: User.create!(email: "project_manager@upupa.test", password: "12345678", roles: [roles[:project_manager]]),
-  translator: User.create!(email: "translator@upupa.test", password: "12345678", roles: [roles[:translator]])
+  superadmin: User.create!(email: "superadmin@upupa.test", password: "mysecret", roles: roles.values),
+  admin: User.create!(email: "admin@upupa.test", password: "mysecret", roles: [roles[:admin]]),
+  manager: User.create!(email: "manager@upupa.test", password: "mysecret", roles: [roles[:manager]]),
+  project_manager: User.create!(email: "project_manager@upupa.test", password: "mysecret", roles: [roles[:project_manager]]),
+  translator: User.create!(email: "translator@upupa.test", password: "mysecret", roles: [roles[:translator]])
 }
 
 10.times do

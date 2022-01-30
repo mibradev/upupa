@@ -3,27 +3,27 @@ one:
 
 with_password:
   email: with_password@upupa.test
-  password_digest: <%= BCrypt::Password.create("12345678") %>
+  password_digest: <%= BCrypt::Password.create("mysecret") %>
 
 for_user_roles:
   email: for_user_roles@upupa.test
 
 admin:
   email: admin@upupa.test
-  password_digest: <%= BCrypt::Password.create("12345678") %>
+  password_digest: <%= BCrypt::Password.create("mysecret") %>
   roles: admin
 
 manager:
   email: manager@upupa.test
-  password_digest: <%= BCrypt::Password.create("12345678") %>
+  password_digest: <%= BCrypt::Password.create("mysecret") %>
   roles: manager
 
 project_manager:
   email: project_manager@upupa.test
-  password_digest: <%= BCrypt::Password.create("12345678") %>
+  password_digest: <%= BCrypt::Password.create("mysecret") %>
   roles: project_manager
 
 translator:
   email: translator@upupa.test
-  password_digest: <%= BCrypt::Password.create("12345678") %>
+  password_digest: <%= BCrypt::Password.create("mysecret") %>
   roles: translator

@@ -4,7 +4,7 @@ class SessionsTest < ApplicationSystemTestCase
   test "logging in" do
     visit login_url
     fill_in User.human_attribute_name(:email), with: users(:with_password).email
-    fill_in User.human_attribute_name(:password), with: "12345678"
+    fill_in User.human_attribute_name(:password), with: "mysecret"
     click_button I18n.t("page.actions.sessions.log_in")
     assert_text I18n.t("notices.sessions.logged_in")
   end

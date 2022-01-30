@@ -3,7 +3,7 @@ require "test_helper"
 class SessionsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:with_password)
-    @password = "12345678"
+    @password = "mysecret"
   end
 
   test "should get login" do
