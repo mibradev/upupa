@@ -5,17 +5,17 @@ ruby "3.1.0"
 
 gem "rails", "7.0.1"
 
-gem "bcrypt", "~> 3.1.16"
-gem "bootsnap", "~> 1.10.2", require: false
-gem "importmap-rails", "~> 1.0.2"
-gem "jbuilder", "~> 2.11.5"
+gem "bcrypt", "~> 3.1.0"
+gem "bootsnap", "~> 1.10.0", require: false
+gem "importmap-rails", "~> 1.0.0"
+gem "jbuilder", "~> 2.11.0"
 gem "pg", "~> 1.3.0"
-gem "puma", "~> 5.6.1"
-gem "redis", "~> 4.5.1"
-gem "sprockets-rails", "~> 3.4.2"
-gem "stimulus-rails", "~> 1.0.2"
-gem "tailwindcss-rails", "~> 2.0.5"
-gem "turbo-rails", "~> 1.0.1"
+gem "puma", "~> 5.6.0"
+gem "redis", "~> 4.6.0"
+gem "sprockets-rails", "~> 3.4.0"
+gem "stimulus-rails", "~> 1.0.0"
+gem "tailwindcss-rails", "~> 2.0.0"
+gem "turbo-rails", "~> 1.0.0"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
