@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: {case_sensitive: false}
   validates :email, format: URI::MailTo::EMAIL_REGEXP, allow_blank: true
   validates :password, presence: true, allow_nil: true
-  validates :password, length: {minimum: 8, maximum: MAX_PASSWORD_LENGTH_ALLOWED}, allow_blank: true
+  validates :password, length: 8..18, allow_blank: true
   validates :password, confirmation: true
 
   has_many :user_roles, dependent: :destroy
