@@ -60,9 +60,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "maximum length of password" do
-    @user.password = @password * 17
+    @user.password = "p" * 73
     assert_not @user.valid?
-    assert @user.errors.added?(:password, :too_long, count: 128)
+    assert @user.errors.added?(:password, :too_long, count: 72)
   end
 
   test "confirmation of password" do
