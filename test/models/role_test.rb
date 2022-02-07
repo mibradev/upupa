@@ -22,7 +22,7 @@ class RoleTest < ActiveSupport::TestCase
       @role.user_roles << user_roles(:one)
     end
 
-    assert @role.destroy
+    @role.destroy
     assert_not @role.user_roles.exists?
   end
 
@@ -31,7 +31,7 @@ class RoleTest < ActiveSupport::TestCase
       @role.users << users(:one)
     end
 
-    assert @role.destroy
+    @role.destroy
     assert_not @role.users.exists?
   end
 
