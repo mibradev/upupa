@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_secure_password validations: false
 
   validates :email, presence: true
-  validates :email, uniqueness: {case_sensitive: false}
+  validates :email, uniqueness: true
   validates :email, format: URI::MailTo::EMAIL_REGEXP, allow_blank: true
   validates :password, presence: true, allow_nil: true
   validates :password, length: 8..18, allow_blank: true
