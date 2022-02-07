@@ -17,14 +17,6 @@ class WorkFileTest < ActiveSupport::TestCase
     assert new_work_file.errors.added?(:name, :taken, value: new_work_file.name)
   end
 
-  test "squishing name" do
-    @work_file.name = " new  name "
-    assert_equal "new name", @work_file.name
-
-    @work_file.name = nil
-    assert_nil @work_file.name
-  end
-
   test "has many word_count_files" do
     assert_difference("@work_file.word_count_files.count") do
       @work_file.word_count_files << word_count_files(:one)
@@ -32,5 +24,13 @@ class WorkFileTest < ActiveSupport::TestCase
 
     assert_not @work_file.destroy
     assert @work_file.errors.added?(:base, :"restrict_dependent_destroy.has_many", record: "word count files")
+  end
+
+  test "squishing name" do
+    @work_file.name = " new  name "
+    assert_equal "new name", @work_file.name
+
+    @work_file.name = nil
+    assert_nil @work_file.name
   end
 end

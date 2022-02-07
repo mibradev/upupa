@@ -35,14 +35,6 @@ class UserTest < ActiveSupport::TestCase
     assert @user.errors.added?(:email, :invalid, value: @user.email)
   end
 
-  test "stripping email" do
-    @user.email = " new@upupa.test "
-    assert_equal "new@upupa.test", @user.email
-
-    @user.email = nil
-    assert_nil @user.email
-  end
-
   test "presence of password" do
     @user.password = " "
     assert_not @user.valid?
@@ -68,15 +60,6 @@ class UserTest < ActiveSupport::TestCase
     assert @user.errors.added?(:password_confirmation, :confirmation, attribute: User.human_attribute_name(:password))
   end
 
-  test "has many word_counts" do
-    assert_difference("@user.word_counts.count") do
-      @user.word_counts << word_counts(:one)
-    end
-
-    assert_not @user.destroy
-    assert @user.errors.added?(:base, :"restrict_dependent_destroy.has_many", record: "word counts")
-  end
-
   test "has many user_roles" do
     assert_difference("@user.user_roles.count") do
       @user.user_roles << user_roles(:one)
@@ -93,6 +76,23 @@ class UserTest < ActiveSupport::TestCase
 
     assert @user.destroy
     assert_not @user.roles.exists?
+  end
+
+  test "has many word_counts" do
+    assert_difference("@user.word_counts.count") do
+      @user.word_counts << word_counts(:one)
+    end
+
+    assert_not @user.destroy
+    assert @user.errors.added?(:base, :"restrict_dependent_destroy.has_many", record: "word counts")
+  end
+
+  test "stripping email" do
+    @user.email = " new@upupa.test "
+    assert_equal "new@upupa.test", @user.email
+
+    @user.email = nil
+    assert_nil @user.email
   end
 
   test "checking if the user has a role" do

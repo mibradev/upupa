@@ -17,14 +17,6 @@ class RoleTest < ActiveSupport::TestCase
     assert new_role.errors.added?(:name, :taken, value: new_role.name)
   end
 
-  test "squishing name" do
-    @role.name = " new  name "
-    assert_equal "new name", @role.name
-
-    @role.name = nil
-    assert_nil @role.name
-  end
-
   test "has many user_roles" do
     assert_difference("@role.user_roles.count") do
       @role.user_roles << user_roles(:one)
@@ -41,5 +33,13 @@ class RoleTest < ActiveSupport::TestCase
 
     assert @role.destroy
     assert_not @role.users.exists?
+  end
+
+  test "squishing name" do
+    @role.name = " new  name "
+    assert_equal "new name", @role.name
+
+    @role.name = nil
+    assert_nil @role.name
   end
 end

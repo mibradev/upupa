@@ -17,14 +17,6 @@ class WorkTypeTest < ActiveSupport::TestCase
     assert new_work_type.errors.added?(:name, :taken, value: new_work_type.name)
   end
 
-  test "squishing name" do
-    @work_type.name = " new  name "
-    assert_equal "new name", @work_type.name
-
-    @work_type.name = nil
-    assert_nil @work_type.name
-  end
-
   test "presence of multiplicand" do
     @work_type.multiplicand = nil
     assert_not @work_type.valid?
@@ -51,5 +43,13 @@ class WorkTypeTest < ActiveSupport::TestCase
 
     assert_not @work_type.destroy
     assert @work_type.errors.added?(:base, :"restrict_dependent_destroy.has_many", record: "word count files")
+  end
+
+  test "squishing name" do
+    @work_type.name = " new  name "
+    assert_equal "new name", @work_type.name
+
+    @work_type.name = nil
+    assert_nil @work_type.name
   end
 end
