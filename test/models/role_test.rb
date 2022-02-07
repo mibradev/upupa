@@ -5,10 +5,6 @@ class RoleTest < ActiveSupport::TestCase
     @role = roles(:one)
   end
 
-  test "validity" do
-    assert @role.valid?
-  end
-
   test "presence of name" do
     @role.name = nil
     assert_not @role.valid?

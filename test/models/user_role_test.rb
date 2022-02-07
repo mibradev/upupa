@@ -5,10 +5,6 @@ class UserRoleTest < ActiveSupport::TestCase
     @user_role = user_roles(:one)
   end
 
-  test "validity" do
-    assert @user_role.valid?
-  end
-
   test "presence of user" do
     @user_role.user_id = nil
     assert_not @user_role.valid?

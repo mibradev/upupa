@@ -6,10 +6,6 @@ class UserTest < ActiveSupport::TestCase
     @password = "mysecret"
   end
 
-  test "validity" do
-    assert @user.valid?
-  end
-
   test "validity with password" do
     @user.password = @password
     assert @user.valid?

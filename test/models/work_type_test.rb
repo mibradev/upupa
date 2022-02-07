@@ -5,10 +5,6 @@ class WorkTypeTest < ActiveSupport::TestCase
     @work_type = work_types(:one)
   end
 
-  test "validity" do
-    assert @work_type.valid?
-  end
-
   test "presence of name" do
     @work_type.name = nil
     assert_not @work_type.valid?
