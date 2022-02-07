@@ -6,17 +6,6 @@ class UserTest < ActiveSupport::TestCase
     @password = "mysecret"
   end
 
-  test "validity with password" do
-    @user.password = @password
-    assert @user.valid?
-  end
-
-  test "validity with password and password_confirmation" do
-    @user.password = @password
-    @user.password_confirmation = @password
-    assert @user.valid?
-  end
-
   test "presence of email" do
     @user.email = nil
     assert_not @user.valid?
