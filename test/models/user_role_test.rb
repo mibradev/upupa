@@ -10,9 +10,11 @@ class UserRoleTest < ActiveSupport::TestCase
   end
 
   test "uniqueness of role" do
-    new_user_role = UserRole.new(user_id: @user_role.user_id, role_id: @user_role.role_id)
-    assert_not new_user_role.valid?
-    assert new_user_role.errors.added?(:role, :taken, value: new_user_role.role)
+    another_user_role = user_roles(:two)
+    another_user_role.user_id = @user_role.user_id
+    another_user_role.role_id = @user_role.role_id
+    assert_not another_user_role.valid?
+    assert another_user_role.errors.added?(:role, :taken, value: another_user_role.role)
   end
 
   test "presence of user" do

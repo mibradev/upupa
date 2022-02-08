@@ -16,9 +16,10 @@ class WorkTypeTest < ActiveSupport::TestCase
   end
 
   test "uniqueness of name" do
-    new_work_type = WorkType.new(name: @work_type.name.swapcase)
-    assert_not new_work_type.valid?
-    assert new_work_type.errors.added?(:name, :taken, value: new_work_type.name)
+    another_work_type = work_types(:two)
+    another_work_type.name = @work_type.name.swapcase
+    assert_not another_work_type.valid?
+    assert another_work_type.errors.added?(:name, :taken, value: another_work_type.name)
   end
 
   test "presence of multiplicand" do

@@ -1,5 +1,11 @@
 one:
   name: one
 
+two:
+  name: two
+
 for_word_count_file_one:
   name: for_word_count_file_one
+
+for_word_count_file_two:
+  name: for_word_count_file_two

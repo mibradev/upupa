@@ -3,7 +3,7 @@ require "test_helper"
 class WordCountsControllerTest < ActionDispatch::IntegrationTest
   setup do
     log_in users(:translator)
-    @word_count = word_counts(:one)
+    @word_count = word_counts(:by_translator)
   end
 
   test "should get index" do

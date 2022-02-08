@@ -3,7 +3,7 @@ require "application_system_test_case"
 class WordCountsTest < ApplicationSystemTestCase
   setup do
     log_in users(:translator)
-    @word_count = word_counts(:one)
+    @word_count = word_counts(:by_translator)
   end
 
   test "creating a word_count" do
