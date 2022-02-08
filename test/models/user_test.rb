@@ -61,7 +61,7 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @password
     @user.password_confirmation = "invalid#{@password}"
     assert_not @user.valid?
-    assert @user.errors.added?(:password_confirmation, :confirmation, attribute: User.human_attribute_name(:password))
+    assert @user.errors.added?(:password_confirmation, :confirmation, attribute: @user.class.human_attribute_name(:password))
   end
 
   test "associated user_roles" do
