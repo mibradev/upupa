@@ -29,7 +29,7 @@ class WordCountTest < ActiveSupport::TestCase
     assert @word_count.errors.added?(:date, :future_date)
   end
 
-  test "presence of user" do
+  test "associated user" do
     @word_count.user = nil
     assert_not @word_count.valid?
     assert @word_count.errors.added?(:user, :blank)

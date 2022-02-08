@@ -62,22 +62,22 @@ class WordCountFileTest < ActiveSupport::TestCase
     assert_equal @word_count_file.actual_word_count * @word_count_file.work_type_multiplicand, @word_count_file.total
   end
 
-  test "presence of word_count" do
+  test "associated word_count" do
     @word_count_file.word_count = nil
     assert_not @word_count_file.valid?
     assert @word_count_file.errors.added?(:word_count, :blank)
   end
 
-  test "presence of work_type" do
-    @word_count_file.work_type = nil
-    assert_not @word_count_file.valid?
-    assert @word_count_file.errors.added?(:work_type, :blank)
-  end
-
-  test "presence of work_file" do
+  test "associated work_file" do
     @word_count_file.work_file = nil
     assert_not @word_count_file.valid?
     assert @word_count_file.errors.added?(:work_file, :blank)
+  end
+
+  test "associated work_type" do
+    @word_count_file.work_type = nil
+    assert_not @word_count_file.valid?
+    assert @word_count_file.errors.added?(:work_type, :blank)
   end
 
   test "setting notes" do
