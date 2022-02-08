@@ -46,13 +46,12 @@ class UserTest < ActiveSupport::TestCase
     assert @user.errors.added?(:password, :blank)
   end
 
-  test "minimum length of password" do
-    @user.password = @password.first(7)
+  test "length of password" do
+    @user.password = "p" * 7
     assert_not @user.valid?
     assert @user.errors.added?(:password, :too_short, count: 8)
-  end
+    assert_not @user.errors.added?(:password, :blank)
 
-  test "maximum length of password" do
     @user.password = "p" * 19
     assert_not @user.valid?
     assert @user.errors.added?(:password, :too_long, count: 18)
