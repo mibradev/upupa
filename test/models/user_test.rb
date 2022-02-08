@@ -74,12 +74,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "associated roles" do
-    assert_difference("@user.roles.count") do
+    assert_difference("@user.user_roles.count") do
       @user.roles << roles(:one)
     end
-
-    @user.destroy
-    assert_not @user.roles.exists?
   end
 
   test "associated word_counts" do

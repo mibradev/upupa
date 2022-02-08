@@ -31,12 +31,9 @@ class RoleTest < ActiveSupport::TestCase
   end
 
   test "associated users" do
-    assert_difference("@role.users.count") do
+    assert_difference("@role.user_roles.count") do
       @role.users << users(:one)
     end
-
-    @role.destroy
-    assert_not @role.users.exists?
   end
 
   test "squishing name" do
