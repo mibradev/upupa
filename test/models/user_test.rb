@@ -88,7 +88,7 @@ class UserTest < ActiveSupport::TestCase
     assert @user.errors.added?(:base, :"restrict_dependent_destroy.has_many", record: "word counts")
   end
 
-  test "stripping email" do
+  test "setting email" do
     @user.email = " new@upupa.test "
     assert_equal "new@upupa.test", @user.email
 

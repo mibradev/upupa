@@ -36,7 +36,7 @@ class RoleTest < ActiveSupport::TestCase
     end
   end
 
-  test "squishing name" do
+  test "setting name" do
     @role.name = " new  name "
     assert_equal "new name", @role.name
 

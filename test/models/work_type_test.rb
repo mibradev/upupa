@@ -49,7 +49,7 @@ class WorkTypeTest < ActiveSupport::TestCase
     assert @work_type.errors.added?(:base, :"restrict_dependent_destroy.has_many", record: "word count files")
   end
 
-  test "squishing name" do
+  test "setting name" do
     @work_type.name = " new  name "
     assert_equal "new name", @work_type.name
 
