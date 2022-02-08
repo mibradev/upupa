@@ -5,6 +5,10 @@ class WorkFileTest < ActiveSupport::TestCase
     @work_file = work_files(:one)
   end
 
+  test "validity" do
+    assert @work_file.valid?
+  end
+
   test "presence of name" do
     @work_file.name = nil
     assert_not @work_file.valid?

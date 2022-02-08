@@ -5,6 +5,10 @@ class UserRoleTest < ActiveSupport::TestCase
     @user_role = user_roles(:one)
   end
 
+  test "validity" do
+    assert @user_role.valid?
+  end
+
   test "uniqueness of role" do
     new_user_role = UserRole.new(user_id: @user_role.user_id, role_id: @user_role.role_id)
     assert_not new_user_role.valid?

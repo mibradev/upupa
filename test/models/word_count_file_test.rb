@@ -5,6 +5,10 @@ class WordCountFileTest < ActiveSupport::TestCase
     @word_count_file = word_count_files(:one)
   end
 
+  test "validity" do
+    assert @word_count_file.valid?
+  end
+
   test "presence of actual_word_count" do
     @word_count_file.actual_word_count = nil
     assert_not @word_count_file.valid?

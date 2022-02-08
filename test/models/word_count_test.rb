@@ -5,6 +5,10 @@ class WordCountTest < ActiveSupport::TestCase
     @word_count = word_counts(:one)
   end
 
+  test "validity" do
+    assert @word_count.valid?
+  end
+
   test "presence of date" do
     @word_count.date = nil
     assert_not @word_count.valid?
