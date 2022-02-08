@@ -76,4 +76,12 @@ class WordCountFileTest < ActiveSupport::TestCase
     assert_not @word_count_file.valid?
     assert @word_count_file.errors.added?(:work_file, :blank)
   end
+
+  test "setting notes" do
+    @word_count_file.notes = " new notes "
+    assert_equal "new notes", @word_count_file.notes
+
+    @word_count_file.notes = nil
+    assert_nil @word_count_file.notes
+  end
 end

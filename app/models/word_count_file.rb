@@ -10,6 +10,10 @@ class WordCountFile < ApplicationRecord
   belongs_to :work_file
   belongs_to :work_type
 
+  def notes=(value)
+    super value&.strip
+  end
+
   private
 
   def set_work_type_multiplicand

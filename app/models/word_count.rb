@@ -6,6 +6,10 @@ class WordCount < ApplicationRecord
   belongs_to :user
   has_many :word_count_files, dependent: :restrict_with_error
 
+  def notes=(value)
+    super value&.strip
+  end
+
   private
 
   def date_cannot_be_in_the_future

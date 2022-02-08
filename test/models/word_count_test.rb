@@ -41,4 +41,12 @@ class WordCountTest < ActiveSupport::TestCase
     assert_not @word_count.destroy
     assert @word_count.errors.added?(:base, :"restrict_dependent_destroy.has_many", record: "word count files")
   end
+
+  test "setting notes" do
+    @word_count.notes = " new notes "
+    assert_equal "new notes", @word_count.notes
+
+    @word_count.notes = nil
+    assert_nil @word_count.notes
+  end
 end
