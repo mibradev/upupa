@@ -21,7 +21,7 @@ class WorkFileTest < ActiveSupport::TestCase
     assert new_work_file.errors.added?(:name, :taken, value: new_work_file.name)
   end
 
-  test "has many word_count_files" do
+  test "associated word_count_files" do
     assert_difference("@work_file.word_count_files.count") do
       @work_file.word_count_files << word_count_files(:one)
     end

@@ -33,7 +33,7 @@ class WordCountTest < ActiveSupport::TestCase
     assert @word_count.errors.added?(:user, :blank)
   end
 
-  test "has many word_count_files" do
+  test "associated word_count_files" do
     assert_difference("@word_count.word_count_files.count") do
       @word_count.word_count_files << word_count_files(:one)
     end

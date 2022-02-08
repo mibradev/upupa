@@ -64,7 +64,7 @@ class UserTest < ActiveSupport::TestCase
     assert @user.errors.added?(:password_confirmation, :confirmation, attribute: User.human_attribute_name(:password))
   end
 
-  test "has many user_roles" do
+  test "associated user_roles" do
     assert_difference("@user.user_roles.count") do
       @user.user_roles << user_roles(:one)
     end
@@ -73,7 +73,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.user_roles.exists?
   end
 
-  test "has many roles" do
+  test "associated roles" do
     assert_difference("@user.roles.count") do
       @user.roles << roles(:one)
     end
@@ -82,7 +82,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.roles.exists?
   end
 
-  test "has many word_counts" do
+  test "associated word_counts" do
     assert_difference("@user.word_counts.count") do
       @user.word_counts << word_counts(:one)
     end

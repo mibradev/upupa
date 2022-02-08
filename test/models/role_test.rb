@@ -21,7 +21,7 @@ class RoleTest < ActiveSupport::TestCase
     assert new_role.errors.added?(:name, :taken, value: new_role.name)
   end
 
-  test "has many user_roles" do
+  test "associated user_roles" do
     assert_difference("@role.user_roles.count") do
       @role.user_roles << user_roles(:one)
     end
@@ -30,7 +30,7 @@ class RoleTest < ActiveSupport::TestCase
     assert_not @role.user_roles.exists?
   end
 
-  test "has many users" do
+  test "associated users" do
     assert_difference("@role.users.count") do
       @role.users << users(:one)
     end

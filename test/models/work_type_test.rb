@@ -40,7 +40,7 @@ class WorkTypeTest < ActiveSupport::TestCase
     assert @work_type.errors.added?(:multiplicand, :greater_than, value: @work_type.multiplicand, count: 0.0)
   end
 
-  test "has many word_count_files" do
+  test "associated word_count_files" do
     assert_difference("@work_type.word_count_files.count") do
       @work_type.word_count_files << word_count_files(:one)
     end
