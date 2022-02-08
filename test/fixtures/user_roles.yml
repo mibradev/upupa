@@ -1,3 +1,3 @@
 one:
-  user: for_user_roles
-  role: for_user_roles
+  user: for_user_role_one
+  role: for_user_role_one

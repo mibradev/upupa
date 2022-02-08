@@ -2,6 +2,6 @@ one:
   date: 2020-01-01
   user: translator
 
-for_word_count_files:
+for_word_count_file_one:
   date: 2020-01-03
   user: translator

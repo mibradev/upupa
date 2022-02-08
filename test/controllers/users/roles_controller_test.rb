@@ -3,7 +3,7 @@ require "test_helper"
 class Users::RolesControllerTest < ActionDispatch::IntegrationTest
   setup do
     log_in users(:admin)
-    @user = users(:for_user_roles)
+    @user = users(:for_user_role_one)
   end
 
   test "should create user_role" do

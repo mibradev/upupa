@@ -5,8 +5,8 @@ with_password:
   email: with_password@upupa.test
   password_digest: <%= BCrypt::Password.create("mysecret") %>
 
-for_user_roles:
-  email: for_user_roles@upupa.test
+for_user_role_one:
+  email: for_user_role_one@upupa.test
 
 admin:
   email: admin@upupa.test

@@ -3,7 +3,7 @@ require "application_system_test_case"
 class Users::RolesTest < ApplicationSystemTestCase
   setup do
     log_in users(:admin)
-    @user = users(:for_user_roles)
+    @user = users(:for_user_role_one)
   end
 
   test "creating a user_role" do
