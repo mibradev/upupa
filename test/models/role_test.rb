@@ -13,6 +13,7 @@ class RoleTest < ActiveSupport::TestCase
     @role.name = nil
     assert_not @role.valid?
     assert @role.errors.added?(:name, :blank)
+    assert_equal 1, @role.errors[:name].count
   end
 
   test "uniqueness of name" do

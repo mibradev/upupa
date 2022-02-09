@@ -13,6 +13,7 @@ class WorkTypeTest < ActiveSupport::TestCase
     @work_type.name = nil
     assert_not @work_type.valid?
     assert @work_type.errors.added?(:name, :blank)
+    assert_equal 1, @work_type.errors[:name].count
   end
 
   test "uniqueness of name" do
@@ -26,7 +27,7 @@ class WorkTypeTest < ActiveSupport::TestCase
     @work_type.multiplicand = nil
     assert_not @work_type.valid?
     assert @work_type.errors.added?(:multiplicand, :blank)
-    assert_not @work_type.errors.added?(:multiplicand, :not_a_number, value: @work_type.multiplicand)
+    assert_equal 1, @work_type.errors[:multiplicand].count
   end
 
   test "numericality of multiplicand" do

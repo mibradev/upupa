@@ -13,7 +13,7 @@ class WordCountFileTest < ActiveSupport::TestCase
     @word_count_file.actual_word_count = nil
     assert_not @word_count_file.valid?
     assert @word_count_file.errors.added?(:actual_word_count, :blank)
-    assert_not @word_count_file.errors.added?(:actual_word_count, :not_a_number, value: @word_count_file.actual_word_count)
+    assert_equal 1, @word_count_file.errors[:actual_word_count].count
   end
 
   test "numericality of actual_word_count" do

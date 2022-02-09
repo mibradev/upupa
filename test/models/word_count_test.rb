@@ -13,6 +13,7 @@ class WordCountTest < ActiveSupport::TestCase
     @word_count.date = nil
     assert_not @word_count.valid?
     assert @word_count.errors.added?(:date, :blank)
+    assert_equal 1, @word_count.errors[:date].count
   end
 
   test "uniqueness of date" do

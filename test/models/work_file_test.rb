@@ -13,6 +13,7 @@ class WorkFileTest < ActiveSupport::TestCase
     @work_file.name = nil
     assert_not @work_file.valid?
     assert @work_file.errors.added?(:name, :blank)
+    assert_equal 1, @work_file.errors[:name].count
   end
 
   test "uniqueness of name" do
