@@ -25,6 +25,7 @@ class UserTest < ActiveSupport::TestCase
     @user.email = nil
     assert_not @user.valid?
     assert @user.errors.added?(:email, :blank)
+    assert_not @user.errors.added?(:email, :invalid, value: @user.email)
   end
 
   test "uniqueness of email" do
@@ -44,13 +45,13 @@ class UserTest < ActiveSupport::TestCase
     @user.password = " "
     assert_not @user.valid?
     assert @user.errors.added?(:password, :blank)
+    assert_not @user.errors.added?(:password, :too_short, count: 8)
   end
 
   test "minimum length of password" do
     @user.password = "p" * 7
     assert_not @user.valid?
     assert @user.errors.added?(:password, :too_short, count: 8)
-    assert_not @user.errors.added?(:password, :blank)
   end
 
   test "maximum length of password" do
