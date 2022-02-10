@@ -25,7 +25,7 @@ en:
         other: Work Types
     errors:
       messages:
-        future_date: "can't be in the futute"
+        future_date: "can't be in the future"
   alerts:
     sessions:
       already_logged_in: "You are already logged in."
