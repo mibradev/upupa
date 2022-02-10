@@ -65,7 +65,7 @@ class WordCountFileTest < ActiveSupport::TestCase
     assert_equal new_word_count_file.work_type.multiplicand, new_word_count_file.work_type_multiplicand
   end
 
-  test "locked work_type_multiplicand if record is persisted" do
+  test "locked work_type_multiplicand if the record is persisted" do
     @word_count_file.work_type.multiplicand += 1.0
     assert @word_count_file.save
     assert_not_equal @word_count_file.work_type.multiplicand, @word_count_file.work_type_multiplicand
