@@ -43,6 +43,20 @@ class WordCountFileTest < ActiveSupport::TestCase
     assert another_word_count_file.errors.added?(:work_file, :taken, value: another_word_count_file.work_file)
   end
 
+  test "validity with existing work_file and work_type" do
+    another_word_count_file = word_count_files(:two)
+    another_word_count_file.work_file_id = @word_count_file.work_file_id
+    another_word_count_file.work_type_id = @word_count_file.work_type_id
+    assert another_word_count_file.valid?
+  end
+
+  test "validity with existing work_file and word_count" do
+    another_word_count_file = word_count_files(:two)
+    another_word_count_file.work_file_id = @word_count_file.work_file_id
+    another_word_count_file.word_count_id = @word_count_file.word_count_id
+    assert another_word_count_file.valid?
+  end
+
   test "setting work_type_multiplicand" do
     new_word_count_file = @word_count_file.dup
     new_word_count_file.work_type = work_types(:one)

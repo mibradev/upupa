@@ -24,6 +24,12 @@ class WordCountTest < ActiveSupport::TestCase
     assert another_word_count.errors.added?(:date, :taken, value: another_word_count.date)
   end
 
+  test "validity with existing date" do
+    another_word_count = word_counts(:two)
+    another_word_count.date = @word_count.date
+    assert another_word_count.valid?
+  end
+
   test "range of date" do
     @word_count.date = Date.tomorrow
     assert_not @word_count.valid?
