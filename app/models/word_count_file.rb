@@ -1,7 +1,7 @@
 class WordCountFile < ApplicationRecord
   validates :actual_word_count, presence: true
   validates :actual_word_count, numericality: {only_integer: true, greater_than: 0}, allow_blank: true
-  validates :work_file, uniqueness: {scope: [:work_type, :word_count]}
+  validates :work_file, uniqueness: {scope: [:word_count, :work_type]}
 
   before_save :set_work_type_multiplicand, if: :new_record?
   before_save :set_total

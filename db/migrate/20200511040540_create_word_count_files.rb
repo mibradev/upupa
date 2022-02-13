@@ -11,6 +11,6 @@ class CreateWordCountFiles < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    add_index :word_count_files, [:work_file_id, :work_type_id, :word_count_id], unique: true, name: "index_word_count_files_on_work_file_&_work_type_&_word_count"
+    add_index :word_count_files, [:work_file_id, :word_count_id, :work_type_id], unique: true, name: "index_word_count_files_on_work_file_&_word_count_&_work_type"
   end
 end
