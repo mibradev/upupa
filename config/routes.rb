@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "home#index"
+  root "home#index"
 
   controller :sessions do
     get "login", action: :new
