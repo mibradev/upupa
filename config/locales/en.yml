@@ -2,12 +2,12 @@ en:
   app_name: "Upupa"
   activerecord:
     models:
+      role_assignment:
+        one: Role Assignment
+        other: Role Assignments
       role:
         one: Role
         other: Roles
-      user_role:
-        one: User Role
-        other: User Roles
       user:
         one: User
         other: Users

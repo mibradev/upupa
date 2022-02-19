@@ -14,21 +14,21 @@ ActiveRecord::Schema[7.0].define(version: 2020_05_11_040540) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "role_assignments", force: :cascade do |t|
+    t.bigint "role_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_id", "user_id"], name: "index_role_assignments_on_role_id_and_user_id", unique: true
+    t.index ["role_id"], name: "index_role_assignments_on_role_id"
+    t.index ["user_id"], name: "index_role_assignments_on_user_id"
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_roles_on_name", unique: true
-  end
-
-  create_table "user_roles", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "role_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["role_id"], name: "index_user_roles_on_role_id"
-    t.index ["user_id", "role_id"], name: "index_user_roles_on_user_id_and_role_id", unique: true
-    t.index ["user_id"], name: "index_user_roles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,8 +80,8 @@ ActiveRecord::Schema[7.0].define(version: 2020_05_11_040540) do
     t.index ["name"], name: "index_work_types_on_name", unique: true
   end
 
-  add_foreign_key "user_roles", "roles"
-  add_foreign_key "user_roles", "users"
+  add_foreign_key "role_assignments", "roles"
+  add_foreign_key "role_assignments", "users"
   add_foreign_key "word_count_files", "word_counts"
   add_foreign_key "word_count_files", "work_files"
   add_foreign_key "word_count_files", "work_types"

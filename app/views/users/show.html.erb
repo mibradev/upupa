@@ -17,14 +17,14 @@
   </div>
 </dl>
 
-<section id="user_roles" class="space-y-8">
+<section id="roles" class="space-y-8">
   <header class="flex justify-between items-start space-x-4">
     <h2 class="text-xl font-bold">
       <%= I18n.t("page.headings.index", model: Role.model_name.human(count: 20)) %>
     </h2>
   </header>
 
-  <%= form_with(scope: :user_role, url: user_roles_path(@user)) do |form| %>
+  <%= form_with(scope: :role_assignment, url: user_roles_path(@user)) do |form| %>
     <div class="flex gap-2">
       <div class="w-full">
         <%= form.label :role_id, class: "sr-only" %>

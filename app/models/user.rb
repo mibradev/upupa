@@ -8,8 +8,8 @@ class User < ApplicationRecord
   validates :password, length: 8..18, allow_blank: true
   validates :password, confirmation: true
 
-  has_many :user_roles, dependent: :destroy
-  has_many :roles, through: :user_roles
+  has_many :role_assignments, dependent: :destroy
+  has_many :roles, through: :role_assignments
   has_many :word_counts, dependent: :restrict_with_error
 
   def email=(value)

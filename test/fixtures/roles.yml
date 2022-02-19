@@ -4,11 +4,11 @@ one:
 two:
   name: two
 
-for_user_role_one:
-  name: for_user_role_one
+for_role_assignment_one:
+  name: for_role_assignment_one
 
-for_user_role_two:
-  name: for_user_role_two
+for_role_assignment_two:
+  name: for_role_assignment_two
 
 admin:
   name: Admin

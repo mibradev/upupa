@@ -3,23 +3,23 @@ require "application_system_test_case"
 class Users::RolesTest < ApplicationSystemTestCase
   setup do
     log_in users(:admin)
-    @user = users(:for_user_role_one)
+    @user = users(:for_role_assignment_one)
   end
 
-  test "creating a user_role" do
+  test "creating a role_assignment" do
     visit user_url(@user)
 
-    within("#user_roles") do
-      select roles(:one).name, from: UserRole.human_attribute_name(:role)
+    within("#roles") do
+      select roles(:one).name, from: RoleAssignment.human_attribute_name(:role)
       click_button I18n.t("helpers.submit.submit")
     end
 
-    assert_text I18n.t("notices.created", record: UserRole.model_name.human)
+    assert_text I18n.t("notices.created", record: RoleAssignment.model_name.human)
   end
 
-  test "destroying a user_role" do
+  test "destroying a role_assignment" do
     visit user_url(@user)
-    within("#user_roles") { accept_confirm { click_button I18n.t("page.actions.destroy") } }
-    assert_text I18n.t("notices.destroyed", record: UserRole.model_name.human)
+    within("#roles") { accept_confirm { click_button I18n.t("page.actions.destroy") } }
+    assert_text I18n.t("notices.destroyed", record: RoleAssignment.model_name.human)
   end
 end

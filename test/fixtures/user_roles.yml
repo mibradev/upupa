@@ -1,7 +1,0 @@
-one:
-  user: for_user_role_one
-  role: for_user_role_one
-
-two:
-  user: for_user_role_two
-  role: for_user_role_two

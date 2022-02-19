@@ -1,0 +1,7 @@
+one:
+  role: for_role_assignment_one
+  user: for_role_assignment_one
+
+two:
+  role: for_role_assignment_two
+  user: for_role_assignment_two

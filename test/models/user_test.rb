@@ -67,17 +67,17 @@ class UserTest < ActiveSupport::TestCase
     assert @user.errors.added?(:password_confirmation, :confirmation, attribute: @user.class.human_attribute_name(:password))
   end
 
-  test "associated user_roles" do
-    assert_difference("@user.user_roles.count") do
-      @user.user_roles << user_roles(:one)
+  test "associated role_assignments" do
+    assert_difference("@user.role_assignments.count") do
+      @user.role_assignments << role_assignments(:one)
     end
 
     @user.destroy
-    assert_not @user.user_roles.exists?
+    assert_not @user.role_assignments.exists?
   end
 
   test "associated roles" do
-    assert_difference("@user.user_roles.count") do
+    assert_difference("@user.role_assignments.count") do
       @user.roles << roles(:one)
     end
   end

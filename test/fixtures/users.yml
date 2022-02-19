@@ -8,11 +8,11 @@ with_password:
   email: with_password@upupa.test
   password_digest: <%= BCrypt::Password.create("mysecret") %>
 
-for_user_role_one:
-  email: for_user_role_one@upupa.test
+for_role_assignment_one:
+  email: for_role_assignment_one@upupa.test
 
-for_user_role_two:
-  email: for_user_role_two@upupa.test
+for_role_assignment_two:
+  email: for_role_assignment_two@upupa.test
 
 for_word_count_one:
   email: for_word_count_one@upupa.test
