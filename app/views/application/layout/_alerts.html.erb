@@ -1,0 +1,15 @@
+<% if flash.any? %>
+  <div class="space-y-4">
+    <% if flash.alert %>
+      <div class="p-4 font-medium text-red-100 bg-red-700 rounded shadow">
+        <%= flash.alert %>
+      </div>
+    <% end %>
+
+    <% if flash.notice %>
+      <div class="p-4 font-medium text-green-100 bg-green-700 rounded shadow">
+        <%= flash.notice %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

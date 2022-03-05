@@ -1,0 +1,14 @@
+<div class="lg:flex lg:flex-col lg:h-screen">
+  <%= render "application/layout/header" %>
+
+  <div class="lg:overflow-y-auto lg:grid lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 lg:h-full">
+    <%= render "application/layout/sidebar" %>
+
+    <main class="lg:overflow-y-auto lg:col-span-3 xl:col-span-4 2xl:col-span-5">
+      <div class="p-8 space-y-8">
+        <%= render "application/layout/alerts" %>
+        <%= yield %>
+      </div>
+    </main>
+  </div>
+</div>
