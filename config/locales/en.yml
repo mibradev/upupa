@@ -3,26 +3,26 @@ en:
   activerecord:
     models:
       role_assignment:
-        one: Role Assignment
-        other: Role Assignments
+        one: "Role Assignment"
+        other: "Role Assignments"
       role:
-        one: Role
-        other: Roles
+        one: "Role"
+        other: "Roles"
       user:
-        one: User
-        other: Users
+        one: "User"
+        other: "Users"
       word_count_file:
-        one: Word Count File
-        other: Word Count Files
+        one: "Word Count File"
+        other: "Word Count Files"
       word_count:
-        one: Word Count
-        other: Word Counts
+        one: "Word Count"
+        other: "Word Counts"
       work_file:
-        one: Work File
-        other: Work Files
+        one: "Work File"
+        other: "Work Files"
       work_type:
-        one: Work Type
-        other: Work Types
+        one: "Work Type"
+        other: "Work Types"
     errors:
       messages:
         future_date: "can't be in the future"
