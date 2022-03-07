@@ -6,7 +6,7 @@
   <%= link_to I18n.t("page.actions.back"), work_types_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 <% end %>
 
-<dl class="text-gray-700 bg-orange-50 rounded divide-y divide-black divide-opacity-10 shadow">
+<dl class="text-gray-700 bg-orange-50 rounded divide-y divide-black divide-opacity-10">
   <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
     <dt class="text-sm font-medium"><%= WorkType.human_attribute_name(:name) %></dt>
     <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @work_type.name %></dd>
