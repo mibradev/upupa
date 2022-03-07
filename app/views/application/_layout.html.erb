@@ -5,8 +5,9 @@
     <%= render "application/layout/sidebar" %>
 
     <main class="lg:overflow-y-auto lg:col-span-3 xl:col-span-4 2xl:col-span-5">
+      <%= render "application/layout/alerts" %>
+
       <div class="p-8 space-y-8">
-        <%= render "application/layout/alerts" %>
         <%= render "application/layout/heading" %>
         <%= yield %>
       </div>
