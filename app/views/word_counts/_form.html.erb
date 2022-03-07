@@ -14,12 +14,12 @@
 
     <div class="space-y-2">
       <%= form.label :date, class: "block font-medium appearance-none" %>
-      <%= form.date_field :date, class: "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none" %>
+      <%= form.date_field :date, class: "block w-full rounded focus:border-gray-700 focus:ring-gray-700" %>
     </div>
 
     <div class="space-y-2">
       <%= form.label :notes, class: "block font-medium appearance-none" %>
-      <%= form.text_area :notes, class: "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none" %>
+      <%= form.text_area :notes, class: "block w-full rounded focus:border-gray-700 focus:ring-gray-700" %>
     </div>
 
     <%= form.submit class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 rounded appearance-none cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
