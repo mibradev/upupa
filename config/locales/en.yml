@@ -59,15 +59,15 @@ en:
     form:
       errors:
         heading: "Form errors:"
-    headings:
+    messages:
+      no_records: "No records found."
+      turbo_confirm: "Are you sure?"
+    nav:
+      home: "Home"
+    titles:
       edit: "Editing %{model}"
       index: "%{model}"
       new: "New %{model}"
       show: "%{model}"
       sessions:
         login: "Login"
-    messages:
-      no_records: "No records found."
-      turbo_confirm: "Are you sure?"
-    nav:
-      home: "Home"

@@ -1,4 +1,4 @@
-<% content_for :title, I18n.t("views.headings.index", model: WordCount.model_name.human(count: 20)) %>
+<% content_for :title, I18n.t("views.titles.index", model: WordCount.model_name.human(count: 20)) %>
 
 <% content_for(:actions) do %>
   <%= link_to I18n.t("views.actions.new"), new_word_count_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
