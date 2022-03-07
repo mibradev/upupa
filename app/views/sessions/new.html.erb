@@ -2,15 +2,15 @@
 <% content_for :description, I18n.t("views.descriptions.login", app_name: I18n.t(:app_name)) %>
 
 <main class="flex justify-center items-center p-8 min-h-screen">
-  <div class="space-y-8 w-full sm:space-y-0 sm:w-auto sm:bg-white sm:rounded sm:shadow">
+  <div class="space-y-8 w-full sm:space-y-0 sm:w-auto sm:bg-white sm:shadow">
     <% if flash.alert %>
-      <div class="p-4 text-red-900 bg-red-300 sm:rounded-t">
+      <div class="p-4 text-red-900 bg-red-300">
         <%= flash.alert %>
       </div>
     <% end %>
 
     <% if flash.notice %>
-      <div class="p-4 text-green-900 bg-green-300 sm:rounded-t">
+      <div class="p-4 text-green-900 bg-green-300">
         <%= flash.notice %>
       </div>
     <% end %>
@@ -22,15 +22,15 @@
         <div class="space-y-4">
           <div class="space-y-2">
             <%= form.label :email, class: "block font-medium appearance-none" %>
-            <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "user@example.com", class: "block w-full rounded focus:border-gray-700 focus:ring-gray-700" %>
+            <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "user@example.com", class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
           </div>
 
           <div class="space-y-2">
             <%= form.label :password, class: "block font-medium appearance-none" %>
-            <%= form.password_field :password, autocomplete: "current-password", placeholder: "********", class: "block w-full rounded focus:border-gray-700 focus:ring-gray-700" %>
+            <%= form.password_field :password, autocomplete: "current-password", placeholder: "********", class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
           </div>
 
-          <%= form.submit I18n.t("views.actions.sessions.log_in"), class: "block p-3 w-full text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 rounded appearance-none cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+          <%= form.submit I18n.t("views.actions.sessions.log_in"), class: "block p-3 w-full text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 appearance-none cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
         </div>
       <% end %>
     </div>

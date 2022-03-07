@@ -1,7 +1,7 @@
 <%= form_with(model: work_type) do |form| %>
   <div class="space-y-4">
     <% if work_type.errors.any? %>
-      <div class="p-4 bg-red-700 rounded">
+      <div class="p-4 bg-red-700">
         <h4 class="mb-2 font-medium text-red-300"><%= I18n.t("views.form.errors.heading") %></h4>
 
         <ul class="pl-4 list-disc list-inside text-sm font-medium text-red-100">
@@ -14,14 +14,14 @@
 
     <div class="space-y-2">
       <%= form.label :name, class: "block font-medium appearance-none" %>
-      <%= form.text_field :name, class: "block w-full rounded focus:border-gray-700 focus:ring-gray-700" %>
+      <%= form.text_field :name, class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
     </div>
 
     <div class="space-y-2">
       <%= form.label :multiplicand, class: "block font-medium appearance-none" %>
-      <%= form.number_field :multiplicand, step: "any", min: 0.0, class: "block w-full rounded focus:border-gray-700 focus:ring-gray-700" %>
+      <%= form.number_field :multiplicand, step: "any", min: 0.0, class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
     </div>
 
-    <%= form.submit class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 rounded appearance-none cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+    <%= form.submit class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 appearance-none cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
   </div>
 <% end %>

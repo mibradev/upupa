@@ -1,7 +1,7 @@
 <%= form_with(model: [word_count_file.word_count, word_count_file]) do |form| %>
   <div class="space-y-4">
     <% if word_count_file.errors.any? %>
-      <div class="p-4 bg-red-700 rounded">
+      <div class="p-4 bg-red-700">
         <h4 class="mb-2 font-medium text-red-300"><%= I18n.t("views.form.errors.heading") %></h4>
 
         <ul class="pl-4 list-disc list-inside text-sm font-medium text-red-100">
@@ -14,29 +14,29 @@
 
     <div class="space-y-2">
       <%= form.label :word_count_id, class: "block font-medium appearance-none" %>
-      <%= form.text_field :word_count_id, disabled: true, value: word_count_file.word_count.date, class: "block w-full rounded focus:border-gray-700 focus:ring-gray-700" %>
+      <%= form.text_field :word_count_id, disabled: true, value: word_count_file.word_count.date, class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
     </div>
 
     <div class="space-y-2">
       <%= form.label :work_file_id, class: "block font-medium appearance-none" %>
-      <%= form.collection_select :work_file_id, WorkFile.all, :id, :name, {include_blank: true}, class: "block w-full rounded focus:border-gray-700 focus:ring-gray-700" %>
+      <%= form.collection_select :work_file_id, WorkFile.all, :id, :name, {include_blank: true}, class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
     </div>
 
     <div class="space-y-2">
       <%= form.label :actual_word_count, class: "block font-medium appearance-none" %>
-      <%= form.number_field :actual_word_count, class: "block w-full rounded focus:border-gray-700 focus:ring-gray-700" %>
+      <%= form.number_field :actual_word_count, class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
     </div>
 
     <div class="space-y-2">
       <%= form.label :work_type_id, class: "block font-medium appearance-none" %>
-      <%= form.collection_select :work_type_id, WorkType.all, :id, :name, {include_blank: true}, class: "block w-full rounded focus:border-gray-700 focus:ring-gray-700" %>
+      <%= form.collection_select :work_type_id, WorkType.all, :id, :name, {include_blank: true}, class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
     </div>
 
     <div class="space-y-2">
       <%= form.label :notes, class: "block font-medium appearance-none" %>
-      <%= form.text_area :notes, class: "block w-full rounded focus:border-gray-700 focus:ring-gray-700" %>
+      <%= form.text_area :notes, class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
     </div>
 
-    <%= form.submit class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 rounded appearance-none cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+    <%= form.submit class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 appearance-none cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
   </div>
 <% end %>

@@ -1,7 +1,7 @@
 <% content_for :title, I18n.t("views.titles.index", model: Role.model_name.human(count: 20)) %>
 
 <% if @roles.load.any? %>
-  <div class="overflow-x-auto rounded">
+  <div class="overflow-x-auto">
     <table class="w-full text-sm text-left text-gray-700 whitespace-nowrap bg-orange-50 divide-y divide-black divide-opacity-10">
       <thead>
         <tr>
@@ -16,7 +16,7 @@
             <td class="p-4"><%= role.name %></td>
 
             <td class="p-2 text-right">
-              <%= link_to I18n.t("views.actions.show"), role_path(role), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              <%= link_to I18n.t("views.actions.show"), role_path(role), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
             </td>
           </tr>
         <% end %>

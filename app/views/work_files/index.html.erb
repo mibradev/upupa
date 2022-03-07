@@ -5,7 +5,7 @@
 <% end %>
 
 <% if @work_files.load.any? %>
-  <div class="overflow-x-auto rounded">
+  <div class="overflow-x-auto">
     <table class="w-full text-sm text-left text-gray-700 whitespace-nowrap bg-orange-50 divide-y divide-black divide-opacity-10">
       <thead>
         <tr>
@@ -20,9 +20,9 @@
             <td class="p-4"><%= work_file.name %></td>
 
             <td class="p-2 text-right">
-              <%= link_to I18n.t("views.actions.show"), work_file_path(work_file), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-              <%= link_to I18n.t("views.actions.edit"), edit_work_file_path(work_file), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
-              <%= button_to I18n.t("views.actions.destroy"), work_file_path(work_file), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              <%= link_to I18n.t("views.actions.show"), work_file_path(work_file), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              <%= link_to I18n.t("views.actions.edit"), edit_work_file_path(work_file), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+              <%= button_to I18n.t("views.actions.destroy"), work_file_path(work_file), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
             </td>
           </tr>
         <% end %>
