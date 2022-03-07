@@ -12,7 +12,7 @@
         <%= form.collection_select :role_id, Role.where.not(id: user.roles), :id, :name, {include_blank: true}, class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
       </div>
 
-      <%= form.submit class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 appearance-none cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+      <%= form.submit class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
     </div>
   <% end %>
 
@@ -32,7 +32,7 @@
               <td class="p-4"><%= role.name %></td>
 
               <td class="p-2 text-right">
-                <%= button_to I18n.t("views.actions.destroy"), user_role_path(user, role), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+                <%= button_to I18n.t("views.actions.destroy"), user_role_path(user, role), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent cursor-pointer hover:bg-black hover:bg-opacity-10" %>
               </td>
             </tr>
           <% end %>

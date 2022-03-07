@@ -21,16 +21,16 @@
       <%= form_with(url: login_path) do |form| %>
         <div class="space-y-4">
           <div class="space-y-2">
-            <%= form.label :email, class: "block font-medium appearance-none" %>
+            <%= form.label :email, class: "block font-medium" %>
             <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "user@example.com", class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
           </div>
 
           <div class="space-y-2">
-            <%= form.label :password, class: "block font-medium appearance-none" %>
+            <%= form.label :password, class: "block font-medium" %>
             <%= form.password_field :password, autocomplete: "current-password", placeholder: "********", class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
           </div>
 
-          <%= form.submit I18n.t("views.actions.sessions.log_in"), class: "block p-3 w-full text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 appearance-none cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+          <%= form.submit I18n.t("views.actions.sessions.log_in"), class: "block p-3 w-full text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
         </div>
       <% end %>
     </div>
