@@ -1,5 +1,5 @@
 <% content_for :title, "#{I18n.t "page.headings.sessions.login"} - #{I18n.t :app_name}" %>
-<% content_for :description, I18n.t("page.descriptions.login", app_name: I18n.t(:app_name)) %>
+<% content_for :description, I18n.t("views.descriptions.login", app_name: I18n.t(:app_name)) %>
 
 <main class="flex justify-center items-center p-8 min-h-screen">
   <div class="space-y-8 w-full sm:space-y-0 sm:w-auto sm:bg-white sm:rounded sm:shadow">
@@ -16,7 +16,7 @@
     <% end %>
 
     <div class="space-y-8 sm:p-16">
-      <h1 class="text-3xl text-center"><%= I18n.t("page.headings.sessions.login") %></h1>
+      <h1 class="text-3xl text-center"><%= I18n.t("views.headings.sessions.login") %></h1>
 
       <%= form_with(url: login_path) do |form| %>
         <div class="space-y-4">
@@ -30,7 +30,7 @@
             <%= form.password_field :password, autocomplete: "current-password", placeholder: "********", class: "block px-3 py-2 w-full text-gray-700 bg-white rounded border border-black border-opacity-25 appearance-none hover:border-opacity-90 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 focus:outline-none" %>
           </div>
 
-          <%= form.submit I18n.t("page.actions.sessions.log_in"), class: "block p-3 w-full text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 rounded appearance-none cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+          <%= form.submit I18n.t("views.actions.sessions.log_in"), class: "block p-3 w-full text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 rounded appearance-none cursor-pointer hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
         </div>
       <% end %>
     </div>

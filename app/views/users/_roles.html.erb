@@ -1,7 +1,7 @@
 <section id="roles" class="space-y-8">
   <header class="flex justify-between items-start space-x-4">
     <h2 class="text-xl font-bold">
-      <%= I18n.t("page.headings.index", model: Role.model_name.human(count: 20)) %>
+      <%= I18n.t("views.headings.index", model: Role.model_name.human(count: 20)) %>
     </h2>
   </header>
 
@@ -32,7 +32,7 @@
               <td class="p-4"><%= role.name %></td>
 
               <td class="p-2 text-right">
-                <%= button_to I18n.t("page.actions.destroy"), user_role_path(user, role), method: :delete, form: {data: {turbo_confirm: I18n.t("page.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+                <%= button_to I18n.t("views.actions.destroy"), user_role_path(user, role), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent rounded appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
               </td>
             </tr>
           <% end %>

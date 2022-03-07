@@ -1,7 +1,7 @@
-<% content_for :title, I18n.t("page.headings.new", model: WorkFile.model_name.human) %>
+<% content_for :title, I18n.t("views.headings.new", model: WorkFile.model_name.human) %>
 
 <% content_for(:actions) do %>
-  <%= link_to I18n.t("page.actions.back"), work_files_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
+  <%= link_to I18n.t("views.actions.back"), work_files_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent appearance-none cursor-pointer hover:bg-black hover:bg-opacity-10" %>
 <% end %>
 
 <%= render "form", work_file: @work_file %>

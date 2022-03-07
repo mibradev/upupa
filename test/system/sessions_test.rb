@@ -5,7 +5,7 @@ class SessionsTest < ApplicationSystemTestCase
     visit login_url
     fill_in User.human_attribute_name(:email), with: users(:with_password).email
     fill_in User.human_attribute_name(:password), with: "mysecret"
-    click_button I18n.t("page.actions.sessions.log_in")
+    click_button I18n.t("views.actions.sessions.log_in")
     assert_text I18n.t("notices.sessions.logged_in")
   end
 
@@ -13,14 +13,14 @@ class SessionsTest < ApplicationSystemTestCase
     visit login_url
     fill_in User.human_attribute_name(:email), with: "invalid@example.com"
     fill_in User.human_attribute_name(:password), with: "invalid_password"
-    click_button I18n.t("page.actions.sessions.log_in")
+    click_button I18n.t("views.actions.sessions.log_in")
     assert_text I18n.t("alerts.sessions.invalid_credentials")
   end
 
   test "logging out" do
     log_in users(:with_password)
     visit root_url
-    click_button I18n.t("page.actions.sessions.log_out")
+    click_button I18n.t("views.actions.sessions.log_out")
     assert_text I18n.t("notices.sessions.logged_out")
   end
 end

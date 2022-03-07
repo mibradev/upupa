@@ -22,7 +22,7 @@ class UsersTest < ApplicationSystemTestCase
 
   test "destroying a user" do
     visit user_url(@user)
-    accept_confirm { click_button I18n.t("page.actions.destroy") }
+    accept_confirm { click_button I18n.t("views.actions.destroy") }
     assert_text I18n.t("notices.destroyed", record: User.model_name.human)
   end
 end

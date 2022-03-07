@@ -24,7 +24,7 @@ class WordCountsTest < ApplicationSystemTestCase
 
   test "destroying a word_count" do
     visit word_count_url(@word_count)
-    accept_confirm { click_button I18n.t("page.actions.destroy") }
+    accept_confirm { click_button I18n.t("views.actions.destroy") }
     assert_text I18n.t("notices.destroyed", record: WordCount.model_name.human)
   end
 end

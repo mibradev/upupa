@@ -19,7 +19,7 @@ class Users::RolesTest < ApplicationSystemTestCase
 
   test "destroying a role_assignment" do
     visit user_url(@user)
-    within("#roles") { accept_confirm { click_button I18n.t("page.actions.destroy") } }
+    within("#roles") { accept_confirm { click_button I18n.t("views.actions.destroy") } }
     assert_text I18n.t("notices.destroyed", record: RoleAssignment.model_name.human)
   end
 end

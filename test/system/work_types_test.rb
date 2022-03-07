@@ -24,7 +24,7 @@ class WorkTypesTest < ApplicationSystemTestCase
 
   test "destroying a work_type" do
     visit work_type_url(@work_type)
-    accept_confirm { click_button I18n.t("page.actions.destroy") }
+    accept_confirm { click_button I18n.t("views.actions.destroy") }
     assert_text I18n.t("notices.destroyed", record: WorkType.model_name.human)
   end
 end
