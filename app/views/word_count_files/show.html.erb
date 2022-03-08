@@ -7,12 +7,6 @@
     </h1>
   </header>
 
-  <% content_for(:actions) do %>
-    <%= link_to I18n.t("views.actions.edit"), edit_word_count_word_count_file_path(@word_count, @word_count_file), class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent hover:bg-black hover:bg-opacity-10" %>
-    <%= button_to I18n.t("views.actions.destroy"), word_count_word_count_file_path(@word_count, @word_count_file), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent hover:bg-black hover:bg-opacity-10" %>
-    <%= link_to I18n.t("views.actions.back"), word_count_path(@word_count), class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent hover:bg-black hover:bg-opacity-10" %>
-  <% end %>
-
   <dl class="text-gray-700 bg-orange-50 divide-y divide-black divide-opacity-10">
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCountFile.human_attribute_name(:word_count) %></dt>
@@ -44,4 +38,10 @@
       <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.notes %></dd>
     </div>
   </dl>
+
+  <div class="overflow-x-auto flex gap-2">
+    <%= link_to I18n.t("views.actions.edit"), edit_word_count_word_count_file_path(@word_count, @word_count_file), class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+    <%= button_to I18n.t("views.actions.destroy"), word_count_word_count_file_path(@word_count, @word_count_file), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+    <%= link_to I18n.t("views.actions.back"), word_count_path(@word_count), class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+  </div>
 </main>

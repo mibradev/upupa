@@ -7,10 +7,6 @@
     </h1>
   </header>
 
-  <% content_for(:actions) do %>
-    <%= link_to I18n.t("views.actions.new"), new_user_path, class: "block py-2 px-8 w-full text-sm font-medium text-left text-gray-700 bg-transparent hover:bg-black hover:bg-opacity-10" %>
-  <% end %>
-
   <% if @users.load.any? %>
     <div class="overflow-x-auto">
       <table class="w-full text-sm text-left text-gray-700 whitespace-nowrap bg-orange-50 divide-y divide-black divide-opacity-10">
@@ -41,4 +37,8 @@
       <%= I18n.t("views.messages.no_records") %>
     </div>
   <% end %>
+
+  <div class="overflow-x-auto flex gap-2">
+    <%= link_to I18n.t("views.actions.new"), new_user_path, class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+  </div>
 </main>
