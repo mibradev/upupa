@@ -20,4 +20,46 @@
   </div>
 </main>
 
-<%= render "roles", user: @user %>
+<section id="roles" class="space-y-8">
+  <header>
+    <h2 class="text-xl font-bold">
+      <%= I18n.t("views.titles.index", model: Role.model_name.human(count: 20)) %>
+    </h2>
+  </header>
+
+  <%= form_with(scope: :role_assignment, url: user_roles_path(@user)) do |form| %>
+    <div class="flex gap-2">
+      <div class="w-full">
+        <%= form.label :role_id, class: "sr-only" %>
+        <%= form.collection_select :role_id, Role.where.not(id: @user.roles), :id, :name, {include_blank: true}, class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
+      </div>
+
+      <%= form.button class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+    </div>
+  <% end %>
+
+  <% if @user.roles.load.any? %>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left text-gray-700 whitespace-nowrap bg-orange-50 divide-y divide-black divide-opacity-10">
+        <thead>
+          <tr>
+            <th scope="col" class="p-4 font-medium"><%= Role.human_attribute_name(:name) %></th>
+            <th scope="col" class="p-4 font-medium"></th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-black divide-opacity-10">
+          <% @user.roles.each do |role| %>
+            <tr>
+              <td class="p-4"><%= role.name %></td>
+
+              <td class="p-2 text-right">
+                <%= button_to I18n.t("views.actions.destroy"), user_role_path(@user, role), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent hover:bg-black hover:bg-opacity-10" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+</section>
