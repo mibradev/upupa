@@ -23,7 +23,7 @@
               <td class="p-4"><%= user.email %></td>
 
               <td class="p-2 text-right">
-                <%= link_to I18n.t("views.actions.show"), user_path(user), class: "inline-block p-1 text-xs font-medium tracking-widest uppercase bg-transparent hover:bg-black hover:bg-opacity-10" %>
+                <%= link_to I18n.t("views.actions.show"), user_path(user), class: "inline-block p-1 text-xs font-medium tracking-wider uppercase bg-transparent hover:bg-black hover:bg-opacity-10" %>
               </td>
             </tr>
           <% end %>
@@ -37,6 +37,6 @@
   <% end %>
 
   <div class="overflow-x-auto flex gap-2">
-    <%= link_to I18n.t("views.actions.new"), new_user_path, class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+    <%= link_to I18n.t("views.actions.new"), new_user_path, class: "block py-2 px-4 text-sm font-medium tracking-wider text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
   </div>
 </main>

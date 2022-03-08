@@ -15,7 +15,7 @@
   </dl>
 
   <div class="overflow-x-auto flex gap-2">
-    <%= link_to I18n.t("views.actions.edit"), edit_work_file_path(@work_file), class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
-    <%= button_to I18n.t("views.actions.destroy"), work_file_path(@work_file), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, class: "block py-2 px-4 text-sm font-medium tracking-widest text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+    <%= link_to I18n.t("views.actions.edit"), edit_work_file_path(@work_file), class: "block py-2 px-4 text-sm font-medium tracking-wider text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+    <%= button_to I18n.t("views.actions.destroy"), work_file_path(@work_file), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, class: "block py-2 px-4 text-sm font-medium tracking-wider text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
   </div>
 </main>
