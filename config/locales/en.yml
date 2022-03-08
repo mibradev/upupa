@@ -46,7 +46,6 @@ en:
       logged_out: "Logged out successfully."
   views:
     actions:
-      back: "Back"
       destroy: "Delete"
       edit: "Edit"
       new: "New"
