@@ -71,12 +71,6 @@ class WordCountFileTest < ActiveSupport::TestCase
     assert_not_equal @word_count_file.work_type.multiplicand, @word_count_file.work_type_multiplicand
   end
 
-  test "setting total" do
-    @word_count_file.total = nil
-    assert @word_count_file.save
-    assert_equal @word_count_file.actual_word_count * @word_count_file.work_type_multiplicand, @word_count_file.total
-  end
-
   test "associated word_count" do
     @word_count_file.word_count = nil
     assert_not @word_count_file.valid?
@@ -101,5 +95,11 @@ class WordCountFileTest < ActiveSupport::TestCase
 
     @word_count_file.notes = nil
     assert_nil @word_count_file.notes
+  end
+
+  test "total" do
+    @word_count_file.actual_word_count = 2
+    @word_count_file.work_type_multiplicand = 3
+    assert_equal 6, @word_count_file.total
   end
 end

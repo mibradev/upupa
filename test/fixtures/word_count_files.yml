@@ -1,7 +1,6 @@
 one:
   actual_word_count: 2000
   work_type_multiplicand: 1.0
-  total: 2000.0
   word_count: for_word_count_file_one
   work_file: for_word_count_file_one
   work_type: for_word_count_file_one
@@ -9,7 +8,6 @@ one:
 two:
   actual_word_count: 2000
   work_type_multiplicand: 1.0
-  total: 2000.0
   word_count: for_word_count_file_two
   work_file: for_word_count_file_two
   work_type: for_word_count_file_two

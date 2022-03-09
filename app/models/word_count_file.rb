@@ -4,7 +4,6 @@ class WordCountFile < ApplicationRecord
   validates :work_file, uniqueness: {scope: [:word_count, :work_type]}
 
   before_save :set_work_type_multiplicand, if: :new_record?
-  before_save :set_total
 
   belongs_to :word_count
   belongs_to :work_file
@@ -14,13 +13,13 @@ class WordCountFile < ApplicationRecord
     super value&.strip
   end
 
+  def total
+    actual_word_count * work_type_multiplicand
+  end
+
   private
 
   def set_work_type_multiplicand
     self.work_type_multiplicand = work_type.multiplicand
-  end
-
-  def set_total
-    self.total = actual_word_count * work_type_multiplicand
   end
 end

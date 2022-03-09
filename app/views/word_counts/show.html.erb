@@ -19,11 +19,6 @@
     </div>
 
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
-      <dt class="text-sm font-medium"><%= WordCount.human_attribute_name(:total) %></dt>
-      <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= number_with_precision(@word_count.word_count_files.sum(:total), precision: 2) %></dd>
-    </div>
-
-    <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCount.human_attribute_name(:notes) %></dt>
       <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count.notes %></dd>
     </div>
