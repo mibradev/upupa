@@ -1,13 +1,13 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.1"
+ruby "3.1.2"
 
 gem "rails", "7.0.3"
 
 gem "bcrypt", "~> 3.1.0"
 gem "bootsnap", "~> 1.11.0", require: false
-gem "importmap-rails", "~> 1.0.0"
+gem "importmap-rails", "~> 1.1.0"
 gem "jbuilder", "~> 2.11.0"
 gem "pg", "~> 1.3.0"
 gem "propshaft", "~> 0.6.0"
@@ -15,7 +15,7 @@ gem "puma", "~> 5.6.0"
 gem "redis", "~> 4.6.0"
 gem "stimulus-rails", "~> 1.0.0"
 gem "tailwindcss-rails", "~> 2.0.0"
-gem "turbo-rails", "~> 1.0.0"
+gem "turbo-rails", "~> 1.1.0"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
