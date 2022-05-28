@@ -7,26 +7,26 @@
     </h1>
   </header>
 
-  <dl class="text-gray-700 bg-orange-50 divide-y divide-black divide-opacity-10">
+  <dl class="text-indigo-900 bg-indigo-100 divide-y divide-black divide-opacity-10">
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCount.human_attribute_name(:day) %></dt>
-      <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= I18n.localize(@word_count.date, format: "%A") %></dd>
+      <dd class="mt-1 text-sm text-indigo-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= I18n.localize(@word_count.date, format: "%A") %></dd>
     </div>
 
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCount.human_attribute_name(:date) %></dt>
-      <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count.date %></dd>
+      <dd class="mt-1 text-sm text-indigo-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count.date %></dd>
     </div>
 
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCount.human_attribute_name(:notes) %></dt>
-      <dd class="mt-1 text-sm text-gray-700 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count.notes %></dd>
+      <dd class="mt-1 text-sm text-indigo-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count.notes %></dd>
     </div>
   </dl>
 
   <div class="overflow-x-auto flex gap-2">
-    <%= link_to I18n.t("views.actions.edit"), edit_word_count_path(@word_count), class: "py-2 px-4 text-sm font-medium tracking-wider text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
-    <%= button_to I18n.t("views.actions.destroy"), word_count_path(@word_count), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, class: "py-2 px-4 text-sm font-medium tracking-wider text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+    <%= link_to I18n.t("views.actions.edit"), edit_word_count_path(@word_count), class: "py-2 px-4 text-sm font-medium tracking-wider text-indigo-100 uppercase bg-indigo-900 hover:bg-indigo-800 focus:bg-indigo-700 focus:outline-none" %>
+    <%= button_to I18n.t("views.actions.destroy"), word_count_path(@word_count), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, class: "py-2 px-4 text-sm font-medium tracking-wider text-indigo-100 uppercase bg-indigo-900 hover:bg-indigo-800 focus:bg-indigo-700 focus:outline-none" %>
   </div>
 </main>
 
@@ -42,6 +42,6 @@
   <% end %>
 
   <div class="overflow-x-auto flex gap-2">
-    <%= link_to I18n.t("views.actions.new"), new_word_count_word_count_file_path(@word_count), class: "py-2 px-4 text-sm font-medium tracking-wider text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+    <%= link_to I18n.t("views.actions.new"), new_word_count_word_count_file_path(@word_count), class: "py-2 px-4 text-sm font-medium tracking-wider text-indigo-100 uppercase bg-indigo-900 hover:bg-indigo-800 focus:bg-indigo-700 focus:outline-none" %>
   </div>
 </section>

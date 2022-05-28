@@ -4,13 +4,13 @@
 <main class="flex justify-center items-center p-8 min-h-screen">
   <div class="space-y-8 w-full sm:space-y-0 sm:w-auto sm:bg-white sm:shadow">
     <% if flash.alert %>
-      <div class="p-4 text-red-900 bg-red-300">
+      <div class="p-4 text-red-50 bg-red-900">
         <%= flash.alert %>
       </div>
     <% end %>
 
     <% if flash.notice %>
-      <div class="p-4 text-green-900 bg-green-300">
+      <div class="p-4 text-green-50 bg-green-900">
         <%= flash.notice %>
       </div>
     <% end %>
@@ -22,15 +22,15 @@
         <div class="space-y-4">
           <div class="space-y-2">
             <%= form.label :email, class: "block font-medium" %>
-            <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "user@example.com", class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
+            <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "user@example.com", class: "block w-full focus:border-indigo-900 focus:ring-indigo-900" %>
           </div>
 
           <div class="space-y-2">
             <%= form.label :password, class: "block font-medium" %>
-            <%= form.password_field :password, autocomplete: "current-password", placeholder: "********", class: "block w-full focus:border-gray-700 focus:ring-gray-700" %>
+            <%= form.password_field :password, autocomplete: "current-password", placeholder: "********", class: "block w-full focus:border-indigo-900 focus:ring-indigo-900" %>
           </div>
 
-          <%= form.button I18n.t("views.actions.sessions.log_in"), class: "block p-3 w-full text-sm font-medium tracking-wider text-orange-100 uppercase bg-gray-700 hover:bg-gray-600 focus:bg-gray-500 focus:outline-none" %>
+          <%= form.button I18n.t("views.actions.sessions.log_in"), class: "block p-3 w-full text-sm font-medium tracking-wider text-indigo-100 uppercase bg-indigo-900 hover:bg-indigo-800 focus:bg-indigo-700 focus:outline-none" %>
         </div>
       <% end %>
     </div>
