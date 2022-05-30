@@ -57,20 +57,6 @@ class WordCountFileTest < ActiveSupport::TestCase
     assert another_word_count_file.valid?
   end
 
-  test "setting work_type_multiplicand" do
-    new_word_count_file = @word_count_file.dup
-    new_word_count_file.work_type = work_types(:one)
-    new_word_count_file.work_type_multiplicand = nil
-    assert new_word_count_file.save
-    assert_equal new_word_count_file.work_type.multiplicand, new_word_count_file.work_type_multiplicand
-  end
-
-  test "locked work_type_multiplicand if the record is persisted" do
-    @word_count_file.work_type.multiplicand += 1.0
-    assert @word_count_file.save
-    assert_not_equal @word_count_file.work_type.multiplicand, @word_count_file.work_type_multiplicand
-  end
-
   test "associated word_count" do
     @word_count_file.word_count = nil
     assert_not @word_count_file.valid?
@@ -99,7 +85,7 @@ class WordCountFileTest < ActiveSupport::TestCase
 
   test "total" do
     @word_count_file.actual_word_count = 2
-    @word_count_file.work_type_multiplicand = 3
+    @word_count_file.work_type.multiplicand = 3
     assert_equal 6, @word_count_file.total
   end
 end
