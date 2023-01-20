@@ -1,6 +1,6 @@
-<div class="overflow-x-auto">
-  <table class="w-full text-sm text-left text-slate-900 whitespace-nowrap bg-slate-100 divide-y divide-slate-200">
-    <thead>
+<div class="overflow-x-auto shadow">
+  <table class="w-full text-sm text-left whitespace-nowrap divide-y divide-slate-200">
+    <thead class="bg-slate-100">
       <tr>
         <th scope="col" class="p-4 font-medium"><%= WordCountFile.human_attribute_name(:work_file) %></th>
         <th scope="col" class="p-4 font-medium"><%= WordCountFile.human_attribute_name(:actual_word_count) %></th>
@@ -21,7 +21,7 @@
           <td class="p-4"><%= truncate(word_count_file.notes) %></td>
 
           <td class="p-2 text-right">
-            <%= link_to I18n.t("views.actions.show"), word_count_word_count_file_path(word_count_file.word_count, word_count_file), class: "inline-block p-1 text-xs font-medium tracking-wider uppercase hover:bg-slate-200" %>
+            <%= link_to I18n.t("views.actions.show"), word_count_word_count_file_path(word_count_file.word_count, word_count_file), class: "inline-block p-1 text-xs font-medium tracking-wider uppercase hover:bg-slate-100" %>
           </td>
         </tr>
       <% end %>
