@@ -9,7 +9,7 @@
 
   <% if @word_counts.load.any? %>
     <div class="overflow-x-auto">
-      <table class="w-full text-sm text-left text-indigo-900 whitespace-nowrap bg-indigo-100 divide-y divide-black divide-opacity-10">
+      <table class="w-full text-sm text-left text-slate-900 whitespace-nowrap bg-slate-100 divide-y divide-black divide-opacity-10">
         <thead>
           <tr>
             <th scope="col" class="p-4 font-medium"><%= WordCount.human_attribute_name(:day) %></th>
@@ -35,12 +35,12 @@
       </table>
     </div>
   <% else %>
-    <div class="py-32 px-4 text-lg font-medium text-center text-indigo-100 bg-indigo-900">
+    <div class="py-32 px-4 text-lg font-medium text-center text-slate-100 bg-slate-900">
       <%= I18n.t("views.messages.no_records") %>
     </div>
   <% end %>
 
   <div class="overflow-x-auto flex gap-2">
-    <%= link_to I18n.t("views.actions.new"), new_word_count_path, class: "py-2 px-4 text-sm font-medium tracking-wider text-indigo-100 uppercase bg-indigo-900 hover:bg-indigo-800 focus:bg-indigo-700 focus:outline-none" %>
+    <%= link_to I18n.t("views.actions.new"), new_word_count_path, class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
   </div>
 </main>

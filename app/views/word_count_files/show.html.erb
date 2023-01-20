@@ -7,40 +7,40 @@
     </h1>
   </header>
 
-  <dl class="text-indigo-900 bg-indigo-100 divide-y divide-black divide-opacity-10">
+  <dl class="text-slate-900 bg-slate-100 divide-y divide-black divide-opacity-10">
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCountFile.human_attribute_name(:word_count) %></dt>
-      <dd class="mt-1 text-sm text-indigo-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= link_to @word_count_file.word_count.date, word_count_path(@word_count), class: "font-medium text-indigo-900 hover:text-indigo-800" %></dd>
+      <dd class="mt-1 text-sm text-slate-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= link_to @word_count_file.word_count.date, word_count_path(@word_count), class: "font-medium text-slate-900 hover:text-slate-800" %></dd>
     </div>
 
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCountFile.human_attribute_name(:work_file) %></dt>
-      <dd class="mt-1 text-sm text-indigo-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.work_file.name %></dd>
+      <dd class="mt-1 text-sm text-slate-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.work_file.name %></dd>
     </div>
 
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCountFile.human_attribute_name(:actual_word_count) %></dt>
-      <dd class="mt-1 text-sm text-indigo-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.actual_word_count %></dd>
+      <dd class="mt-1 text-sm text-slate-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.actual_word_count %></dd>
     </div>
 
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCountFile.human_attribute_name(:work_type) %></dt>
-      <dd class="mt-1 text-sm text-indigo-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.work_type.name %></dd>
+      <dd class="mt-1 text-sm text-slate-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.work_type.name %></dd>
     </div>
 
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCountFile.human_attribute_name(:total) %></dt>
-      <dd class="mt-1 text-sm text-indigo-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= number_with_precision(@word_count_file.total, precision: 2) %></dd>
+      <dd class="mt-1 text-sm text-slate-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= number_with_precision(@word_count_file.total, precision: 2) %></dd>
     </div>
 
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCountFile.human_attribute_name(:notes) %></dt>
-      <dd class="mt-1 text-sm text-indigo-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.notes %></dd>
+      <dd class="mt-1 text-sm text-slate-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count_file.notes %></dd>
     </div>
   </dl>
 
   <div class="overflow-x-auto flex gap-2">
-    <%= link_to I18n.t("views.actions.edit"), edit_word_count_word_count_file_path(@word_count, @word_count_file), class: "py-2 px-4 text-sm font-medium tracking-wider text-indigo-100 uppercase bg-indigo-900 hover:bg-indigo-800 focus:bg-indigo-700 focus:outline-none" %>
-    <%= button_to I18n.t("views.actions.destroy"), word_count_word_count_file_path(@word_count, @word_count_file), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, class: "py-2 px-4 text-sm font-medium tracking-wider text-indigo-100 uppercase bg-indigo-900 hover:bg-indigo-800 focus:bg-indigo-700 focus:outline-none" %>
+    <%= link_to I18n.t("views.actions.edit"), edit_word_count_word_count_file_path(@word_count, @word_count_file), class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
+    <%= button_to I18n.t("views.actions.destroy"), word_count_word_count_file_path(@word_count, @word_count_file), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
   </div>
 </main>

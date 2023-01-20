@@ -1,10 +1,10 @@
 <%= form_with(model: work_file) do |form| %>
   <div class="space-y-4">
     <% if work_file.errors.any? %>
-      <div class="p-4 bg-red-900">
-        <h4 class="mb-2 font-medium text-red-100"><%= I18n.t("views.form.errors.heading") %></h4>
+      <div class="p-4 bg-red-100">
+        <h4 class="mb-2 font-medium text-red-900"><%= I18n.t("views.form.errors.heading") %></h4>
 
-        <ul class="pl-4 list-disc list-inside text-sm font-medium text-red-50">
+        <ul class="pl-4 list-disc list-inside text-sm font-medium text-red-900">
           <% work_file.errors.each do |error| %>
             <li><%= error.full_message %></li>
           <% end %>
@@ -14,9 +14,9 @@
 
     <div class="space-y-2">
       <%= form.label :name, class: "block font-medium" %>
-      <%= form.text_field :name, class: "block w-full focus:border-indigo-900 focus:ring-indigo-900" %>
+      <%= form.text_field :name, class: "block w-full focus:border-slate-900 focus:ring-slate-900" %>
     </div>
 
-    <%= form.button class: "py-2 px-4 text-sm font-medium tracking-wider text-indigo-100 uppercase bg-indigo-900 hover:bg-indigo-800 focus:bg-indigo-700 focus:outline-none" %>
+    <%= form.button class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
   </div>
 <% end %>
