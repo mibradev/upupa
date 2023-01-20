@@ -7,20 +7,20 @@
     </h1>
   </header>
 
-  <dl class="text-slate-900 bg-slate-100 divide-y divide-black divide-opacity-10">
+  <dl class="text-slate-900 bg-slate-100 divide-y divide-slate-200">
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCount.human_attribute_name(:day) %></dt>
-      <dd class="mt-1 text-sm text-slate-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= I18n.localize(@word_count.date, format: "%A") %></dd>
+      <dd class="mt-1 text-sm text-slate-700 sm:col-span-2 sm:mt-0"><%= I18n.localize(@word_count.date, format: "%A") %></dd>
     </div>
 
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCount.human_attribute_name(:date) %></dt>
-      <dd class="mt-1 text-sm text-slate-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count.date %></dd>
+      <dd class="mt-1 text-sm text-slate-700 sm:col-span-2 sm:mt-0"><%= @word_count.date %></dd>
     </div>
 
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WordCount.human_attribute_name(:notes) %></dt>
-      <dd class="mt-1 text-sm text-slate-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @word_count.notes %></dd>
+      <dd class="mt-1 text-sm text-slate-700 sm:col-span-2 sm:mt-0"><%= @word_count.notes %></dd>
     </div>
   </dl>
 

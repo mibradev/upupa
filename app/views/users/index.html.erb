@@ -9,7 +9,7 @@
 
   <% if @users.load.any? %>
     <div class="overflow-x-auto">
-      <table class="w-full text-sm text-left text-slate-900 whitespace-nowrap bg-slate-100 divide-y divide-black divide-opacity-10">
+      <table class="w-full text-sm text-left text-slate-900 whitespace-nowrap bg-slate-100 divide-y divide-slate-200">
         <thead>
           <tr>
             <th scope="col" class="p-4 font-medium"><%= User.human_attribute_name(:email) %></th>
@@ -17,13 +17,13 @@
           </tr>
         </thead>
 
-        <tbody class="divide-y divide-black divide-opacity-10">
+        <tbody class="divide-y divide-slate-200">
           <% @users.each do |user| %>
             <tr>
               <td class="p-4"><%= user.email %></td>
 
               <td class="p-2 text-right">
-                <%= link_to I18n.t("views.actions.show"), user_path(user), class: "inline-block p-1 text-xs font-medium tracking-wider uppercase bg-transparent hover:bg-black hover:bg-opacity-10" %>
+                <%= link_to I18n.t("views.actions.show"), user_path(user), class: "inline-block p-1 text-xs font-medium tracking-wider uppercase hover:bg-slate-200" %>
               </td>
             </tr>
           <% end %>

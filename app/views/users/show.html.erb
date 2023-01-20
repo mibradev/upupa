@@ -7,10 +7,10 @@
     </h1>
   </header>
 
-  <dl class="text-slate-900 bg-slate-100 divide-y divide-black divide-opacity-10">
+  <dl class="text-slate-900 bg-slate-100 divide-y divide-slate-200">
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= User.human_attribute_name(:email) %></dt>
-      <dd class="mt-1 text-sm text-slate-900 text-opacity-90 sm:col-span-2 sm:mt-0"><%= @user.email %></dd>
+      <dd class="mt-1 text-sm text-slate-700 sm:col-span-2 sm:mt-0"><%= @user.email %></dd>
     </div>
   </dl>
 
@@ -40,7 +40,7 @@
 
   <% if @user.roles.load.any? %>
     <div class="overflow-x-auto">
-      <table class="w-full text-sm text-left text-slate-900 whitespace-nowrap bg-slate-100 divide-y divide-black divide-opacity-10">
+      <table class="w-full text-sm text-left text-slate-900 whitespace-nowrap bg-slate-100 divide-y divide-slate-200">
         <thead>
           <tr>
             <th scope="col" class="p-4 font-medium"><%= Role.human_attribute_name(:name) %></th>
@@ -48,13 +48,13 @@
           </tr>
         </thead>
 
-        <tbody class="divide-y divide-black divide-opacity-10">
+        <tbody class="divide-y divide-slate-200">
           <% @user.roles.each do |role| %>
             <tr>
               <td class="p-4"><%= role.name %></td>
 
               <td class="p-2 text-right">
-                <%= button_to I18n.t("views.actions.destroy"), user_role_path(@user, role), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-wider uppercase bg-transparent hover:bg-black hover:bg-opacity-10" %>
+                <%= button_to I18n.t("views.actions.destroy"), user_role_path(@user, role), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-wider uppercase hover:bg-slate-200" %>
               </td>
             </tr>
           <% end %>
