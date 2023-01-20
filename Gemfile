@@ -31,6 +31,7 @@ group :development do
   gem "web-console"
 
   gem "faker"
+  gem "ruby-lsp", require: false
 end
 
 group :test do
