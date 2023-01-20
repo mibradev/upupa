@@ -40,6 +40,6 @@ work_type_ids = WorkType.ids
       work_type_id: work_type_ids.sample
     )
   rescue => error
-    error.message == "Validation failed: Work file has already been taken" ? retry : raise
+    (error.message == "Validation failed: Work file has already been taken") ? retry : raise
   end
 end
