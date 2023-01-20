@@ -14,27 +14,27 @@
 
     <div class="space-y-2">
       <%= form.label :word_count_id, class: "block font-medium" %>
-      <%= form.text_field :word_count_id, disabled: true, value: word_count_file.word_count.date, class: "block w-full rounded focus:border-slate-900 focus:ring-slate-900" %>
+      <%= form.text_field :word_count_id, disabled: true, value: word_count_file.word_count.date, class: "block w-full border-slate-300 rounded focus:border-amber-500 focus:ring-amber-500" %>
     </div>
 
     <div class="space-y-2">
       <%= form.label :work_file_id, class: "block font-medium" %>
-      <%= form.collection_select :work_file_id, WorkFile.all, :id, :name, {include_blank: true}, class: "block w-full rounded focus:border-slate-900 focus:ring-slate-900" %>
+      <%= form.collection_select :work_file_id, WorkFile.all, :id, :name, {include_blank: true}, class: "block w-full border-slate-300 rounded focus:border-amber-500 focus:ring-amber-500" %>
     </div>
 
     <div class="space-y-2">
       <%= form.label :actual_word_count, class: "block font-medium" %>
-      <%= form.number_field :actual_word_count, class: "block w-full rounded focus:border-slate-900 focus:ring-slate-900" %>
+      <%= form.number_field :actual_word_count, class: "block w-full border-slate-300 rounded focus:border-amber-500 focus:ring-amber-500" %>
     </div>
 
     <div class="space-y-2">
       <%= form.label :work_type_id, class: "block font-medium" %>
-      <%= form.collection_select :work_type_id, WorkType.all, :id, :name, {include_blank: true}, class: "block w-full rounded focus:border-slate-900 focus:ring-slate-900" %>
+      <%= form.collection_select :work_type_id, WorkType.all, :id, :name, {include_blank: true}, class: "block w-full border-slate-300 rounded focus:border-amber-500 focus:ring-amber-500" %>
     </div>
 
     <div class="space-y-2">
       <%= form.label :notes, class: "block font-medium" %>
-      <%= form.text_area :notes, class: "block w-full rounded focus:border-slate-900 focus:ring-slate-900" %>
+      <%= form.text_area :notes, class: "block w-full border-slate-300 rounded focus:border-amber-500 focus:ring-amber-500" %>
     </div>
 
     <%= form.button class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 rounded shadow hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
