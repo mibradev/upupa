@@ -14,14 +14,14 @@
 
     <div class="space-y-2">
       <%= form.label :date, class: "block font-medium" %>
-      <%= form.date_field :date, class: "block w-full focus:border-slate-900 focus:ring-slate-900" %>
+      <%= form.date_field :date, class: "block w-full rounded focus:border-slate-900 focus:ring-slate-900" %>
     </div>
 
     <div class="space-y-2">
       <%= form.label :notes, class: "block font-medium" %>
-      <%= form.text_area :notes, class: "block w-full focus:border-slate-900 focus:ring-slate-900" %>
+      <%= form.text_area :notes, class: "block w-full rounded focus:border-slate-900 focus:ring-slate-900" %>
     </div>
 
-    <%= form.button class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
+    <%= form.button class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 rounded shadow hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
   </div>
 <% end %>

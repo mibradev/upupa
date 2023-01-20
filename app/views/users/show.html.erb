@@ -7,7 +7,7 @@
     </h1>
   </header>
 
-  <dl class="text-slate-900 bg-slate-100 divide-y divide-slate-200">
+  <dl class="text-slate-900 bg-slate-100 divide-y divide-slate-200 rounded shadow">
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= User.human_attribute_name(:email) %></dt>
       <dd class="mt-1 text-sm text-slate-700 sm:col-span-2 sm:mt-0"><%= @user.email %></dd>
@@ -15,8 +15,8 @@
   </dl>
 
   <div class="overflow-x-auto flex gap-2">
-    <%= link_to I18n.t("views.actions.edit"), edit_user_path(@user), class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
-    <%= button_to I18n.t("views.actions.destroy"), user_path(@user), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
+    <%= link_to I18n.t("views.actions.edit"), edit_user_path(@user), class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 rounded shadow hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
+    <%= button_to I18n.t("views.actions.destroy"), user_path(@user), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 rounded shadow hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
   </div>
 </main>
 
@@ -31,15 +31,15 @@
     <div class="flex gap-2">
       <div class="w-full">
         <%= form.label :role_id, class: "sr-only" %>
-        <%= form.collection_select :role_id, Role.where.not(id: @user.roles), :id, :name, {include_blank: true}, class: "block w-full focus:border-slate-900 focus:ring-slate-900" %>
+        <%= form.collection_select :role_id, Role.where.not(id: @user.roles), :id, :name, {include_blank: true}, class: "block w-full rounded focus:border-slate-900 focus:ring-slate-900" %>
       </div>
 
-      <%= form.button class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
+      <%= form.button class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 rounded shadow hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
     </div>
   <% end %>
 
   <% if @user.roles.load.any? %>
-    <div class="overflow-x-auto shadow">
+    <div class="overflow-x-auto rounded shadow">
       <table class="w-full text-sm text-left whitespace-nowrap divide-y divide-slate-200">
         <thead class="bg-slate-100">
           <tr>
@@ -54,7 +54,7 @@
               <td class="p-4"><%= role.name %></td>
 
               <td class="p-2 text-right">
-                <%= button_to I18n.t("views.actions.destroy"), user_role_path(@user, role), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-wider uppercase hover:bg-slate-100" %>
+                <%= button_to I18n.t("views.actions.destroy"), user_role_path(@user, role), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, form_class: "inline-block", class: "inline-block p-1 text-xs font-medium tracking-wider uppercase hover:bg-slate-100 hover:rounded" %>
               </td>
             </tr>
           <% end %>

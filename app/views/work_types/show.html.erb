@@ -7,7 +7,7 @@
     </h1>
   </header>
 
-  <dl class="text-slate-900 bg-slate-100 divide-y divide-slate-200">
+  <dl class="text-slate-900 bg-slate-100 divide-y divide-slate-200 rounded shadow">
     <div class="p-4 sm:grid sm:grid-cols-4 sm:gap-4">
       <dt class="text-sm font-medium"><%= WorkType.human_attribute_name(:name) %></dt>
       <dd class="mt-1 text-sm text-slate-700 sm:col-span-2 sm:mt-0"><%= @work_type.name %></dd>
@@ -20,7 +20,7 @@
   </dl>
 
   <div class="overflow-x-auto flex gap-2">
-    <%= link_to I18n.t("views.actions.edit"), edit_work_type_path(@work_type), class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
-    <%= button_to I18n.t("views.actions.destroy"), work_type_path(@work_type), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
+    <%= link_to I18n.t("views.actions.edit"), edit_work_type_path(@work_type), class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 rounded shadow hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
+    <%= button_to I18n.t("views.actions.destroy"), work_type_path(@work_type), method: :delete, form: {data: {turbo_confirm: I18n.t("views.messages.turbo_confirm")}}, class: "py-2 px-4 text-sm font-medium tracking-wider text-slate-100 uppercase bg-slate-900 rounded shadow hover:bg-slate-800 focus:bg-slate-700 focus:outline-none" %>
   </div>
 </main>
