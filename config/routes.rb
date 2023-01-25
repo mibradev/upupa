@@ -7,8 +7,6 @@ Rails.application.routes.draw do
     delete "logout", action: :destroy
   end
 
-  resources :roles, only: [:index, :show]
-
   resources :users do
     scope module: :users do
       resources :roles, only: [:create, :destroy]
@@ -19,6 +17,7 @@ Rails.application.routes.draw do
     resources :word_count_files
   end
 
+  resources :roles, only: [:index, :show]
   resources :work_files
   resources :work_types
 end
